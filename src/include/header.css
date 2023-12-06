@@ -80,7 +80,6 @@
 
 /* 로고 ~ */
 #header-container {
-  position: fixed;
   width: 100%;
   top: 50px;
   display: flex;

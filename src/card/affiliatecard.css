@@ -1,0 +1,60 @@
+
+
+/* 기본 전체 설정 */
+#affiliatecard-body-e {
+  width: 100%;
+  height: 460px;
+  background-image: url('./affiliatecardimg/affiliate_bg.jpg');
+}
+
+#affiliatecard-container-e {
+  border: 1px solid;
+  margin: 0 auto;
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#affiliatecard-title-e {
+  letter-spacing: 2px;
+  font-size: 48px;
+  font-weight: 100;
+  padding: 116px 0 19px;
+  
+}
+
+#affiliatecard-select-e {
+  border: 1px solid;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#affiliatecard-cardlist-e {
+  width: 352px;
+  height: 38px;
+}
+
+#affiliatecard-cardselect-e{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-list-e{
+  border: 1px solid black;
+  width: 176px;
+  height: 38px;
+}
+
+#card-list-e{
+  width: 176px;
+  height: 38px;
+}

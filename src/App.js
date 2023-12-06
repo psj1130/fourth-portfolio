@@ -1,5 +1,6 @@
 // 메인 라우터 공간
 import './App.css';
+import Affiliatecard from './card/affiliatecard';
 import { Routes, Route } from 'react-router-dom';
 
 // 컴포넌트 불러오기
@@ -14,6 +15,7 @@ function App() {
       <div id='App_Main'>
         <Routes>
           <Route path='/' element={<MainPage/>}/>
+          <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
         </Routes>
       </div>
       <Footer/>
