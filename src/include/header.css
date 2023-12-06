@@ -80,37 +80,38 @@
 
 /* 로고 ~ */
 #header-container {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  top: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 30px;
+  /* justify-content: center; */
+  gap: 25px;
   align-items: center;
-  height: 121px;
+  height: 171px;
   background-color: #fff;
-  padding-top: 20px;
+  /* padding-top: 20px; */
+  border-bottom: 1px solid #ccc;
 }
 #header-second-menu {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#header-second-menu ul {
+#header-second-menu-fromInsideOut {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   height: 30px;
 }
-#header-second-menu ul a {
+#header-second-menu-fromInsideOut a {
   height: auto;
   /* padding: 5px 40px; */
   color: #000;
   line-height: normal;
 }
-#header-second-menu-fromInsideOut li {
+.nav_menu {
   position: relative; 
   display: inline-block; 
   margin: 0 20px; 
@@ -119,7 +120,7 @@
   line-height: 30px; 
   cursor: pointer;
 }
-#header-second-menu-fromInsideOut li::after {
+.nav_menu::after {
   position: absolute; content:"";
   display: block;
   border-bottom: 3px solid #000;
@@ -127,8 +128,13 @@
   left: 50%; 
   width: 0;
 }
-#header-second-menu-fromInsideOut li:hover::after {
+.nav_menu:hover::after {
   transition: all 200ms ease-out;
   left: 0%; 
   width: 100%;
+}
+
+#header-dropdown-menu-wrapper {
+  width: 1300px;
+
 }
