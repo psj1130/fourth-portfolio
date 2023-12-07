@@ -1,6 +1,7 @@
 // 메인 라우터 공간
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import Buy from './buy/buy';
 
 // 컴포넌트 불러오기
 import Header from './include/header';
@@ -12,9 +13,10 @@ function App() {
     <div className="App">
       <Header/>
       <div id='App_Main'>
-        <Routes>
+        <Buy/>
+        {/* <Routes>
           <Route path='/' element={<MainPage/>}/>
-        </Routes>
+        </Routes> */}
       </div>
       <Footer/>
     </div>
