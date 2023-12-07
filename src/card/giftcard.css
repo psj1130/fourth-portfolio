@@ -1,0 +1,128 @@
+#giftcard-body {
+  width: 100%;
+}
+
+#giftcard-con1 {
+  width: 100%;
+  height: 460px;
+  background-image: url('./giftcardimg/giftcard_intro_visual.jpg');
+}
+
+#giftcard-con1-text {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#con1-title-text {
+  width: 100%;
+  font-size: 46px;
+  font-weight: 300;
+  padding-bottom: 25px;
+}
+
+#info-text {
+  width: 100%;
+  height: 62px;
+  font-size: 18px;
+}
+
+#giftcard-btn {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#giftcard-btn-con {
+  display: flex;
+  flex-direction: row;
+  width: 540px;
+  height: 35px;
+  text-decoration: none;
+}
+
+.btn-con-lists {
+  border: 1px solid #a0a0a2;;
+  width: 180px;
+  height: 100%;
+  text-decoration: none;
+  line-height: 35px;
+}
+
+.btn-con-lists > a {
+  color: #202023;
+}
+
+.btn-con-lists:hover {
+  background-color: #a0a0a2;
+}
+
+.btn-con-lists:hover > a{
+  color: white;
+}
+
+#giftcard-con2 {
+  width: 100%;
+  height: 680px;
+  background-image: url('./giftcardimg/giftcard_intro_bg01.jpg');
+}
+
+/* #giftcard-con3 {
+  width: 100%;
+  height: 680px;
+  background-image: url('./giftcardimg/giftcard_intro_bg02.jpg');
+}
+
+#giftcard-con4 {
+  width: 100%;
+  height: 680px;
+  background-image: url('./giftcardimg/giftcard_intro_bg03.jpg');
+}
+#giftcard-con5 {
+  width: 100%;
+  height: 680px;
+  background-image: url('./giftcardimg/giftcard_intro_bg04.jpg');
+} */
+
+.giftcard-cons {
+  margin: 0 auto;
+  border: 1px solid;
+  width: 1180px;
+  height: 100%;
+}
+
+.cons-left{
+  border: 1px solid;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cons-text-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  width: 590px;
+  height: 260px;
+}
+
+.cons-text-after::after{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #213e84;
+  margin: 50px 0 50px;
+}

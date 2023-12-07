@@ -8,7 +8,6 @@
 }
 
 #affiliatecard-container-e {
-  border: 1px solid;
   margin: 0 auto;
   width: 1200px;
   height: 100%;
@@ -26,7 +25,6 @@
 }
 
 #affiliatecard-select-e {
-  border: 1px solid;
   width: 100%;
   height: 250px;
   display: flex;
@@ -52,9 +50,12 @@
   border: 1px solid black;
   width: 176px;
   height: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#card-list-e{
-  width: 176px;
-  height: 38px;
+.card-list-e:hover {
+  background-color: #6d6d6d;
+  color: white;
 }

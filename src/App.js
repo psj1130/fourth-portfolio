@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './include/header';
 import Footer from './include/footer';
 import MainPage from './main';
+import Giftcard from './card/giftcard';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<MainPage/>}/>
           <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
+          <Route path='/card/giftcard' element={<Giftcard/>}/>
         </Routes>
       </div>
       <Footer/>

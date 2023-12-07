@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './affiliatecard.css'
 import Hanacard from "./hanacard";
-import Sinhancard from "./sinhancard";
+import Shinhancard from "./sinhancard";
+
+
 
 function Affiliatecard() {
 
@@ -13,17 +15,17 @@ function Affiliatecard() {
             <div id='affiliatecard-select-e'>
               <div id='affiliatecard-cardlist-e'>
                   <ul id='affiliatecard-cardselect-e'>
-                      <button className='card-list-e'>
+                      <a href='#none' className='card-list-e'>
                         하나카드
-                      </button>
-                      <button className='card-list-e'>
+                      </a>
+                      <a href='#none' className='card-list-e'>
                         신한카드
-                      </button>
+                      </a>
                   </ul>
               </div>
           </div>
       </div>
-      <Sinhancard/>
+      <Shinhancard/>
     </div>
   );
 }
