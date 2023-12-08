@@ -21,7 +21,7 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-  margin-right: 50px;
+  margin-right: 30px;
 }
 #header-topmenu-navigation {
   display: flex;
@@ -149,7 +149,8 @@
   display: none;
   width: 200px;
   height: 200px;
-  z-index: 1;
+  z-index: 100;
+  /* background-color: #fff; */
 }
 .nav_menu ul li a:hover {
   color: #ccc;
