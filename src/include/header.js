@@ -1,14 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import './header.css';
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [scrollY, setScrollY] = useState(0);
-  const ex = document.getElementById('header-container');
+  // const [scrollY, setScrollY] = useState(0);
+  const ex = useRef(document.getElementById('header-container'));
 
   const handleScroll = () => {
-    const scrollPosition = window.pageYOffset;
-    setScrollY(scrollPosition)
+    const scrollPosition = window.scrollY;
+    // setScrollY(scrollPosition)
+    if(scrollPosition > 0) {
+      ex.current.style.setProperty('top', '-50px');
+    } else if(scrollPosition === 0) {
+      ex.current.style.setProperty('top', '0px');
+    }
   };
 
   useEffect( () => {
@@ -19,16 +24,10 @@ function Header() {
     }
   }, []);
 
-  if(scrollY > 0) {
-    ex.style.top = "-50px";
-  } else if(scrollY == 0) {
-    ex.style.top = "0px";
-  }
-
   return(
     <header>
       <div id="header-wrapper">
-        <div id="header-container">
+        <div id="header-container" ref={ex}>
         <div id="header-topmenu-container">
           <div id="header-topmenu">
             <ul id="header-topmenu-navigation">
