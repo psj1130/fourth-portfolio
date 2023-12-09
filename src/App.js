@@ -1,10 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Customerservice from './customerservicecenter/customerservice';
+import DistributionProducts from './distributionProducts/distributionProducts';
 
 function App() {
   return (
     <div className="App">
-
+      {/* <Header/> */}
+      <div id='App_Main'>
+        <Routes>
+          {/* <Route path='/' element={<MainPage/>}/> */}
+          <Route path='/dp/*' element={<DistributionProducts />}/>
+          <Route path='/cs/*' element={<Customerservice />}/>
+        </Routes>
+      </div>
+      {/* <Footer/> */}
     </div>
   );
 }
