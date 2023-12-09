@@ -1,0 +1,113 @@
+#partnershipmemo_memo{
+ width: 540px;
+ height: 58px;
+}
+#partnershipmemo_memo2{
+  width: 168px;
+  height: 58px;
+}
+#partnershipmemo_memo3{
+  width: 320px;
+  height: 58px;
+}
+#partnershipmemo_memo4{
+  width: 540px;
+  height: 160px;
+}
+#partnershipmemo_memo5{
+  width: 210px;
+  height: 58px;
+}
+#partnershipmemo_memo6{
+  width: 540px;
+  height: 23px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#partnershipmemo_title{
+  width: 140px;
+  height: 58px;
+  font-size: 15px;
+  display: flex;
+  /* border: 1px solid black; */
+  align-items: center;
+}
+#par{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+#par_a{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+#partnershipmemo_container{
+  /* border: 3px solid rgb(255, 0, 0); */
+  width: 680px;
+ 
+}
+#partnershipmemo_hyphen{
+  display: flex;
+  width: 15px;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid rgb(255, 0, 0); */
+}
+/* 버튼 */
+#partnership_btns_main{
+  width: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 3px solid rgb(255, 0, 0); */
+}
+#partnership_btns{
+  width: 520px;
+  display: flex;
+  justify-content: space-between;
+  /* border: 3px solid rgb(255, 0, 0); */
+}
+#partnership_btn_a{
+  width: 245px;
+  height: 68px;
+  color: white;
+  background-color: #959595;
+  font-weight: 900;
+  border: none;
+  font-size: 20px;
+}
+#partnership_btn_b{
+  width: 245px;
+  height: 68px;
+  color: white;
+  background-color: #002F6C;
+  font-weight: 900;
+  border: none;
+  font-size: 20px;
+}
+#partnershipmemo_notice{
+  width: 750px;
+  color: red;
+  font-size: 15px;
+  text-align:left;
+}
+#partnershipmemo_main{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#par_a{
+  width: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 3px solid black; */
+  gap: 20px;
+}

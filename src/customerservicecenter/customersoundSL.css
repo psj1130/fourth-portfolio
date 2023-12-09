@@ -1,0 +1,119 @@
+#cussl_main{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+#cussl_title h1{
+  font-size: 25px;
+}
+#cussl_container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl{
+  width: 1200px;
+  height: 420px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+}
+#cussl_a{
+  width: 212px;
+  height: 50px;
+  border-bottom: 1px solid black;
+  background-color: rgb(230, 230, 230);
+}
+#cussl_b{
+  width: 330px;
+  height: 50px;
+  border-top: 1px solid black;
+  background-color: rgb(230, 230, 230);
+}
+#cussl_c{
+  width: 636px;
+  height: 50px;
+  border-bottom: 1px solid black;
+  background-color: rgb(230, 230, 230);
+}
+#cussl_d{
+  width: 212px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl_e{
+  width: 330px;
+  height: 49.5px;
+  border-bottom: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl_ee{
+  width: 330px;
+  height: 50px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl_eee{
+  width: 330px;
+  height: 50px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl_f{
+  width: 330px;
+  height: 95px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl_g{
+  width: 636px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl_gg{
+  width: 636px;
+  height: 203px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cussl_ggg{
+  width: 636px;
+  height: 94px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#cussl_h{
+  width: 636px;
+  height: 95px;
+  border: 1px solid black;
+}
+#cussl_i{
+  width: 212px;
+  height: 299px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
