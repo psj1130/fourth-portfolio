@@ -39,18 +39,18 @@ function Header() {
           <nav id="header-second-menu">
             <ul id="header-second-menu-fromInsideOut">
               <li className="nav_menu">
-                <a href="#none"><span>원두</span></a>
+                <a href="/Beans"><span>원두</span></a>
                 {/* <ul>
                   <li><a href="#none">이디야 블렌드</a></li>
-                  <li><a href="#none">품질</a></li>
+                  <li><a href="/Quality">품질</a></li>
                 </ul> */}
               </li>
               <li className="nav_menu">
                 <a href="#none"><span>메뉴</span></a>
                 {/* <ul>
-                  <li><a href="#none">음료</a></li>
-                  <li><a href="#none">푸드</a></li>
-                  <li><a href="#none">MD</a></li>
+                  <li><a href="/drink">음료</a></li>
+                  <li><a href="/food">푸드</a></li>
+                  <li><a href="/MD">MD</a></li>
                 </ul> */}
               </li>
               <li className="nav_menu">
