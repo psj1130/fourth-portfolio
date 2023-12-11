@@ -53,11 +53,7 @@
   height: 100%;
 }
 
-/* #card-info-con {
-  border: 1px solid;
-  width: 100%;
-  height: 315px;
-} */
+
 
 #card-info-con {
   width: 100%;
@@ -92,7 +88,6 @@
 
 #card-info-lists {
   margin: 20px auto 0;
-  border: 1px solid;
   width: 380px;
   height: 200px;
   display: flex;
@@ -117,6 +112,7 @@
 .info-list:nth-child(1){
   margin-top: 15px;
 }
+
 .numlist-box {
   line-height: 40px;
   width: 40px;

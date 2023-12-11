@@ -8,6 +8,9 @@ import Header from './include/header';
 import Footer from './include/footer';
 import MainPage from './main';
 import Giftcard from './card/giftcard';
+import Buy from "./card/buy";
+import Check from './card/check'
+import Introduce from './card/cardintroduce' 
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
           <Route path='/' element={<MainPage/>}/>
           <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
           <Route path='/card/giftcard' element={<Giftcard/>}/>
+          <Route path='/card/giftcard/buy' element={<Buy/>}/>
+          <Route path='/card/giftcard/check' element={<Check/>}/>
+          <Route path='/card/giftcard/cardintroduce' element={<Introduce/>}/>
         </Routes>
       </div>
       <Footer/>
