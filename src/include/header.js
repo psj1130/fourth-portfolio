@@ -35,7 +35,7 @@ function Header() {
               <li><Link to='/'>매장찾기</Link></li>
               <li><Link to='/'>고객의 소리</Link></li>
               <li><Link to='/'>이디야 스토어</Link></li>
-              <li><Link to='/'>모바일상품권 스토어</Link></li>
+              <li><Link to='/'>관리자 페이지</Link></li>
             </ul>
             <div id="header-topmenu-sns">
               <a href='#none'><img src="images/top_sns/top_sns01.png" alt="1"/></a>

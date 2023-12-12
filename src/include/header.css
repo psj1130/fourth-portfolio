@@ -151,7 +151,7 @@
   padding-top: 30px;
   text-align: left;
   display: none;
-  width: 150px;
+  width: 250px;
   height: 200px;
   z-index: 15;
   background-color: #fff;
@@ -159,7 +159,6 @@
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  
 }
 
 #header-second-menu-fromInsideOut:hover .nav_menu ul {
