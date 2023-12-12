@@ -3,6 +3,7 @@
   vertical-align: middle;
   margin: auto 0;
   padding: 0;
+  z-index: 10;
 }
 
 .dots_custom li {
@@ -35,6 +36,7 @@
   /* height: 1vw; */
 }
 
-/* .img_box {
-  z-index: 0;
-} */
+.slick-list {
+  width: 100%;
+  z-index: 5;
+}

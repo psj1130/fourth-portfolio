@@ -37,7 +37,7 @@ const ImageSlide = (props) => {
           <Slider {...settings}>
           {props.images.map((img) => {
               return(
-                <img src={img.img_url} alt='1'></img>
+                <img src={img.img_url} alt='1' key={img.id}></img>
               )
             })}
           </Slider>
