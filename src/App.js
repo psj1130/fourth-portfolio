@@ -11,6 +11,7 @@ import Giftcard from './card/giftcard';
 import Buy from "./card/buy";
 import Check from './card/check'
 import Introduce from './card/cardintroduce' 
+import Declaration from './card/declaration';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/card/giftcard/buy' element={<Buy/>}/>
           <Route path='/card/giftcard/check' element={<Check/>}/>
           <Route path='/card/giftcard/cardintroduce' element={<Introduce/>}/>
+          <Route path='/card/giftcard/declaration' element={<Declaration/>}/>
         </Routes>
       </div>
       <Footer/>

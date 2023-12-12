@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './giftcard.css'
 import React from 'react';
 
@@ -66,9 +65,9 @@ function Giftcard() {
             <div className="cons-left">
                 <div className='cons-text-box'>
                   <h1 className='cons-text-after'>분실신고 & 환불신청</h1>
-                    <a href='#none'>
+                    <a href='/card/giftcard/declaration'>
                       <div className='giftcard-introduce'>
-                        <p>기프트카드 소개</p>
+                        <p>분실신고 / 환불신청</p>
                       </div>
                     </a>
                 </div>
@@ -83,7 +82,7 @@ function Giftcard() {
                   <h1 className='cons-text-after'>자주하는 질문</h1>
                   <a href='#none'>
                     <div className='giftcard-introduce'>
-                      <p>기프트카드 소개</p>
+                      <p>자주하는 질문</p>
                     </div>
                   </a>
                 </div>
