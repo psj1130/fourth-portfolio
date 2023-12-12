@@ -1,13 +1,13 @@
-#stickC_container{
+#mixC_container{
   width: 100%;
-  height: 900px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   /* border: 3px solid rgb(254, 0, 0); */
 }
-#stickC_main{
+#mixC_main{
   width: 1200px;
   height: 250px;
   display: flex;
@@ -15,14 +15,8 @@
   justify-content: center;
   /* border: 3px solid rgb(254, 0, 0); */
 }
-#stickC_title{
-  width: 1200px;
-  height: 200px;
-  /* border: 3px solid rgb(254, 0, 0); */
-  display: flex;
-  align-items: flex-end;
-}
-#stickC_a{
+
+#mixC_a{
   width: 1200px;
   height: 400px;
   /* border: 3px solid rgb(207, 131, 131); */
@@ -30,7 +24,7 @@
   align-items: center;
   justify-content: center;
 }
-#stickC_aa{
+#mixC_aa{
   width: 360px;
   height: 170px;
   display: flex;
@@ -40,15 +34,15 @@
   /* border: 1px solid rgb(0, 0, 0); */
   background-color: #F4F4F2;
 }
-#stickC_img1 img{
-  width: 17px;
-  height: 25px;
+#mixC_img1 img{
+  width: 15px;
+  height: 30px;
 }
-#stickC_img2 img{
+#mixC_img2 img{
   width: 60px;
   height: 60px;
 }
-#stickC_arrow{
+#mixC_arrow{
   width: 40px;
   height: 170px;
   /* border: 3px solid black; */
@@ -56,7 +50,16 @@
   align-items: center;
   justify-content: center;
 }
-#stickC_botmemo{
+#mixC_botmemo{
+  /* border: 3px solid black; */
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 13px;
+  width: 1200px;
+  height: 35px;
+}
+#mixC_botmemo{
   /* border: 3px solid black; */
   display: flex;
   align-items: flex-start;
@@ -66,40 +69,4 @@
   height: 35px;
   font-weight: 600;
   color:rgb(70, 70, 70);
-}
-#circle_container{
-  width: 1200px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
-  /* border: 3px solid black; */
-}
-#circle_test{
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background-color: #1A437B;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
- 
-}
-#circle_img{
-  width: 80px;
-  height: 80px;
-}
-#cicle_memo{
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  width: 170px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  /* border: 1px solid black; */
 }

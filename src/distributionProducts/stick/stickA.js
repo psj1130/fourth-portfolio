@@ -1,5 +1,5 @@
 import './stickA.css';
-import Dplist from './dplist';
+import Dplist from '../dplist';
 
 function StickA() {
   return (

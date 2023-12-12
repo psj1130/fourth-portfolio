@@ -1,7 +1,8 @@
-// import React from 'react';
+import {Route, Routes} from 'react-router-dom';
 import Stick from './stick';
 import Coffemix from './coffemix';
-import {Route, Routes} from 'react-router-dom';
+import Capsule from './capsule';
+import Cup from './cup';
 
 function DistributionProducts() {
   return (
@@ -9,6 +10,8 @@ function DistributionProducts() {
       <Routes>
         <Route path='/' element={<Stick/>} />
         <Route path='/coffemix' element={<Coffemix/>} />
+        <Route path='/capsule' element={<Capsule/>} />
+        <Route path='/cup' element={<Cup/>} />
       </Routes>
     </div>
   );
