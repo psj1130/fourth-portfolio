@@ -17,14 +17,14 @@ function App() {
     <div className="App">
       <Header/>
       <div id='App_Main'>
-        <Buy/>
-        {<Routes>
+        <Routes>
           <Route path='/' element={<MainPage/>}/>
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
-        </Routes>}
+        </Routes>
       </div>
       <Footer/>
+      
     </div>
   );
 }
