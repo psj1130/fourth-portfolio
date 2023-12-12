@@ -1,0 +1,117 @@
+/* 라뗴 */
+#la_top{
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  /* border: 10px solid red; */
+}
+#la_container{
+  width: 1200px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 10px solid black; */
+  flex-wrap: wrap;
+}
+#la_main{
+  width: 600px;
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 10px solid black; */
+  flex-direction: column;
+  gap: 10px;
+  
+}
+#la_container_a{
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 10px solid black; */
+}
+#la_detail_h2{
+  width: 420px;
+  height: 22px;
+  font-size:18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#la_detail_h3_d{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(224, 176, 141);
+  font-size:13px;
+}
+#la_detail_p_d{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(224, 176, 141);
+  font-size:13px;
+}
+#la_detail_h3_e{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(143, 172, 223);
+  font-size:13px;
+}
+#la_detail_p_e{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(143, 172, 223);
+  font-size:13px;
+}
+#la_detail_h3_f{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(254, 110, 123);
+  font-size:13px;
+}
+#la_detail_p_f{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(254, 110, 123);
+  font-size:13px;
+}
+#la_detail_h3_g{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(245, 176, 27);
+  font-size:13px;
+}
+#la_detail_p_g{
+  width: 420px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(245, 176, 27);
+  font-size:13px;
+}

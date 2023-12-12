@@ -1,0 +1,54 @@
+#cupB_container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* border: 3px solid black; */
+}
+#cupB_main{
+  width: 1200px;
+  height: 800px;
+  border: 3px solid black;
+}
+#cupB_main1{
+  width: 1200px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /* border: 3px solid black; */
+}
+#cupB_detail{
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#cupB_detail h3{
+  font-size: 17px;
+  width: 330px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 3px solid black; */
+}
+#cupB_detail p {
+  font-size: 13px;
+  width: 330px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 3px solid black; */
+}
+#cupB_main2{
+  width: 1200px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  /* border: 3px solid black; */
+}

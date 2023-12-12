@@ -1,0 +1,80 @@
+#cupA_container{
+  width: 100%;
+}
+#cupA_main{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 3px solid black; */
+}
+#cupA_main2{
+  width: 1200px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 3px solid rgb(0, 72, 255); */
+}
+#cupA_a{
+  width: 1200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 100;
+  /* border: 3px solid rgb(0, 72, 255); */
+}
+#cupA_a h3{
+  font-size: 20px;
+}
+
+#cup_Top{
+  width: 100%;
+  height: 450px;
+  border: 1px solid black;
+  background-image: url('../dpbackimg/drink_visual.jpg');
+  background-size: 100% 450px;
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-around; */
+}
+#cup_title{
+  width: 100%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rebeccapurple; */
+  font-weight: 100;
+}
+#cup_title h3{
+  font-size: 60px;
+  font-weight: 300;
+}
+#cup_title p{
+  font-size: 20px;
+  width: 800px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rebeccapurple; */
+}
+#cup_mid{
+  width: 89%;
+  height: 150px;
+  color: #898989;
+  font-size: 12px;
+  /* border: 1px solid black; */
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 600;
+}

@@ -1,23 +1,23 @@
 
-#stickA_container{
+#mixA_containcupBer{
   width: 100%;
 
 }
-#stickA_img1{
+#mixA_img1{
   width: 192px;
   height: 40px;
   
 }
-#stickA_main{
+#mixA_main{
   width: 100%;
-  height: 800px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   /* border: 3px solid black; */
 }
-#stickA_main2{
+#mixA_main2{
   width: 1200px;
   height: 300px;
   display: flex;
@@ -26,7 +26,12 @@
   flex-direction: column;
   /* border: 3px solid rgb(0, 72, 255); */
 }
-#stickA_a{
+#mixA_main2 h1{
+  font-size: 50px;
+  color:rgb(34, 60, 133);
+  font-weight: 600;
+}
+#mixA_a{
   width: 1200px;
   height: 150px;
   display: flex;
@@ -36,11 +41,12 @@
   font-weight: 100;
   /* border: 3px solid rgb(0, 72, 255); */
 }
-#stickA_a h3{
+#mixA_a h3{
   font-size: 20px;
+  font-weight: 400;
 }
 
-#stickA_aa{
+#mixA_aa{
   font-size: 14px;
   font-weight: 400;
   height: 60px;
@@ -49,16 +55,16 @@
   align-items: center;
   justify-content: center;
 }
-#stickB_main{
+#mixB_main{
   width: 1200px;
   /* border: 3px solid black; */
 }
-#stickA_img2 img{
+#mixA_img2 img{
   width: 160px;
   height: 160px;
-  
+  /* border: 3px solid black; */
 }
-#stickA_img2{
+#mixA_img2{
   width: 1200px;
   height: 400px;
   display: flex;
@@ -67,7 +73,7 @@
   flex-direction: row;
   border: 1px solid rgb(153, 153, 153);
 }
-#stickA_b{
+#mixA_b{
   width: 280px;
   height: 400px;
   display: flex;
@@ -76,7 +82,7 @@
   justify-content: center;
   /* border: 3px solid black; */
 }
-#stickA_bb{
+#mixA_bb{
   width: 300px;
   height: 70px;
   /* border: 3px solid black; */
@@ -85,8 +91,11 @@
   justify-content: center;
   font-size: 18px;
 }
+#mixA_bb h4{
+  font-weight: 500;
+}
 
-#stickA_bbb {
+#mixA_bbb {
   width: 305px;
   height: 80px;
   font-size: 13px;
@@ -99,7 +108,8 @@
   flex-wrap: wrap;
   line-height: 20px;
 }
-#stick_Top{
+
+#mix_Top{
   width: 100%;
   height: 450px;
   border: 1px solid black;
@@ -109,7 +119,7 @@
   flex-direction: column;
   /* align-content: space-around; */
 }
-#stick_title{
+#mix_title{
   width: 100%;
   height: 240px;
   display: flex;
@@ -119,12 +129,13 @@
   /* border: 1px solid rebeccapurple; */
   font-weight: 100;
 }
-#stick_title h3{
-  font-size: 60px;
-  font-weight: 300;
+#mix_title h3{
+  font-weight: 100;
+  font-size: 48px;
 }
-#stick_title p{
-  font-size: 20px;
+
+#mix_title_p{
+  font-size: 26px;
   width: 800px;
   height: 70px;
   display: flex;
@@ -132,7 +143,10 @@
   justify-content: center;
   /* border: 1px solid rebeccapurple; */
 }
-#stick_mid{
+#mix_title_sapn{
+  font-weight: 700;
+}
+#mix_mid{
   width: 89%;
   height: 150px;
   color: #898989;
