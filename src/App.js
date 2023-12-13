@@ -13,15 +13,15 @@ import Quality from './Beans_Quality/quality';
 
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
+import MapSearch from './mapSearch';
 import Buy from './buy/buy';
-
-
 
 function App() {
   return (
     <div className="App">
       <Header/>
       <div id='App_Main'>
+        {/* <MapSearch></MapSearch> */}
         <Routes>
           <Route path='/' element={<MainPage/>}/>
           <Route path='/beans' element={<Beans/>}/>
