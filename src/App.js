@@ -17,7 +17,8 @@ import Quality from './Beans_Quality/quality';
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
 import MapSearch from './mapSearch';
-import Buy from './buy/buy';
+import LoginPage from "./customer/login";
+// import Buy from './buy/buy';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
           <Route path='/quality' element={<Quality/>}/>
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
-           <Route path='/order/menu/:id' element={<Buy/>}/>
+          <Route path='/order/menu/:id' element={<Buy/>}/>
           <Route path='/order/:id' element={<Seller/>}/>
         </Routes>
       </div>
