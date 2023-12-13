@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import '../question/questionmain.css'
-import { Link } from 'react-router-dom';
+
 
 function QuestionMain() {
 
@@ -73,12 +73,9 @@ function QuestionMain() {
               <div id='question-detail-container'>
                 <div id='question-dataile-tapcontainer'>
                 {tapMenu.map((item, index)=>(
-                  <Link key={item.key} to='/'>
-                    {/* Link 부분에 변수를 넣어야하나? */}
                     <div key={item.key} value={item.key} id='question-detail-list'>
                       <p>{item.value}</p>
                     </div>
-                  </Link>
                   ))}
                 </div>
               </div>
