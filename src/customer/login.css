@@ -1,0 +1,11 @@
+#login-page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-page-container {
+  width: 440px;
+  
+}
