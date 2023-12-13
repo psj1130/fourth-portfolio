@@ -12,6 +12,8 @@ import Buy from "./card/buy";
 import Check from './card/check'
 import Introduce from './card/cardintroduce' 
 import Declaration from './card/declaration';
+import Question from './card/question';
+import Brandnews from './brandnews/index';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path='/card/giftcard/check' element={<Check/>}/>
           <Route path='/card/giftcard/cardintroduce' element={<Introduce/>}/>
           <Route path='/card/giftcard/declaration' element={<Declaration/>}/>
+          <Route path='/card/giftcard/question/' element={<Question/>}/>
+          <Route path='/brandnews/index' element={<Brandnews/>}/>
         </Routes>
       </div>
       <Footer/>

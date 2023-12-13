@@ -80,7 +80,7 @@ function Giftcard() {
           <div className="cons-right">
                 <div className='cons-text-box'>
                   <h1 className='cons-text-after'>자주하는 질문</h1>
-                  <a href='#none'>
+                  <a href='/card/giftcard/question'>
                     <div className='giftcard-introduce'>
                       <p>자주하는 질문</p>
                     </div>
