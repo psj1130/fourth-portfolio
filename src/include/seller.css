@@ -1,0 +1,8 @@
+.seller{
+  display: flex;
+  justify-content: center;
+}
+#sellergrid{
+  display: grid;
+  grid-template-rows: ;
+}
