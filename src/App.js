@@ -2,10 +2,13 @@ import React from "react";
 import './App.css';
 import { Route, Routes } from "react-router-dom";
 
+
 // 컴포넌트 불러오기
 import Header from './include/header';
 import Footer from './include/footer';
 import MainPage from './main';
+import Buy from './include/buy';
+import Seller from './include/seller';
 
 
 import Beans from './Beans_Quality/beans';
@@ -28,6 +31,8 @@ function App() {
           <Route path='/quality' element={<Quality/>}/>
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
+           <Route path='/order/menu/:id' element={<Buy/>}/>
+          <Route path='/order/:id' element={<Seller/>}/>
         </Routes>
       </div>
       <Footer/>
