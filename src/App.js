@@ -41,7 +41,6 @@ function App() {
     <div className="App">
       <Header/>
       <div id='App_Main'>
-        {/* <MapSearch></MapSearch> */}
         <Routes>
           <Route path='/' element={<MainPage/>}/>
 

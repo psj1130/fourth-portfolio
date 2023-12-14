@@ -17,7 +17,7 @@ const LoginForm = () => {
         </p>
         <input id="password" type="text" placeholder="비밀번호를 입력해 주세요."></input>
       </div>
-      <div id="login-button">로그인</div>
+      <div className="login-button">로그인</div>
     </div>
   )
 }
@@ -34,10 +34,10 @@ function LoginPage() {
           <Link to='/login'>아이디/비밀번호 찾기</Link>
           <Link to='/login'>이메일로 회원가입</Link>
         </div>
-        <div className="kakao-login">
+        <div className="kakao-login login-button">
           <span>카카오 1초 회원가입/로그인</span>
         </div>
-        <div className="naver-login">
+        <div className="naver-login login-button">
           <span>네이버 1초 회원가입/로그인</span>
         </div>
       </div>
