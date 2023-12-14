@@ -6,11 +6,15 @@ const LoginForm = () => {
   return(
     <div className="login-form-container">
       <div className="login-input-container">
-        <span>이메일 아이디</span>
+        <p>
+          <span>이메일 아이디</span>
+        </p>
         <input id='id' type="text" placeholder="이메일을 입력해 주세요."></input>
       </div>
       <div className="login-input-container">
-        <span>비밀번호</span>
+        <p>
+          <span>비밀번호</span>
+        </p>
         <input id="password" type="text" placeholder="비밀번호를 입력해 주세요."></input>
       </div>
       <div id="login-button">로그인</div>
@@ -22,7 +26,9 @@ function LoginPage() {
   return (
     <div id="login-page-wrapper">
       <div id="login-page-container">
-        <h1>로그인</h1>
+        <div className="login-h1">
+          <h1>로그인</h1>
+        </div>
         <LoginForm/>
         <div className="other-container">
           <Link to='/login'>아이디/비밀번호 찾기</Link>
