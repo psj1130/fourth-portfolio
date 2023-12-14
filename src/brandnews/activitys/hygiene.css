@@ -1,15 +1,15 @@
-#hygiene-body {
+.hygiene-body {
   width: 100%;
   height: 5000px;
 }
 
-#hygiene-container {
+.hygiene-container {
   width: 100%;
   height: 460px;
   background-image: url('../brandnewsimg/campaign_visual.jpg');
 }
 
-#hygiene-con-text {
+.hygiene-con-text {
   color: white;
   width: 100%;
   margin: 0 auto;
@@ -21,21 +21,21 @@
   text-align: center;
 }
 
-#con1-title-text {
+.con1-title-text {
   width: 100%;
   font-size: 46px;
   font-weight: 300;
   padding-bottom: 25px;
 }
 
-#info-text {
+.info-text {
   color: #B9b8b8;
   width: 100%;
   height: 62px;
   font-size: 18px;
 }
 
-#hygiene-btn {
+.hygiene-btn {
   width: 100%;
   height: 190px;
   display: flex;
@@ -44,7 +44,7 @@
   align-items: center;
 }
 
-#hygiene-btn-con {
+.hygiene-btn-con {
   width: 100%;
   height: 35px;
   text-decoration: none;
@@ -75,22 +75,22 @@
   color: black;
 }
 
-#hygiene-detail-container {
+.hygiene-detail-container {
   margin: 0 auto;
   width: 1200px;
 }
 
-#hygiene-guide-link {
+.hygiene-guide-link {
   width: 1200px;
   height: 25px;
   padding-top: 35px;
   text-align: right;
   font-size: 12px;
-  color: #898989;
+  color: .898989;
   font-weight: bold;
 }
 
-#hygiene-guide-link > span {
+.hygiene-guide-link > span {
   background-image: url('../brandnewsimg/icon_loc.png');
   background-repeat: no-repeat;
   background-position: right;
@@ -98,33 +98,33 @@
   margin: 8px;
 }
 
-#mate-detail-container {
+.mate-detail-container {
   margin: 40px 0 25px 0;
   width: 100%;
   height: 100px;
 }
 
-#mate-detail-title-con {
+.mate-detail-title-con {
   width: 100%;
   height: 95px;
   margin-bottom: 30px;
 }
 
-#mate-detail-title {
-  color: #202023;
+.mate-detail-title {
+  color: .202023;
   font-weight: 600;
   background-image: url('../brandnewsimg/contents_bull.gif');
   background-repeat: no-repeat;
   padding-left: 20px;
 }
 
-#mate-detail-title-con > p {
+.mate-detail-title-con > p {
   margin-top: 25px;
   font-size: 20px;
-  color: #202023;
+  color: .202023;
 }
 
-#mate-detail-gridboxs {
+.mate-detail-gridboxs {
   width: 100%;
   display: grid;
   grid-template-columns: 590px 590px;
@@ -132,42 +132,42 @@
   gap: 20px;
 }
 
-#mate-detail-gridboxs > li {
-  border: 1px solid #898989;
+.mate-detail-gridboxs > li {
+  border: 1px solid .898989;
   display: flex;
   flex-direction: column;
 }
 
-#mate-detail-gridboximg > a > img{
+.mate-detail-gridboximg > a > img{
   width: 100%;
   height: 320px;
 }
 
-#mate-detail-girdboxtext {
+.mate-detail-girdboxtext {
   width: 518px;
   height: 82px;
   padding: 30px;
 }
 
-#mate-detail-girdboxtext > a > h5 {
-  color: #213e84;
+.mate-detail-girdboxtext > a > h5 {
+  color: .213e84;
   font-size: 18px;
 }
 
-#mate-detail-girdboxtext > a > p {
+.mate-detail-girdboxtext > a > p {
   font-size: 13px;
   color: black;
   margin-top: 20px;
 }
 
-#mate-detail-gridbtncon {
+.mate-detail-gridbtncon {
   width: 100%;
   height: 30px;
 }
 
-#mate-detail-gridbtn {
+.mate-detail-gridbtn {
   float: right;
-  border: 1px solid #898989;
+  border: 1px solid .898989;
   border-radius: 15px;
   width: 83px;
   height: 28px;
@@ -175,8 +175,8 @@
   text-align: center;
 }
 
-#mate-detail-gridbtn :hover {
+.mate-detail-gridbtn :hover {
   border-radius: 15px;
-  background-color: #213e84;
+  background-color: .213e84;
   color: white;
 }
