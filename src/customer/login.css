@@ -46,8 +46,9 @@
 .login-input-container input:focus {
   border-color: #000;
 }
-#login-button {
+.login-button {
   background-color: #2A47BF;
+  width: 100%;
   color: #fff;
   border-radius: 8px;
   box-sizing: border-box;
@@ -60,6 +61,29 @@
   display: inline-block;
 }
 .other-container {
-  margin-top: 20px;
+  margin: 20px 0;
   text-align: center;
 }
+
+.kakao-login {
+  background-color: #FEE500;
+  color: #391B1B;
+  margin-top: 8px;
+}
+.kakao-login span::before {
+  background-image: url(./icon/icon_kakao_02.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  height: 24px;
+  width: 24px;
+}
+.naver-login {
+  background-color: #03C75A;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
