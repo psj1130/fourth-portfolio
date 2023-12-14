@@ -36,7 +36,7 @@ function App() {
 
           <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
           <Route path='/card/giftcardrouters/*' element={<Giftcardrouters/>}/>
-          <Route path='/brandnews/activityrouters/*' element={<Brandnewsrouters/>}/>
+          <Route path='/brandnews/brandnewsrouters/*' element={<Brandnewsrouters/>}/>
 
           <Route path='/beans' element={<Beans/>}/>
           <Route path='/quality' element={<Quality/>}/>
