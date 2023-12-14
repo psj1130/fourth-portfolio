@@ -23,7 +23,7 @@ import Accompany from './brandnews/activitys/accompany';
 import Otheractivities from './brandnews/activitys/otheractivities';
 import Affiliatecard from './card/affiliatecard';
 
-import Buy from './include/buy';
+// import Buy from './include/buy';
 import Seller from './include/seller';
 
 
@@ -64,7 +64,7 @@ function App() {
           <Route path='/quality' element={<Quality/>}/>
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
-          <Route path='/order/menu/:id' element={<Buy/>}/>
+          {/* <Route path='/order/menu/:id' element={<Buy/>}/> */}
           <Route path='/order/:id' element={<Seller/>}/>
 
         </Routes>
