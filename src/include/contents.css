@@ -1,0 +1,207 @@
+#contable{
+  /* width: 1020px; */
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#contd1{
+  font-size: 13px;
+  background-color:#F7F8FA;
+  width: 200px;
+  height: 40px;
+  text-align: left;
+  padding-left: 20px;
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  
+}
+#contd2{
+  font-size: 10px;
+  width: 310px; 
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  text-align: left;
+  padding-left: 20px;
+}
+#contd3{
+  font-size:10px;
+  /* width: 810px; */
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  text-align: left;
+  padding-left: 20px;
+}
+#contdp{
+ height: 40px;
+ font-size: 15px;
+}
+#contdp1{
+  height: 20px;
+  
+ }
+#conspan{
+  text-decoration: line-through;
+}
+#conbtn{
+  border: 1px solid #ededed;
+  width: 140px;
+  height: 30px;
+  background-color: white;
+}
+#contd10{
+  padding-right: 20px;
+  font-size: 15px;
+  background-color:#F7F8FA;
+  width: 400px;
+  height: 50px;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+}
+#contd30{
+  width: 610px;
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 10px;
+}
+#contdp2{
+  height: 80px;
+  text-align: end;
+  font-size: 17px;
+  text-align: left;
+  vertical-align: bottom;
+  padding-bottom: 10px;
+
+}
+/* 리뷰 */
+#proreview{
+  font-size: 15px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+#proborder{
+  padding-bottom: 20px;
+  border-bottom: 3px solid black;
+}
+#prop1{
+  color: #a797ba;
+  margin-top: 10px;
+}
+#prospan{
+  margin-left: 10px;
+  border-left: 1px solid #a797ba;;
+}
+#prospan1{
+  color: #6b90dc;
+}
+#proh1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#prodiv{
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  height: 250px;
+}
+#probtn1{
+  width: 200px;
+  height: 50px;
+  background-color: #3d3d4f;
+  color: white;
+  font-size: 16px;
+  border: 0px;
+  /* margin-top: 10px; */
+}
+#probtn2{
+  background-color: #989AA5;
+  color: white;
+  font-size: 16px;
+  width: 150px;
+  height: 50px;
+  margin-left: 10px;
+  border: 0px;
+  /* margin-top: 10px; */
+}
+#proimg{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#prodiv1{
+  height: 200px;
+  border-bottom: 1.5px solid #ededed;
+  margin-bottom: 100px;
+}
+#protdp3{
+  background-color:#F7F8FA;
+  text-align: center;
+  height:70px;
+  width: 1020px;
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  font-size: 15px;
+}
+#prop5{
+  margin-top: 10px;
+}
+#protd4{
+  padding-right: 20px;
+  font-size: 15px;
+  width: 250px;
+  height: 150px;
+  background-color:#F7F8FA;
+  padding-left: 20px;
+}
+#probor{
+  padding-left: 20px;
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  font-size: 10px;
+}
+#protd5{
+  font-size: 15px;
+  border-top: 1.5px solid #ededed;
+  width: 280px;
+  height: 200px;
+  background-color:#F7F8FA;
+  padding-left: 20px;
+}
+#protdpa{
+  border-bottom: 1.5px solid #ededed;
+  font-size: 10px;
+}
+#protdpa p{
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 10px;
+}
+#promargin{
+  height: 60px;
+}
+#prop2{
+margin-top: 20px;
+margin-bottom: 20px;
+}
+#prop3{
+  color: blue;
+  
+}
+#prop4{
+  margin-bottom: 20px;
+  font-size: 10px;
+  color: #a797ba;
+}
+#prop4 li{
+  margin-left: 15px;
+  list-style-type: disc;
+  padding-top: 5px;
+  padding-bottom: 5px;
+ 
+}
+#problack{
+  color: black;
+}

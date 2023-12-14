@@ -1,0 +1,146 @@
+
+#stickA_container{
+  width: 100%;
+
+}
+#stickA_img1{
+  width: 192px;
+  height: 40px;
+  
+}
+#stickA_main{
+  width: 100%;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 3px solid black; */
+}
+#stickA_main2{
+  width: 1200px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 3px solid rgb(0, 72, 255); */
+}
+#stickA_a{
+  width: 1200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 100;
+  /* border: 3px solid rgb(0, 72, 255); */
+}
+#stickA_a h3{
+  font-size: 20px;
+}
+
+#stickA_aa{
+  font-size: 14px;
+  font-weight: 400;
+  height: 60px;
+  /* border: 3px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#stickB_main{
+  width: 1200px;
+  /* border: 3px solid black; */
+}
+#stickA_img2 img{
+  width: 160px;
+  height: 160px;
+  
+}
+#stickA_img2{
+  width: 1200px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  border: 1px solid rgb(153, 153, 153);
+}
+#stickA_b{
+  width: 280px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 3px solid black; */
+}
+#stickA_bb{
+  width: 300px;
+  height: 70px;
+  /* border: 3px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#stickA_bbb {
+  width: 305px;
+  height: 80px;
+  font-size: 13px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 3px solid black; */
+  flex-wrap: wrap;
+  line-height: 20px;
+}
+#stick_Top{
+  width: 100%;
+  height: 450px;
+  border: 1px solid black;
+  background-image: url('../dpbackimg/beanist_visual.jpg');
+  background-size: 100% 450px;
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-around; */
+}
+#stick_title{
+  width: 100%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rebeccapurple; */
+  font-weight: 100;
+}
+#stick_title h3{
+  font-size: 60px;
+  font-weight: 300;
+}
+#stick_title p{
+  font-size: 20px;
+  width: 800px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rebeccapurple; */
+}
+#stick_mid{
+  width: 89%;
+  height: 150px;
+  color: #898989;
+  font-size: 12px;
+  /* border: 1px solid black; */
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 600;
+}
