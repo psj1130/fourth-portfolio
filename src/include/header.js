@@ -31,11 +31,11 @@ function Header() {
         <div id="header-topmenu-container">
           <div id="header-topmenu">
             <ul id="header-topmenu-navigation">
-              <li><Link to='/'>로그인</Link></li>
+              <li><Link to='/members/login'>로그인</Link></li>
               <li><Link to='/'>매장찾기</Link></li>
               <li><Link to='/'>고객의 소리</Link></li>
               <li><Link to='/'>이디야 스토어</Link></li>
-              <li><Link to='/'>관리자 페이지</Link></li>
+              <li><Link to='/administarator'>관리자 페이지</Link></li>
             </ul>
             <div id="header-topmenu-sns">
               <a href='#none'><img src="images/top_sns/top_sns01.png" alt="1"/></a>
@@ -57,7 +57,7 @@ function Header() {
             <Link to='/'><img src="images/logo/top_logo.gif"></img></Link>
           </div>
           <nav id="header-second-menu">
-            <ul id="header-second-menu-fromInsideOut">
+            <ul className="header-second-menu-fromInsideOut">
               <li className="nav_menu">
                 <a href="#none" className="nav_a"><span>원두</span></a>
                 <ul>

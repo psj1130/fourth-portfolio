@@ -29,7 +29,7 @@ function QuestionMain() {
     <div id='question-body'>
       <div id="question-container">
         <div id="question-con-text">
-          <h1 id='con1-title-text'>잔액조회</h1>
+          <h1 id='con1-title-text'>자주하는질문</h1>
             <div id="info-text">
               <p>빠르고 간편하게 잔액을 확인해보세요</p>
             </div>
