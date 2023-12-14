@@ -1,0 +1,123 @@
+#shinhancard-body {
+  width: 100%;
+}
+
+#shinhancard-container {
+  height: 481px;
+  margin: 120px 0 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#shinhancard-title {
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: center;
+}
+
+#shinhancard-title::after{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #213e84;
+  margin: 35px auto;
+}
+
+#shinhancard-cardcon {
+  width: 1080px;
+  height: 370px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#shinhan-card-img {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#shinhan-card-img > p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#shinhan-card-info {
+  width: 500px;
+  height: 100%;
+}
+
+
+
+#card-info-con {
+  width: 100%;
+  height: 315px;
+  padding: 25px 0;
+  background: #f5f5f5;
+  border-radius: 10px 10px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,8%);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#info-text-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#info-text-start p:nth-child(1){
+  color: white;
+  text-align: center;
+  width: 180px;
+  height: 45px;
+  background-color: #213e84;
+}
+#info-text-start p:nth-child(2) {
+  color: #213e84;
+}
+
+#card-info-lists {
+  margin: 20px auto 0;
+  width: 380px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-list{
+  width: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.info-list:nth-child(1){
+  margin-top: 15px;
+}
+
+.numlist-box {
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #19a767;
+  color: white;
+}

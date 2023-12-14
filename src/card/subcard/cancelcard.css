@@ -1,0 +1,65 @@
+#cancelcard-container {
+  width: 100%;
+  height: 560px;
+}
+
+#cancelcard-box01 {
+  background-color: #f5f5f5;
+  padding: 50px 30px 50px 30px;
+  width: 1140px;
+  height: 100px;
+}
+
+#cancelcard-box02 {
+  border: 1px solid #d9d9d9;
+  padding: 50px 30px 50px 30px;
+  width: 1140px;
+  height: 220px;
+}
+
+.cancelcard-box-title {
+  color: #464646;
+  font-size: 20px;
+}
+
+.cancelcard-box-title::after{
+  text-align: center;
+  content: "";
+  display: block;
+  width: 20px;
+  height: 5px;
+  background: #000;
+  margin: 25px 0;
+}
+
+#cancelcard-box01 > p {
+  padding-left: 15px;
+  background-image: url('../../../public/images/cardlist/member_list_dot.png');
+  background-repeat: no-repeat;
+  background-position: 1px;
+}
+
+#cancelcard-box02 {
+  
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#cancelcard-box02 > p {
+  padding-left: 15px;
+  background-image: url('../../../public/images/cardlist/member_list_dot.png');
+  background-repeat: no-repeat;
+  background-position: 1px;
+  margin-bottom: 5px;
+}
+#cancelcard-box02 > ul > li {
+  margin-bottom: 5px;
+}
+
+#cancelcard-box02 > ul > li:nth-child(2) {
+  margin-bottom: 15px;
+}
+#cancelcard-text-style > b{
+  padding-left: 5px;
+}
