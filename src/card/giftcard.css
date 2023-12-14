@@ -49,7 +49,7 @@
   text-decoration: none;
 }
 
-.btn-con-lists {
+.giftcard-btn-con-lists {
   border: 1px solid #a0a0a2;;
   width: 180px;
   height: 100%;
@@ -57,15 +57,15 @@
   line-height: 35px;
 }
 
-.btn-con-lists > a {
+.giftcard-btn-con-lists > a {
   color: #202023;
 }
 
-.btn-con-lists:hover {
+.giftcard-btn-con-lists:hover {
   background-color: #a0a0a2;
 }
 
-.btn-con-lists:hover > a{
+.giftcard-btn-con-lists:hover > a{
   color: white;
 }
 

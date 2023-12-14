@@ -15,13 +15,13 @@ function Giftcard() {
             </div>
             <div id="giftcard-btn">
               <div id="giftcard-btn-con">
-                <span className='btn-con-lists'>
+                <span className='giftcard-btn-con-lists'>
                   <a href='#none'>기프트카드</a>
                 </span>
-                <span className='btn-con-lists'>
+                <span className='giftcard-btn-con-lists'>
                   <a href="#noen">모바일 상품권</a>
                 </span>
-                <span className='btn-con-lists'>
+                <span className='giftcard-btn-con-lists'>
                   <a href='/card/giftcard/buy'>단체·기업 구매</a>
                 </span>
               </div>

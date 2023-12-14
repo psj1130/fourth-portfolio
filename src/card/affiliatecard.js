@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import './affiliatecard.css'
 import Hanacard from "./hanacard";
 import Shinhancard from "./sinhancard";
-import Buy from "./buy";
 
 
 
