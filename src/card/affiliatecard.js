@@ -6,6 +6,17 @@ import Shinhancard from "./sinhancard";
 
 
 function Affiliatecard() {
+  const [selectcard, setSelectcard] = useState('Hana');
+    const cardBox = (e) => {
+      switch (selectcard) {
+        case 'Hana':
+          return <Hanacard/>;
+        case 'Shinhan':
+          return <Shinhancard/>;
+        default:
+          return null;
+      }
+    }
 
   return (
     <div id="affiliatecard-body-e">
@@ -15,17 +26,21 @@ function Affiliatecard() {
             <div id='affiliatecard-select-e'>
               <div id='affiliatecard-cardlist-e'>
                   <ul id='affiliatecard-cardselect-e'>
-                      <a href='#none' className='card-list-e'>
+                      <p
+                      onClick={() => setSelectcard} 
+                      className='card-list-e'>
                         하나카드
-                      </a>
-                      <a href='#none' className='card-list-e'>
+                      </p>
+                      <p 
+                      onClick={() => setSelectcard} 
+                      className='card-list-e'>
                         신한카드
-                      </a>
+                      </p>
                   </ul>
               </div>
           </div>
       </div>
-      <Hanacard/>
+      {cardBox()}
     </div>
   );
 }

@@ -8,19 +8,19 @@ function Check() {
       <div id="check-con">
         <div id="check-con-text">
           <h1 id='con1-title-text'>잔액조회</h1>
-            <div id="info-text">
+            <div id="check-info-text">
               <p>빠르고 간편하게 잔액을 확인해보세요</p>
             </div>
             <div id="check-btn">
               <div id="check-btn-con">
-                <span className='btn-con-lists'>
-                  <a href='#none'>기프트카드</a>
+                <span className='check-btn-con-lists'>
+                  <a href='/card/giftcardrouters/giftcard'>기프트카드</a>
                 </span>
-                <span className='btn-con-lists'>
+                <span className='check-btn-con-lists'>
                   <a href="#noen">모바일 상품권</a>
                 </span>
-                <span className='btn-con-lists'>
-                  <a href='/card/check/check'>단체·기업 구매</a>
+                <span className='check-btn-con-lists'>
+                  <a href='/card/giftcardrouters/giftcard/giftbuy'>단체·기업 구매</a>
                 </span>
               </div>
             </div>
