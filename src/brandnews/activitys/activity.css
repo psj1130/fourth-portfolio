@@ -1,85 +1,9 @@
-#activity-body {
-  width: 100%;
-}
-
-#activity-container {
-  width: 100%;
-  height: 460px;
-  background-image: url('../brandnewsimg/campaign_visual.jpg');
-}
-
-#activity-con-text {
-  color: white;
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#con1-title-text {
-  width: 100%;
-  font-size: 46px;
-  font-weight: 300;
-  padding-bottom: 25px;
-}
-
-#info-text {
-  color: #B9b8b8;
-  width: 100%;
-  height: 62px;
-  font-size: 18px;
-}
-
-#activity-btn {
-  width: 100%;
-  height: 190px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#activity-btn-con {
-  width: 100%;
-  height: 35px;
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-con-lists {
-  border: 1px solid #a0a0a2;;
-  width: 180px;
-  height: 100%;
-  text-decoration: none;
-  line-height: 35px;
-  font-size: 14px;
-}
-
-.btn-con-lists > a {
-  color: white;
-}
-
-.btn-con-lists:hover {
-  background-color: white;
-}
-
-.btn-con-lists:hover > a{
-  color: black;
-}
-
-#activity-detail-container {
-  margin: 0 auto;
+.activity-detail-container {
   width: 1200px;
+  height: 100%;
 }
 
-#activity-guide-link {
+.activity-guide-link {
   width: 1200px;
   height: 25px;
   padding-top: 35px;
@@ -89,7 +13,7 @@
   font-weight: bold;
 }
 
-#activity-guide-link > span {
+.activity-guide-link > span {
   background-image: url('../brandnewsimg/icon_loc.png');
   background-repeat: no-repeat;
   background-position: right;
@@ -97,85 +21,85 @@
   margin: 8px;
 }
 
-#mate-detail-container {
-  margin: 40px 0 25px 0;
-  width: 100%;
-  height: 100px;
-}
-
-#mate-detail-title-con {
+.activity-detail-title-container {
   width: 100%;
   height: 95px;
-  margin-bottom: 30px;
-}
-
-#mate-detail-title {
-  color: #202023;
-  font-weight: 600;
-  background-image: url('../brandnewsimg/contents_bull.gif');
-  background-repeat: no-repeat;
-  padding-left: 20px;
-}
-
-#mate-detail-title-con > p {
-  margin-top: 25px;
-  font-size: 20px;
-  color: #202023;
-}
-
-#mate-detail-gridboxs {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 590px 590px;
-  grid-template-rows: 510px;
-  gap: 20px;
-}
-
-#mate-detail-gridboxs > li {
-  border: 1px solid #898989;
+  margin: 50px 0 40px 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+
 }
 
-#mate-detail-gridboximg > a > img{
+.activity-detail-title-container > h2 {
+  background-image: url('../brandnewsimg/contents_bull.gif');
+  background-repeat: no-repeat;
+  background-position: 5px;
+  padding-left: 25px;
+  font-weight: 400;
+}
+
+.activity-box-container {
+  width: 1180px;
+  height: 100%;
+}
+
+.activity-box-list-con {
   width: 100%;
-  height: 320px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 578px 578px;
+  grid-template-rows: 512px;
+  gap: 24px;
+  margin-bottom: 80px;
 }
 
-#mate-detail-girdboxtext {
+.activity-box-list-con > li {
+  border: 1px solid #D9D9D9;
+  width: 578px;
+  height: 512px;
+}
+
+.activity-text-box > a{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 518px;
   height: 82px;
   padding: 30px;
 }
 
-#mate-detail-girdboxtext > a > h5 {
-  color: #213e84;
+.activity-text-box > a > h5{
+  color: #002F6C;
   font-size: 18px;
+  font-weight: 900;
 }
 
-#mate-detail-girdboxtext > a > p {
-  font-size: 13px;
-  color: black;
-  margin-top: 20px;
+.activity-text-box > a > p {
+  color: #000;
+  font-size: 15px;
 }
 
-#mate-detail-gridbtncon {
-  width: 100%;
-  height: 30px;
-}
-
-#mate-detail-gridbtn {
+.activity-btn-box {
+  width: 73px;
+  height: 23px;
+  margin-right: 15px;
+  border: 1px solid #D9D9D9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
   float: right;
-  border: 1px solid #898989;
-  border-radius: 15px;
-  width: 83px;
-  height: 28px;
-  line-height: 30px;
-  text-align: center;
 }
 
-#mate-detail-gridbtn :hover {
-  border-radius: 15px;
-  background-color: #213e84;
+.activity-btn-box:hover {
   color: white;
+  background-color: #002F6C;
+}
+
+.activity-btn-box > p {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 4px;
+  padding-left: 20px;
 }

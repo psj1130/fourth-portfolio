@@ -46,8 +46,9 @@
 .login-input-container input:focus {
   border-color: #000;
 }
-#login-button {
+.login-button {
   background-color: #2A47BF;
+  width: 100%;
   color: #fff;
   border-radius: 8px;
   box-sizing: border-box;
@@ -58,8 +59,50 @@
   font-weight: 700;
   line-height: 3.222em;
   display: inline-block;
+  position: relative;
 }
 .other-container {
-  margin-top: 20px;
+  margin: 20px 0;
   text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
+/* .other-container a:nth-child(1)::after {
+  width: 1px;
+  content: '';
+  background-color: #000;
+  height: 3px;
+  display: block;
+} */
+.kakao-login {
+  background-color: #FEE500;
+  color: #391B1B;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.kakao-login p{
+  background-image: url(./icon/icon_kakao_02.svg);
+  width: 24px;
+  height: 24px;
+}
+
+.naver-login {
+  background-color: #03C75A;
+  color: #ffffff;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.naver-login p {
+  background-image: url(./icon/icon_naver_02.svg);
+  width: 24px;
+  height: 24px;
+}
+

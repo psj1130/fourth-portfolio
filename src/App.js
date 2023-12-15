@@ -1,29 +1,19 @@
 import React from "react";
 import './App.css';
-import { Route, Routes } from "react-router-dom";
+
+import { Routes, Route } from 'react-router-dom';
 
 // 컴포넌트 불러오기
 import Header from './include/header';
 import Footer from './include/footer';
 import MainPage from './main';
 
-import Giftcard from './card/giftcard';
-import Buy from "./card/buy";
-import Check from './card/check'
-import Introduce from './card/cardintroduce' 
-import Declaration from './card/declaration';
-import Question from './card/question';
-import Brandnews from './brandnews/index';
-import Event from './brandnews/event';
-import Activity from './brandnews/activitys/activity';
-import Campus from './brandnews/activitys/campus';
-import Hygiene from './brandnews/activitys/hygiene';
-import Accompany from './brandnews/activitys/accompany';
-import Otheractivities from './brandnews/activitys/otheractivities';
 import Affiliatecard from './card/affiliatecard';
+import Giftcardrouters from "./card/giftcardrouters";
+import Brandnewsrouters from "./brandnews/barndnewsrouters";
 
-// import Buy from './include/buy';
 import Seller from './seller/seller';
+import Buym from "./seller/buym";
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
@@ -31,7 +21,6 @@ import Quality from './Beans_Quality/quality';
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
 import MapSearch from './mapSearch';
-import Buym from "./seller/buym";
 
 function App() {
   return (
@@ -40,13 +29,23 @@ function App() {
       <div id='App_Main'>
         <Routes>
           <Route path='/' element={<MainPage/>}/>
+
+          <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
+          <Route path='/card/giftcardrouters/*' element={<Giftcardrouters/>}/>
+          <Route path='/brandnews/brandnewsrouters/*' element={<Brandnewsrouters/>}/>
+
           <Route path='/beans' element={<Beans/>}/>
           <Route path='/quality' element={<Quality/>}/>
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
+
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
+
+          <Route path='/order/menu/:id' element={<Buy/>}/>
+          <Route path='/order/:id' element={<Seller/>}/>
+
         </Routes>
       </div>
       <Footer/>

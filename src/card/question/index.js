@@ -26,54 +26,54 @@ function QuestionMain() {
   ]
 
   return(
-    <div id='question-body'>
-      <div id="question-container">
-        <div id="question-con-text">
-          <h1 id='con1-title-text'>잔액조회</h1>
-            <div id="info-text">
-              <p>빠르고 간편하게 잔액을 확인해보세요</p>
+    <div className='question-body'>
+      <div className="question-container">
+        <div className="question-con-text">
+          <h1 className='con1-title-text'>자주하는질문</h1>
+            <div className="question-info-text">
+              <p>이디야를 이용하시는 고객님들이 자주 질문하시는 내용입니다.</p>
             </div>
-            <div id="question-btn">
-              <div id="question-btn-con">
-                <span className='btn-con-lists'>
-                  <a href='#none'>기프트카드</a>
+            <div className="question-btn">
+              <div className="question-btn-con">
+                <span className='giftcard-btn-con-lists'>
+                  <a href='/card/giftcardrouters/giftcard/'>기프트카드</a>
                 </span>
-                <span className='btn-con-lists'>
+                <span className='giftcard-btn-con-lists'>
                   <a href="#noen">모바일 상품권</a>
                 </span>
-                <span className='btn-con-lists'>
-                  <a href='#none'>단체·기업 구매</a>
+                <span className='giftcard-btn-con-lists'>
+                  <a href='/card/giftcardrouters/giftcard/giftbuy'>단체·기업 구매</a>
                 </span>
               </div>
             </div>
         </div>
-          <div id="question-con">
-            <div id="check-guide-link">
+          <div className="question-con">
+            <div className="check-guide-link">
               <span>HOME</span>
               <span>기프트카드</span>
               FAQ
             </div>
-              <div id="question-search-container">
-                <div id="question-drowdown-box">
-                  <select id='question-drowdown-list' onChange={onchanglist} value={content}>
+              <div className="question-search-container">
+                <div className="question-drowdown-box">
+                  <select className='question-drowdown-list' onChange={onchanglist} value={content}>
                     {options.map((item)=>(
                       <option key={item.key} value={item.key}>{item.value}</option>
                     ))}
                   </select>
                 </div>
-                <div id="question-search-box">
+                <div className="question-search-box">
                   <input 
-                  id='question-serch-input'
+                  className='question-serch-input'
                   type="text" />
-                    <button id='question-serch-result'>
+                    <button className='question-serch-result'>
                       <img src="/images/cardlist/icon_search.gif"/>
                     </button>
                 </div>
               </div>
-              <div id='question-detail-container'>
-                <div id='question-dataile-tapcontainer'>
+              <div className='question-detail-container'>
+                <div className='question-dataile-tapcontainer'>
                 {tapMenu.map((item, index)=>(
-                    <div key={item.key} value={item.key} id='question-detail-list'>
+                    <div key={item.key} value={item.key} className='question-detail-list'>
                       <p>{item.value}</p>
                     </div>
                   ))}

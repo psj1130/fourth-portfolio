@@ -1,5 +1,6 @@
 #check-body {
   width: 100%;
+  height: 1100px;
 }
 
 #check-con {
@@ -32,6 +33,10 @@
   font-size: 18px;
 }
 
+#check-info-text > p{
+  color: black;
+}
+
 #check-btn {
   width: 100%;
   height: 190px;
@@ -49,7 +54,7 @@
   text-decoration: none;
 }
 
-.btn-con-lists {
+.check-btn-con-lists {
   border: 1px solid #a0a0a2;;
   width: 180px;
   height: 100%;
@@ -57,15 +62,15 @@
   line-height: 35px;
 }
 
-.btn-con-lists > a {
+.check-btn-con-lists > a {
   color: #202023;
 }
 
-.btn-con-lists:hover {
+.check-btn-con-lists:hover {
   background-color: #a0a0a2;
 }
 
-.btn-con-lists:hover > a{
+.check-btn-con-lists:hover > a{
   color: white;
 }
 
@@ -153,4 +158,5 @@
   font-size: 22px;
   color: white;
   font-weight: 800;
+  cursor: pointer;
 }
