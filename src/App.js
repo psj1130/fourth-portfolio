@@ -23,7 +23,7 @@ import Otheractivities from './brandnews/activitys/otheractivities';
 import Affiliatecard from './card/affiliatecard';
 
 // import Buy from './include/buy';
-import Seller from './include/seller';
+import Seller from './seller/seller';
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
@@ -31,7 +31,7 @@ import Quality from './Beans_Quality/quality';
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
 import MapSearch from './mapSearch';
-import Buy from './buy/buy';
+import Buym from "./seller/buym";
 
 function App() {
   return (
@@ -45,8 +45,8 @@ function App() {
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
           <Route path='/mapsearch' element={<MapSearch />}/>
-          {/* <Route path='/order/menu/:id' element={<Buy/>}/> */}
-          <Route path='/order/:id' element={<Seller/>}/>
+          <Route path='/order/menu/:id' element={<Buym/>}/>
+          <Route path='/seller/:id' element={<Seller/>}/>
         </Routes>
       </div>
       <Footer/>
