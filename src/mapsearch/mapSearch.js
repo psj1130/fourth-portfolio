@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './mapSearch.css';
 
 const MapSearch = () => {
   const [markers, setMarkers] = useState([]);

@@ -23,11 +23,11 @@ function Brandnewsrouters() {
         <Route path='/' element={<Brandnews/>}/>
         <Route path='/event' element={<Event/>}/>
         
-        <Route path='/activitys' element={<Society/>}/>
-        <Route path='/activitys/campus' element={<Campus/>}/>
-        <Route path='/activitys/hygiene' element={<Hygiene/>}/>
-        <Route path='/activitys/accompany' element={<Accompany/>}/>
-        <Route path='/activitys/otheractivities' element={<Otheractivities/>}/>
+        <Route path='/activity' element={<Society/>}/>
+        <Route path='/activity/campus' element={<Campus/>}/>
+        <Route path='/activity/hygiene' element={<Hygiene/>}/>
+        <Route path='/activity/accompany' element={<Accompany/>}/>
+        <Route path='/activity/otheractivities' element={<Otheractivities/>}/>
       </Routes>
     </div>
   );
