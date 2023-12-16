@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './mapSearch.css';
 
 const MapSearch = () => {
   const [markers, setMarkers] = useState([]);
-  const [keyword, setKeyword] = useState('이디야 커피랩');
+  const [keyword, setKeyword] = useState('');
   const [places, setPlaces] = useState([]);
   const mapContainer = useRef(null);
-  const [kakaoMap, setKakaoMap] = useState(null);
+  const [kakaoMap, setKakaoMap] = useState(null); // Kakao Map을 상태로 관리
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -21,7 +20,7 @@ const MapSearch = () => {
           level: 3
         };
         const newKakaoMap = new window.kakao.maps.Map(mapContainer.current, mapOptions);
-        setKakaoMap(newKakaoMap);
+        setKakaoMap(newKakaoMap); // Kakao Map 상태 업데이트
       });
     };
 
@@ -51,9 +50,8 @@ const MapSearch = () => {
   const searchPlacesCB = (data, status, pagination) => {
     if (status === window.kakao.maps.services.Status.OK) {
       setPlaces(data);
-      removeAllMarkers();
       showMarkers(data);
-      displayPlaces(data);
+      displayPlaces(data); // 검색 결과를 목록으로 표시하는 함수 호출
     } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
       alert('검색 결과가 존재하지 않습니다.');
     } else if (status === window.kakao.maps.services.Status.ERROR) {
@@ -61,46 +59,25 @@ const MapSearch = () => {
     }
   };
 
-  const removeAllMarkers = () => {
-    markers.forEach((marker) => {
-      marker.setMap(null);
-    });
+  const showMarkers = (data) => {
     setMarkers([]);
+
+    data.forEach((position) => {
+      const marker = new window.kakao.maps.Marker({
+        position: new window.kakao.maps.LatLng(position.y, position.x),
+        map: kakaoMap // kakaoMap 상태 사용
+      });
+
+      setMarkers((prevMarkers) => [...prevMarkers, marker]);
+
+      window.kakao.maps.event.addListener(marker, 'click', () => {
+        const content = `<div style="padding:5px;z-index:1;">${position.place_name}</div>`;
+        const infowindow = new window.kakao.maps.InfoWindow({ content });
+        infowindow.open(kakaoMap, marker);
+      });
+    });
   };
-// 
-const showMarkers = (data) => {
-  removeAllMarkers(); // Remove existing markers
 
-  const newMarkers = data.map((position, index) => {
-    const markerImage = new window.kakao.maps.MarkerImage(
-      'https://www.ediya.com/images/customer/store_position.png',
-      new window.kakao.maps.Size(40, 40),
-      {
-        offset: new window.kakao.maps.Point(20, 40),
-        zIndex: 1
-      }
-    );
-
-    const marker = new window.kakao.maps.Marker({
-      position: new window.kakao.maps.LatLng(position.y, position.x),
-      map: kakaoMap,
-      image: markerImage,
-      zIndex: 2 // Set zIndex to a higher value for the new markers
-    });
-
-    window.kakao.maps.event.addListener(marker, 'click', () => {
-      const content = `<div style="padding:5px;z-index:1;">${position.place_name}</div>`;
-      const infowindow = new window.kakao.maps.InfoWindow({ content });
-      infowindow.open(kakaoMap, marker);
-    });
-
-    return marker;
-  });
-
-  setMarkers(newMarkers);
-};
-
-  // 
   const displayPlaces = (places) => {
     const listEl = document.getElementById('placesList');
     const menuEl = document.getElementById('menu_wrap');
@@ -128,30 +105,16 @@ const showMarkers = (data) => {
       itemEl.innerHTML = `
         <span class="markerbg marker_${index + 1}"></span>
         <div class="info">
-          <h5>
-            <div id=info_logo_img_E>
-              <img id=info_logo_img_E_img src='./mapimg/logo_img_E.jpg'></img>
-              <div id=info_logo_a>
-                ${place.place_name}
-                <div id='info_logo_b'>
-                  <span>${place.road_address_name || place.address_name}</span>
-                </div>
-                <div id='info_logo_c'>
-                  <span class="tel">${place.phone}</span>
-                </div>
-              </div>
-            </div>
-          </h5>
-          
+          <h5>${place.place_name}</h5>
+          <span>${place.road_address_name || place.address_name}</span>
+          <span class="tel">${place.phone}</span>
         </div>
       `;
-      
       itemEl.className = 'item';
 
       itemEl.addEventListener('mouseover', () => {
         window.kakao.maps.event.trigger(marker, 'click');
       });
-      
 
       fragment.appendChild(itemEl);
     });
@@ -170,27 +133,19 @@ const showMarkers = (data) => {
 
   return (
     <div className="map_wrap">
-      <div ref={mapContainer} style={{ width: '1200px', height: '500px' }}></div>
-        <div id="menu_wrap" className="bg_white">
-          <div className="option">
-            <div id='st_name'>
-              <form id='st_form_a' onSubmit={handleSubmit}>
-                <div id='st_form_b'>
-                  <span><div id='st_img_a'><img src="images/logo/top_logo.gif"/></div><p id='st_p'>매장명</p></span>
-                </div>
-                <div id='st_form_c'>
-                  <input id='st_form_d' type="text" value={keyword} onChange={handleKeywordChange} size="15" />
-                  <button id='st_form_e' type="submit"><img src='./mapimg/mir_add.jpg'></img></button>
-                </div>
-              </form>
-            </div>
+      <div ref={mapContainer} style={{ width: '100%', height: '400px' }}></div>
+      <div id="menu_wrap" className="bg_white">
+        <div className="option">
+          <div>
+            <form onSubmit={handleSubmit}>
+              키워드 : <input type="text" value={keyword} onChange={handleKeywordChange} size="15" />
+              <button type="submit">검색하기</button>
+            </form>
           </div>
-          <div id='st_detail'>
-            <ul>
-              <li id="placesList"></li>
-            </ul>
-            <div id="pagination"></div>
-          </div>
+        </div>
+        <hr />
+        <ul id="placesList"></ul>
+        <div id="pagination"></div>
       </div>
     </div>
   );

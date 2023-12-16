@@ -7,7 +7,7 @@ function StickA() {
       <div id='stick_Top'>
         <div id='stick_title'>
           <h3>비니스트</h3>
-          <p>ALWAYS BESIDE YOU, <span id='stickA_title_sapn'>EDIYA BEANIST</span></p>
+          <p>ALWAYS BESIDE YOU, EDIYA BEANIST</p>
         </div>
        <Dplist></Dplist>
       </div>

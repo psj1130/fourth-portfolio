@@ -3,7 +3,7 @@
 }
 #cupA_main{
   width: 100%;
-  height: 200px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,11 +19,6 @@
   flex-direction: column;
   /* border: 3px solid rgb(0, 72, 255); */
 }
-#cupA_main2 h1{
-  font-size: 50px;
-  color:rgb(34, 60, 133);
-  font-weight: 600;
-}
 #cupA_a{
   width: 1200px;
   height: 150px;
@@ -36,14 +31,12 @@
 }
 #cupA_a h3{
   font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
 }
 
 #cup_Top{
   width: 100%;
   height: 450px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   background-image: url('../dpbackimg/drink_visual.jpg');
   background-size: 100% 450px;
   display: flex;
@@ -61,13 +54,11 @@
   font-weight: 100;
 }
 #cup_title h3{
-  font-size: 48px;
-  font-weight: 100;
-  color: white;
+  font-size: 60px;
+  font-weight: 300;
 }
 #cup_title p{
-  color: white;
-  font-size: 26px;
+  font-size: 20px;
   width: 800px;
   height: 70px;
   display: flex;
@@ -86,7 +77,4 @@
   align-items: center;
   justify-content: flex-end;
   font-weight: 600;
-}
-#cupA_title_sapn{
-  font-weight: 700;
 }

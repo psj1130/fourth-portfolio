@@ -12,67 +12,44 @@
 }
 #cupC_main1{
   width: 1200px;
-  height: 250px;
+  height: 200px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  border-bottom: 1px solid rgb(199, 199, 199);
   /* border: 3px solid black; */
 }
 #cupC_detail{
   width: 400px;
-  height: 120px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
-  /* border: 3px solid black; */
 }
-#cupC_detail h2{
-  font-size: 22px;
-  color:rgb(7, 55, 135);
-  width: 300px;
-  height: 4   0px;
+#cupC_detail h3{
+  font-size: 17px;
+  width: 330px;
+  height: 70px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   /* border: 3px solid black; */
 }
-#cupC_detail h4{
-  font-size: 18px;
-  width: 300px;
-  height: 40px;
+#cupC_detail p {
+  font-size: 13px;
+  width: 330px;
+  height: 70px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  /* border: 3px solid black; */
-}
-#cupC_detail p{
-  font-size: 14px;
-  width: 300px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color:rgb(96, 96, 96);
+  justify-content: center;
   /* border: 3px solid black; */
 }
 #cupC_main2{
   width: 1200px;
-  height: 450px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /* border: 3px solid black; */
-}
-#cupC_detail_h3 h3{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 17px;
-  width: 300px;
-  height: 90px;
   /* border: 3px solid black; */
 }
 #cupC_title{

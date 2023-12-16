@@ -7,7 +7,7 @@ function CupA() {
       <div id='cup_Top'>
         <div id='cup_title'>
           <h3>이디야 컵커피</h3>  
-          <p>ALWAYS BESIDE YOU,<span id='cupA_title_sapn'>RTD COFFEE</span></p>
+          <p>ALWAYS BESIDE YOU, RTD COFFEE</p>
         </div>
        <Dplist></Dplist>
       </div>
