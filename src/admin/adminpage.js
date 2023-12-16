@@ -7,7 +7,7 @@ function AdminPage() {
     <div id='admin'>
       <header>
         <div className='admin-header-logo'>
-          <img src='images/logo/top_logo.gif'></img>
+          <img src='  images/logo/top_logo.gif'></img>
         </div>
       </header>
     </div>

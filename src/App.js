@@ -20,7 +20,9 @@ import Quality from './Beans_Quality/quality';
 
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
-import MapSearch from './mapSearch';
+
+import MapSearch from './mapsearch/mapSearch';
+
 
 function App() {
   return (
@@ -28,24 +30,27 @@ function App() {
       <Header/>
       <div id='App_Main'>
         <Routes>
+          {/* 성종 */}
           <Route path='/' element={<MainPage/>}/>
 
+          {/* 유준 */}
           <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
           <Route path='/card/giftcardrouters/*' element={<Giftcardrouters/>}/>
-          <Route path='/brandnews/brandnewsrouters/*' element={<Brandnewsrouters/>}/>
+          <Route path='/brandnews/*' element={<Brandnewsrouters/>}/>
 
+          {/* 원기 */}
           <Route path='/beans' element={<Beans/>}/>
           <Route path='/quality' element={<Quality/>}/>
+
+          {/* 동명 */}
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
+          <Route path='/searchstore' element={<MapSearch/>}/>
 
+          {/* 성원 */}
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
-
-          <Route path='/order/menu/:id' element={<Buy/>}/>
-          <Route path='/order/:id' element={<Seller/>}/>
-
         </Routes>
       </div>
       <Footer/>

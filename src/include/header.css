@@ -101,6 +101,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 16;
+  overflow: hidden;
 }
 .header-second-menu-fromInsideOut {
   position: absolute;
@@ -152,12 +154,12 @@
   text-align: left;
   display: block;
   width: 250px;
-  height: 200px;
+  height: 150px;
   z-index: 15;
   /* background-color: #fff; */
   /* 이거 왜 안먹지 */
   opacity: 0;
-  transform: translateY(-25px);
+  transform: translateY(-50px);
   transition: none;
 }
 

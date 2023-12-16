@@ -26,13 +26,13 @@ function Event() {
             <div className="event-btn">
               <div className="event-btn-con">
               <span className='brandnews-btn-con-lists'>
-                  <a href='/brandnews/activityrouters/'>공지사항</a>
+                  <a href='/brandnews'>공지사항</a>
                 </span>
                 <span className='brandnews-btn-con-lists'>
-                  <a href="/brandnews/activityrouters/event">이벤트 안내</a>
+                  <a href="/brandnewsevent">이벤트 안내</a>
                 </span>
                 <span className='brandnews-btn-con-lists'>
-                  <a href='/brandnews/activityrouters/activitys/activity'>사회공헌 활동</a>
+                  <a href='/brandnews/activity'>사회공헌 활동</a>
                 </span>
               </div>
             </div>
