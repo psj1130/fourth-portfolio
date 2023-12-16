@@ -12,15 +12,15 @@ import Affiliatecard from './card/affiliatecard';
 import Giftcardrouters from "./card/giftcardrouters";
 import Brandnewsrouters from "./brandnews/barndnewsrouters";
 
-import Buy from './include/buy';
-import Seller from './include/seller';
-
+import Seller from './seller/seller';
+import Buym from "./seller/buym";
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
 
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
+
 import MapSearch from './mapsearch/mapSearch';
 
 
@@ -48,8 +48,9 @@ function App() {
           <Route path='/searchstore' element={<MapSearch/>}/>
 
           {/* 성원 */}
-          <Route path='/order/menu/:id' element={<Buy/>}/>
-          <Route path='/order/:id' element={<Seller/>}/>
+          <Route path='/mapsearch' element={<MapSearch />}/>
+          <Route path='/order/menu/:id' element={<Buym/>}/>
+          <Route path='/seller/:id' element={<Seller/>}/>
         </Routes>
       </div>
       <Footer/>

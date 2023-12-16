@@ -12,8 +12,6 @@ import styled from "styled-components";
 
 // const cookie = getCookie('loginCookie');
 const ContentDiv = styled.div`
-
-  
   width: 1020px;
   display:flex;
   flex-direction: column-reverse;
@@ -24,6 +22,8 @@ async function getBuy(id) {
   console.log(res);
   return res.data;
 }
+
+
 function Buymenu(props) {
   const [count, setCount] = useState(0);
   const Plus = () => {
@@ -46,7 +46,7 @@ function Buymenu(props) {
   const sumn = n4+n5+n2;
   const imgurl = props.rdata.menuResult.img_url.split(',');
   console.log(review);
-
+  
   return (
     <table id="buytable" border={1}>
       <tr id="borderbuy">
@@ -81,15 +81,15 @@ function Buymenu(props) {
                   </p>
                 </div>
                 <div id="buyp2-5">
-                  <p id="buyp5">네이버 멤버쉽 최대5%적립 {">"}</p>
+                  <p id="buyp5">이디야 멤버쉽 최대5%적립 {">"}</p>
                   <p id="buymar1">{(n4.toLocaleString('ko-KR'))}원</p>
                 </div>
                 <div id="buyp2-5">
-                  <p id="buyp5">네이버 현대카드로 결제 시{">"}</p>
+                  <p id="buyp5">이디야 현대카드로 결제 시{">"}</p>
                   <p id="buymar1">{(n5.toLocaleString('ko-KR'))}원</p>
                 </div>
                 <div id="buyp2-5">
-                  <p id="buyp5">네이버페이 머니로 결제 시 {">"}</p>
+                  <p id="buyp5">이디야 머니로 결제 시 {">"}</p>
                   <p id="buymar1">{(n2.toLocaleString('ko-KR'))}원</p>
                 </div>
               </div>
@@ -123,8 +123,8 @@ function Buymenu(props) {
               <span id="buyright1">{(price * count).toLocaleString('ko-KR')} 원</span>
             </p>
             {/* <Link to={cookie ? `/menu/${cookie}?id=${props.rdata.menuResult.id}&o_count=${count}&o_amount=${count*price}` : '/login'}> */}
-            <Link to={`/order/${props.rdata.menuResult.id}`} id="buybutton" >
-            <button id="buybutton" >
+            <Link to={`/seller/${props.rdata.menuResult.id}?o_count=${count}&o_amount=${count*price}`} id="buybutton" >
+            <button id="buybutton">
               <b>구매하기</b>
             </button>
             </Link>
@@ -144,6 +144,7 @@ function Buymenu(props) {
       </tr>
     </table>
   );
+  
 }
 function Photo(props){
   
@@ -183,7 +184,7 @@ function Buy() {
   
   const { id } = useParams();
   const [state] = useAsync(() => getBuy(id), [id]);
-  const { loading, data: rdata, error } = state;
+  const { loading, data:rdata, error } = state;
   // const cookie = getCookie('loginCookie');
 
   if (loading) return <div>로딩중입니다.....</div>;

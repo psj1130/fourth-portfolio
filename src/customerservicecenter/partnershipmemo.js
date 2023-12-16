@@ -38,12 +38,14 @@ const Test = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
     const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
     const email = `${emailId}@${selectedDomain}`;
     const formData = {
       type: selectedOptions,
       user: name,
-      phone: `${firstNumber}-${middleNumber}-${lastNumber}`,
+      // phone: `${firstNumber}-${middleNumber}-${lastNumber}`,
+      phone: contactInfo,
       email,
       title,
       body: content,
