@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/serverurl";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [id, setId] = useState();
   const [password, setPassword] = useState();
-
+  const [context, setContext] = useState(null);
   const id_css = useRef(document.getElementById('id'));
   const pw_css = useRef(document.getElementById('password'));
-
 
 
   return(
@@ -19,7 +18,7 @@ const LoginForm = () => {
         <p>
           <span>이메일 아이디</span>
         </p>
-        <input id='id' type="text" placeholder="이메일을 입력해 주세요." onChange={(e) => {
+        <input ref={id_css} id='id' type="text" placeholder="이메일을 입력해 주세요." onChange={(e) => {
           setId(e.target.value);
         }}></input>
       </div>
@@ -27,17 +26,26 @@ const LoginForm = () => {
         <p>
           <span>비밀번호</span>
         </p>
-        <input id="password" type="text" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
+        <input ref={pw_css} id="password" type="text" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
           setPassword(e.target.value);
         }}></input>
       </div>
+      <p id="fail-login">{context}</p>
       <div className="login-button" onClick={async () => {
         if(!id || !password) {
           id_css.current.style.setProperty('border', '1px solid red')
+          pw_css.current.style.setProperty('border', '1px solid red')
+          setContext('아이디 또는 비밀번호를 입력해주세요 !');
         }
         await axios.post(`${API_URL}/login`, { id: id, password: password})
         .then((res) => {
-          console.log(res);
+          if(res.data == '1') {
+            console.log('로그인 성공');
+          }else if(res.data == '2') {
+            id_css.current.style.setProperty('border', '1px solid red')
+            pw_css.current.style.setProperty('border', '1px solid red')
+            setContext('아이디 또는 비밀번호를 다시 확인해주세요 !');
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -51,6 +59,8 @@ function LoginPage() {
   const REST_API_KEY = '7e42b9acd1b62e84dc8ee847360eb8fa';
   const REDIRECT_URI = 'http://localhost:3000/ouath';
   const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+
+
 
   const loginHandler = () => {
     window.location.href = link;
