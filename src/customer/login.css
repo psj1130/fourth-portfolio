@@ -60,6 +60,7 @@
   line-height: 3.222em;
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 .other-container {
   margin: 20px 0;
@@ -109,3 +110,7 @@
   height: 24px;
 }
 
+#fail-login {
+  text-align: center;
+  color: red;
+}

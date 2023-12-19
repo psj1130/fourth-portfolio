@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './ad_suggestion.css';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import useAsync from '../customHook/useAsync';
@@ -32,13 +31,13 @@ const columns = [
   },
   {
     field: 'user',
-    headerName: 'user name',
+    headerName: '이름',
     width: 120,
     editable: true,
   },
   {
     field: 'phone',
-    headerName: 'Phone',
+    headerName: '핸드폰 번호',
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 150,
@@ -46,31 +45,31 @@ const columns = [
   },
   {
     field: 'email',
-    headerName: 'email',
+    headerName: '이메일',
     width: 200,
     editable: true,
   },
   {
     field: 'title',
-    headerName: 'title',
+    headerName: '제목',
     width: 150,
     editable: true,
   },
   {
     field: 'body',
-    headerName: 'detail',
+    headerName: '내용',
     width: 200,
     editable: true,
   },
   {
     field: 'file_dir',
-    headerName: 'file_dir',
+    headerName: '첨부 파일',
     width: 100,
     editable: true,
   },
   {
     field: 'action',
-    headerName: 'Action',
+    headerName: '삭제',
     width: 80,
     renderCell: (params) => {
       const handleDelete = () => {
