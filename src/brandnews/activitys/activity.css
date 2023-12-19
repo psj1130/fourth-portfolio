@@ -1,6 +1,12 @@
+.activity-body {
+  width: 100%;
+  height: 100%;
+}
+
 .activity-detail-container {
   width: 1200px;
   height: 100%;
+  margin: 0 auto;
 }
 
 .activity-guide-link {
