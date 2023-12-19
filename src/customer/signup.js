@@ -2,6 +2,7 @@ import axios from "axios";
 import './signup.css';
 import React, { useRef, useState } from "react";
 import { API_URL } from "../config/serverurl";
+import { useNavigate } from "react-router";
 
 const SignUpForm = () => {
   const [name, setName] = useState('');
@@ -14,6 +15,7 @@ const SignUpForm = () => {
   const [context, setContext] = useState('');
   const pw_css = useRef(document.getElementById('pw'));
   const pw2_css = useRef(document.getElementById('pw2'));
+  const navigate = useNavigate();
 
   return (
     <div className="signup-form-container">
@@ -77,7 +79,12 @@ const SignUpForm = () => {
             }
             await axios.post(`${API_URL}/signup`, data)
               .then(res => {
-                
+                if(res.data == 'success') {
+                  alert('회원가입을 축하드립니다 !');
+                  navigate('/members/login');
+                } else if(res.data == 'fail') {
+                  alert('다시 확인해주세요 !');
+                }
               })
               .catch(err => {
                 console.log(err);
