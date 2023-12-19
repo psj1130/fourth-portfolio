@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import './login.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/serverurl";
 
@@ -10,6 +10,7 @@ const LoginForm = (props) => {
   const [context, setContext] = useState(null);
   const id_css = useRef(document.getElementById('id'));
   const pw_css = useRef(document.getElementById('password'));
+
 
 
   return(
@@ -26,7 +27,7 @@ const LoginForm = (props) => {
         <p>
           <span>비밀번호</span>
         </p>
-        <input ref={pw_css} id="password" type="text" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
+        <input ref={pw_css} id="password" type="number" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
           setPassword(e.target.value);
         }}></input>
       </div>
@@ -59,7 +60,7 @@ function LoginPage() {
   const REST_API_KEY = '7e42b9acd1b62e84dc8ee847360eb8fa';
   const REDIRECT_URI = 'http://localhost:3000/ouath';
   const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-
+  const navigate = useNavigate();
 
 
   const loginHandler = () => {
@@ -91,7 +92,7 @@ function LoginPage() {
   return (
     <div id="login-page-wrapper">
       <div id="login-page-container">
-        <div className="login-h1">
+        <div className="customer-h1">
           <h1>로그인</h1>
         </div>
         <LoginForm/>
@@ -103,7 +104,9 @@ function LoginPage() {
               <input type="hidden" id="enc_data" name="enc_data" />
               <input type="hidden" id="integrity_value" name="integrity_value" />
           </form>
-          <div onClick={onClickCertify}>이메일로 회원가입</div>
+          <div onClick={() => {
+            navigate('/members/signup');
+          }}>이메일로 회원가입</div>
         </div>
         <div className="kakao-login login-button" onClick={async () => {
           await axios.get(`${API_URL}/auth/kakao`)

@@ -3,6 +3,7 @@ import MembersHeader from "./membersh";
 import { Route, Routes } from "react-router";
 import LoginPage from "../customer/login";
 import './index.css'
+import SignUpPage from "../customer/signup";
 
 function MembersPage() {
 
@@ -12,6 +13,7 @@ function MembersPage() {
         <div className="members-container">
           <Routes>
             <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/signup" element={<SignUpPage/>}/>
           </Routes>
         </div>
     </div>
