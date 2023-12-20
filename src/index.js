@@ -11,7 +11,7 @@ root.render(
     <React.StrictMode>
       <BrowserRouter>
         <App />
-        {/* <AdminPage /> */}
+        <AdminPage />
       </BrowserRouter>
     </React.StrictMode>
 );

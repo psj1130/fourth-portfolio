@@ -135,13 +135,18 @@ function Buymenu(props) {
           </div>
         </td>
       </tr>
-      <tr>
-        <td id="buytabletd1_1">
-          리뷰 수<span>{review.score}</span>
-          <span>사용자 총 평점</span>{}
-          <span>{review.score/review.id}</span>
-        </td>
-      </tr>
+        {review.map((a)=>{
+          return(
+          <tr>
+            <td id="buytabletd1_1">
+            리뷰 수<span>{a.score}</span>
+            <span>사용자 총 평점</span>
+            <span>{a.score/a.id}</span>
+          </td>
+        </tr>
+          )
+        })}
+      
     </table>
   );
   

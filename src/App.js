@@ -32,7 +32,8 @@ import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
 import MapSearch from './mapSearch';
 import Buym from "./seller/buym";
-
+import Success from "./seller/success.tsx"
+import Adminsell from "./admin/sell.jsx"
 function App() {
   return (
     <div className="App">
@@ -47,6 +48,8 @@ function App() {
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
+          <Route path="/seller/success" element={<Success/>}/>
+          <Route path="/admin/sell" element={<Adminsell/>}/>
         </Routes>
       </div>
       <Footer/>
