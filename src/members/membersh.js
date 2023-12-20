@@ -14,7 +14,7 @@ function MembersHeader() {
     }}>로그아웃</p></li>
   } else if(!cookie){
     context = <li><Link to='/members/login' onClick={() => {
-      window.sessionStorage.setItem('BeforePage', Location);
+      window.sessionStorage.setItem('BeforePage', window.location.pathname);
     }}>로그인</Link></li>
   }
 

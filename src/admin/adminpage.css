@@ -31,3 +31,18 @@
 .menuListDelete {
   cursor: pointer;
 }
+#ad-login-page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ad-login-page-container {
+  margin-top: 200px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
