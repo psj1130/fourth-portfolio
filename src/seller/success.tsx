@@ -9,7 +9,7 @@ function ReservationSuccess() {
     <div id="payment-result-wrapper">
       <div id="payment-result-container">
         <h1>결제가 완료되었습니다 !</h1>
-        <p>자세한 내역은 예약확인 페이지에서 확인해주세요 !</p>
+        <p>구매한 상품은 구매목록에서 확인해주세요 !</p>
       </div>
       <div id="result-navigation-wrapper">
         <Link to='/'>
@@ -17,11 +17,11 @@ function ReservationSuccess() {
             메인 페이지
           </div>
         </Link>
-        <Link to={`/reservationlist/`}>
+        {/* <Link to={`/order/list/`}>
           <div className="payment-result-button">
-            예약확인 페이지
+            구매목록
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   )

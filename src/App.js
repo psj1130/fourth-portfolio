@@ -20,9 +20,7 @@ import Quality from './Beans_Quality/quality';
 
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
-
 import MapSearch from './mapsearch/mapSearch';
-
 
 function App() {
   return (
@@ -51,6 +49,8 @@ function App() {
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
+          <Route path="/seller/success" element={<Success/>}/>
+          <Route path="/admin/sell" element={<Adminsell/>}/>
         </Routes>
       </div>
       <Footer/>
