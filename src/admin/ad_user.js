@@ -26,7 +26,7 @@ const columns = [
   {
     field: 'password',
     headerName: '비밀번호',
-    width: 100,
+    width: 130,
     editable: false,
   },
   {
@@ -62,19 +62,26 @@ const columns = [
   {
     field: 'createdAt',
     headerName: '가입 날짜',
-    width: 120,
-    editable: false,
+    width: 200,
+    renderCell: (params) => {
+      return(
+        <p>{new Date(params.row.createdAt).toLocaleString('ko-KR', {
+          year: '2-digit',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })}</p>
+      )
+    }
   },
   {
     field: 'action',
-    headerName: '수정/삭제',
+    headerName: '삭제',
     width: 100,
     renderCell: (params) => {
       return (
         <>
-          <Link to={'/menu/' + params.row.id}>
-            <button className='menuListEdit'>수정</button>
-          </Link>
           <DeleteOutLine className='menuListDelete' onClick={async () => {
             let yn = window.confirm('정말 삭제하시겠습니까?');
               if(yn) {

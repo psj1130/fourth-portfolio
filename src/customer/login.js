@@ -19,9 +19,9 @@ const LoginForm = (props) => {
     <div className="login-form-container">
       <div className="login-input-container">
         <p>
-          <span>이메일 아이디</span>
+          <span>아이디</span>
         </p>
-        <input ref={id_css} id='id' type="text" placeholder="이메일을 입력해 주세요." onChange={(e) => {
+        <input ref={id_css} id='id' type="text" placeholder="아이디를 입력해 주세요." onChange={(e) => {
           setId(e.target.value);
         }}></input>
       </div>
