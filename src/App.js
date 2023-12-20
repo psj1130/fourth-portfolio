@@ -14,6 +14,7 @@ import Brandnewsrouters from "./brandnews/barndnewsrouters";
 
 import Seller from './seller/seller';
 import Buym from "./seller/buym";
+import Success from './seller/success.tsx';
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
@@ -50,7 +51,6 @@ function App() {
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
           <Route path="/seller/success" element={<Success/>}/>
-          <Route path="/admin/sell" element={<Adminsell/>}/>
         </Routes>
       </div>
       <Footer/>
