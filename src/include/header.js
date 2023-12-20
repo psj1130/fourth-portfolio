@@ -115,7 +115,7 @@ function Header() {
               <li className="nav_menu">
                 <a href="/brandnews" className="nav_a"><span>브랜드 소식</span></a>
                 <ul>
-                  <li><a href="/brandnews">공지사항</a></li>
+                  <li><a href="brandnews/brandnewsrouters/notice">공지사항</a></li>
                   <li><a href="/brandnews/event">이벤트 안내</a></li>
                   <li><a href="/brandnews/activity">사회공헌 활동</a></li>
                 </ul>

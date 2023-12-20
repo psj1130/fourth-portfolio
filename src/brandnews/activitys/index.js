@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './society.css';
 
 import Activity from './activity';
@@ -9,13 +10,20 @@ import Otheractivities from './otheractivities';
 
 function Society() {
   const [selectBoxlist, setSelectBoxlist] = useState('activity');
+  const navigate = useNavigate();
 
   const components = {
-    activity: { title: '메이트 희망기금', component: <Activity /> },
-    campus: { title: '캠퍼스 희망기금', component: <Campus /> },
-    hygiene: { title: '식수위생 캠페인', component: <Hygiene /> },
-    accompany: { title: '이디야의 동행', component: <Accompany /> },
-    otheractivities: { title: '기타 활동', component: <Otheractivities /> },
+    activity: { title: '메이트 희망기금',},
+    campus: { title: '캠퍼스 희망기금', },
+    hygiene: { title: '식수위생 캠페인',},
+    accompany: { title: '이디야의 동행', },
+    otheractivities: { title: '기타 활동', },
+  };
+
+  const handleComponentClick = (key) => {
+    setSelectBoxlist(key);
+    // 페이지 이동 로직 추가
+    navigate(`/brandnews/activitys/${key}`);
   };
 
   const renderContent = () => {
@@ -66,7 +74,7 @@ function Society() {
           <div className="society-title-box-container">
             <div className="society-title-box-list">
               {Object.keys(components).map((key) => (
-                <div key={key} className="society-title-box" onClick={() => setSelectBoxlist(key)}>
+                <div key={key} className="society-title-box" onClick={() => handleComponentClick(key)}>
                   <p>{components[key].title}</p>
                 </div>
               ))}
@@ -74,7 +82,6 @@ function Society() {
           </div>
         </div>
       </div>
-      {components[selectBoxlist].component}
     </div>
   );
 }

@@ -14,15 +14,14 @@ import Brandnewsrouters from "./brandnews/barndnewsrouters";
 
 import Seller from './seller/seller';
 import Buym from "./seller/buym";
+import Success from './seller/success.tsx';
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
 
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
-
 import MapSearch from './mapsearch/mapSearch';
-
 
 function App() {
   return (
@@ -51,6 +50,7 @@ function App() {
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
+          <Route path="/seller/success" element={<Success/>}/>
         </Routes>
       </div>
       <Footer/>
