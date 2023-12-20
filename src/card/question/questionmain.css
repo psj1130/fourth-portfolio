@@ -1,14 +1,15 @@
-#question-body {
+.qna-container {
   width: 100%;
+  height: 100%;
 }
 
-#question-container {
+.qna-title-container {
   width: 100%;
   height: 460px;
   background-image: url('../giftcardimg/check_visual.jpg');
 }
 
-#question-con-text {
+.qna-con-text {
   width: 1200px;
   margin: 0 auto;
   height: 100%;
@@ -19,20 +20,24 @@
   text-align: center;
 }
 
-#con1-title-text {
+.con1-title-text {
   width: 100%;
   font-size: 46px;
   font-weight: 300;
   padding-bottom: 25px;
 }
 
-#info-text {
+.info-text {
   width: 100%;
   height: 62px;
   font-size: 18px;
 }
 
-#question-btn {
+.qna-info-text > p {
+  color: black;
+}
+
+.qna-btn {
   width: 100%;
   height: 190px;
   display: flex;
@@ -41,7 +46,7 @@
   align-items: center;
 }
 
-#question-btn-con {
+.qna-btn-con {
   display: flex;
   flex-direction: row;
   width: 540px;
@@ -49,7 +54,7 @@
   text-decoration: none;
 }
 
-.btn-con-lists {
+.qna-btn-con-lists {
   border: 1px solid #a0a0a2;;
   width: 180px;
   height: 100%;
@@ -57,25 +62,26 @@
   line-height: 35px;
 }
 
-.btn-con-lists > a {
+.qna-btn-con-lists > a {
   color: #202023;
 }
 
-.btn-con-lists:hover {
+.qna-btn-con-lists:hover {
   background-color: #a0a0a2;
 }
 
-.btn-con-lists:hover > a{
+.qna-btn-con-lists:hover > a{
   color: white;
 }
 
-#question-con {
+.qna-datail-container {
   width: 1200px;
+  height: 100%;
   margin: 0 auto;
 }
 
-#check-guide-link {
-  width: 1200px;
+.qna-guide-link {
+  width: 100%;
   height: 25px;
   padding-top: 35px;
   text-align: right;
@@ -84,7 +90,7 @@
   font-weight: bold;
 }
 
-#check-guide-link > span {
+.qna-guide-link > span {
   background-image: url('../giftcardimg/icon_loc.png');
   background-repeat: no-repeat;
   background-position: right;
@@ -92,81 +98,99 @@
   margin: 8px;
 }
 
-#question-search-container {
-  border: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  width: 100%;
-  height: 50px;
+.qna-search-container {
   padding: 40px 0 20px 0;
-}
-
-#question-drowdown-box {
-  width: 95px;
-  height: 40px;
-  margin-right: 10px;
-}
-
-#question-drowdown-list {
   width: 100%;
-  height: 100%;
-  font-size: 16px;
-  font-weight: 500;
+  height: 40px;
 }
 
-#question-search-box {
+.qna-search-boxs {
+  width: 325px;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 230px;
-  height: 40px;
+  float: right;
 }
 
-#question-serch-input {
-  width: 183px;
-  height: 40px;
-  border: 1px solid #898989;
+.qna-search-dropdown {
+  width: 85px;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.qna-drowdown-list {
+  width: 85px;
+  height: 42px;
+  font-size: 14px;
+  border: 1px solid #a0a0a2;
+}
+
+.qna-serach-result-box {
+  width: 210px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+}
+
+.qna-serach-input-box{
+  width: 176px;
+  height: 41px;
+  border: 1px solid #a0a0a2;
   border-right: none;
 }
 
-#question-serch-result {
-  width: 46px;
-  height: 42px;
-  border: 1px solid #898989;
+.qna-serach-button {
+  border: 1px solid #a0a0a2;
   border-left: none;
+  width: 50px;
+  height: 43px;
   background-color: white;
-  cursor: pointer;
+  background-image: url('../giftcardimg/icon_search.gif');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-#question-detail-container {
-  margin: 0 auto;
-  width: 1212px;
-  border-bottom: 5px solid#213e84;
+.qna-detail-box-container {
+  width: 100%;
+  height: 100%;
 }
 
-#question-dataile-tapcontainer {
+.qna-detail-box-lists {
   width: 100%;
   height: 50px;
-  display: flex;
-  flex-direction: row;
-  font-size: 18px;
+  display: grid;
+  grid-template: 100% / repeat(6, 200px);
   text-align: center;
-  line-height: 45px;
-  font-weight: 400;
+  border-bottom: px solid #213e84;
+}
+
+.qna-select-box {
+  width: 200px;
+  height: 100%;
+  border: 1px solid #a0a0a2;
+  font-size: 18px;
+  cursor: pointer;
   
 }
 
-#question-detail-list {
+.qna-select-box > p {
   width: 200px;
   height: 100%;
-  border: 1px solid #898989;
-  color: #898989;
-  border-bottom: none;
+  text-align: center;
+  color: #7A7A7A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+  
 }
-
-#question-detail-list:hover {
-  color: white;
+.qna-select-box.select > p {
   background-color: #213e84;
+  color: white;
 }
 
+.qna-select-box :hover {
+ background-color: #213e84;
+ color: white;
+}

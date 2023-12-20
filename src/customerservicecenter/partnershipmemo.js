@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './partnershipmemo.css';
 import PartnershipRobot from './partnershipRobot';
+import axios from 'axios';
+import { API_URL } from '../config/serverurl';
+import { useNavigate } from 'react-router';
 
 
 const Test = () => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const navigate = useNavigate();
+  const [selectedOptions, setSelectedOptions] = useState('');
   const [name,setName] = useState('');
   const [firstNumber, setfirstNumber] = useState('');
   const [middleNumber, setMiddleNumber] = useState('');
@@ -19,9 +23,10 @@ const Test = () => {
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     if (checked) {
-      setSelectedOptions([...selectedOptions, value]);
+      setSelectedOptions(value);
     } else {
-      const updatedOptions = selectedOptions.filter((option) => option !== value);
+      // const updatedOptions = selectedOptions.filter((option) => option !== value);
+      const updatedOptions = "안고름";
       setSelectedOptions(updatedOptions);
     }
   };
@@ -33,17 +38,31 @@ const Test = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
     const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
     const email = `${emailId}@${selectedDomain}`;
     const formData = {
-      name,
-      number: `${firstNumber} ${middleNumber} ${lastNumber}`,
+      type: selectedOptions,
+      user: name,
+      // phone: `${firstNumber}-${middleNumber}-${lastNumber}`,
+      phone: contactInfo,
       email,
-      content,
-      selectedFile,
-      spamCheck,
+      title,
+      body: content,
+      // file_dir: selectedFile,
+      file_dir: 'test',
+      // spamCheck,
     };
     console.log('제출된 데이터:', formData);
+
+    axios.post(`${API_URL}/suggestion`, formData)
+    .then(res => {
+      console.log(res.status);
+      alert("신청 성공!");
+      navigate('/'); //성공하면 메인페이지로 가게 하는것
+    }).catch(err => {
+      console.error(err);
+    })
   };
 
   const emailDomains = [

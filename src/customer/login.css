@@ -9,11 +9,15 @@
   width: 440px;
   
 }
-.login-h1 {
+.customer-h1 {
   text-align: center;
   padding-top: 76px;
   margin-bottom: 40px;
 }
+.customer-h1 h1 {
+  font-family: 'Pretendard-Regular', sans-serif;
+}
+
 .login-form-container {
   width: 100%;
   display: flex;
@@ -25,12 +29,7 @@
   flex-direction: column;
   gap: 8px;
 }
-.login-input-container span {
-  padding-right: 16px;
-  background: url(./icon/icon_necd.svg) no-repeat right top;
-  background-size: 16px;
-  
-}
+
 .login-input-container input {
   display: block;
   box-sizing: border-box;
@@ -46,8 +45,9 @@
 .login-input-container input:focus {
   border-color: #000;
 }
-#login-button {
+.login-button {
   background-color: #2A47BF;
+  width: 100%;
   color: #fff;
   border-radius: 8px;
   box-sizing: border-box;
@@ -58,8 +58,65 @@
   font-weight: 700;
   line-height: 3.222em;
   display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-family: 'Pretendard-Regular', sans-serif;
 }
 .other-container {
-  margin-top: 20px;
+  margin: 20px 0;
   text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.other-container div {
+  cursor: pointer;
+}
+/* .other-container a:nth-child(1)::after {
+  width: 1px;
+  content: '';
+  background-color: #000;
+  height: 3px;
+  display: block;
+} */
+.kakao-login {
+  background-color: #FEE500;
+  color: #391B1B;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.kakao-login p{
+  background-image: url(./icon/icon_kakao_02.svg);
+  width: 24px;
+  height: 24px;
+}
+.kakao-login span {
+  font-family: 'Pretendard-Regular', sans-serif;
+}
+
+.naver-login {
+  background-color: #03C75A;
+  color: #ffffff;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.naver-login p {
+  background-image: url(./icon/icon_naver_02.svg);
+  width: 24px;
+  height: 24px;
+}
+.naver-login span {
+  font-family: 'Pretendard-Regular', sans-serif;
+}
+
+#fail-login {
+  text-align: center;
+  color: red;
 }

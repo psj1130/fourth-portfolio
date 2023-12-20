@@ -3,8 +3,8 @@
 /* 기본 전체 설정 */
 #affiliatecard-body-e {
   width: 100%;
-  height: 460px;
   background-image: url('./affiliatecardimg/affiliate_bg.jpg');
+  background-repeat: no-repeat;
 }
 
 #affiliatecard-container-e {
@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 }
 
 .card-list-e:hover {

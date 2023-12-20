@@ -1,6 +1,6 @@
 import './mixA.css';
 import Dplist from '../dplist';
-
+import MixAA from './mixAA';
 
 function MixA() {
   return (

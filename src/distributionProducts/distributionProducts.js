@@ -9,7 +9,7 @@ function DistributionProducts() {
     <div>
       <Routes>
         <Route path='/' element={<Stick/>} />
-        <Route path='/coffemix' element={<Coffemix/>} />
+        <Route path='/coffeemix' element={<Coffemix/>} />
         <Route path='/capsule' element={<Capsule/>} />
         <Route path='/cup' element={<Cup/>} />
       </Routes>

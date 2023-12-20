@@ -1,10 +1,36 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios';
+import { API_URL } from '../config/serverurl';
+import useAsync from '../config/useAsync';
+
 import './event.css';
-import { Link } from 'react-router-dom'
+
+import Brandbg from './brandbg';
+
+async function getevent() {
+  try {
+    const eventdata = await axios.get(`${API_URL}/event`);
+    console.log('eventdata로 받아온 데이터', eventdata);
+    return eventdata.data;
+  }
+  catch(err) {
+    console.error('에러 발생:', err);
+  }
+}
 
 function Event() {
+
   const [content, setContent] = useState();
-  
+
+  const { id } = useParams();
+  const [eventstate] = useAsync(() => getevent(id), [id]);
+  const { loading, data:eventdata, error } = eventstate;
+
+  if(loading) return <div>로딩중입니다.....</div>
+  if(error) return <div>에러가 발생했습니다.</div>
+  if(!eventdata) return null;
+
   const onchanglist = (e) => {
     setContent(e.currentTarget.value);
   }
@@ -15,76 +41,60 @@ function Event() {
   ];
 
   return(
-    <div id='event-body'>
-      <div id="event-container">
-        <div id="event-con-text">
-          <h1 id='con1-title-text'>공지사항</h1>
-            <div id="info-text">
-              <p>이디야는 국내 브랜드의 자부심을 지키며</p>
-              <p>대한민국 커피 문화를 이끌어 나갑니다.</p>
-            </div>
-            <div id="event-btn">
-              <div id="event-btn-con">
-                <span className='btn-con-lists'>
-                  <a href='/brandnews/'>공지사항</a>
-                </span>
-                <span className='btn-con-lists'>
-                  <a href="/brandnews/event">이벤트 안내</a>
-                </span>
-                <span className='btn-con-lists'>
-                  <a href='/brandnews/activitys/activity'>사회공헌 활동</a>
-                </span>
-              </div>
-            </div>
-        </div>
-          <div id="event-main-container">
-            <div id="check-guide-link">
+    <div className="event-body">
+      <Brandbg/>
+      <div className="event-main-container">
+            <div className="event-guide-link">
               <span>HOME</span>
               <span>이디야 소식</span>
               이벤트
             </div>
-            <div id="event-search-container">
-                <div id="event-drowdown-box">
-                  <select id='event-drowdown-list' onChange={onchanglist} value={content}>
+            <div className="event-search-container">
+                <div className="event-drowdown-box">
+                  <select className='event-drowdown-list' onChange={onchanglist} value={content}>
                     {options.map((item)=>(
                       <option key={item.key} value={item.key}>{item.value}</option>
                     ))}
                   </select>
                 </div>
-                <div id="event-search-box">
+                <div className="event-search-box">
                   <input 
-                  id='event-search-input'
+                  className='event-search-input'
                   type="text" />
-                    <button id='event-search-result'>
+                    <button className='event-search-result'>
                       <img src="/images/cardlist/icon_search.gif"/>
                     </button>
                 </div>
               </div>
               {/* db데이터 받고 작성하는부분 */}
-              <ul id="event-detail-container">
-                <li>
-                  <div id='event-detail-imgcon'>
-                    <Link>
-                      <img src="/images/brandnews/eventimgtest.jpg" alt="나중에 데이터로 삽입" />
+              <ul className="event-detail-container">
+                {eventdata.map((item) => (
+                  <li key={item.id}>
+                     {/* {console.log(`Key for item with id ${item.id}: ${item.id}`)} 키 값 확인코드 */}
+                   <div className='event-detail-imgcon'>
+                    <Link to={`${item.id}`}>
+                      <img src={item.img_url} alt="" />
                     </Link>
                   </div>
-                  <dl id='event-detail-titlecon'>
+                  <dl className='event-detail-titlecon'>
                     <dt>
-                      <Link>이순신 장군의 마지막 전투를 보고싶다면?</Link>
+                      <Link to={`${item.id}`}>{item.title}</Link>
                     </dt>
                     <dd>
-                      기간: {/*기간 데이터 받아와야함*/}
+                      
+                      <p>기간 : {new Date(item.start).toLocaleDateString('ko-KR')} ~ </p>
+                      <p>{new Date(item.end).toLocaleDateString('ko-KR')}</p>
                     </dd>
                   </dl>
-                  <div id='event-detail-progress'>
-                    <span id='event-progress-check'>
+                  <div className='event-detail-progress'>
+                    <span className='event-progress-check'>
                       진행여부{/*데이터로 들어가야하나?*/}
                     </span>
                   </div>
-                </li>
+                  </li>
+                ))}
               </ul>
           </div>
-      </div>
     </div>
   );
 }

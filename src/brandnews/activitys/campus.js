@@ -1,96 +1,78 @@
 import React from 'react'
-import '../activitys/campus.css';
-import { Link } from 'react-router-dom'
+import './campus.css'
+
+import Society from '.';
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios';
+import { API_URL } from '../../config/serverurl';
+import useAsync from '../../config/useAsync';
+
+async function getsocial() {
+  try {
+    const socialdata = await axios.get(`${API_URL}/social`);
+    console.log('socialdata로 받아온 데이터', socialdata);
+    return socialdata.data;
+  }
+  catch(err) {
+    console.error('에러 발생:', err);
+  }
+}
 
 function Campus() {
 
+  const { id } = useParams();
+  const [socialstate] = useAsync(() => getsocial(id), [id]);
+  const { loading, data:socialdata, error } = socialstate;
+
+  if(loading) return <div>로딩중입니다.....</div>
+  if(error) return <div>에러가 발생했습니다.</div>
+  if(!socialdata) return null;
+
+
+  //카테고리가 해당 되는것만 보이게함 이유는 id값 여러번 안불러오게 할려고
+  const category = socialdata.filter(item => item.category === '캠퍼스 희망기금');
+  console.log('필터 된 데이터', category);
+
   return(
-    <div id="campus-body">
-      <div id="campus-container">
-        <div id="campus-con-text">
-          <h1 id='con1-title-text'>이디야 가맹점주 자녀 캠퍼스 희망기금</h1>
-            <div id="info-text">
-              <p>오랜 시간 아껴주신 여러분의 성원에 보답하기 위해</p>
-              <p>이디야커피가 대한민국과 이디야 가족 모두를 응원합니다.</p>
-            </div>
-            <div id="campus-btn">
-              <div id="campus-btn-con">
-                <span className='btn-con-lists'>
-                  <a href='/brandnews/activitys/activity'>메이트 희망기금</a>
-                </span>
-                <span className='btn-con-lists'>
-                  <a href="/brandnews/activitys/campus">캠퍼스 희망기금</a>
-                </span>
-                <span className='btn-con-lists'>
-                  <a href='/brandnews/activitys/hygiene'>식수위생 캠페인</a>
-                </span>
-                <span className='btn-con-lists'>
-                  <a href='/brandnews/activitys/accompany'>이디야의 동행</a>
-                </span>
-                <span className='btn-con-lists'>
-                  <a href='/brandnews/activitys/otheractivities'>기타 활동</a>
-                </span>
-              </div>
-            </div>
+  <div className="campus-body">
+    <Society/>
+    <div className="campus-container">
+      <div className="campus-detail-container">
+        <div className="campus-guide-link">
+          <span>HOME</span>
+          <span>사회공헌 활동</span>
+          메이트 희망기금
         </div>
-        <div id="campus-detail-container">
-          <div id="campus-guide-link">
-            <span>HOME</span>
-            <span>사회공헌활동</span>
-            캠퍼스 희망기금
-          </div>
-            <div id="mate-detail-container">
-              <div id='mate-detail-title-con'>
-                <h2 id='mate-detail-title'>이디야 가맹점주 자녀 캠퍼스 희망기금</h2>
-                <p>가맹점주님과 자녀들의 미래와 희망을 함께 그려나가고자 합니다.</p>
-              </div>
-            </div>
-              <ul id="mate-detail-gridboxs">
-                <li>
-                  <div id='mate-detail-gridboximg'>
-                    <Link>
-                      <img src="/images/brandnews/eventimgtest.jpg"/>
-                    </Link>
-                  </div>
-                  <div id='mate-detail-girdboxtext'>
-                    <Link>
-                      <h5>2023 이디야 메이트 희망기금 전달</h5>
-                      <p>어쩌고 저쩌고 데이터 내용어쩌고 저쩌고 데이터 내용어쩌고 저쩌고 데이터 내용어쩌고 저쩌고 데이터 내용</p>
-                    </Link>
-                  </div>
-                  <div id='mate-detail-gridbtncon'>
-                    <div id='mate-detail-gridbtn'>
-                      <Link>
-                        <p>더 보기</p>
-                      </Link>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div id='mate-detail-gridboximg'>
-                    <Link>
-                      <img src="/images/brandnews/eventimgtest.jpg"/>
-                    </Link>
-                  </div>
-                  <div id='mate-detail-girdboxtext'>
-                    <Link>
-                      <h5>2023 이디야 메이트 희망기금 전달</h5>
-                      <p>어쩌고 저쩌고 데이터 내용어쩌고 저쩌고 데이터 내용어쩌고 저쩌고 데이터 내용어쩌고 저쩌고 데이터 내용</p>
-                    </Link>
-                  </div>
-                  <div id='mate-detail-gridbtncon'>
-                    <div id='mate-detail-gridbtn'>
-                      <Link>
-                        <p>더 보기</p>
-                      </Link>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            {/* <h1>맵으로 풀어야함</h1> */}
+        <div className="campus-detail-title-container">
+          <h2>이디야 메이트 희망기금 사업</h2>
+          <p>이디야커피는 대한민국 청년의 미래를 후원합니다.</p>
+        </div>
+        <div className="campus-box-container">
+          {/* 추후 맵으로 뿌리면될듯 밑에는 틀만 맞는지 확인용 하드코딩 */}
+          <ul className="campus-box-list-con">
+          {category.map((item) => (
+            <li key={item.id}>
+              <Link to={`details/${item.id}`}>
+              <img src={item.img_url}/>
+              </Link >
+                <div className='campus-text-box'>
+                  <Link to={`details/${item.id}`}>
+                    <h5>{item.title}</h5>
+                      <p>&nbsp; ▶ {item.body.length > 100 ? item.body.substring(0, 100) + '...' : item.body}</p>
+                  </Link>
+                </div>
+              <Link to={`details/${item.id}`}>
+                <div className="campus-btn-box">
+                  <p>더보기</p>
+                </div>
+              </Link>
+            </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
+  </div>
   );
 }
 

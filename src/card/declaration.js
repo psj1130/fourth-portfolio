@@ -31,13 +31,13 @@ function Declaration() {
               <div id="declaration-btn">
                 <div id="declaration-btn-con">
                   <span className='declaration-btn-con-lists'>
-                    <a href='#none'>기프트카드</a>
+                    <a href='/card/giftcardrouters/giftcard'>기프트카드</a>
                   </span>
                   <span className='declaration-btn-con-lists'>
                     <a href="#noen">모바일 상품권</a>
                   </span>
                   <span className='declaration-btn-con-lists'>
-                    <a href='/card/giftcard/declaration'>단체·기업 구매</a>
+                    <a href='/card/giftcardrouters/giftcard/giftbuy'>단체·기업 구매</a>
                   </span>
                 </div>
               </div>
