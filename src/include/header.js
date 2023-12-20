@@ -35,7 +35,7 @@ function Header() {
               <li><a href='/searchstore'>매장찾기</a></li>
               <li><a href='/cs'>고객의 소리</a></li>
               <li><a href='/'>이디야 스토어</a></li>
-              <li><a href='/administarator'>관리자 페이지</a></li>
+              <li><a href='/administrator'>관리자 페이지</a></li>
             </ul>
             <div id="header-topmenu-sns">
               <a href='#none'><img src={process.env.PUBLIC_URL + "/images/top_sns/top_sns01.png"} alt="1"/></a>

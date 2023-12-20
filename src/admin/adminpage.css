@@ -1,0 +1,33 @@
+.admin-header-logo {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+#admin-main {
+  display: flex;
+  height: 794px;
+}
+.others {
+  flex: 6;
+  overflow: scroll;
+}
+
+.menuImg {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+.menuListEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #243C84;
+  margin-right: 15px;
+  color: #fff;
+}
+.menuListDelete {
+  cursor: pointer;
+}

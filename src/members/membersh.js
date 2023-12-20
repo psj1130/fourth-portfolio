@@ -10,9 +10,9 @@ function MembersHeader() {
         <div className="members-header-top-nav">
           <ul>
             <li><Link to='/members/login'>로그인</Link></li>
-            <li><Link to='/login'>매장찾기</Link></li>
-            <li><Link to='/login'>APP 다운로드</Link></li>
-            <li><Link to='/login'>이디야 스토어</Link></li>
+            <li><Link to='/searchstore'>매장찾기</Link></li>
+            <li><Link to='/'>APP 다운로드</Link></li>
+            <li><Link to='/'>이디야 스토어</Link></li>
           </ul>
         </div>
       </div>
