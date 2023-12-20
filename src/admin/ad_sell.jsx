@@ -12,7 +12,7 @@ import {DeleteOutline} from '@mui/icons-material'
 
 
 async function getseller(id) {
-  const res = await axios.get(`${API_URL}/admin/sell`);
+  const res = await axios.get(`${API_URL}/order/order`);
   console.log(res);
   return res.data;
 }
@@ -25,37 +25,20 @@ function Sell() {
      
     }
     const columns=[
-      {field: 'id', headerName:'ID', width:70},
-      {field: 'count', headerName:'Count',width:200},
-      {field: 'amount', headerName:'amount',width:200},
+      {field: 'id', headerName:'주문번호', width:70,},
+      {field: 'userid', headerName:'구매자', width:70,},
+      {field: 'menuid', headerName:'상품', width:70,},
+      {field: 'count', headerName:'갯수',width:70,},
+      {field: 'amount', headerName:'총가격',width:100,},
       {
-        field:'status',
-        headerName:'Status',
-        width:90,
+        field:'createdAt',
+        headerName:'주문날짜',
+        width:200,
+        
       },
-      {
-        field: 'transaction',
-        headerName:'Transaction',
-        width:130,
-      },
-      {
-        field: 'action',
-        headerName:'Action',
-        width:150,
-        renderCell:(params)=>{
-          return(
-            <>
-            <Link to={'/admin/sell/'+params.row.id}>
-            <button className="userListEdit" >Edit</button>
-            </Link>
-            <DeleteOutline 
-            className="userListDelete"
-            onClick={()=>handleDelete(params.row.id)}
-            />
-            </>
-          )
-        },
-      },
+    
+  
+  
     ]
     const { id} = useParams();
     const [state] = useAsync(() => getseller(id), [id]);
@@ -71,10 +54,19 @@ function Sell() {
   return (
     <div className="sell">
       <DataGrid
-      rows={ rdata.orderResult.map((a)=>({
+      rows={ rdata.map((a)=>({
         id:a.id,
         count:a.o_count,
-        amount:a.o_amount
+        amount:a.o_amount,
+        createdAt:new Date(a.createdAt).toLocaleDateString('ko-KR', {
+          year: '2-digit',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+        }),
+        userid:a.userid,
+        menuid:a.menu.name
+        
       }))}
       columns={columns}
       pageSize={5}

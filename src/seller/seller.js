@@ -7,6 +7,7 @@ import useAsync from "../customHook/useAsync";
 import { useState, } from 'react'
 import "./seller.css";
 import Checkout from "./Checkout.tsx";
+import { getCookie } from "../customer/cookies.js";
 async function getseller(id) {
   const res = await axios.get(`${API_URL}/seller/${id}`);
   console.log(res);
@@ -186,18 +187,22 @@ function Info2(props){
 }
 function Seller(props) {
   const [point1,setpoint1] = useState('0')
-  const { id} = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
+  const id = searchParams.get('id');
   const count = searchParams.get('o_count');
   const amount = searchParams.get('o_amount');
   const value = {
+
     count,
     amount
   }
+  const cookie = getCookie('loginCookie');
   const order =value.amount.toLocaleString();
   const Allprice = order-props.point1;
   async function setseller(price){
+    if(cookie){
     const data = {
+      id:cookie,
       count : count,
       amount : price,
 
@@ -212,12 +217,15 @@ function Seller(props) {
     })
     .catch(err=>{
         console.log(err)
-    })};
+    })
+  }else if(!cookie){
+    return;
+  }
+}
   
   console.log("Link to:",id,count,amount);
   const [state] = useAsync(() => getseller(id), [id]);
   const { loading, data: rdata, error } = state;
-  // const cookie = getCookie('loginCookie');
 
   if (loading) return <div>로딩중입니다.....</div>;
   if (error) return <div>에러가 발생했습니다.</div>;

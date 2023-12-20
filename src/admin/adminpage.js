@@ -4,6 +4,7 @@ import Ad_suggestion from './ad_suggestion';
 import Ad_menu from './ad_menu';
 import Ad_user from './ad_user';
 import Sidebar from './include/sidebar';
+import Sell from './ad_sell.jsx';
 import './adminpage.css';
 
 function AdminPage() {
@@ -25,7 +26,8 @@ function AdminPage() {
             <Route path='/suggestion' element={<Ad_suggestion/>}/>
             <Route path='/menu' element={<Ad_menu/>}/>
             <Route path='/user' element={<Ad_user/>}/>
-          </Routes>
+            <Route path='/sell' element={<Sell/>}/>          
+             </Routes>
         </div>
       </div>
     </div>
