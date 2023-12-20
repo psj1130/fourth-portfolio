@@ -1,0 +1,97 @@
+.all-container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 60px;
+}
+
+.all-list-box {
+  width: 100%;
+  height: 100%;
+}
+
+.all-box-container {
+  width: 100%;
+  max-height: 100%;
+  border-bottom: 2px solid #d9d9d9;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.all-q-box {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.all-q-box > dt{
+  width: 40px;
+  height: 100%;
+  padding-left: 40px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 60px;
+  cursor: pointer;
+  color: #213e84;
+}
+
+.all-q-box > dd {
+  width: 1040px;
+  height: 100%;
+  line-height: 60px;
+  color: #213e84;
+  font-weight: 600;
+  transition: 5s;
+}
+
+.all-q-box :nth-child(3) {
+  width: 80px;
+  height: 100%;
+  background-image: url('../giftcardimg/btn_down.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.all-a-box {
+  width: 1126px;
+  height: 100%;
+  padding: 50px 37px 50px 37px;
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f5f5;
+  animation: scale-up-ver-top 1s ease-out;
+}
+
+@keyframes scale-up-ver-top {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
+}
+
+.all-a-box > dt {
+  width: 37px;
+  height: 22px;
+  font-size: 24px;
+  font-weight: 900;
+  color: #898989; 
+}
+
+.all-a-subbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-a-subbox > li {
+  color: black;
+  font-weight: 700;
+  line-height: 20px;
+}
