@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import './login.css'
 import { Link, useNavigate } from "react-router-dom";
+import { setCookie } from "./cookies";
 import axios from "axios";
 import { API_URL } from "../config/serverurl";
 
@@ -10,7 +11,8 @@ const LoginForm = (props) => {
   const [context, setContext] = useState(null);
   const id_css = useRef(document.getElementById('id'));
   const pw_css = useRef(document.getElementById('password'));
-
+  const navigate = useNavigate();
+  const setTime = 3600000; //1시간
 
 
   return(
@@ -27,7 +29,7 @@ const LoginForm = (props) => {
         <p>
           <span>비밀번호</span>
         </p>
-        <input ref={pw_css} id="password" type="number" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
+        <input ref={pw_css} id="password" type="text" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
           setPassword(e.target.value);
         }}></input>
       </div>
@@ -42,6 +44,13 @@ const LoginForm = (props) => {
         .then((res) => {
           if(res.data == '1') {
             console.log('로그인 성공');
+            setCookie('loginCookie', id, {
+              path: '/',
+              secure: '/',
+              expires: new Date(Date.now() + setTime),
+            });
+            navigate(sessionStorage.getItem('BeforePage') ? sessionStorage.getItem('BeforePage') : '/');
+            document.location.reload(true);
           }else if(res.data == '2') {
             id_css.current.style.setProperty('border', '1px solid red')
             pw_css.current.style.setProperty('border', '1px solid red')

@@ -31,7 +31,9 @@ function Header() {
         <div id="header-topmenu-container">
           <div id="header-topmenu">
             <ul id="header-topmenu-navigation">
-              <li><a href='/members/login'>로그인</a></li>
+              <li><a href='/members/login' onClick={() => {
+                window.sessionStorage.setItem('BeforePage', Location);
+              }}>로그인</a></li>
               <li><a href='/searchstore'>매장찾기</a></li>
               <li><a href='/cs'>고객의 소리</a></li>
               <li><a href='/'>이디야 스토어</a></li>
