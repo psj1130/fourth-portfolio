@@ -1,9 +1,19 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import useAsync from '../customHook/useAsync';
+import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../../config/serverurl';
+
+
+async function deleteSuggestion(id) {
+  try {
+    const res = await axios.delete(`${API_URL}/suggestion/${id}`);
+    console.log(res);
+  } catch (error) {
+    console.error('Error deleting suggestion:', error);
+  }
+}
 
 async function getSuggestion() {
   const res = await axios.get(`${API_URL}/suggestion`);
@@ -15,7 +25,7 @@ async function getSuggestion() {
 const columns = [
   {
     field: 'type',
-    headerName: '제휴/제안',
+    headerName: '이벤트',
     width: 120,
     editable: true,
   },
@@ -62,6 +72,10 @@ const columns = [
     headerName: '삭제',
     width: 80,
     renderCell: (params) => {
+      const handleDelete = () => {
+        deleteSuggestion(params.id); 
+      };
+
       return (
         <>
           <button className='userListDelete' onClick={async () => {
@@ -83,7 +97,7 @@ const columns = [
   },
 ];
 
-export default function Ad_suggestion() {
+export default function Ad_event() {
   const [state] = useAsync(getSuggestion, []);
 
   const { loading, data: formData, error } = state;
