@@ -37,6 +37,7 @@ const MenuModal = ({isOpen}) => {
 
     if(e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0])
+      setImage1(e.target.files[0]);
     }
   
     reader.onloadend = () => {
@@ -183,6 +184,13 @@ const MenuModal = ({isOpen}) => {
         </div>
         <div className='modal-button-container'>
           <button type='click' onClick={async () => {
+            await axios.post(`${API_URL}/menu/upload/image`, {imgFile: img1})
+              .then(res => {
+                console.log(res);
+              })
+              .catch(err => {
+                console.log(err);
+              })
             const data = {
               type: type,
               code: code,
@@ -199,6 +207,7 @@ const MenuModal = ({isOpen}) => {
               ingredient_na: na,
               ingredient_caffein: caffein
             }
+            
             await axios.post(`${API_URL}/menu/add`, data)
               .then(() => {
                 alert('추가되었습니다 !');
