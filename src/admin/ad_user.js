@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 async function getUser() {
-  const res = await axios.get(`${API_URL}/user`);
+  const res = await axios.get(`${API_URL}/admin/user`);
   console.log(res);
   return res.data;
 }

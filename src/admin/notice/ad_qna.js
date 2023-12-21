@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import useAsync from '../customHook/useAsync';
+import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../../config/serverurl';
 
 async function getSuggestion() {
-  const res = await axios.get(`${API_URL}/suggestion`);
+  const res = await axios.get(`${API_URL}/qna`);
   console.log(res);
   return res.data;
 }
@@ -14,59 +14,75 @@ async function getSuggestion() {
 
 const columns = [
   {
-    field: 'type',
-    headerName: '제휴/제안',
+    field: 'id',
+    headerName: 'QnA',
     width: 120,
-    editable: true,
+    editable: false,
   },
   {
-    field: 'user',
-    headerName: '이름',
+    field: 'question',
+    headerName: '질문',
+    width: 200,
+    editable: false,
+  },
+  {
+    field: 'answer',
+    headerName: '응답',
+    width: 200,
+    editable: false,
+  },
+  {
+    field: 'category',
+    headerName: '카테고리',
     width: 120,
-    editable: true,
+    editable: false,
   },
   {
-    field: 'phone',
-    headerName: '핸드폰 번호',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 150,
-    valueGetter: (params) => `${params.row.phone}`,
-  },
-  {
-    field: 'email',
-    headerName: '이메일',
+    field: 'createdAt',
+    headerName: '작성 시간',
     width: 200,
-    editable: true,
+    editable: false,
+    valueGetter: (params) => {
+      // 'createdAt' 필드의 값은 여기서 변환됩니다.
+      const date = new Date(params.row.createdAt);
+      return date.toLocaleString('ko-KR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+    },
   },
   {
-    field: 'title',
-    headerName: '제목',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'body',
-    headerName: '내용',
+    field: 'updatedAt',
+    headerName: '수정 시간',
     width: 200,
-    editable: true,
-  },
-  {
-    field: 'file_dir',
-    headerName: '첨부 파일',
-    width: 100,
-    editable: true,
+    editable: false,
+    valueGetter: (params) => {
+      // 'createdAt' 필드의 값은 여기서 변환됩니다.
+      const date = new Date(params.row.createdAt);
+      return date.toLocaleString('ko-KR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+    },
   },
   {
     field: 'action',
     headerName: '삭제',
     width: 80,
+    //그리드 컬럼 설정하는데 여기서 return값을 주고 삭제 요청을 보낼수있음
     renderCell: (params) => {
       return (
         <>
           <button className='userListDelete' onClick={async () => {
             console.log(params.id);
-            await axios.delete(`${API_URL}/suggestion/delete/${params.id}`)
+            await axios.delete(`${API_URL}/qna/delete/${params.id}`)
+            //qnaroute에서 delete만들고 요청하면 됨
             .then(res => {
               console.log(res.data);
               window.location.reload();
@@ -83,7 +99,7 @@ const columns = [
   },
 ];
 
-export default function Ad_suggestion() {
+export default function Ad_qna() {
   const [state] = useAsync(getSuggestion, []);
 
   const { loading, data: formData, error } = state;

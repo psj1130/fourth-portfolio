@@ -5,6 +5,19 @@
   justify-content: center;
   align-items: center;
 }
+.custom-menu-modal p {
+  font-family: 'TheJamsil2Bold';
+}
+.custom-menu-modal button {
+  width: 300px;
+  height: 50px;
+  background-color: #243c84;
+  color: #fff;
+  font-size: 25px;
+  font-family: 'Pretendard-Regular';
+  border: none;
+  cursor: pointer;
+}
 #menu-modal-container {
   position: fixed;
   width: 1000px;
@@ -44,8 +57,85 @@
   height: 200px;
   border: 1px solid #000;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.menu-add-image input {
+.menu-add-image label{
   width: 100%;
   height: 100%;
+}
+.menu-add-image label img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.menu-add-image input {
+  display: none;
+}
+
+.menu-add-input-wrapper {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-add-input-container {
+  width: 600px;
+}
+.menu-add-input-container  p {
+  margin: 5px ;
+}
+.menu-price input {
+  width: 30%;
+  padding: 15px 0 15px 15px;
+}
+.menu-name input{
+  width: 100%;
+  padding: 15px 0 15px 15px ;
+  font-size: 15px;
+}
+.menu-seq span {
+  font-size: 11px;
+  margin-top: 20px;
+}
+
+.menu-info textarea{
+  font-size: 15px;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+}
+
+.menu-selection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  /* justify-content: space-between; */
+}
+.menu-type select{
+  width: 100px;
+  height: 35px;
+}
+.menu-selection input {
+  height: 25px;
+  padding: 3px;
+}
+.menu-ingredient {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
+.menu-ingredient input {
+  height: 25px;
+  padding: 5px;
+  font-size: 15px;
+}
+.modal-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
 }
