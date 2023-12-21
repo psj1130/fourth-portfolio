@@ -34,11 +34,11 @@ function Brandnewsrouters() {
         <Route path='/notice' element={<Notice/>}/>
         <Route path='/event' element={<Event/>}/>
 
-        <Route path='/activitys/activity' element={<Activity/>}/>
-        <Route path='/activitys/campus' element={<Campus/>}/>
-        <Route path='/activitys/hygiene' element={<Hygiene/>}/>
-        <Route path='/activitys/accompany' element={<Accompany/>}/>
-        <Route path='/activitys/otheractivities' element={<Otheractivities/>}/>
+        <Route path='/activity' element={<Activity/>}/>
+        <Route path='/campus' element={<Campus/>}/>
+        <Route path='/hygiene' element={<Hygiene/>}/>
+        <Route path='/accompany' element={<Accompany/>}/>
+        <Route path='/otheractivities' element={<Otheractivities/>}/>
 
         {/* 상세페이지 id 라우트 */}
         <Route path='notice/:id' element={<Noticedetail />} />

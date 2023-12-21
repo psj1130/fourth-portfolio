@@ -106,18 +106,18 @@ function Header() {
               <li className="nav_menu">
                 <a href="/card/affiliatecard" className="nav_a"><span>상품권·제휴카드</span></a>
                 <ul>
-                  <li><a href="#none">제휴카드(하나·신한)</a></li>
-                  <li><a href="#none">기프트카드</a></li>
-                  <li><a href="#none">모바일상품권</a></li>
-                  <li><a href="#none">단체·기업 구매</a></li>
+                  <li><a href="/card/affiliatecard">제휴카드(하나·신한)</a></li>
+                  <li><a href="/card/giftcardrouters/">기프트카드</a></li>
+                  <li><a href="https://brand.naver.com/ediyagift">모바일상품권</a></li>
+                  <li><a href="/card/giftbuy">단체·기업 구매</a></li>
                 </ul>
               </li>
               <li className="nav_menu">
-                <a href="/brandnews" className="nav_a"><span>브랜드 소식</span></a>
+                <a href="/brandnews/notice" className="nav_a"><span>브랜드 소식</span></a>
                 <ul>
-                  <li><a href="brandnews/brandnewsrouters/notice">공지사항</a></li>
+                  <li><a href="/brandnews/notice">공지사항</a></li>
                   <li><a href="/brandnews/event">이벤트 안내</a></li>
-                  <li><a href="/brandnews/activity">사회공헌 활동</a></li>
+                  <li><a href="/brandnews/activity/">사회공헌 활동</a></li>
                 </ul>
               </li>
               <li className="nav_menu">
