@@ -17,6 +17,10 @@ import Buym from "./seller/buym";
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
+import Menu_main from './menu_main/menu_main';
+import Drink from "./menu_main/drink/drink";
+import Food from "./menu_main/food/food";
+import MD from "./menu_main/md/md";
 
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
@@ -41,6 +45,10 @@ function App() {
           {/* 원기 */}
           <Route path='/beans' element={<Beans/>}/>
           <Route path='/quality' element={<Quality/>}/>
+          <Route path='/menu_main' element={<Menu_main/>}/>
+          <Route path='/product/drink' element={<Drink/>}/>
+          <Route path='/product/food' element={<Food/>}/>
+          <Route path='/product/md' element={<MD/>}/>
 
           {/* 동명 */}
           <Route path='/dp/*' element={<DistributionProducts />}/>
@@ -53,7 +61,7 @@ function App() {
           <Route path='/seller/:id' element={<Seller/>}/>
         </Routes>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

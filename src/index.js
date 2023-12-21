@@ -14,7 +14,7 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path='/*' element={<App/>}/>
-          <Route path='/administarator' element={<AdminPage/>}/>
+          {/* <Route path='/administarator' element={<AdminPage/>}/> */}
           <Route path='/members/*' element={<MembersPage/>}/>
         </Routes>
       </BrowserRouter>
