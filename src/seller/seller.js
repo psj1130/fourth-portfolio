@@ -16,7 +16,7 @@ async function getseller(id) {
 
 function DT1(props) {
   const [isOpen, setIsOpen] = useState(false);
-  const user = props.rdata.userResult;
+  const user = props.rdata.user;
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -49,9 +49,9 @@ function DT1(props) {
 function DT2(props) {
   const [isOpen, setIsOpen] = useState(false);
  
-  const menu = props.rdata.menuResult;
+  const menu = props.rdata.menu;
   
-  const imgurl = props.rdata.menuResult.img_url.split(',');
+  const imgurl = null
   const amount1 = props.value.amount;
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -67,7 +67,7 @@ function DT2(props) {
         <h3 id="sellerbor1" onClick={handleToggle}>구매상품</h3>
           <div id="sellerdt1">
             <div>
-              <img src={imgurl[0]} id="sellerimg"></img>
+              <img src={imgurl} id="sellerimg"></img>
             </div>
               <div >
                 <h2 id="sellerp1">{menu.name}</h2>
@@ -129,7 +129,7 @@ function Info(props){
   const changepoint =(e)=>{
     const inputValue = e.target.value.replace(/[^0-9]/g, '') && e.target.value.replace(/^0+/, '');
    props.setpoint1(inputValue); 
-   
+   const user = props.rdata.user;
    if( e.target.value>user.point || e.target.value>parseInt(order)){
     // alert('보유 포인트 이상은 사용불가능합니다.');
     e.target.value="";

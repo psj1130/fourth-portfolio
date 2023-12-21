@@ -135,9 +135,9 @@ function Buymenu(props) {
               }
               id="buybutton"
             >
-              <button id="buybutton">
-                <b>구매하기</b>
-              </button>
+            <button id="buybutton">
+              <b>구매하기</b>
+            </button>
             </Link>
             <div>
               <button id="buytok">톡톡문의</button>
@@ -145,14 +145,14 @@ function Buymenu(props) {
             </div>
           </div>
         </td>
-      </tr>
-      <tr>
-        <td id="buytabletd1_1">
-          리뷰 수<span>{review.score}</span>
-          <span>사용자 총 평점</span>
-          <span>{review.score / review.id}</span>
-        </td>
-      </tr>
+      </tr>   
+          <tr>
+            <td id="buytabletd1_1">
+            리뷰 수<span>{review.score}</span>
+            <span>사용자 총 평점</span>
+            <span>{review.score/review.id}</span>
+          </td>
+        </tr>
     </table>
   );
 }
@@ -193,36 +193,30 @@ function Photo(props) {
   }
   return (
     <div>
-      <p id="photop1">
-        <b>포토/동영상</b>
-
-        <span>전체보기</span>
-      </p>
-      <div>
-        <div id="photogrid">
-          {review.filter((_, index) => index < 2).map((a) => {
-            return (
-              <div key={a.id} id="photogrid1">
-                <div>
+    <p id="photop1"><b>포토/동영상</b>
+    <span>전체보기</span></p>
+      <div id="photogrid">
+        {review.filter((_, index) => index < 2).map((a) => {
+          return (
+          <div key={a.id} id="photogrid1">
+             <div>
                 <div>
                   <div className="star-rating">{renderStars()} {rating}</div> 
                 </div>
-                  <p>
+                <p>
                     {a.user.name}*
                     <span style={{ fontSize: "10px" }}>{a.createAt}</span>
                   </p>
-                  <p>{a.body}</p>
-                </div>
-                <div>
-                  <img id="reviewimg" src={a.img_url} alt="빈칸" />
-                </div>
-              </div>
-            );
-          })}
+                <p>{a.body}</p>
+            </div>
+              <div> 
+                <img id="reviewimg" src={a.img_url} alt="빈칸"/></div>
+            </div>  
+          )
+        })}
         </div>
-      </div>
-    </div>
-  );
+      </div> 
+    )
 }
 
 function Buy() {
