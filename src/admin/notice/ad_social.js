@@ -38,13 +38,13 @@ export default function Ad_social() {
     }, [isOpen]);
 
   //데이터 전체 조회부분
-  async function getSuggestion() {
+  async function getSocial() {
     const res = await axios.get(`${API_URL}/social`);
     console.log(res);
     return res.data;
   };
 
-  const [state] = useAsync(getSuggestion, []);
+  const [state] = useAsync(getSocial, []);
 
   const { loading, data: formData, error } = state;
 

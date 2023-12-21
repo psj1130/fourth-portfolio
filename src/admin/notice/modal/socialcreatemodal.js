@@ -20,6 +20,7 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     //name과 value를 추출함
+    console.log(name, value);
     setFormData({
       ...formData,
       //기존 상태를 변경하지않고 새로운 객체를 생성하기 위해서 사용
@@ -32,6 +33,7 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
+    console.log(file);
     setFormData({
       ...formData,
       img_url: file,
@@ -41,13 +43,11 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const soclaldata = new FormData();
-    soclaldata.append('img_url', formData.img_url);
+    console.log('FormData:', formData);
 
-    axios.post(`${API_URL}/social/add`, soclaldata)
+    axios.post(`${API_URL}/social/add`, formData)
     .then(res => {
-      console.log(res.status);
-      window.alert("게시물 등록 하시겠습니까?");
+      console.log('보낸데이터', res.status);
       setModalOpen(false);
     }).catch(err => {
       console.error(err);

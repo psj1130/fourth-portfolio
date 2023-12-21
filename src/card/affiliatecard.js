@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import './affiliatecard.css'
 import Hanacard from "./hanacard";
 import Shinhancard from "./sinhancard";
@@ -27,12 +27,12 @@ function Affiliatecard() {
               <div id='affiliatecard-cardlist-e'>
                   <ul id='affiliatecard-cardselect-e'>
                       <p
-                      onClick={() => setSelectcard} 
+                      onClick={() => setSelectcard('Hana')} 
                       className='card-list-e'>
                         하나카드
                       </p>
                       <p 
-                      onClick={() => setSelectcard} 
+                      onClick={() => setSelectcard('Shinhan')} 
                       className='card-list-e'>
                         신한카드
                       </p>
