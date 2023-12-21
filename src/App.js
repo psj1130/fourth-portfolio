@@ -61,7 +61,7 @@ function App() {
           <Route path="/seller/success" element={<Success/>}/>
         </Routes>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

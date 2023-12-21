@@ -6,7 +6,6 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
 import PerosonOutlineIcon from '@mui/icons-material/PersonOutline'
 import StoreFrontIceon from '@mui/icons-material/Storefront'
-import { Link } from "react-router-dom";
 
 //공지관련 아이콘
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';

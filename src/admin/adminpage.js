@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 import Ad_suggestion from './ad_suggestion';
-import Ad_menu from './ad_menu';
+import Ad_menu from './menu/ad_menu.js';
 import Ad_user from './ad_user';
 import Sidebar from './include/sidebar';
 import { getCookie } from '../customer/cookies';
@@ -44,9 +44,8 @@ function AdminPage() {
         </div>
       </div>
     </div>
-  </div>
     : navigate('/administrator/login')
   )
 }
 
-// export default AdminPage;
+export default AdminPage;
