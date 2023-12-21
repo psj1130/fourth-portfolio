@@ -44,7 +44,6 @@ function AdminPage() {
         </div>
       </div>
     </div>
-  </div>
     : navigate('/administrator/login')
   )
 }
