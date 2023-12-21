@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { IoSearch } from "react-icons/io5";
 
 async function getdrink() {
-  const res = await axios.get(`${API_URL}/product/drink`);
+  const res = await axios.get(`${API_URL}/menu/drink`);
   console.log(res);
   return res.data;
 }
