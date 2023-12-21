@@ -38,7 +38,7 @@ function App() {
 
           {/* 유준 */}
           <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
-          <Route path='/card/giftcardrouters/*' element={<Giftcardrouters/>}/>
+          <Route path='/card/giftcard/*' element={<Giftcardrouters/>}/>
           <Route path='/brandnews/*' element={<Brandnewsrouters/>}/>
 
           {/* 원기 */}
