@@ -5,24 +5,25 @@ import { getCookie } from "../customer/cookies";
 import React from "react";
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react";
 import MenuList from "./menulist";
 import Contents from "./contents";
 import styled from "styled-components";
+import Star from "./star";
 
-const cookie = getCookie('loginCookie');
+const cookie = getCookie("loginCookie");
 const ContentDiv = styled.div`
   width: 1020px;
-  display:flex;
+  display: flex;
   flex-direction: column-reverse;
-  
 `;
+
+
 async function getBuy(id) {
   const res = await axios.get(`${API_URL}/order/menu/${id}`);
   console.log(res);
   return res.data;
 }
-
 
 function Buymenu(props) {
   const [count, setCount] = useState(0);
@@ -43,21 +44,21 @@ function Buymenu(props) {
   const n4 = price * 0.04;
   const n5 = price * 0.05;
   const n2 = price * 0.02;
-  const sumn = n4+n5+n2;
-  const imgurl = props.rdata.menuResult.img_url.split(',');
+  const sumn = n4 + n5 + n2;
+  const imgurl = props.rdata.menuResult.img_url.split(",");
   console.log(review);
-  
+
   return (
     <table id="buytable" border={1}>
       <tr id="borderbuy">
         <td id="buytabletd1">
-          <img id="buyimg"src={imgurl[1]} />
+          <img id="buyimg" src={imgurl[1]} />
         </td>
         <td rowSpan={2} id="buytabletd2">
           <div id="buydiv">
             <h1 id="buyh1">{menu.name}</h1>
             <p id="buyp1">
-              <span>{price.toLocaleString('ko-KR')}원</span>
+              <span>{price.toLocaleString("ko-KR")}원</span>
             </p>
             <div id="buybox1">
               <p id="buyp2">
@@ -67,9 +68,9 @@ function Buymenu(props) {
                 <p id="buyp1-3">
                   <b>적립 포인트</b>
                 </p>
-                <p id="buyspan"> {(n1.toLocaleString('ko-KR'))}원</p>
+                <p id="buyspan"> {n1.toLocaleString("ko-KR")}원</p>
               </div>
-              <div id="buybox2">  
+              <div id="buybox2">
                 <div id="buyp2-5">
                   <p id="buyred1">
                     <b>
@@ -77,20 +78,20 @@ function Buymenu(props) {
                     </b>
                   </p>
                   <p id="buymar2">
-                    <b>+ 최대{(sumn.toLocaleString('ko-KR'))}원</b>
+                    <b>+ 최대{sumn.toLocaleString("ko-KR")}원</b>
                   </p>
                 </div>
                 <div id="buyp2-5">
                   <p id="buyp5">이디야 멤버쉽 최대5%적립 {">"}</p>
-                  <p id="buymar1">{(n4.toLocaleString('ko-KR'))}원</p>
+                  <p id="buymar1">{n4.toLocaleString("ko-KR")}원</p>
                 </div>
                 <div id="buyp2-5">
                   <p id="buyp5">이디야 현대카드로 결제 시{">"}</p>
-                  <p id="buymar1">{(n5.toLocaleString('ko-KR'))}원</p>
+                  <p id="buymar1">{n5.toLocaleString("ko-KR")}원</p>
                 </div>
                 <div id="buyp2-5">
                   <p id="buyp5">이디야 머니로 결제 시 {">"}</p>
-                  <p id="buymar1">{(n2.toLocaleString('ko-KR'))}원</p>
+                  <p id="buymar1">{n2.toLocaleString("ko-KR")}원</p>
                 </div>
               </div>
             </div>
@@ -152,13 +153,10 @@ function Buymenu(props) {
             <span>{review.score/review.id}</span>
           </td>
         </tr>
-
     </table>
   );
-  
 }
-function Photo(props){
-  
+function Photo(props) {
   const review = props.rdata.reviewResult;
   const [rating, setRating] = useState(review[1].score); // 가저온 점수를 저장할 state
 
@@ -221,14 +219,11 @@ function Photo(props){
     )
 }
 
-
-
 function Buy() {
-  
   const { id } = useParams();
   const [state] = useAsync(() => getBuy(id), [id]);
-  const { loading, data:rdata, error } = state;
-  const cookie = getCookie('loginCookie');
+  const { loading, data: rdata, error } = state;
+  const cookie = getCookie("loginCookie");
 
   if (loading) return <div>로딩중입니다.....</div>;
   if (error) return <div>에러가 발생했습니다.</div>;
@@ -238,11 +233,10 @@ function Buy() {
   return (
     <div className="buy">
       <Buymenu rdata={rdata} />
-      <Photo rdata={rdata}/>
+      <Photo rdata={rdata} />
       <ContentDiv>
-       
-        <Contents rdata={rdata}/>
-        <MenuList/>
+        <Contents rdata={rdata} />
+        <MenuList />
       </ContentDiv>
     </div>
   );
