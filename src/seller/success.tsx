@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './success.css'
-// import { getCookie } from "../loginpage/cookies";
+import { getCookie } from "../customer/cookies";
 
 function ReservationSuccess() {
-  // const cookie = getCookie('loginCookie');
+  const cookie = getCookie('loginCookie');
   return(
     <div id="payment-result-wrapper">
       <div id="payment-result-container">

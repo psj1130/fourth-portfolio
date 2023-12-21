@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import useAsync from '../customHook/useAsync';
@@ -6,6 +7,7 @@ import axios from 'axios';
 import { API_URL } from '../config/serverurl';
 import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 import { Link } from 'react-router-dom';
+import MenuModal from './component/menumodal';
 
 
 
@@ -155,6 +157,7 @@ const columns = [
 
 export default function Ad_menu() {
   const [state] = useAsync(getMenu, []);
+  const [isOpen, setOpen] = useState(false);
 
   const { loading, data: formData, error } = state;
 
@@ -181,6 +184,11 @@ export default function Ad_menu() {
             disableRowSelectionOnClick
           />
         </Box>
+        <button type='click' onClick={() => {
+          setOpen(true);
+        }}>새 메뉴</button>
+        {isOpen ? <MenuModal
+                   isOpen={setOpen} /> : null}
       </div>
     </div>
   );

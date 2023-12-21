@@ -1,7 +1,7 @@
 import "./buy.css";
 import { Link, useParams } from "react-router-dom";
 import { API_URL } from "../config/contansts";
-// import { getCookie } from "../loginpage/cookies";
+import { getCookie } from "../customer/cookies";
 import React from "react";
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
@@ -10,7 +10,7 @@ import MenuList from "./menulist";
 import Contents from "./contents";
 import styled from "styled-components";
 
-// const cookie = getCookie('loginCookie');
+const cookie = getCookie('loginCookie');
 const ContentDiv = styled.div`
   width: 1020px;
   display:flex;
@@ -122,8 +122,8 @@ function Buymenu(props) {
               총 상품 금액 <span id="buyright">총 수량{count}개</span>{" "}
               <span id="buyright1">{(price * count).toLocaleString('ko-KR')} 원</span>
             </p>
-            {/* <Link to={cookie ? `/menu/${cookie}?id=${props.rdata.menuResult.id}&o_count=${count}&o_amount=${count*price}` : '/login'}> */}
-            <Link to={`/seller/${props.rdata.menuResult.id}?o_count=${count}&o_amount=${count*price}`} id="buybutton" >
+            <Link to={cookie ? `/seller/${cookie}?id=${props.rdata.menuResult.id}&o_count=${count}&o_amount=${count*price}` : '/login'} id="buybutton">
+            
             <button id="buybutton">
               <b>구매하기</b>
             </button>
@@ -190,7 +190,7 @@ function Buy() {
   const { id } = useParams();
   const [state] = useAsync(() => getBuy(id), [id]);
   const { loading, data:rdata, error } = state;
-  // const cookie = getCookie('loginCookie');
+  const cookie = getCookie('loginCookie');
 
   if (loading) return <div>로딩중입니다.....</div>;
   if (error) return <div>에러가 발생했습니다.</div>;
