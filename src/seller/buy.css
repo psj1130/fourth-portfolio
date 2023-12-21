@@ -215,7 +215,7 @@ font-size: 25px;
   display: grid;
   grid-template-columns: 310px 200px;
   grid-template-rows: 130px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 #photop1{
   font-size: 20px;

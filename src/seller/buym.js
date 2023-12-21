@@ -61,7 +61,7 @@ function Buymenu(props) {
             </p>
             <div id="buybox1">
               <p id="buyp2">
-                <b>{user.name} 님만을 위한 혜택</b>
+                <b>{cookie} 님만을 위한 혜택</b>
               </p>
               <div id="buyp2-4">
                 <p id="buyp1-3">
@@ -120,10 +120,20 @@ function Buymenu(props) {
             <p id="buyp6">
               {" "}
               총 상품 금액 <span id="buyright">총 수량{count}개</span>{" "}
-              <span id="buyright1">{(price * count).toLocaleString('ko-KR')} 원</span>
+              <span id="buyright1">
+                {(price * count).toLocaleString("ko-KR")} 원
+              </span>
             </p>
-            <Link to={cookie ? `/seller/${cookie}?id=${props.rdata.menuResult.id}&o_count=${count}&o_amount=${count*price}` : '/login'} id="buybutton">
-            
+            <Link
+              to={
+                cookie
+                  ? `/seller/${cookie}?id=${
+                      props.rdata.menuResult.id
+                    }&o_count=${count}&o_amount=${count * price}`
+                  : "/login"
+              }
+              id="buybutton"
+            >
             <button id="buybutton">
               <b>구매하기</b>
             </button>
@@ -134,19 +144,15 @@ function Buymenu(props) {
             </div>
           </div>
         </td>
-      </tr>
-        {review.map((a)=>{
-          return(
+      </tr>   
           <tr>
             <td id="buytabletd1_1">
-            리뷰 수<span>{a.score}</span>
+            리뷰 수<span>{review.score}</span>
             <span>사용자 총 평점</span>
-            <span>{a.score/a.id}</span>
+            <span>{review.score/review.id}</span>
           </td>
         </tr>
-          )
-        })}
-      
+
     </table>
   );
   
@@ -154,21 +160,55 @@ function Buymenu(props) {
 function Photo(props){
   
   const review = props.rdata.reviewResult;
-  console.log(review.length);
-  return(
+  const [rating, setRating] = useState(review[1].score); // 가저온 점수를 저장할 state
+
+  // 데이터베이스에서 값을 가져와서 rating state를 업데이트하는 함수
+  const fetchRatingFromDatabase = () => {
+    // 여기에서 데이터베이스에서 값을 가져오는 로직을 구현
+    // 가져온 값을 setRating을 사용하여 rating state에 업데이트
+    const fetchedRating = props.rdata.reviewResult[0].score;
+    setRating(fetchedRating);
+  };
+
+  // 컴포넌트가 마운트될 때 데이터베이스에서 값을 가져옴
+  useEffect(() => {
+    fetchRatingFromDatabase();
+  }, []); // 빈 배열을 전달하여 최초 한 번만 실행
+
+  // 별점을 보여주는 UI를 생성하는 함수
+  const renderStars = () => {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span
+          key={i}
+          className={i <= rating ? 'star filled' : 'star'}
+          // 여기에서 클릭 이벤트를 추가하여 사용자가 별을 클릭할 때 rating을 업데이트할 수 있도록 구현 가능
+        >
+          &#9733; {/* 별 모양의 유니코드 */}
+        </span>
+      );
+    }
+
+    return stars;
+  }
+  return (
     <div>
     <p id="photop1"><b>포토/동영상</b>
-     
     <span>전체보기</span></p>
       <div id="photogrid">
-        <div >
-        
-        {review.map((a) => {
-          return(
+        {review.filter((_, index) => index < 2).map((a) => {
+          return (
           <div key={a.id} id="photogrid1">
              <div>
-                <p>{a.score}</p>
-                <p>닉네임 5글자부터 *<span style={{fontSize:'10px'}}>{a.createdAt}</span></p>
+                <div>
+                  <div className="star-rating">{renderStars()} {rating}</div> 
+                </div>
+                <p>
+                    {a.user.name}*
+                    <span style={{ fontSize: "10px" }}>{a.createAt}</span>
+                  </p>
                 <p>{a.body}</p>
             </div>
               <div> 
@@ -177,10 +217,8 @@ function Photo(props){
           )
         })}
         </div>
-
-      </div>
-    </div>
-  )
+      </div> 
+    )
 }
 
 
