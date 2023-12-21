@@ -129,7 +129,7 @@ function Info(props){
   const changepoint =(e)=>{
     const inputValue = e.target.value.replace(/[^0-9]/g, '') && e.target.value.replace(/^0+/, '');
    props.setpoint1(inputValue); 
-   const user = props.rdata.user;
+   const user = props.rdata.userResult;
    if( e.target.value>user.point || e.target.value>parseInt(order)){
     // alert('보유 포인트 이상은 사용불가능합니다.');
     e.target.value="";
@@ -186,6 +186,7 @@ function Info2(props){
   )
 }
 function Seller(props) {
+  const {userid} = useParams();
   const [point1,setpoint1] = useState('0')
   const [searchParams, setSearchParams] = useSearchParams();
   const id = searchParams.get('id');

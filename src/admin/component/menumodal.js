@@ -37,6 +37,8 @@ const MenuModal = ({isOpen}) => {
 
     if(e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0])
+
+      
     }
   
     reader.onloadend = () => {

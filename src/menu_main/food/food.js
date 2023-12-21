@@ -94,8 +94,8 @@ function Food(props) {
     slidesToShow: 3,
     slidesToScroll: 1,
     waitForAnimate: false,
-    prevArrow: <CustomPrevButton />,
-    nextArrow: <CustomNextButton />,
+    // prevArrow: <CustomPrevButton />,
+    // nextArrow: <CustomNextButton />,
   };
 
   return (

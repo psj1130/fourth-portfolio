@@ -23,7 +23,7 @@ function MainPage() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // arrows: true,
+    // arrows: false,
     draggable: false,
     appendDots: (dots) => (
       <div
@@ -85,7 +85,7 @@ function MainPage() {
             <h2>ALWAYS BESIDE YOU, <em>EDIYA COFFEE</em></h2>
             <h3>늘 당신 곁에, 이디야 커피의 다양한 메뉴를 맛보세요.</h3>
             <div className='main-page-button'>
-              <a href='/'>메뉴보기</a>
+              <a href='/menu_main'>메뉴보기</a>
             </div>
           </div>
       </section>
@@ -122,7 +122,7 @@ function MainPage() {
           <div id='bottom-notice'>
             <div id='news-container'>
               <h2>이디야 소식</h2>
-              <a href='/'>more <i className='xi-angle-right-min'></i></a>
+              <a href='/brandnews'>more <i className='xi-angle-right-min'></i></a>
             </div>
             <ul>
               <li><a href='/'>2024 다이어리 판매 매장 안내</a><p>2023.11.06</p></li>
