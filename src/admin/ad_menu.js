@@ -187,8 +187,7 @@ export default function Ad_menu() {
         <button type='click' onClick={() => {
           setOpen(true);
         }}>새 메뉴</button>
-        {isOpen ? <MenuModal
-                   isOpen={setOpen} /> : null}
+        {isOpen ? <MenuModal isOpen={setOpen} /> : null}
       </div>
     </div>
   );

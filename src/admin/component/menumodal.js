@@ -43,12 +43,26 @@ const MenuModal = ({isOpen}) => {
           }}></i></div>
           <h1>메뉴 추가하기</h1>
         </div>
-        <div className='menu-add-container'>
-          <div className='menu-add-image' >
-            <input type='file' onChange={(e) => {
-              console.log(e.target.files[0]);
-              setImage(e.target.files);
-            }}></input>
+        <div className='menu-add-wrapper'>
+          <div className='menu-add-container'>
+            <div className='menu-add-image' >
+              <input type='file' onChange={(e) => {
+                console.log(e.target.files[0]);
+                setImage(e.target.files);
+              }}></input>
+            </div>
+            <div className='menu-add-image' >
+              <input type='file' onChange={(e) => {
+                console.log(e.target.files[0]);
+                setImage(e.target.files);
+              }}></input>
+            </div>
+            <div className='menu-add-image' >
+              <input type='file' onChange={(e) => {
+                console.log(e.target.files[0]);
+                setImage(e.target.files);
+              }}></input>
+            </div>
           </div>
         </div>
       </div>
