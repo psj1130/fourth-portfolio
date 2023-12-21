@@ -6,20 +6,20 @@ import axios from 'axios';
 import { API_URL } from '../config/serverurl';
 
 
-async function deleteSuggestion(id) {
-  try {
-    const res = await axios.delete(`${API_URL}/suggestion/${id}`);
-    console.log(res);
-  } catch (error) {
-    console.error('Error deleting suggestion:', error);
-  }
-}
+// async function deleteSuggestion(id) {
+//   try {
+//     const res = await axios.delete(`${API_URL}/suggestion/${id}`);
+//     console.log(res);
+//   } catch (error) {
+//     console.error('Error deleting suggestion:', error);
+//   }
+// }
 
-async function getSuggestion() {
-  const res = await axios.get(`${API_URL}/suggestion`);
-  console.log(res);
-  return res.data;
-}
+// async function getSuggestion() {
+//   const res = await axios.get(`${API_URL}/suggestion`);
+//   console.log(res);
+//   return res.data;
+// }
 
 
 const columns = [
