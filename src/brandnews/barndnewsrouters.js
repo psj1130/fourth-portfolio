@@ -31,7 +31,7 @@ function Brandnewsrouters() {
     <div>
       <Routes>
           {/* 페이지 라우트 */}
-        <Route path='/notice' element={<Notice/>}/>
+        <Route path='/' element={<Notice/>}/>
         <Route path='/event' element={<Event/>}/>
 
         <Route path='/activitys/activity' element={<Activity/>}/>

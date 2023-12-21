@@ -13,7 +13,7 @@ function Footer() {
         <li><a>점주의 방</a></li>
       </ul>
       <div className="footer-logo">
-        <img src="images/logo/bottom_logo.gif"></img>
+        <img src={process.env.PUBLIC_URL + "/images/logo/bottom_logo.gif"}></img>
       </div>
       <div className="footer-text">
         <span>서울특별시 강남구 논현로 636 이디야빌딩(서울특별시 강남구 논현동 221-17)</span>

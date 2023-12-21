@@ -52,7 +52,7 @@ function Buymenu(props) {
     <table id="buytable" border={1}>
       <tr id="borderbuy">
         <td id="buytabletd1">
-          <img id="buyimg" src={imgurl[1]} />
+          <img id="buyimg" src={imgurl[0]} />
         </td>
         <td rowSpan={2} id="buytabletd2">
           <div id="buydiv">
@@ -158,7 +158,7 @@ function Buymenu(props) {
 }
 function Photo(props) {
   const review = props.rdata.reviewResult;
-  const [rating, setRating] = useState(review[1].score); // 가저온 점수를 저장할 state
+  const [rating, setRating] = useState(review[0].score); // 가저온 점수를 저장할 state
 
   // 데이터베이스에서 값을 가져와서 rating state를 업데이트하는 함수
   const fetchRatingFromDatabase = () => {
