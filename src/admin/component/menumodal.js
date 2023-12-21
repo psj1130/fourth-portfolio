@@ -38,6 +38,7 @@ const MenuModal = ({isOpen}) => {
     if(e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0])
       setImage1(e.target.files[0]);
+      // console.log(img1)
     }
   
     reader.onloadend = () => {
@@ -184,37 +185,43 @@ const MenuModal = ({isOpen}) => {
         </div>
         <div className='modal-button-container'>
           <button type='click' onClick={async () => {
-            await axios.post(`${API_URL}/menu/upload/image`, {imgFile: img1})
+            const upload1 = document.getElementById('img1').files[0];
+            const upload2 = document.getElementById('img2').files[0];
+            const formData = new FormData()
+            formData.append('imageFile', upload1);
+            formData.append('imageFile', upload2);
+            await axios.post(`${API_URL}/menu/upload/images`, formData)
               .then(res => {
-                console.log(res);
+                console.log(res.data.image_path);
+                const data = {
+                  type: type,
+                  code: code,
+                  seq: seq,
+                  name: name,
+                  eng_name: eng,
+                  price: price,
+                  info: textValue,
+                  img_url: res.data.image_path,
+                  ingredient_cal: kcal,
+                  ingredient_sugar: sugar,
+                  ingredient_protein: protein,
+                  ingredient_sf: sf,
+                  ingredient_na: na,
+                  ingredient_caffein: caffein
+                }
+                
+                axios.post(`${API_URL}/menu/add`, data)
+                  .then(() => {
+                    alert('추가되었습니다 !');
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  })
               })
               .catch(err => {
                 console.log(err);
               })
-            const data = {
-              type: type,
-              code: code,
-              seq: seq,
-              name: name,
-              eng_name: eng,
-              price: price,
-              info: textValue,
-              img_url: img1 + ',' + img2,
-              ingredient_cal: kcal,
-              ingredient_sugar: sugar,
-              ingredient_protein: protein,
-              ingredient_sf: sf,
-              ingredient_na: na,
-              ingredient_caffein: caffein
-            }
             
-            await axios.post(`${API_URL}/menu/add`, data)
-              .then(() => {
-                alert('추가되었습니다 !');
-              })
-              .catch((err) => {
-                console.log(err);
-              })
           }}>추가하기</button>
         </div>
       </div>
