@@ -14,7 +14,7 @@ function Giftcardrouters() {
       <Routes>
         <Route path='/' element={<Giftcard/>}/>
         <Route path='/cardintroduce' element={<Cardintroduce/>}/>
-        <Route path='check' element={<Check/>}/>
+        <Route path='/check' element={<Check/>}/>
         <Route path='/declaration' element={<Declaration/>}/>
         <Route path='/question/' element={<Question/>}/>
         

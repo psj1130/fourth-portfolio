@@ -9,7 +9,10 @@ import Sell from './ad_sell.jsx';
 import './adminpage.css';
 
 // 공지관련
-import Noticerouter from './notice/noticerouter.js';
+import Ad_event from './notice/ad_event.js';
+import Ad_qna from './notice/ad_qna';
+import Ad_social from './notice/ad_social'
+import Ad_notice from './notice/ad_notice'
 
 function AdminPage() {
   document.title = "EDIYA COFFEE - 관리자 페이지";
@@ -34,8 +37,11 @@ function AdminPage() {
             <Route path='/suggestion' element={<Ad_suggestion/>}/>
             <Route path='/menu' element={<Ad_menu/>}/>
             <Route path='/user' element={<Ad_user/>}/>
-
-            <Route path='notice/*' element={<Noticerouter/>}/>
+            
+            <Route path='/qna' element={<Ad_qna/>}/>
+            <Route path='/social' element={<Ad_social/>}/>
+            <Route path='/event' element={<Ad_event/>}/>
+            <Route path='/notice' element={<Ad_notice/>}/>
           </Routes>
         </div>
       </div>

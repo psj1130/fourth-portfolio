@@ -14,12 +14,14 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
     body: '',
     img_url: null,
   });
+  //현재 formData는 객체 형식으로 요청이 가고있음
 
   const categories = ["메이트 희망기금", "캠퍼스 희망기금", "식수위생 캠퍼스", "이디야의 동행", "기타 활동"];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     //name과 value를 추출함
+    console.log(name, value);
     setFormData({
       ...formData,
       //기존 상태를 변경하지않고 새로운 객체를 생성하기 위해서 사용
@@ -31,23 +33,31 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
   };
 
   const handleFileChange = (e) => {
+    //변화 이벤트
     const file = e.target.files[0];
+    // 파일 입력(input type="file")에서 선택된 파일들을 나타내는 FileList 객체
+    // [0]을 사용하여 첫 번째 파일을 선택하고, 이를 file 변수에 할당
+    console.log(file);
+
+    const formData = new FormData();
+//FormData라는 빈 객체를 생성 키-값 쌍을 담을 컨테이너 역할
+    formData.append('img_url', file);
+//새로운 객체에 키, 값 쌍을 추가함
     setFormData({
       ...formData,
       img_url: file,
     });
+    //현재의 formData 상태를 복사하고, 그 중 img_url을 선택된 파일 객체로 업데이트함
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const soclaldata = new FormData();
-    soclaldata.append('img_url', formData.img_url);
+    console.log('FormData:', formData);
 
-    axios.post(`${API_URL}/social/add`, soclaldata)
+    axios.post(`${API_URL}/social/add`, formData)
     .then(res => {
-      console.log(res.status);
-      window.alert("게시물 등록 하시겠습니까?");
+      console.log('보낸데이터', res.status);
       setModalOpen(false);
     }).catch(err => {
       console.error(err);
