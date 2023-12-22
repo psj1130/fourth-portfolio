@@ -39,7 +39,7 @@ function Activity() {
       <div className="activity-detail-container">
         <div className="activity-guide-link">
           <span>HOME</span>
-          <span>사회공헌 활동</span>
+          <span>사회공헌활동</span>
           메이트 희망기금
         </div>
         <div className="activity-detail-title-container">
