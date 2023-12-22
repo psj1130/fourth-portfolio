@@ -99,8 +99,8 @@ function Header() {
               <li className="nav_menu">
                 <a href="/members" className="nav_a"><span>이디야멤버스</span></a>
                 <ul>
-                  <li><a href="#none">멤버십안내</a></li>
-                  <li><a href="#none">서비스안내</a></li>
+                  <li><a href="/members">멤버십안내</a></li>
+                  <li><a href="/members">서비스안내</a></li>
                 </ul>
               </li>
               <li className="nav_menu">

@@ -111,15 +111,35 @@ const columns = [
   },
   {
     field: 'createdAt',
-    headerName: '출시 날짜',
-    width: 120,
-    editable: false,
+    headerName: '등록 날짜',
+    width: 200,
+    renderCell: (params) => {
+      return(
+        <p>{new Date(params.row.createdAt).toLocaleString('ko-KR', {
+          year: '2-digit',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })}</p>
+      )
+    }
   },
   {
-    field: 'modified_at',
-    headerName: '수정 날짜',
-    width: 120,
-    editable: true,
+    field: 'modifiedAt',
+    headerName: '출시 날짜',
+    width: 200,
+    renderCell: (params) => {
+      return(
+        <p>{new Date(params.row.modified_at).toLocaleString('ko-KR', {
+          year: '2-digit',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })}</p>
+      )
+    }
   },
   {
     field: 'action',
@@ -129,22 +149,22 @@ const columns = [
       return (
         <>
           <Link to={'/menu/' + params.row.id}>
-            <button className='menuListEdit'>수정</button>
+            <button className='menuListEdit' tabIndex={-1}>수정</button>
           </Link>
           <DeleteOutLine className='menuListDelete' onClick={async () => {
             let yn = window.confirm('정말 삭제하시겠습니까?');
               if(yn) {
-                console.log(params.id);
-              await axios.delete(`${API_URL}/menu/delete/${params.id}`)
-              .then(res => {
-                console.log(res.data);
-                window.location.reload();
-              })
-              .catch(err => {
-                console.log(err);
-              })
-            }
-          }}>
+                console.log(params.row.id);
+                await axios.delete(`${API_URL}/menu/delete/${params.row.id}`)
+                .then(res => {
+                  console.log(res.data);
+                  window.location.replace('/administrator/menu');
+                })
+                .catch(err => {
+                  console.log(err);
+                })
+              }
+            }}>
           </DeleteOutLine>
         </>
       );
@@ -164,6 +184,9 @@ export default function Ad_menu() {
 
   return (
     <div id='ad_menu_container'>
+      <button className='add-button' tabIndex={-1} type='click' onClick={() => {
+          setOpen(true);
+        }}>새 메뉴</button>
       <div id='ad_menu_main'>
         <Box>
           <DataGrid
@@ -172,7 +195,7 @@ export default function Ad_menu() {
             initialState={{
               pagination: {
                 paginationModel: {
-                  pageSize: 10,
+                  pageSize: 11,
                 },
               },
             }}
@@ -181,9 +204,7 @@ export default function Ad_menu() {
             disableRowSelectionOnClick
           />
         </Box>
-        <button type='click' onClick={() => {
-          setOpen(true);
-        }}>새 메뉴</button>
+        
         {isOpen ? <MenuModal isOpen={setOpen} /> : null}
       </div>
     </div>

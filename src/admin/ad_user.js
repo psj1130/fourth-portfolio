@@ -18,6 +18,12 @@ async function getUser() {
 
 const columns = [
   {
+    field: 'name',
+    headerName: '이름',
+    width: 100,
+    editable: false,
+  },
+  {
     field: 'id',
     headerName: '아이디',
     width: 100,
@@ -122,7 +128,7 @@ export default function Ad_user() {
             initialState={{
               pagination: {
                 paginationModel: {
-                  pageSize: 10,
+                  pageSize: 11  ,
                 },
               },
             }}
