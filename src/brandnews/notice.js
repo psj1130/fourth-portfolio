@@ -62,7 +62,7 @@ function Notice() {
                   className='notice-serch-input'
                   type="text" />
                     <button className='notice-serch-result'>
-                      <img src="/images/cardlist/icon_search.gif" alt='img'/>
+                      <img src={process.env.PUBLIC_URL + "/images/cardlist/icon_search.gif"}alt='img'/>
                     </button>
                 </div>
               </div>

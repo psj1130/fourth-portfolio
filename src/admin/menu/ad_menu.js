@@ -2,22 +2,18 @@ import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import useAsync from '../customHook/useAsync';
+import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../../config/serverurl';
 import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 import { Link } from 'react-router-dom';
-import MenuModal from './component/menumodal';
-
-
-
+import MenuModal from '../component/menumodal';
 
 async function getMenu() {
-  const res = await axios.get(`${API_URL}/product/menu`);
+  const res = await axios.get(`${API_URL}/admin/menu`);
   console.log(res);
   return res.data;
 }
-
 
 const columns = [
   {
@@ -61,10 +57,11 @@ const columns = [
     headerName: '이미지',
     width: 100,
     renderCell: (params) => {
-      console.log(params.row.img_url);
+      const image = params.row.img_url.split(',');
+      console.log(image[1]);
       return(
         <div>
-          <img className='menuImg' src={params.row.img_url} alt='' >
+          <img className='menuImg' src={image[0]} alt='' >
           </img>
         </div>
       )
@@ -187,8 +184,7 @@ export default function Ad_menu() {
         <button type='click' onClick={() => {
           setOpen(true);
         }}>새 메뉴</button>
-        {isOpen ? <MenuModal
-                   isOpen={setOpen} /> : null}
+        {isOpen ? <MenuModal isOpen={setOpen} /> : null}
       </div>
     </div>
   );

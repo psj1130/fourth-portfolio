@@ -43,7 +43,6 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
 //FormData라는 빈 객체를 생성 키-값 쌍을 담을 컨테이너 역할
     formData.append('img_url', file);
 //새로운 객체에 키, 값 쌍을 추가함
-
     setFormData({
       ...formData,
       img_url: file,

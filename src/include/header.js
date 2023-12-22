@@ -80,11 +80,11 @@ function Header() {
                 </ul>
               </li>
               <li className="nav_menu">
-                <a href="#none" className="nav_a"><span>메뉴</span></a>
+                <a href="/menu_main" className="nav_a"><span>메뉴</span></a>
                 <ul>
-                  <li><a href="#none">음료</a></li>
-                  <li><a href="#none">푸드</a></li>
-                  <li><a href="#none">MD</a></li>
+                  <li><a href="/product/drink">음료</a></li>
+                  <li><a href="/product/food">푸드</a></li>
+                  <li><a href="/product/md">MD</a></li>
                 </ul>
               </li>
               <li className="nav_menu">
