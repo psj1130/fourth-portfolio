@@ -18,7 +18,7 @@ async function getdrink() {
 const Drink_header = () => {
   return (
     <div id="drink_main_div1">
-      <div id="drink_back_img">
+      <div id="md_back_img">
         <div id="drink_textbox1">
           <div id="drink_textbox1_div1"><p>MD</p></div>
           <div id="drink_textbox1_div2"><p>Always Beside you, <b>EDIYA COFFEE</b></p></div>
@@ -26,7 +26,7 @@ const Drink_header = () => {
         <div id="drink_header_DFM">
           <a href="/product/drink" id="DFM_drink_style">음료</a>
           <a href="/product/food" id="DFM_drink_style">푸드</a>
-          <a href="/product/md" id="DFM_drink_style">MD</a>
+          <a href="/product/md" className="backwhite">MD</a>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@ function MD(props) {
   if (!pdata) return null;
 
   // ICED와 HOT 필터링된 데이터 가져오기
-
+  const sortedData = pdata.sort((a, b) => a.seq - b.seq);
   const CustomPrevButton = ({ onClick }) => (
     <button onClick={onClick} className="slick-prev"></button>
   );
@@ -94,7 +94,7 @@ function MD(props) {
           <div id="drink_main_container">
             <div className="hr-sect">추천 상품</div>
             <Slider {...settings} id='slick-slider'>
-              {pdata.map((a, index) => {
+              {sortedData.map((a, index) => {
                 const imga = a.img_url.split(',');
                 return (
                   <div id="drink_relative" key={a.id} style={{ margin: '0 10px' }}>
@@ -112,7 +112,7 @@ function MD(props) {
                       style={{ display: hiddenItems[index] ? "block" :"none"}}>
                       <div>
                         <div id="drink_name">
-                          <div id="name_kor1"><p><b>{a.name}</b></p></div>
+                          <div id="name_kor"><p><b>{a.name}</b></p></div>
                           <div id="name_eng"><p>{a.eng_name}</p></div>
                         </div>
                         <div id="drink_info" ><p>{a.info}</p></div>
@@ -123,7 +123,7 @@ function MD(props) {
               })}
             </Slider>
 
-            {pdata.slice(0, showMore1).map((a, index) => {
+            {sortedData.slice(0, showMore1).map((a, index) => {
               const imga = a.img_url.split(',');
               if (index < itemsPerPage || showMore1) {
                 return (
@@ -147,7 +147,7 @@ function MD(props) {
                       style={{ display: hiddenItems1[index] ? "block" :"none"}}>
                       <div>
                         <div id="drink_name1">
-                          <div id="name_kor"><p><b>{a.name}</b></p></div>
+                          <div id="name_kor1"><p><b>{a.name}</b></p></div>
                           <div id="name_eng"><p>{a.eng_name}</p></div>
                         </div>
                         <div id="drink_info1" ><p>{a.info}</p></div>
@@ -161,7 +161,7 @@ function MD(props) {
               <div id="show_drink_list_warrap">
                 {showMore1 < pdata.length && (
                 <button id="show_drink_list" onClick={toggleShowMore1}>
-                  {'더보기'}
+                  {'더보기  +'}
                 </button>
               )}
               </div>

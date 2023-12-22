@@ -24,7 +24,7 @@ const Drink_header = () => {
           <div id="drink_textbox1_div2"><p>Always Beside you, <b>EDIYA COFFEE</b></p></div>
         </div>
         <div id="drink_header_DFM">
-          <a href="/product/drink" id="DFM_drink_style">음료</a>
+          <a href="/product/drink" className="backwhite">음료</a>
           <a href="/product/food" id="DFM_drink_style">푸드</a>
           <a href="/product/md" id="DFM_drink_style">MD</a>
         </div>
@@ -42,6 +42,8 @@ function Drink(props) {
   const [showMore1, setShowMore1] = useState(8);
   const itemsPerPage = 8;
 
+
+  
   const switchHandler = (index,listNumber) => {
     if (listNumber === 1) {
       setHiddenItems((prevHiddenItems) => {
@@ -68,8 +70,10 @@ function Drink(props) {
   if (error) return <div>에러가 발생했습니다.</div>;
   if (!pdata) return null;
 
+  const sortedData = [...pdata].sort((a, b) => a.seq - b.seq);
+  
   // ICED와 HOT 필터링된 데이터 가져오기
-  const filteredData = pdata.filter((item) => {
+  const filteredData = sortedData.filter((item) => {
     const isIcedMatch = !icedChecked || item.name.includes('ICED');
     const isHotMatch = !hotChecked || item.name.includes('HOT');
     const isSearchMatch = item.name.toLowerCase().includes(searchText.toLowerCase());
@@ -83,6 +87,23 @@ function Drink(props) {
   const CustomNextButton = ({ onClick }) => (
     <button onClick={onClick} className="slick-next"></button>
   );
+
+  const handleIcedChange = () => {
+    setIcedChecked(!icedChecked);
+    // HOT 체크박스가 true일 때, ICED 체크박스를 변경할 때 false로 설정
+    if (hotChecked) {
+      setHotChecked(false);
+    }
+  };
+
+  // HOT 체크박스 변경 시
+  const handleHotChange = () => {
+    setHotChecked(!hotChecked);
+    // ICED 체크박스가 true일 때, HOT 체크박스를 변경할 때 false로 설정
+    if (icedChecked) {
+      setIcedChecked(false);
+    }
+  };
 
   const settings = {
     arrows: true,
@@ -103,7 +124,7 @@ function Drink(props) {
           <div id="drink_main_container">
             <div className="hr-sect">추천 상품</div>
             <Slider {...settings} id='slick-slider'>
-              {pdata.map((a, index) => {
+              {sortedData.map((a, index) => {
                 const imga = a.img_url.split(',');
                 return (
                   <div id="drink_relative" key={a.id} style={{ margin: '0 10px' }}>
@@ -122,6 +143,7 @@ function Drink(props) {
                       style={{ display: hiddenItems[index] ? "block" :"none"}}>
                       <div>
                         <div id="drink_name">
+                          {/*  */}
                           <div id="name_kor"><p><b>{a.name}</b></p></div>
                           <div id="name_eng"><p>{a.eng_name}</p></div>
                         </div>
@@ -151,15 +173,20 @@ function Drink(props) {
                     onChange={(e) => setSearchText(e.target.value)}/><IoSearch /></div>
                 </div>  
                 <div id="drink_search_2">
-                  <input type="checkbox" id="drink_search_checkbox1" 
-                  checked={icedChecked}
-                  onChange={() => setIcedChecked(!icedChecked)}
-                  /><p>ICED</p>
-                  <input type="checkbox" id="drink_search_checkbox1"
-                  checked={hotChecked}
-                  onChange={() => setHotChecked(!hotChecked)}
-                  /><p>HOT</p>
-                  {/* <input type="checkbox" id="drink_search_checkbox1"></input> */}
+                  <input
+                    type="checkbox"
+                    id="drink_search_checkbox1"
+                    checked={icedChecked}
+                    onChange={handleIcedChange}
+                  />
+                  <p>ICED</p>
+                  <input
+                    type="checkbox"
+                    id="drink_search_checkbox2"
+                    checked={hotChecked}
+                    onChange={handleHotChange}
+                  />
+                  <p>HOT</p>
                 </div>
               </div>
             </div>
@@ -188,7 +215,7 @@ function Drink(props) {
                       style={{ display: hiddenItems1[index] ? "block" :"none"}}>
                       <div>
                         <div id="drink_name1">
-                          <div id="name_kor"><p><b>{a.name}</b></p></div>
+                          <div id="name_kor1"><p><b>{a.name}</b></p></div>
                           <div id="name_eng"><p>{a.eng_name}</p></div>
                         </div>
                         <div id="drink_info1" ><p>{a.info}</p></div>
@@ -214,7 +241,7 @@ function Drink(props) {
               <div id="show_drink_list_warrap">
                 {showMore1 < filteredData.length && (
                 <button id="show_drink_list" onClick={toggleShowMore1}>
-                  {'더보기'}
+                  {'더보기 +'}
                 </button>
               )}
               </div>
