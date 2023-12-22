@@ -38,13 +38,12 @@ function Accompany() {
       <div className="accompany-detail-container">
         <div className="accompany-guide-link">
           <span>HOME</span>
-          <span>사회공헌 활동</span>
-          식수위생 캠페인
+          <span>사회공헌활동</span>
+          이디야의 동행
         </div>
         <div className="accompany-detail-title-container">
-          <h2>식수위생 캠페인</h2>
-          <p>이디야커피는 식수위생 캠페인을 통해 식수부족국가를 위한 
-            정수시설 설치 및 인식개선 사업을 후원합니다.</p>
+          <h2>이디야의 동행</h2>
+          <p>이디야커피는 따뜻한 마음과 기쁨을 나누기 위해 먼저 실천합니다.</p>
         </div>
         <div className="accompany-box-container">
           {/* 추후 맵으로 뿌리면될듯 밑에는 틀만 맞는지 확인용 하드코딩 */}

@@ -44,11 +44,11 @@ function Brandnewsrouters() {
         <Route path='notice/:id' element={<Noticedetail />} />
         <Route path='event/:id' element={<Eventdetail />} />
 
-        <Route path='activitys/activity/details/:id' element={<Activitydetail />} />
-        <Route path='activitys/campus/details/:id' element={<Campusdetail />} />
-        <Route path='activitys/hygiene/details/:id' element={<Hygienedetail />} />
-        <Route path='activitys/accompany/details/:id' element={<Accompanydetail />} />
-        <Route path='activitys/otheractivities/details/:id' element={<Otheractivitiesdetail />} />
+        <Route path='activity/details/:id' element={<Activitydetail />} />
+        <Route path='campus/details/:id' element={<Campusdetail />} />
+        <Route path='hygiene/details/:id' element={<Hygienedetail />} />
+        <Route path='accompany/details/:id' element={<Accompanydetail />} />
+        <Route path='otheractivities/details/:id' element={<Otheractivitiesdetail />} />
       </Routes>
     </div>
   )

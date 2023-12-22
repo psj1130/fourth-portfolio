@@ -40,7 +40,7 @@ function Campus() {
       <div className="campus-detail-container">
         <div className="campus-guide-link">
           <span>HOME</span>
-          <span>사회공헌 활동</span>
+          <span>사회공헌활동</span>
           메이트 희망기금
         </div>
         <div className="campus-detail-title-container">

@@ -38,8 +38,10 @@ function Activitydetail() {
           이벤트
         </div>
         <div className="activitydetail-title-container">
-          <h2>이디야 메이트 희망기금 사업</h2>
-          <p>이디야커피는 대한민국 청년의 미래를 후원합니다.</p>
+          <h2>식수위생 캠페인</h2>
+          <p>이디야커피는 식수위생 캠페인을 통해 식수부족국가를 위한 정수시설 설치 및 
+            인식개선 사업을 후원합니다.
+          </p>
         </div>
         <div className="activitydetail-detail-container">
           <div className="activitydetail-detail-title">
