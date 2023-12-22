@@ -61,7 +61,7 @@ function App() {
           <Route path='/seller/:id' element={<Seller/>}/>
         </Routes>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }
