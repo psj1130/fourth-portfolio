@@ -18,6 +18,10 @@ import Success from './seller/success.tsx';
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
+import Menu_main from './menu_main/menu_main';
+import Drink from "./menu_main/drink/drink";
+import Food from "./menu_main/food/food";
+import MD from "./menu_main/md/md";
 
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
@@ -34,12 +38,16 @@ function App() {
 
           {/* 유준 */}
           <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
-          <Route path='/card/giftcardrouters/*' element={<Giftcardrouters/>}/>
+          <Route path='/card/giftcard/*' element={<Giftcardrouters/>}/>
           <Route path='/brandnews/*' element={<Brandnewsrouters/>}/>
 
           {/* 원기 */}
           <Route path='/beans' element={<Beans/>}/>
           <Route path='/quality' element={<Quality/>}/>
+          <Route path='/menu_main' element={<Menu_main/>}/>
+          <Route path='/product/drink' element={<Drink/>}/>
+          <Route path='/product/food' element={<Food/>}/>
+          <Route path='/product/md' element={<MD/>}/>
 
           {/* 동명 */}
           <Route path='/dp/*' element={<DistributionProducts />}/>

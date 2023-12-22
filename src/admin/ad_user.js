@@ -11,12 +11,18 @@ import { Link } from 'react-router-dom';
 
 
 async function getUser() {
-  const res = await axios.get(`${API_URL}/user`);
+  const res = await axios.get(`${API_URL}/admin/user`);
   console.log(res);
   return res.data;
 }
 
 const columns = [
+  {
+    field: 'name',
+    headerName: '이름',
+    width: 100,
+    editable: false,
+  },
   {
     field: 'id',
     headerName: '아이디',
@@ -122,7 +128,7 @@ export default function Ad_user() {
             initialState={{
               pagination: {
                 paginationModel: {
-                  pageSize: 10,
+                  pageSize: 11  ,
                 },
               },
             }}

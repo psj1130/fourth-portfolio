@@ -58,7 +58,7 @@ const Middle = (props) => {
                   <td id="contd3" colSpan={3}><button id="conbtn">상세정보 확인</button></td>
                 </tr>
                 <tr>
-                   <td colSpan={4}><img id="proimg" src={imgurl[2]}/></td> 
+                   <td colSpan={4}><img id="proimg" src={imgurl[1]}/></td> 
                 </tr>
                 <tr>
                   <td id="contdp2"><b>상품정보 제공고시</b></td>

@@ -5,24 +5,16 @@ import { API_URL } from '../../config/serverurl';
 import './menumodal.css'
 
 
-const MenuModal = ({isOpen}) => {
+const MdModal = ({isOpen}) => {
   const [img1, setImage1] = useState(null);
   const [previewImg, setPreviewImg ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
   const [img2, setImage2] = useState(null);
   const [previewImg2, setPreviewImg2 ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
-  const [type, setType] = useState('drink');
-  const [code, setCode] = useState(0);
   const [seq, setSeq] = useState(0);
   const [price, setPrice] = useState(0);
   const [name, setName] = useState('');
   const [eng, setEng] = useState('');
   const [textValue, setText] = useState('');
-  const [kcal, setKcal] = useState(0);
-  const [sugar, setSugar] = useState(0);
-  const [protein, setProtein] = useState(0);
-  const [sf, setSf] = useState(0);
-  const [na, setNa] = useState(0);
-  const [caffein, setCaffein] = useState(0);
   const imgRef = useRef();
 
   const customStyles = {
@@ -71,7 +63,7 @@ const MenuModal = ({isOpen}) => {
           <div className='modal-x-button' ><i className='xi-close' onClick={() => {
             isOpen(false);
           }}></i></div>
-          <h1>메뉴 추가하기</h1>
+          <h1>상품 추가하기</h1>
         </div>
         <div className='menu-add-image-container'>
           <div className='menu-add-image' >
@@ -90,22 +82,6 @@ const MenuModal = ({isOpen}) => {
         <div className='menu-add-input-wrapper'>
           <div className='menu-add-input-container'>
             <div className='menu-selection'>
-              <div className='menu-type'>
-                <p>종류</p>
-                <select onChange={(e) => {
-                  setType(e.target.value);
-                }}>
-                  <option key='drink'>drink</option>
-                  <option key='bread'>bread</option>
-                  <option key='sauce'>sauce</option>
-                </select>
-              </div>
-              <div className='menu-code'>
-                <p>메뉴 코드</p>
-                <input type='number' placeholder='메뉴 코드' onChange={(e) => {
-                  setCode(e.target.value);
-                }}/>
-              </div>
               <div className='menu-seq'>
                 <p>보여주기 순서 <span>＊낮을 수록 앞에 배치</span></p>
                   <input type='number' placeholder='보여주기 순서' onChange={(e) => {
@@ -115,63 +91,25 @@ const MenuModal = ({isOpen}) => {
             </div>
             <div className='menu-price'>
               <p>가격( 원)</p>
-              <input type='number' placeholder='메뉴의 가격을 입력해주세요' onChange={(e) => {
+              <input type='number' placeholder='상품의 가격을 입력해주세요' onChange={(e) => {
                 setPrice(e.target.value);
               }}/>
             </div>
             <div className='menu-name'>
-              <p>메뉴 이름</p>
-              <input type='text' placeholder='메뉴의 이름을 입력해주세요' onChange={(e) => {
+              <p>상품 이름</p>
+              <input type='text' placeholder='상품의 이름을 입력해주세요' onChange={(e) => {
                   setName(e.target.value);
                 }}/>
-              <p>메뉴 영어 이름</p>
-              <input type='text' placeholder='메뉴의 영어 이름을 입력해주세요' onChange={(e) => {
+              <p>상품 영어 이름</p>
+              <input type='text' placeholder='상품의 영어 이름을 입력해주세요' onChange={(e) => {
                   setEng(e.target.value);
                 }}/>
             </div>
             <div className='menu-info'>
-              <p>메뉴 정보</p>
-              <textarea placeholder='메뉴 정보를 입력해주세요' value={textValue} onChange={(e) => {
+              <p>상품 정보</p>
+              <textarea placeholder='상품 정보를 입력해주세요' value={textValue} onChange={(e) => {
                 setText(e.target.value);
               }}/>
-            </div>
-            <div className='menu-ingredient'>
-              <div className='grid 1'>
-                <p>칼로리</p>
-                <input type='number' placeholder='kcal' onChange={(e) => {
-                  setKcal(e.target.value);
-                }}/>
-              </div>
-              <div className='grid 2'>
-                <p>당류</p>
-                <input type='number' placeholder='g' onChange={(e) => {
-                  setSugar(e.target.value);
-                }}/>
-              </div>
-              <div className='grid 3'>
-                <p>단백질</p>
-                <input type='number' placeholder='g' onChange={(e) => {
-                  setProtein(e.target.value);
-                }}/>
-              </div>
-              <div className='grid 4'>
-                <p>포화지방</p>
-                <input type='number' placeholder='g' onChange={(e) => {
-                  setSf(e.target.value);
-                }}/>
-              </div>
-              <div className='grid 5'>
-                <p>나트륨</p>
-                <input type='number' placeholder='mg' onChange={(e) => {
-                  setNa(e.target.value);
-                }}/>
-              </div>
-              <div className='grid 6'>
-                <p>카페인</p>
-                <input type='number' placeholder='mg' onChange={(e) => {
-                  setCaffein(e.target.value);
-                }}/>
-              </div>
             </div>
           </div>
         </div>
@@ -186,26 +124,17 @@ const MenuModal = ({isOpen}) => {
               .then(res => {
                 console.log(res.data.image_path);
                 const data = {
-                  type: type,
-                  code: code,
                   seq: seq,
                   name: name,
                   eng_name: eng,
                   price: price,
                   info: textValue,
                   img_url: res.data.image_path,
-                  ingredient_cal: kcal,
-                  ingredient_sugar: sugar,
-                  ingredient_protein: protein,
-                  ingredient_sf: sf,
-                  ingredient_na: na,
-                  ingredient_caffein: caffein
                 }
                 
-                axios.post(`${API_URL}/admin/add/menu`, data)
+                axios.post(`${API_URL}/admin/add/md`, data)
                   .then((res) => {
-                    console.log(res.data);
-                    window.location.replace('/');
+                    window.location.reload(true);
                   })
                   .catch((err) => {
                     console.log(err);
@@ -222,4 +151,4 @@ const MenuModal = ({isOpen}) => {
   );
 }
 
-export default MenuModal;
+export default MdModal;

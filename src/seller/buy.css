@@ -205,20 +205,22 @@ font-size: 25px;
 }
 /* 포토 */
 #photogrid{
+  gap: 20px;
   display: grid;
   grid-template-columns: 510px 510px;
+  grid-template-rows: auto;
 }
 #photogrid1{
-  padding-top: 10px;
-  padding-left: 20px;
-  margin-top: 20px;
+  padding:20px;
+  /* margin-top: 20px; */
   display: grid;
   grid-template-columns: 310px 200px;
   grid-template-rows: 130px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 #photop1{
   font-size: 20px;
+  padding-left: 10px;
   
 }
 #reviewimg{
