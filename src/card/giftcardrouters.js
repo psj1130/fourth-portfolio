@@ -4,7 +4,7 @@ import Giftcard from './giftcard';
 import Check from './check';
 import Declaration from './declaration';
 import Giftbuy from './giftbuy'
-import QuestionMain from './question/index'
+import Question from './question/index'
 import Cardintroduce from './cardintroduce'
 
 
@@ -12,13 +12,13 @@ function Giftcardrouters() {
   return (
     <div>
       <Routes>
-        <Route path='/giftcard/' element={<Giftcard/>}/>
-        <Route path='/giftcard/cardintroduce' element={<Cardintroduce/>}/>
-        <Route path='/giftcard/check' element={<Check/>}/>
-        <Route path='/giftcard/declaration' element={<Declaration/>}/>
-        <Route path='/giftcard/question/' element={<QuestionMain/>}/>
+        <Route path='/' element={<Giftcard/>}/>
+        <Route path='/cardintroduce' element={<Cardintroduce/>}/>
+        <Route path='/check' element={<Check/>}/>
+        <Route path='/declaration' element={<Declaration/>}/>
+        <Route path='/question/' element={<Question/>}/>
         
-        <Route path='/giftcard/giftbuy' element={<Giftbuy/>}/>
+        <Route path='/giftbuy' element={<Giftbuy/>}/>
         {/* 단체·기업 구매 컴포넌트 */}
       </Routes>
     </div>

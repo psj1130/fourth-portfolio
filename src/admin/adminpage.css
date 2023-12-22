@@ -1,1 +1,68 @@
-/*  */
+.admin-header-logo {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+#admin-main {
+  display: flex;
+  height: 780px;
+}
+.others {
+  flex: 6;
+  overflow-y: scroll;
+}
+
+.menuImg {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+.menuListEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #243C84;
+  margin-right: 15px;
+  color: #fff;
+}
+.menuListDelete {
+  cursor: pointer;
+}
+#ad-login-page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ad-login-page-container {
+  margin-top: 200px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.add-button {
+  /* position: fixed; */
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  display: block;
+  align-self: flex-end;
+  border: none;
+  background-color: #243C84;
+  color: #fff;
+  font-family: 'Pretendard-Regular';
+  margin: 10px;
+  font-size: 17px;
+}
+
+#ad_menu_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

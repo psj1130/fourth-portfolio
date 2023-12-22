@@ -12,7 +12,6 @@ const customerKey = "YbX2HuSlsC9uVJW6NMRMj"
 
 export default function Pay(props) {
   const paymentWidgetRef = useRef<PaymentWidgetInstance | null>(null)
-  const price = 0
   console.log(props.price);
 
   useEffect(() => {
@@ -31,14 +30,14 @@ export default function Pay(props) {
       <button
       id="appbutton"
       onClick={async () => {
-        props.setseller();
+        props.setseller(props.price);
         const paymentWidget = paymentWidgetRef.current
         try {
           await paymentWidget?.requestPayment({
           	orderId: nanoid(),
             orderName: "패키지 상품 결제",
             customerEmail: "customer123@gmail.com",
-            successUrl: `${window.location.origin}/success`,
+            successUrl: `${window.location.origin}/seller/success`,
             failUrl: `${window.location.origin}/fail`,
         })
         } catch (err) {

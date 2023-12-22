@@ -1,10 +1,24 @@
 import React, {useState, useEffect, useRef} from "react";
 import './header.css';
 import { Link } from "react-router-dom";
+import { getCookie, delCookie } from "../customer/cookies";
 
 function Header() {
   // const [scrollY, setScrollY] = useState(0);
   const ex = useRef(document.getElementById('header-container'));
+  const cookie = getCookie('loginCookie');
+  let context = null;
+
+  if(cookie) {
+    context = <p onClick={() => {
+      delCookie('loginCookie');
+      document.location.reload(true);
+    }}>로그아웃</p>
+  } else if(!cookie) {
+    context = <a href='/members/login' onClick={() => {
+      window.sessionStorage.setItem('BeforePage', window.location.pathname);
+    }}>로그인</a>
+  }
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -31,11 +45,11 @@ function Header() {
         <div id="header-topmenu-container">
           <div id="header-topmenu">
             <ul id="header-topmenu-navigation">
-              <li><a href='/members/login'>로그인</a></li>
+              <li>{context}</li>
               <li><a href='/searchstore'>매장찾기</a></li>
               <li><a href='/cs'>고객의 소리</a></li>
               <li><a href='/'>이디야 스토어</a></li>
-              <li><a href='/administarator'>관리자 페이지</a></li>
+              <li><a href='/administrator/login'>관리자 페이지</a></li>
             </ul>
             <div id="header-topmenu-sns">
               <a href='#none'><img src={process.env.PUBLIC_URL + "/images/top_sns/top_sns01.png"} alt="1"/></a>
@@ -85,25 +99,25 @@ function Header() {
               <li className="nav_menu">
                 <a href="/members" className="nav_a"><span>이디야멤버스</span></a>
                 <ul>
-                  <li><a href="#none">멤버십안내</a></li>
-                  <li><a href="#none">서비스안내</a></li>
+                  <li><a href="/members">멤버십안내</a></li>
+                  <li><a href="/members">서비스안내</a></li>
                 </ul>
               </li>
               <li className="nav_menu">
                 <a href="/card/affiliatecard" className="nav_a"><span>상품권·제휴카드</span></a>
                 <ul>
-                  <li><a href="#none">제휴카드(하나·신한)</a></li>
-                  <li><a href="#none">기프트카드</a></li>
-                  <li><a href="#none">모바일상품권</a></li>
-                  <li><a href="#none">단체·기업 구매</a></li>
+                  <li><a href="/card/affiliatecard">제휴카드(하나·신한)</a></li>
+                  <li><a href="/card/giftcardrouters/">기프트카드</a></li>
+                  <li><a href="https://brand.naver.com/ediyagift">모바일상품권</a></li>
+                  <li><a href="/card/giftbuy">단체·기업 구매</a></li>
                 </ul>
               </li>
               <li className="nav_menu">
-                <a href="/brandnews" className="nav_a"><span>브랜드 소식</span></a>
+                <a href="/brandnews/notice" className="nav_a"><span>브랜드 소식</span></a>
                 <ul>
-                  <li><a href="/brandnews">공지사항</a></li>
+                  <li><a href="/brandnews/notice">공지사항</a></li>
                   <li><a href="/brandnews/event">이벤트 안내</a></li>
-                  <li><a href="/brandnews/activity">사회공헌 활동</a></li>
+                  <li><a href="/brandnews/activity/">사회공헌 활동</a></li>
                 </ul>
               </li>
               <li className="nav_menu">

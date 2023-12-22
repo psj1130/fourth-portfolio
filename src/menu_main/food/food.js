@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { IoSearch } from "react-icons/io5";
 
 async function getdrink() {
-  const res = await axios.get(`${API_URL}/product/Food`);
+  const res = await axios.get(`${API_URL}/menu/food`);
   console.log(res);
   return res.data;
 }
@@ -113,8 +113,8 @@ function Food(props) {
     slidesToShow: 3,
     slidesToScroll: 1,
     waitForAnimate: false,
-    prevArrow: <CustomPrevButton />,
-    nextArrow: <CustomNextButton />,
+    // prevArrow: <CustomPrevButton />,
+    // nextArrow: <CustomNextButton />,
   };
 
   return (

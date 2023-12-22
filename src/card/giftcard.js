@@ -16,13 +16,13 @@ function Giftcard() {
             <div className="giftcard-btn">
               <div className="giftcard-btn-con">
                 <span className='giftcard-btn-con-lists'>
-                  <a href='/card/giftcardrouters/giftcard'>기프트카드</a>
+                  <a href='/card/giftcardrouters/'>기프트카드</a>
                 </span>
                 <span className='giftcard-btn-con-lists'>
-                  <a href="#noen">모바일 상품권</a>
+                  <a href="https://brand.naver.com/ediyagift">모바일 상품권</a>
                 </span>
                 <span className='giftcard-btn-con-lists'>
-                  <a href='/card/giftcardrouters/giftcard/giftbuy'>단체·기업 구매</a>
+                  <a href='/card/giftcardrouters/giftbuy'>단체·기업 구매</a>
                 </span>
               </div>
             </div>
@@ -35,7 +35,7 @@ function Giftcard() {
                 <h1 className='cons-text-after'>기프트카드 소개</h1>
                 <p className='text-after-style'>작지만 가볍지 않은<br/>
                 당신의 마음을 전합니다.</p>
-                <a href='/card/giftcardrouters/giftcard/cardintroduce'>
+                <a href='/card/giftcardrouters/cardintroduce'>
                   <div className='giftcard-introduce'>
                     <p>기프트카드 소개</p>
                   </div>
@@ -50,7 +50,7 @@ function Giftcard() {
               <div className='cons-text-box'>
                 <h1 className='cons-text-after'>잔액조회</h1>
                 <p className='text-after-style'>빠르고 간편하게 잔액을 확인해보세요</p>
-                <a href='/card/giftcardrouters/giftcard/check'>
+                <a href='/card/giftcardrouters/check'>
                   <div className='giftcard-introduce'>
                     <p>잔액조회</p>
                   </div>
@@ -65,7 +65,7 @@ function Giftcard() {
             <div className="cons-left">
                 <div className='cons-text-box'>
                   <h1 className='cons-text-after'>분실신고 & 환불신청</h1>
-                    <a href='/card/giftcardrouters/giftcard/declaration'>
+                    <a href='/card/giftcardrouters/declaration'>
                       <div className='giftcard-introduce'>
                         <p>분실신고 / 환불신청</p>
                       </div>
@@ -80,7 +80,7 @@ function Giftcard() {
           <div className="cons-right">
                 <div className='cons-text-box'>
                   <h1 className='cons-text-after'>자주하는 질문</h1>
-                  <a href='/card/giftcardrouters/giftcard/question'>
+                  <a href='/card/giftcardrouters/question'>
                     <div className='giftcard-introduce'>
                       <p>자주하는 질문</p>
                     </div>

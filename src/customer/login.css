@@ -9,11 +9,15 @@
   width: 440px;
   
 }
-.login-h1 {
+.customer-h1 {
   text-align: center;
   padding-top: 76px;
   margin-bottom: 40px;
 }
+.customer-h1 h1 {
+  font-family: 'Pretendard-Regular', sans-serif;
+}
+
 .login-form-container {
   width: 100%;
   display: flex;
@@ -25,12 +29,7 @@
   flex-direction: column;
   gap: 8px;
 }
-.login-input-container span {
-  padding-right: 16px;
-  background: url(./icon/icon_necd.svg) no-repeat right top;
-  background-size: 16px;
-  
-}
+
 .login-input-container input {
   display: block;
   box-sizing: border-box;
@@ -60,6 +59,8 @@
   line-height: 3.222em;
   display: inline-block;
   position: relative;
+  cursor: pointer;
+  font-family: 'Pretendard-Regular', sans-serif;
 }
 .other-container {
   margin: 20px 0;
@@ -93,6 +94,9 @@
   width: 24px;
   height: 24px;
 }
+.kakao-login span {
+  font-family: 'Pretendard-Regular', sans-serif;
+}
 
 .naver-login {
   background-color: #03C75A;
@@ -108,4 +112,11 @@
   width: 24px;
   height: 24px;
 }
+.naver-login span {
+  font-family: 'Pretendard-Regular', sans-serif;
+}
 
+#fail-login {
+  text-align: center;
+  color: red;
+}

@@ -1,18 +1,32 @@
 import React from "react";
 import './membersh.css'
 import { Link } from "react-router-dom";
+import { getCookie, delCookie } from "../customer/cookies";
 
 function MembersHeader() {
+  const cookie = getCookie('loginCookie');
+  let context = null;
+
+  if(cookie) {
+    context = <li><p onClick={() => {
+      delCookie('loginCookie');
+      document.location.reload(true);
+    }}>로그아웃</p></li>
+  } else if(!cookie){
+    context = <li><Link to='/members/login' onClick={() => {
+      window.sessionStorage.setItem('BeforePage', window.location.pathname);
+    }}>로그인</Link></li>
+  }
 
   return(
     <header id="members-header">
       <div className="members-header-top">
         <div className="members-header-top-nav">
           <ul>
-            <li><Link to='/members/login'>로그인</Link></li>
-            <li><Link to='/login'>매장찾기</Link></li>
-            <li><Link to='/login'>APP 다운로드</Link></li>
-            <li><Link to='/login'>이디야 스토어</Link></li>
+            {context}
+            <li><Link to='/searchstore'>매장찾기</Link></li>
+            <li><Link to='/'>APP 다운로드</Link></li>
+            <li><Link to='/'>이디야 스토어</Link></li>
           </ul>
         </div>
       </div>
