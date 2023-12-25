@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from 'react-modal';
-import './popup.css'
+import './popup.css';
 
 const Popup = ({isOpen}) => {
 

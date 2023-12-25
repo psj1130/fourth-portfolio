@@ -1,7 +1,7 @@
 .seller{
   display: flex;
   justify-content: center;
-  background-color: #E9ECEF;
+  /* background-color: #243C84; */
   height: auto;
   
 }
@@ -94,7 +94,9 @@
 }
 #sellerbtn{
   justify-content:left;
+  
   width: 100px;
+  text-align: right;
 }
 #sellercolor{
   color: #d2c9c9;
@@ -118,4 +120,8 @@
   text-align: right;
   color: #d2c9c9;
   font-size: 15px; 
+}
+#sellergrid4{
+  display: grid;
+  grid-template-columns: 400px 350px;
 }

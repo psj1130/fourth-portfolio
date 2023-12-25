@@ -1,15 +1,44 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './accompany.css'
 
-function accompany() {
+import Society from '.';
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios';
+import { API_URL } from '../../config/serverurl';
+import useAsync from '../../config/useAsync';
+
+async function getsocial() {
+  try {
+    const socialdata = await axios.get(`${API_URL}/social`);
+    console.log('socialdata로 받아온 데이터', socialdata);
+    return socialdata.data;
+  }
+  catch(err) {
+    console.error('에러 발생:', err);
+  }
+}
+
+function Accompany() {
+
+  const { id } = useParams();
+  const [socialstate] = useAsync(() => getsocial(id), [id]);
+  const { loading, data:socialdata, error } = socialstate;
+
+  if(loading) return <div>로딩중입니다.....</div>
+  if(error) return <div>에러가 발생했습니다.</div>
+  if(!socialdata) return null;
+
+  const category = socialdata.filter(item => item.category === '이디야의 동행');
+  console.log('필터 된 데이터', category);
 
   return(
+  <div className="accompany-body">
+    <Society/>  
     <div className="accompany-container">
       <div className="accompany-detail-container">
         <div className="accompany-guide-link">
           <span>HOME</span>
-          <span>사회공헌 활동</span>
+          <span>사회공헌활동</span>
           이디야의 동행
         </div>
         <div className="accompany-detail-title-container">
@@ -19,41 +48,30 @@ function accompany() {
         <div className="accompany-box-container">
           {/* 추후 맵으로 뿌리면될듯 밑에는 틀만 맞는지 확인용 하드코딩 */}
           <ul className="accompany-box-list-con">
-            <li>
-              <Link><img src="/images/brandnews/testimgs.jpg"/></Link>
-                <div className='accompany-text-box'>
-                  <Link>
-                    <h5>2023 이디야 메이트 희망기금 전달</h5>
-                    <p>&nbsp; ▶ 메이트 장학금 확대... 수혜자 150명에게 100만원씩 전달▶ 
-                      2023년부터 11년간 메이트 총 4,48...</p>
-                  </Link>
-                </div>
-              <Link>
-                <div className="accompany-btn-box">
-                  <p>더보기</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link><img src="/images/brandnews/testimgs.jpg"/></Link>
-                <div className='accompany-text-box'>
-                  <Link>
-                    <h5>2023 이디야 메이트 희망기금 전달</h5>
-                    <p>&nbsp; ▶ 메이트 장학금 확대... 수혜자 150명에게 100만원씩 전달▶ 
-                      2023년부터 11년간 메이트 총 4,48...</p>
-                  </Link>
-                </div>
-              <Link>
-                <div className="accompany-btn-box">
-                  <p>더보기</p>
-                </div>
-              </Link>
-            </li>
+            {category.map((item) => (
+              <li key={item.id}>
+                <Link to={`details/${item.id}`}>
+                <img src={item.img_url}/>
+                </Link >
+                  <div className='campus-text-box'>
+                    <Link to={`details/${item.id}`}>
+                      <h5>{item.title}</h5>
+                        <p>&nbsp; ▶ {item.body.length > 100 ? item.body.substring(0, 100) + '...' : item.body}</p>
+                    </Link>
+                  </div>
+                <Link to={`details/${item.id}`}>
+                  <div className="campus-btn-box">
+                    <p>더보기</p>
+                  </div>
+                </Link>
+              </li>
+              ))}
           </ul>
         </div>
       </div>
     </div>
+  </div>  
   );
 }
 
-export default accompany;
+export default Accompany;

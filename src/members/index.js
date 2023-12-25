@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router";
 import LoginPage from "../customer/login";
 import './index.css'
+import SignUpPage from "../customer/signup";
 
 import MembersHeader from "./membersh";
 import MembersFooter from "./membersf";
@@ -20,6 +21,7 @@ function MembersPage() {
             <Route path='/members_guide' element={<Members_guide/>}/>
             <Route path='/service_guide' element={<Service_guide/>}/>
             <Route path='/' element={<Members_main/>}/>
+            <Route path="/signup" element={<SignUpPage/>}/>
           </Routes>
         </div>
         <MembersFooter/>
