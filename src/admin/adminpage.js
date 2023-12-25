@@ -14,6 +14,7 @@ import Ad_event from './notice/ad_event.js';
 import Ad_qna from './notice/ad_qna';
 import Ad_social from './notice/ad_social'
 import Ad_notice from './notice/ad_notice'
+import Ad_home from './ad_index.js';
 
 function AdminPage() {
   document.title = "EDIYA COFFEE - 관리자 페이지";
@@ -35,6 +36,7 @@ function AdminPage() {
         <Sidebar />
         <div className='others'>
           <Routes>
+            <Route path='/' element={<Ad_home/>}/>
             <Route path='/suggestion' element={<Ad_suggestion/>}/>
             <Route path='/menu' element={<Ad_menu/>}/>
             <Route path='/md' element={<Ad_md/>}/>

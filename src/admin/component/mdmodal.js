@@ -6,9 +6,7 @@ import './menumodal.css'
 
 
 const MdModal = ({isOpen}) => {
-  const [img1, setImage1] = useState(null);
   const [previewImg, setPreviewImg ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
-  const [img2, setImage2] = useState(null);
   const [previewImg2, setPreviewImg2 ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
   const [seq, setSeq] = useState(0);
   const [price, setPrice] = useState(0);
@@ -120,7 +118,7 @@ const MdModal = ({isOpen}) => {
             const formData = new FormData()
             formData.append('imageFile', upload1);
             formData.append('imageFile', upload2);
-            await axios.post(`${API_URL}/menu/upload/images`, formData)
+            await axios.post(`${API_URL}/menu/upload/md/images`, formData)
               .then(res => {
                 console.log(res.data.image_path);
                 const data = {
@@ -134,7 +132,7 @@ const MdModal = ({isOpen}) => {
                 
                 axios.post(`${API_URL}/admin/add/md`, data)
                   .then((res) => {
-                    window.location.reload(true);
+                    window.location.replace('/administrator/md');
                   })
                   .catch((err) => {
                     console.log(err);
