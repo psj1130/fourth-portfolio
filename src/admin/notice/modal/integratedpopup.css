@@ -1,0 +1,17 @@
+.integratedpopup-body {
+  width: 100%;
+  height: 100%;
+}
+
+.integratedpopup-inner {
+  width: 1200px;
+  height: 100%;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 25px;
+}

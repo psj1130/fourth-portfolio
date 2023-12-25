@@ -6,7 +6,6 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
 import PerosonOutlineIcon from '@mui/icons-material/PersonOutline'
 import StoreFrontIceon from '@mui/icons-material/Storefront'
-// import { Link } from "react-router-dom";
 
 //공지관련 아이콘
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
@@ -53,20 +52,20 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">공지사항 관리</h3>
           <ul className="sidebarList">
-              <Link to='/administrator/notice/qna'>
+              <Link to='/administrator/qna'>
                 <li className="sidebarListItem"><QuestionAnswerIcon />
                   QnA
                 </li>
               </Link>
-              <Link to='/administrator/notice/notice'>
+              <Link to='/administrator/notice'>
                 <li className="sidebarListItem"><CampaignIcon />
                   공지사항
                 </li>
-              </Link><Link to='/administrator/notice/event'>
+              </Link><Link to='/administrator/event'>
                 <li className="sidebarListItem"><CelebrationIcon />
                   이벤트
                 </li>
-              </Link><Link to='/administrator/notice/social'>
+              </Link><Link to='/administrator/social'>
                 <li className="sidebarListItem"><Diversity1Icon />
                   사회공헌 활동
                 </li>

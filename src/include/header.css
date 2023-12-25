@@ -167,7 +167,7 @@
   position: absolute;
   padding-top: 30px;
   text-align: left;
-  display: block;
+  display: none;
   width: 250px;
   height: 150px;
   z-index: 15;

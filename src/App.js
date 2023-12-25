@@ -15,6 +15,7 @@ import Brandnewsrouters from "./brandnews/barndnewsrouters";
 import Seller from './seller/seller';
 import Buym from "./seller/buym";
 import Success from './seller/success.tsx';
+import Fail from './seller/fail.tsx';
 
 import Beans from './Beans_Quality/beans';
 import Quality from './Beans_Quality/quality';
@@ -41,7 +42,7 @@ function App() {
 
           {/* 유준 */}
           <Route path='/card/affiliatecard' element={<Affiliatecard/>}/>
-          <Route path='/card/giftcardrouters/*' element={<Giftcardrouters/>}/>
+          <Route path='/card/giftcard/*' element={<Giftcardrouters/>}/>
           <Route path='/brandnews/*' element={<Brandnewsrouters/>}/>
 
           {/* 원기 */}
@@ -64,9 +65,10 @@ function App() {
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
           <Route path="/seller/success" element={<Success/>}/>
+          <Route path="/seller/fail" element={<Fail/>}/>
         </Routes>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

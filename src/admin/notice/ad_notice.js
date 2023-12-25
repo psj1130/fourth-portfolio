@@ -1,20 +1,37 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
 import './ad_notice.css';
-import Popup from "./modal/popup";
+import Noticepopup from "./modal/noticepopup";
 
 export default function Ad_notice() {
 
     //모달 부분
-  const [isOpen, setOpen] = useState(false);
-
-  const popupclick = () => {
-  setOpen(true);
-  };
+    const [isOpen, setOpen] = useState(false);
+    const modalRef = useRef(null);
+  
+    const popupclick = () => {
+      setOpen(true);
+    };
+  
+    const handleCloseModal = () => {
+      setOpen(false);
+    };
+  
+    useEffect(() => {
+      const handleOutsideClick = (event) => {
+        if (isOpen && !modalRef.current?.contains(event.target)) {
+          handleCloseModal();
+        }
+      };
+    
+      document.addEventListener("mousedown", handleOutsideClick);
+    
+      return () => document.removeEventListener("mousedown", handleOutsideClick);
+    }, [isOpen]);
 
   //데이터 전체 조회부분
   async function getSuggestion() {
@@ -60,41 +77,27 @@ export default function Ad_notice() {
       const imgUrl = params.row.img_url;
         return (
           <>
-            <div className='notice-img-box'>
-              <img className='notice-img' src={params.row.img_url}
-              onClick={popupclick}/>
-                {isOpen ? <Popup imgUrl={imgUrl} isOpen={setOpen} /> : null}
-            </div>
+          <div className='notice-img-box' ref={modalRef}>
+            <img
+              className='notice-img'
+              src={params.row.img_url}
+              onClick={popupclick}
+            />
+            {isOpen ? <Noticepopup imgUrl={imgUrl} isOpen={isOpen} /> : null}
+          </div>
           </>
         );
       },
     },
     {
-      field: 'createdAt',
+      field: 'date',
       headerName: '작성 시간',
       width: 200,
       editable: false,
       valueGetter: (params) => {
         // 'createdAt' 필드의 값은 여기서 변환됩니다.
-        const date = new Date(params.row.createdAt);
-        return date.toLocaleString('ko-KR', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-        });
-      },
-    },
-    {
-      field: 'updatedAt',
-      headerName: '수정 시간',
-      width: 200,
-      editable: false,
-      valueGetter: (params) => {
-        // 'createdAt' 필드의 값은 여기서 변환됩니다.
-        const date = new Date(params.row.createdAt);
-        return date.toLocaleString('ko-KR', {
+        const dates = new Date(params.row.date);
+        return dates.toLocaleString('ko-KR', {
           year: 'numeric',
           month: '2-digit',
           day: '2-digit',
@@ -149,6 +152,7 @@ export default function Ad_notice() {
             checkboxSelection
             disableRowSelectionOnClick
           />
+          <h1>버튼을 여기 공간 살짝 넣어서 만들면</h1>
         </Box>
       </div>
     </div>

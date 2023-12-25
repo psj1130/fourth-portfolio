@@ -1,9 +1,9 @@
-.notice-img-box {
+.data-box-list {
   display: flex;
   flex-direction: row ;
 }
 
-.notice-img{
+.data-box{
   width: 100%;
   height: 100%;
 }

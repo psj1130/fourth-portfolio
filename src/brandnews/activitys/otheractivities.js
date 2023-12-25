@@ -38,13 +38,11 @@ function Otheractivities() {
       <div className="otheractivities-detail-container">
         <div className="otheractivities-guide-link">
           <span>HOME</span>
-          <span>사회공헌 활동</span>
-          식수위생 캠페인
+          <span>사회공헌활동</span>
+          기타 활동
         </div>
         <div className="otheractivities-detail-title-container">
-          <h2>식수위생 캠페인</h2>
-          <p>이디야커피는 식수위생 캠페인을 통해 식수부족국가를 위한 
-            정수시설 설치 및 인식개선 사업을 후원합니다.</p>
+          <h2>그 외 사회공헌활동</h2>
         </div>
         <div className="otheractivities-box-container">
           {/* 추후 맵으로 뿌리면될듯 밑에는 틀만 맞는지 확인용 하드코딩 */}
