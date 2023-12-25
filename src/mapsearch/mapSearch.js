@@ -67,7 +67,7 @@ const MapSearch = () => {
     });
     setMarkers([]);
   };
-// 
+
 const showMarkers = (data) => {
   removeAllMarkers(); // Remove existing markers
 

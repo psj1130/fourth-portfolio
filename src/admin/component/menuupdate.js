@@ -3,33 +3,36 @@ import Modal from 'react-modal';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
 import './menumodal.css'
+import { useParams } from 'react-router';
+import useAsync from '../../config/useAsync';
 
+async function getmenu(id) {
+  const res = await axios.get(`${API_URL}/admin/menu/${id}`);
+  console.log(res);
+  return res.data;
+}
 
-const MenuUpdateModal = ({isOpen, data}) => {
+const UpdateInput = (props) => {
+  const images = props.menu.img_url.split(',');
+  console.log(typeof(props.menu.ingredient_cal));
   const [img1, setImage1] = useState(null);
-  const [previewImg, setPreviewImg ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
+  const [previewImg, setPreviewImg ] = useState(images[0]);
   const [img2, setImage2] = useState(null);
-  const [previewImg2, setPreviewImg2 ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
+  const [previewImg2, setPreviewImg2 ] = useState(images[1]);
   const [type, setType] = useState('drink');
-  const [code, setCode] = useState(0);
-  const [seq, setSeq] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [name, setName] = useState('');
-  const [eng, setEng] = useState('');
-  const [textValue, setText] = useState('');
-  const [kcal, setKcal] = useState(0);
-  const [sugar, setSugar] = useState(0);
-  const [protein, setProtein] = useState(0);
-  const [sf, setSf] = useState(0);
-  const [na, setNa] = useState(0);
-  const [caffein, setCaffein] = useState(0);
+  const [code, setCode] = useState(props.menu.code);
+  const [seq, setSeq] = useState(props.menu.seq);
+  const [price, setPrice] = useState(props.menu.price);
+  const [name, setName] = useState(props.menu.name);
+  const [eng, setEng] = useState(props.menu.eng_name);
+  const [textValue, setText] = useState(props.menu.info);
+  const [kcal, setKcal] = useState(parseInt(props.menu.ingredient_cal));
+  const [sugar, setSugar] = useState(parseInt(props.menu.ingredient_sugar));
+  const [protein, setProtein] = useState(parseInt(props.menu.ingredient_protein));
+  const [sf, setSf] = useState(parseInt(props.menu.ingredient_sf));
+  const [na, setNa] = useState(parseInt(props.menu.ingredient_na));
+  const [caffein, setCaffein] = useState(parseInt(props.menu.ingredient_caffein));
   const imgRef = useRef();
-
-  const customStyles = {
-    content: {
-      backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    },
-  };
 
   const InsertImg = (e) => {
     const reader = new FileReader()
@@ -59,23 +62,15 @@ const MenuUpdateModal = ({isOpen, data}) => {
       }
     }
   }
-
-  return(
-    <Modal
-    style={customStyles}
-    className="custom-menu-modal" 
-    isOpen={isOpen}>
-      <div id='menu-modal-container'>
+  return (
+    <div id='menu-modal-container update-container'>
         <div className='menu-modal-header'>
-          <div className='modal-x-button' ><i className='xi-close' onClick={() => {
-            isOpen(false);
-          }}></i></div>
           <h1>메뉴 수정하기</h1>
         </div>
         <div className='menu-add-image-container'>
           <div className='menu-add-image' >
             <label htmlFor='img1'><img src={previewImg} alt='image'></img></label>
-            <input ref={imgRef} id='img1' type='file' accept="image/*" value={data.img_url} onChange={(e) => {
+            <input ref={imgRef} id='img1' type='file' accept="image/*" onChange={(e) => {
               InsertImg(e);
             }}></input>
           </div>
@@ -101,30 +96,30 @@ const MenuUpdateModal = ({isOpen, data}) => {
               </div>
               <div className='menu-code'>
                 <p>메뉴 코드</p>
-                <input type='number' placeholder='메뉴 코드' onChange={(e) => {
+                <input type='number' placeholder='메뉴 코드' value={code} onChange={(e) => {
                   setCode(e.target.value);
                 }}/>
               </div>
               <div className='menu-seq'>
                 <p>보여주기 순서 <span>＊낮을 수록 앞에 배치</span></p>
-                  <input type='number' placeholder='보여주기 순서' onChange={(e) => {
+                  <input type='number' placeholder='보여주기 순서' value={seq} onChange={(e) => {
                     setSeq(e.target.value);
                   }}/>
               </div>
             </div>
             <div className='menu-price'>
               <p>가격( 원)</p>
-              <input type='number' placeholder='메뉴의 가격을 입력해주세요' onChange={(e) => {
+              <input type='number' placeholder='메뉴의 가격을 입력해주세요' value={price} onChange={(e) => {
                 setPrice(e.target.value);
               }}/>
             </div>
             <div className='menu-name'>
               <p>메뉴 이름</p>
-              <input type='text' placeholder='메뉴의 이름을 입력해주세요' onChange={(e) => {
+              <input type='text' placeholder='메뉴의 이름을 입력해주세요' value={name} onChange={(e) => {
                   setName(e.target.value);
                 }}/>
               <p>메뉴 영어 이름</p>
-              <input type='text' placeholder='메뉴의 영어 이름을 입력해주세요' onChange={(e) => {
+              <input type='text' placeholder='메뉴의 영어 이름을 입력해주세요' value={eng} onChange={(e) => {
                   setEng(e.target.value);
                 }}/>
             </div>
@@ -137,37 +132,37 @@ const MenuUpdateModal = ({isOpen, data}) => {
             <div className='menu-ingredient'>
               <div className='grid 1'>
                 <p>칼로리</p>
-                <input type='number' placeholder='kcal' onChange={(e) => {
+                <input type='number' placeholder='kcal' value={kcal} onChange={(e) => {
                   setKcal(e.target.value);
                 }}/>
               </div>
               <div className='grid 2'>
                 <p>당류</p>
-                <input type='number' placeholder='g' onChange={(e) => {
+                <input type='number' placeholder='g' value={sugar} onChange={(e) => {
                   setSugar(e.target.value);
                 }}/>
               </div>
               <div className='grid 3'>
                 <p>단백질</p>
-                <input type='number' placeholder='g' onChange={(e) => {
+                <input type='number' placeholder='g' value={protein} onChange={(e) => {
                   setProtein(e.target.value);
                 }}/>
               </div>
               <div className='grid 4'>
                 <p>포화지방</p>
-                <input type='number' placeholder='g' onChange={(e) => {
+                <input type='number' placeholder='g' value={sf} onChange={(e) => {
                   setSf(e.target.value);
                 }}/>
               </div>
               <div className='grid 5'>
                 <p>나트륨</p>
-                <input type='number' placeholder='mg' onChange={(e) => {
+                <input type='number' placeholder='mg' value={na} onChange={(e) => {
                   setNa(e.target.value);
                 }}/>
               </div>
               <div className='grid 6'>
                 <p>카페인</p>
-                <input type='number' placeholder='mg' onChange={(e) => {
+                <input type='number' placeholder='mg' value={caffein} onChange={(e) => {
                   setCaffein(e.target.value);
                 }}/>
               </div>
@@ -176,14 +171,7 @@ const MenuUpdateModal = ({isOpen, data}) => {
         </div>
         <div className='modal-button-container'>
           <button type='click' onClick={async () => {
-            const upload1 = document.getElementById('img1').files[0];
-            const upload2 = document.getElementById('img2').files[0];
-            const formData = new FormData()
-            formData.append('imageFile', upload1);
-            formData.append('imageFile', upload2);
-            await axios.patch(`${API_URL}/menu/upload/images`, formData)
-              .then(res => {
-                console.log(res.data.image_path);
+            
                 const data = {
                   type: type,
                   code: code,
@@ -192,7 +180,6 @@ const MenuUpdateModal = ({isOpen, data}) => {
                   eng_name: eng,
                   price: price,
                   info: textValue,
-                  img_url: res.data.image_path,
                   ingredient_cal: kcal,
                   ingredient_sugar: sugar,
                   ingredient_protein: protein,
@@ -201,7 +188,7 @@ const MenuUpdateModal = ({isOpen, data}) => {
                   ingredient_caffein: caffein
                 }
                 
-                axios.post(`${API_URL}/admin/add/menu`, data)
+                axios.patch(`${API_URL}/admin/update/menu/${props.id}`, data)
                   .then((res) => {
                     console.log(res.data);
                     window.location.replace('/');
@@ -209,16 +196,25 @@ const MenuUpdateModal = ({isOpen, data}) => {
                   .catch((err) => {
                     console.log(err);
                   })
-              })
-              .catch(err => {
-                console.log(err);
-              })
             
           }}>수정하기</button>
         </div>
-      </div>
-    </Modal>
+    </div>
+  )
+}
+
+const MenuUpdate = () => {
+  const { id } = useParams();
+  const [state] = useAsync(() => getmenu(id), [id]);
+  const { loading, data: menu, error } = state;
+
+  if (loading) return <div>로딩중입니다.....</div>;
+  if (error) return <div>에러가 발생했습니다.</div>;
+  if (!menu) return null;
+
+  return(
+    <UpdateInput menu={menu} id={id}/>
   );
 }
 
-export default MenuUpdateModal;
+export default MenuUpdate;

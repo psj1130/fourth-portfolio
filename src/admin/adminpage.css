@@ -27,6 +27,7 @@
   background-color: #243C84;
   margin-right: 15px;
   color: #fff;
+  cursor: pointer;
 }
 .menuListDelete {
   cursor: pointer;
