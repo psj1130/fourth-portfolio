@@ -107,9 +107,9 @@ function Header() {
                 <a href="/card/affiliatecard" className="nav_a"><span>상품권·제휴카드</span></a>
                 <ul>
                   <li><a href="/card/affiliatecard">제휴카드(하나·신한)</a></li>
-                  <li><a href="/card/giftcardrouters/">기프트카드</a></li>
+                  <li><a href="/card/giftcard/">기프트카드</a></li>
                   <li><a href="https://brand.naver.com/ediyagift">모바일상품권</a></li>
-                  <li><a href="/card/giftbuy">단체·기업 구매</a></li>
+                  <li><a href="/card/giftcard/giftbuy">단체·기업 구매</a></li>
                 </ul>
               </li>
               <li className="nav_menu">

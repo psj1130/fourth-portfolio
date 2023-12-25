@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 3px solid black;
+  /* border: 3px solid black; */
 }
 #capsuleA_main2{
   width: 1200px;
@@ -117,6 +117,7 @@
   justify-content: center;
   /* border: 1px solid rebeccapurple; */
   font-weight: 100;
+  color: #fff;
 }
 #capsule_title h3{
   font-size: 60px;
@@ -155,7 +156,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  border: 3px solid black;
+  border: 1px solid #ccc;
 }
 #capsuleC_detail{
   width: 400px;

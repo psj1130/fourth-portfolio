@@ -104,17 +104,17 @@ const columns = [
     renderCell: (params) => {
       return (
         <>
-          <Link to={'/menu/' + params.row.id}>
+          <Link to={'/md/' + params.row.id}>
             <button className='menuListEdit'>수정</button>
           </Link>
           <DeleteOutLine className='menuListDelete' onClick={async () => {
             let yn = window.confirm('정말 삭제하시겠습니까?');
               if(yn) {
                 console.log(params.id);
-              await axios.delete(`${API_URL}/menu/delete/${params.id}`)
+              await axios.delete(`${API_URL}/menu/md/delete/${params.row.id}`)
               .then(res => {
                 console.log(res.data);
-                window.location.reload();
+                window.location.replace('/administartor/md');
               })
               .catch(err => {
                 console.log(err);

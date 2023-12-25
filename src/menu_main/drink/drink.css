@@ -40,8 +40,8 @@
   top: 70%;
   display: flex;
   justify-content: space-around;
-  width: 500px;
-  height: 30px;
+  width: 550px;
+  height: 40px;
 }
 #DFM_drink_style{
   display: flex;
@@ -285,6 +285,7 @@
 }
 #show_drink_list{
   background-color: white;
+  cursor: pointer;
   width: 190px;
   height: 44px;
   border: 1px solid #000;
