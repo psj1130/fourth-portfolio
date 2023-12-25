@@ -3,6 +3,7 @@ import axios from "axios";
 import { API_URL } from "../config/serverurl";
 import useAsync from '../customHook/useAsync';
 import FeaturedInfo from "./component/featuredinfo";
+import Chart from "./component/chart.tsx";
 
 const getOrder = async () => {
   const result = await axios.get(`${API_URL}/order/order`);
@@ -22,6 +23,7 @@ function Ad_home(){
   return(
     <div id="ad_home_main">
       <FeaturedInfo data={formData} />
+      <Chart data={formData}/>
     </div>
   )
 }

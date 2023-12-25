@@ -23,8 +23,10 @@ export default function Sidebar() {
             <Link to='/administrator'>
               <li className="sidebarListItem"><HomeWorkIcon />Home</li>
             </Link>
-            <li className="sidebarListItem"><TrendingUpIcon />Analystics</li>
-            <li className="sidebarListItem"><MonetizationOnIcon />Sales</li>
+            {/* <li className="sidebarListItem"><TrendingUpIcon />Analystics</li> */}
+            <Link to='/administrator/sales'>
+              <li className="sidebarListItem"><MonetizationOnIcon />Sales</li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">

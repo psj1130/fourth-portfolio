@@ -1,6 +1,6 @@
 import { Link, useParams,useSearchParams} from "react-router-dom";
 import { API_URL } from "../config/contansts";
-// import { getCookie } from "../loginpage/cookies";
+import { getCookie } from "../customer/cookies";
 import * as react from 'react'; 
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
@@ -19,7 +19,7 @@ async function getseller(id) {
 }
 
 
-function Sell() {
+function Ad_sell() {
     
     const handleDelete=(id) =>{
    
@@ -27,15 +27,14 @@ function Sell() {
     }
     const columns=[
       {field: 'id', headerName:'주문번호', width:70,},
-      {field: 'userid', headerName:'구매자', width:70,},
-      {field: 'menuid', headerName:'상품', width:70,},
+      {field: 'userid', headerName:'구매자', width:110,},
+      {field: 'menuid', headerName:'상품', width:250,},
       {field: 'count', headerName:'갯수',width:70,},
       {field: 'amount', headerName:'총가격',width:100,},
       {
         field:'createdAt',
         headerName:'주문날짜',
         width:200,
-        
       },
     
   
@@ -77,4 +76,4 @@ function Sell() {
     </div>
   );
 }
-export default Sell;
+export default Ad_sell;
