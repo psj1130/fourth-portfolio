@@ -1,5 +1,7 @@
 #members-header {
+  z-index: 15;
   width: 100%;
+  background-color: white;
   position: fixed;
 }
 .members-header-top{

@@ -8,6 +8,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MembersPage from './members';
 
+// import Service_guide from "../members/service_guide/service_guide";
+// import Members_guide from "../members/members_guide/members_guide";
+// import Members_main from "../members/members_main/members_main";
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
