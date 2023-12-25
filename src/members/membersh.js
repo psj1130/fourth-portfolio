@@ -39,8 +39,8 @@ function MembersHeader() {
           </h1>
         </div>
         <div className="members-header-bottom-nav">
-          <a href="/">멤버십 안내</a>
-          <a href="/">서비스 안내</a>
+          <a href="/members/members_guide">멤버십 안내</a>
+          <a href="/members/service_guide">서비스 안내</a>
         </div>
       </div>
     </header>
