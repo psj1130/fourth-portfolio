@@ -38,7 +38,7 @@ function Hygiene() {
       <div className="hygiene-detail-container">
         <div className="hygiene-guide-link">
           <span>HOME</span>
-          <span>사회공헌 활동</span>
+          <span>사회공헌활동</span>
           식수위생 캠페인
         </div>
         <div className="hygiene-detail-title-container">
