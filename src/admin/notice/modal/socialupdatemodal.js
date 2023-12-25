@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import LogoutIcon from '@mui/icons-material/Logout';
 import IconButton from '@mui/material/IconButton';
@@ -7,74 +7,89 @@ import axios from 'axios'; // Axios 라이브러리 import
 import { API_URL } from '../../../config/serverurl';
 import './createmodal.css';
 
-const Createmodal = ({ modalOpen, setModalOpen }) => {
+const Updatemodal = ({ isOpen, onClose, updateId }) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [category, setCategory] = useState('');
   const [img, setImg] = useState(null);
-  
+
   const categories = ["메이트 희망기금", "캠퍼스 희망기금", "식수위생 캠퍼스", "이디야의 동행", "기타 활동"];
 
-  const handleSubmit = async (e) => {
-    // e.preventDefault();
+  Modal.setAppElement('#root');
+
+  // Modal창이 열릴 때 데이터를 불러옴
+  useEffect(() => {
+    if (isOpen && updateId) {
+      fetchUpdate(updateId);
+    }
+  }, [isOpen, updateId]);
+
+  const fetchUpdate = async (postId) => {
+    try {
+      const res = await axios.get(`${API_URL}/social/${postId}`);
+      const { title, body, category, img_url } = res.data;
+      setTitle(title);
+      setBody(body);
+      setCategory(category);
+      setImg(img_url);
+      console.log(res.data);
+    } catch (err) {
+      console.log('id 불러오기 실패 오류 발생', err);
+    }
+  }
+
+  const UpdateSubmit = async (e) => {
+    e.preventDefault();
+    console.log('들어온 updateId 값 : ', updateId);
     const imgfile = document.getElementById('file-style').files[0];
     const formData = new FormData();
-    // formData.append('title', title);
-    // formData.append('body', body);
-    // formData.append('category', category);
     formData.append('img_url', imgfile);
 
-    
-    // console.log('푼 값들', socialdata);
 
-  await axios.post(`${API_URL}/social/images/social`, formData)
-      .then(res => {
-        console.log(res.data);
+      const imgUpload = await axios.post(`${API_URL}/social/images/social`, formData);
+      console.log('보낸 이미지 데이터', imgUpload.data);
 
-        const socialdata = {
-          title: title,
-          body: body,
-          category: category,
-          img_url: res.data.path
-          //이미지 경로 데이터 사용
-        }
+      const UpDateData = {
+        id: updateId,
+        title: title,
+        body: body,
+        category: category,
+        img_url: imgUpload.data.path
+      };
 
-        axios.post(`${API_URL}/social/add`, socialdata)
-        .then(res => {
-          console.log(res.data);
-        })
-        .catch (err => {
-          console.log(err);
-        })
-      })
+      const UpDateres = await axios.put(`${API_URL}/social/patch/${updateId}`, UpDateData);
+      console.log('수정을 보낸 데이터', UpDateres);
 
-    }
+      // 모달 닫기 등 추가 동작 수행
+      onClose(false);
+  };
+
   return (
     <Modal
       className="socialcreatemodal-body"
-      isOpen={modalOpen}
-      onRequestClose={() => setModalOpen(false)}
-      contentLabel="Createmodal"
+      isOpen={isOpen}
+      onRequestClose={() => onClose(false)}
+      contentLabel="updatemodal"
     >
       <div className="socialcreatemodal-content">
         <div className="socialcreatemodal-top">
-          <p className='socialcreatemodal-top-title'>사회 공헌</p>
+          <p className='socialcreatemodal-top-title'>게시물 수정(사회공헌)</p>
           <button
-            className='socialcreatemodal-btn-style' 
-            onClick={() => setModalOpen(false)}>
+            className='socialcreatemodal-btn-style'
+            onClick={() => onClose(false)}>
             <LogoutIcon style={{ fontSize: '44px'}}/>
           </button>
         </div>
         <div className="socialcreatemodal-main-container">
-          <form onSubmit={handleSubmit} encType="multipart/form-data">
+          <form onSubmit={UpdateSubmit} encType="multipart/form-data">
             <div className="socialcreatemodal-main-title">
               <input
                 className='socialcreatemodal-main-title-style'
                 type="text"
                 name="title"
-                placeholder='제목을 입력해주세요' 
-                value={title} 
-                onChange={(e) => setTitle(e.target.value)} 
+                placeholder='제목을 입력해주세요'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
               />
               <select
                 className='socialcreatemodal-main-category-style'
@@ -100,12 +115,12 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
             </div>
             <div className="socialcreatemodal-bottom-body">
               <div className='socialcreatemodal-botton-file-con'>
-              <input
-                id='file-style' 
-                className='socialcreatemodal-bottom-imgselect'
-                type="file"
-                name="img_url"
-                onChange={(e) => setImg(e.target.files[0])} 
+                <input
+                  id='file-style'
+                  className='socialcreatemodal-bottom-imgselect'
+                  type="file"
+                  name="img_url"
+                  onChange={(e) => setImg(e.target.files[0])}
                 />
                 <label htmlFor="file-style">
                   <div className="file-input-icon">
@@ -124,4 +139,4 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
   );
 };
 
-export default Createmodal;
+export default Updatemodal;
