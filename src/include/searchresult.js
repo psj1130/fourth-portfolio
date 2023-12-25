@@ -53,12 +53,12 @@ function Searchre() {
         </div>
         <div id='searchresult_boxmain'>
           {/* 첫 번째 데이터 세트가 검색 결과를 가지고 있을 경우 */}
-          {searchResults.length > 0 && (
+          {searchResults.length > 0 &&
             searchResults.map((result) => (
-              <Link to={`/details/${result.id}`} key={result.id}>
+              <Link to={`/product/drink`} key={result.id}>
                 <li>
                   <div id="searchresult_box">
-                    <img src={result.img_url} alt={result.name} />
+                    {renderFirstImage(result.img_url)} {/* 이미지 함수 호출 */}
                     <div id="searchresult_detail">
                       <p id="searchresult_p">
                         <b>{result.name}</b>
@@ -68,15 +68,15 @@ function Searchre() {
                 </li>
               </Link>
             ))
-          )}
+          }
 
           {/* 두 번째 데이터 세트가 검색 결과를 가지고 있을 경우 */}
-          {mdResults.length > 0 && (
+          {mdResults.length > 0 &&
             mdResults.map((result) => (
-              <Link to={`/product/Md/${result.id}`} key={result.id}>
+              <Link to={`/product/md`} key={result.id}>
                 <li>
                   <div id="searchresult_box">
-                    {renderFirstImage(result.img_url)}
+                    {renderFirstImage(result.img_url)} {/* 이미지 함수 호출 */}
                     <div id="searchresult_detail">
                       <p id="searchresult_p">
                         <b>{result.name}</b>
@@ -86,8 +86,8 @@ function Searchre() {
                 </li>
               </Link>
             ))
-          )}
-
+          }
+          
           {/* 두 데이터 세트 모두 검색 결과가 없을 경우 */}
           {searchResults.length === 0 && mdResults.length === 0 && (
             <div id="searchresult_title">
@@ -115,7 +115,7 @@ function Searchre() {
         {/* 이벤트 */}
         {postResults.length > 0 &&
           postResults.map((result) => (
-            <Link to={`/event${result.id}`} key={result.id}>
+            <Link to={`/brandnews/event`} key={result.id}>
               <li id='postResults_box0'>
                 <div id="postResults_box">
                   <div id='postResults_box2'>
@@ -142,55 +142,42 @@ function Searchre() {
           ))
         }
         {/* 공지사항 */}
-        <div id='noticeResults_continer'>
+        <div id='noticeResults_container'>
           {noticeResults.length > 0 &&
-            noticeResults.map((result) => (
-              <Link to={`/notice${result.id}`} key={result.id}>
-                <li>
-                  <div id="noticeResults_box">
-                    <div id="noticeResults_detail">
-                      <p id="noticeResults_p">
-                        <div id='noticeResults_detail2'>
-                          <div id='noticeResults_box2'>
-                            <div id='noticeResults_h4'><h4>공지사항</h4></div>
-                            <div id='noticeResults_b'><p>{result.title}</p></div>
+            noticeResults.map((result) => {
+              // 날짜 데이터에서 시간 부분 제거
+              const dateWithoutTime = result.date.split('T')[0]; // 'T'를 기준으로 나누어 시간 부분 제거
+
+              return (
+                <Link to={`/brandnews/notice`} key={result.id}>
+                  <li>
+                    <div id='noticeResults_box'>
+                      <div id='noticeResults_detail'>
+                        <p id='noticeResults_p'>
+                          <div id='noticeResults_detail2'>
+                            <div id='noticeResults_box2'>
+                              <div id='noticeResults_h4'><h4>공지사항</h4></div>
+                              <div id='noticeResults_b'><p>{result.title}</p></div>
+                            </div>
+                            <div id='noticeResults_box3'>
+                              {/* 시간이 제거된 날짜 출력 */}
+                              <p>{dateWithoutTime}</p>
+                            </div>
                           </div>
-                          <div id='noticeResults_box3'>
-                            <p>{result.date}</p>
-                          </div>
-                        </div>
-                      </p>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              </Link>
-            ))
-          }
-        </div>
-        {/* 사회공헌 */}
-        <div id='socialResults_container'>
-          {socialResults.length > 0 &&
-            socialResults.map((result) => (
-              <Link to={`/social${result.id}`} key={result.id}>
-                <li>
-                  <div id="socialResults_box">
-                    {renderFirstImage(result.img_url)}
-                    <div id="socialResults_detail">
-                      <p id="socialResults_p">
-                        <b>{result.title}</b>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </Link>
-            ))
+                  </li>
+                </Link>
+              );
+            })
           }
         </div>
         {/* QnA */}
         <div id='QnAResults_continer'>
           {qnaResults.length > 0 &&
             qnaResults.map((result) => (
-              <Link to={`/qna${result.id}`} key={result.id}>
+              <Link to={`/qna`} key={result.id}>
                 <li>
                 <div id="QnAResults_box">
                     <div id="QnAResults_detail">
@@ -204,6 +191,26 @@ function Searchre() {
                             <p>{result.category}</p>
                           </div>
                         </div>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </Link>
+            ))
+          }
+        </div>
+
+        {/* 사회공헌 */}
+        <div id='socialResults_container'>
+          {socialResults.length > 0 &&
+            socialResults.map((result) => (
+              <Link to={`/brandnews/social`} key={result.id}>
+                <li>
+                  <div id="socialResults_box">
+                    {renderFirstImage(result.img_url)}
+                    <div id="socialResults_detail">
+                      <p id="socialResults_p">
+                        <b>{result.title}</b>
                       </p>
                     </div>
                   </div>

@@ -8,7 +8,7 @@
 #cupB_main{
   width: 1200px;
   height: 800px;
-  /* border: 3px solid black;  */
+  border: 1px solid rgb(199, 199, 199); 
 }
 #cupB_main1{
   width: 1200px;
@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  
   /* border: 3px solid black; */
 }
 #cupB_detail{
@@ -24,6 +25,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-right: 1px solid rgb(199, 199, 199); 
+}
+#cupB_detail:nth-last-child(1) {
+  border: none;
 }
 #cupB_detail h3{
   font-size: 17px;
@@ -34,14 +39,18 @@
   justify-content: center;
   /* border: 3px solid black; */
 }
-#cupB_detail p {
-  font-size: 13px;
+#cupB_detail_pp {
+  font-size: 14px;
   width: 330px;
-  height: 70px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  line-height: 22px;
+  color:rgb(149, 149, 149);
   /* border: 3px solid black; */
+  font-weight: 600;
 }
 #cupB_main2{
   width: 1200px;

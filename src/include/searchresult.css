@@ -234,12 +234,17 @@
   /* border: 3px solid rgb(10, 222, 158); */
 }
 #noticeResults_box3{
-  width: 500px;
-  height: 100px;
+  width: 480px;
+  height: 50px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   color: black;
+  line-height:30.1px;
+  vertical-align:baseline;
+  letter-spacing:normal;
+  word-spacing:0px;
+  font-weight: 600;
   /* border: 3px solid rgb(104, 185, 18); */
 }
 
@@ -382,6 +387,11 @@
   align-items: center;
   justify-content: flex-end;
   color: black;
+  line-height:30.1px;
+  vertical-align:baseline;
+  letter-spacing:normal;
+  word-spacing:0px;
+  font-weight: 600;
   /* border: 3px solid rgb(104, 185, 18); */
 }
 

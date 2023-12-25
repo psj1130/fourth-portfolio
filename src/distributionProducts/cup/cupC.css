@@ -8,6 +8,7 @@
 #cupC_main{
   width: 1200px;
   height: 200px;
+  border-bottom: 1px solid rgb(199, 199, 199) ;
   /* border: 3px solid black; */
 }
 #cupC_main1{
@@ -24,6 +25,30 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+#cupC_detail h2{
+  color:rgb(7, 55, 135);
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 800;
+  width: 400px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 1px solid black; */
+}
+#cupC_detail h4{
+  font-size: 17px;
+  color:rgb(48, 48, 48);
+  line-height: 22px;
+  font-weight: 800;
+  width: 400px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 1px solid black; */
 }
 #cupC_detail h3{
   font-size: 17px;
@@ -50,6 +75,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  
   /* border: 3px solid black; */
 }
 #cupC_title{
