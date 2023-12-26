@@ -15,9 +15,13 @@ import Ad_qna from './notice/ad_qna';
 import Ad_social from './notice/ad_social'
 import Ad_notice from './notice/ad_notice'
 import Ad_home from './ad_index.js';
-// 판매기록
+
 import Ad_sell from './ad_sell.jsx';
 import Ad_selledit from './ad_selledit.js';
+
+import MenuUpdate from './component/menuupdate.js';
+import MdUpdate from './component/mdupdate.js';
+
 function AdminPage() {
   document.title = "EDIYA COFFEE - 관리자 페이지";
   const cookie = getCookie('adminCookie');
@@ -39,6 +43,8 @@ function AdminPage() {
         <div className='others'>
           <Routes>
             <Route path='/' element={<Ad_home/>}/>
+
+            <Route path='/sales' element={<Ad_sell/>}/>
             <Route path='/suggestion' element={<Ad_suggestion/>}/>
             <Route path='/menu' element={<Ad_menu/>}/>
             <Route path='/md' element={<Ad_md/>}/>
@@ -48,8 +54,12 @@ function AdminPage() {
             <Route path='/social' element={<Ad_social/>}/>
             <Route path='/event' element={<Ad_event/>}/>
             <Route path='/notice' element={<Ad_notice/>}/>
+
             <Route path='/sell' element={<Ad_sell/>}/>
             <Route path='/selledit' element={<Ad_selledit/>}/>
+
+            <Route path='/menu/update/:id' element={<MenuUpdate/>}/>
+            <Route path='/md/update/:id' element={<MdUpdate/>}/>
           </Routes>
         </div>
       </div>

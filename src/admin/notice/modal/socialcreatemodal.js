@@ -36,6 +36,7 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
           body: body,
           category: category,
           img_url: res.data.path
+          //이미지 경로 데이터 사용
         }
 
         axios.post(`${API_URL}/social/add`, socialdata)

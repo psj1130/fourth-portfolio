@@ -28,6 +28,9 @@ import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
 import MapSearch from './mapsearch/mapSearch';
 
+import Searchre from "./include/searchresult.js";
+
+
 function App() {
   return (
     <div className="App">
@@ -54,6 +57,8 @@ function App() {
           <Route path='/dp/*' element={<DistributionProducts />}/>
           <Route path='/cs/*' element={<Customerservice />}/>
           <Route path='/searchstore' element={<MapSearch/>}/>
+          <Route path="/search/:keyword" element={<Searchre/>}></Route>
+          {/* <Route path="/search/:keyword" element={<SearchComponent />} /> */}
 
           {/* 성원 */}
           <Route path='/orderlist/:userid' element={<Orderlist />}/>

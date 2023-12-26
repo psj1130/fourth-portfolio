@@ -104,8 +104,8 @@ const columns = [
     renderCell: (params) => {
       return (
         <>
-          <Link to={'/md/' + params.row.id}>
-            <button className='menuListEdit'>수정</button>
+          <Link to={`/administrator/md/update/${params.row.id}`}>
+            <button type='click' className='menuListEdit' tabIndex={-1}>수정</button>
           </Link>
           <DeleteOutLine className='menuListDelete' onClick={async () => {
             let yn = window.confirm('정말 삭제하시겠습니까?');

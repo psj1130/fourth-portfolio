@@ -1,0 +1,138 @@
+#check_icon{
+  color: rgb(42, 71, 191);
+  margin-right: 3px;
+}
+#BsDot{
+  color: rgb(204, 204, 204);
+  margin-right: 3px;
+}
+#num5blue{
+  color: blue;
+  font-size: 20px;
+}
+/* #members_guide_body{width: 1900px;} */
+#members_guide_container{
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+#guide_header_textbox{
+  text-align: center;
+  height: 250px;
+}
+#guide_header_div1{
+  margin-top: 100px;
+  height: 45px;
+  font-size: 36px;
+  font-weight: bolder;
+}
+#guide_header_div2{
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+}
+#guide_header_div3{
+  margin-top: 80px;
+  font-weight: bold;
+  font-size: 30px;
+}
+/*  */
+#guide_main_treebox{
+  display: flex;
+  justify-content: space-around;
+}
+#main_treebox1{
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 292px;
+  height: 270px;
+  border-radius: 20px;
+  border: 1px solid rgb(238, 238, 238);
+}
+#main_trb1_1div{
+  display: flex;
+  width: 100%;
+  height: 128px;
+  border-bottom: 1px solid rgb(238, 238, 238);;
+}
+
+#main_trb1_textbox{
+  width: 240px;
+}
+#trb1_textbox1{
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  height: 40px;
+}
+#trb1_img{
+  display: flex;
+  margin-top: 8px;
+}
+#trb1_2div_1{
+  display: flex;
+  margin-top: 25px;
+}
+#trb1_2div_2{
+  display: flex;
+  margin-top: 15px;
+  font-size: 14px;
+  color: rgb(113, 113, 113);
+}
+/*  */
+#guidetextbox3{
+  width: 100%;
+  margin-top: 10px;
+  line-height: 50px;
+  text-align: center;
+  color: rgb(113, 113, 113);
+  font-size: 13px;
+}
+/*  */
+#service_useguide_back{
+  width: 100%;
+  height: 475px;
+  background-color: rgb(250, 247, 244);
+}
+#service_useguide_container{
+  margin: 0 auto;
+  width: 1200px;
+  height: 400px;
+}
+#useguide_textbox{
+  text-align: center;
+  height: 130px;
+}
+#useguide_textbox_1{
+  padding-top: 50px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+#useguide_textbox_2{
+  margin-top: 10px;
+  color: rgb(113, 113, 113);
+}
+#service_useguide_items{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+#service_useguide_item{
+  text-align: center;
+  width: 200px;
+  height: 180px;
+}
+#service_item_text1{
+  font-weight: bolder;
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+}
+#service_item_text2{
+  color: rgb(113, 113, 113);
+  font-size: 14px;
+  line-height: 20px;
+}

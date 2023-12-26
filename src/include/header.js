@@ -2,6 +2,8 @@ import React, {useState, useEffect, useRef} from "react";
 import './header.css';
 import { Link } from "react-router-dom";
 import { getCookie, delCookie } from "../customer/cookies";
+// import SearchComponent from "./testSearch";
+import Searchbar from "./searchbar";
 
 function Header() {
   // const [scrollY, setScrollY] = useState(0);
@@ -38,6 +40,8 @@ function Header() {
     }
   }, []);
 
+
+  
   return(
     <header>
       <div id="header-wrapper">
@@ -52,7 +56,7 @@ function Header() {
               <li><Link to='/searchstore'>매장찾기</Link></li>
               <li><Link to='/cs'>고객의 소리</Link></li>
               <li><Link to='/'>이디야 스토어</Link></li>
-              <li><Link to='/administrator/login'>관리자 페이지</Link></li>
+              <li><Link to='/administrator'>관리자 페이지</Link></li>
             </ul>
             <div id="header-topmenu-sns">
               <a href='#none'><img src={process.env.PUBLIC_URL + "/images/top_sns/top_sns01.png"} alt="1"/></a>
@@ -61,12 +65,18 @@ function Header() {
               <a href='#none'><img src={process.env.PUBLIC_URL + "/images/top_sns/top_sns04.png"} alt="1"/></a>
             </div>
             <div id="header-topmenu-searchbox">
-              <form>
+              <Searchbar></Searchbar>
+
+              {/* <div id="SearchComponent_main">
+                <SearchComponent></SearchComponent>
+              </div> */}
+              
+              {/* <form>
                 <input id="searchbox-input" type="text" ></input>
                 <div id="header-topmenu-searchbox-ok">
                   <i className="xi-search"></i>
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>
