@@ -188,10 +188,10 @@ const UpdateInput = (props) => {
                   ingredient_caffein: caffein
                 }
                 
-                axios.patch(`${API_URL}/admin/update/menu/${props.id}`, data)
+                await axios.patch(`${API_URL}/admin/update/menu/${props.id}`, data)
                   .then((res) => {
                     console.log(res.data);
-                    window.location.replace('/');
+                    window.location.replace('/administrator/menu');
                   })
                   .catch((err) => {
                     console.log(err);

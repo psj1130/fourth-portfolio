@@ -29,7 +29,7 @@ const LoginForm = (props) => {
         <p>
           <span>비밀번호</span>
         </p>
-        <input ref={pw_css} id="password" type="text" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
+        <input ref={pw_css} id="password" type="password" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
           setPassword(e.target.value);
         }}></input>
       </div>
