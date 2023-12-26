@@ -103,6 +103,7 @@
   padding: 15px 0 15px 15px ;
   font-size: 15px;
 }
+
 .menu-seq span {
   font-size: 11px;
   margin-top: 20px;
@@ -149,4 +150,8 @@
 
 .update-container {
   height: 100%;
+}
+
+.menu-seq input {
+  padding: 15px;
 }

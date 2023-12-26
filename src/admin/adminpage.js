@@ -17,6 +17,7 @@ import Ad_notice from './notice/ad_notice'
 import Ad_home from './ad_index.js';
 import Ad_sell from './ad_sell.jsx';
 import MenuUpdate from './component/menuupdate.js';
+import MdUpdate from './component/mdupdate.js';
 
 function AdminPage() {
   document.title = "EDIYA COFFEE - 관리자 페이지";
@@ -52,6 +53,7 @@ function AdminPage() {
             <Route path='/notice' element={<Ad_notice/>}/>
 
             <Route path='/menu/update/:id' element={<MenuUpdate/>}/>
+            <Route path='/md/update/:id' element={<MdUpdate/>}/>
           </Routes>
         </div>
       </div>
