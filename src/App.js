@@ -11,7 +11,7 @@ import MainPage from './main';
 import Affiliatecard from './card/affiliatecard';
 import Giftcardrouters from "./card/giftcardrouters";
 import Brandnewsrouters from "./brandnews/barndnewsrouters";
-import Orderlist from './seller/orderlist.js';
+import Orderlist from './seller/mypage/orderlist.js';
 import Seller from './seller/seller';
 import Buym from "./seller/buym";
 import Success from './seller/success.tsx';
@@ -29,6 +29,7 @@ import DistributionProducts from './distributionProducts/distributionProducts';
 import MapSearch from './mapsearch/mapSearch';
 
 import Searchre from "./include/searchresult.js";
+import MyPage from "./seller/mypage/mypage.js";
 
 
 function App() {
@@ -61,10 +62,10 @@ function App() {
           {/* <Route path="/search/:keyword" element={<SearchComponent />} /> */}
 
           {/* 성원 */}
-          <Route path='/orderlist/:userid' element={<Orderlist />}/>
+          <Route path='/mypage/:userid' element={<MyPage />}/>
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
-          <Route path='/seller/:id' element={<Seller/>}/>
+          <Route path='/seller/:userid' element={<Seller/>}/>
           <Route path="/seller/success" element={<Success/>}/>
           <Route path="/seller/fail" element={<Fail/>}/>
         </Routes>
