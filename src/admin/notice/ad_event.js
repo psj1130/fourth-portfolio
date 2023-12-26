@@ -1,14 +1,16 @@
 import React, {useState, useRef, useEffect} from "react";
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import DeleteOutLine from '@mui/icons-material/DeleteOutline'
+
 import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
-import './ad_notice.css';
+import './notice.css';
 import Integratedpopup from "./modal/integratedpopup";
 import Createmodal from "./modal/eventcreatemodal";
-import Button from '@mui/material/Button';
 import Updatemodal from "./modal/eventupdatemodal";
+
 
 export default function Ad_event() {
 
@@ -67,7 +69,7 @@ export default function Ad_event() {
   const columns = [
     {
       field: 'id',
-      headerName: '공지사항',
+      headerName: '이벤트',
       width: 100,
       editable: false,
     },
@@ -178,7 +180,9 @@ export default function Ad_event() {
       renderCell: (params) => {
         return (
           <>
-            <button className='userListDelete' onClick={async () => {
+            <DeleteOutLine
+            style={{ cursor: 'pointer' }}
+             className='userListDelete' onClick={async () => {
               console.log(params.id);
               await axios.delete(`${API_URL}/event/delete/${params.id}`)
               //qnaroute에서 delete만들고 요청하면 됨
@@ -191,7 +195,7 @@ export default function Ad_event() {
               })
             }}>
               삭제
-            </button>
+            </DeleteOutLine>
           </>
         );
       },
@@ -204,7 +208,7 @@ export default function Ad_event() {
         return (
           <>
             <button
-              className="userListDelete"
+              className="update-btn"
               onClick={() => UpdateClick(params.row.id)}
             >
               수정
@@ -216,13 +220,14 @@ export default function Ad_event() {
   ];
 
   return (
-    <div id='ad_suggestion_container'>
-      <div id='ad_suggestion_main'>
+    <div id='ad_event_container'>
+      <div id='ad_event_main'>
         <Box>
-          <div className="created-btn">
-          <Button
-          onClick={() => setModalOpen(true)}
-          style={{ color: 'black'}}>새로 만들기</Button>
+          <div className="create_title">
+            <button
+              className="create-btn"
+              onClick={() => setModalOpen(true)}>
+            새로 만들기</button>
             <Createmodal modalOpen={modalOpen} setModalOpen={setModalOpen} />
           </div>
           <Updatemodal

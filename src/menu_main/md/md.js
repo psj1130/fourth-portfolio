@@ -7,7 +7,7 @@ import useAsync from '../../customHook/useAsync';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { IoSearch } from "react-icons/io5";
+
 
 async function getdrink() {
   const res = await axios.get(`${API_URL}/menu/md`);

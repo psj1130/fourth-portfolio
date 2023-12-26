@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios'; // Axios 라이브러리 import
 import { API_URL } from '../../../config/serverurl';
-import './createmodal.css';
+import './qnamodal.css'
 
 const Createmodal = ({ modalOpen, setModalOpen }) => {
   const [question, setQuestion] = useState('');
@@ -37,25 +37,25 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
 
   return (
       <Modal
-      className="socialcreatemodal-body"
+      className="qnamodal-body"
       isOpen={modalOpen}
       onRequestClose={() => setModalOpen(false)}
       contentLabel="Createmodal"
     >
-      <div className="socialcreatemodal-content">
-        <div className="socialcreatemodal-top">
-          <p className='socialcreatemodal-top-title'>사회 공헌</p>
+      <div className="qnamodal-content">
+        <div className="qnamodal-top">
+          <p className='qnamodal-top-title'>QnA</p>
           <button
-            className='socialcreatemodal-btn-style'
+            className='qnamodal-btn-style'
             onClick={() => setModalOpen(false)}>
             <LogoutIcon style={{ fontSize: '44px' }} />
           </button>
         </div>
-        <div className="socialcreatemodal-main-container">
+        <div className="qnamodal-main-container">
           <form onSubmit={handleSubmit} encType="multipart/form-data">
-            <div className="socialcreatemodal-main-title">
+            <div className="qnamodal-main-title-box">
               <input
-                className='socialcreatemodal-main-title-style'
+                className='qnamodal-main-title'
                 type="text"
                 name="title"
                 placeholder='제목을 입력해주세요' 
@@ -63,7 +63,7 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                 onChange={(e) => setQuestion(e.target.value)} 
               />
               <select
-                className='socialcreatemodal-main-category-style'
+                className='qnamodal-main-category'
                 name="category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}>
@@ -75,20 +75,17 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                 ))}
               </select>
             </div>
-            <div className="socialcreatemodal-main-body">
+            <div className="qnamodal-main-box">
               <textarea
-                className='socialcreatemodal-main-body-style'
+                className='qnamodal-main-body'
                 placeholder='내용을 입력해주세요'
                 type="text"
                 name="body"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}/>
             </div>
-            <div className="socialcreatemodal-bottom-body">
-              <div className='socialcreatemodal-botton-file-con'>
-
-              </div>
-              <button className='socialcreatemodal-form-btn' type="submit">업로드</button>
+            <div className="qnamodal-bottom-body">
+              <button className='qnamodal-form-btn' type="submit">업로드</button>
             </div>
           </form>
         </div>
