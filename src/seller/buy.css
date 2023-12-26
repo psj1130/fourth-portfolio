@@ -181,6 +181,7 @@ font-size: 25px;
   padding-right: 10px;
 }
 #buybutton{
+  width: 100%;
   text-align: center;
   height: 50px;
   border-radius: 5px;
@@ -188,6 +189,7 @@ font-size: 25px;
   background-color: #243C84;
   font-size: 15px;
   color: white;
+  cursor: pointer;
 }
 #buytok{
   width: 210px;

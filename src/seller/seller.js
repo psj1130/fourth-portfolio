@@ -1,4 +1,4 @@
-import { useParams,useSearchParams} from "react-router-dom";
+import { useParams, useSearchParams} from "react-router-dom";
 import { API_URL } from "../config/contansts";
 // import { getCookie } from "../loginpage/cookies";
 import React from "react";
@@ -9,8 +9,12 @@ import "./seller.css";
 import Checkout from "./Checkout.tsx";
 import { getCookie } from "../customer/cookies.js";
 
-async function getseller(id) {
-  const res = await axios.get(`${API_URL}/seller/${id}`);
+async function getseller(userid, id) {
+  const res = await axios.get(`${API_URL}/seller/${userid}`, {
+    params: {
+      id: id
+    }
+  });
   console.log(res);
   return res.data;
 }
@@ -192,7 +196,8 @@ function Info(props){
 
 
 function Seller(props) {
-  const {userid} = useParams();
+  const { userid } = useParams();
+  console.log(userid);
   const [searchParams, setSearchParams] = useSearchParams();
   const id = searchParams.get('id');
   const count = searchParams.get('o_count');
@@ -228,8 +233,8 @@ function Seller(props) {
   }
 }
   
-  console.log("Link to:",id,count,amount);
-  const [state] = useAsync(() => getseller(id), [id]);
+  // console.log("Link to:",id,count,amount);
+  const [state] = useAsync(() => getseller(userid, id), [userid]);
   const { loading, data: rdata, error } = state;
 
   if (loading) return <div>로딩중입니다.....</div>;

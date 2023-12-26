@@ -51,7 +51,7 @@ function Header() {
             <ul id="header-topmenu-navigation">
               <li><Link to={
                 cookie
-                ?`/orderlist/${cookie}`:"/login"}>구매내역</Link></li>
+                ?`/mypage/${cookie}`: "/members/login"}>구매내역</Link></li>
               <li>{context}</li>
               <li><Link to='/searchstore'>매장찾기</Link></li>
               <li><Link to='/cs'>고객의 소리</Link></li>
