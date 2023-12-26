@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { IoSearch } from "react-icons/io5";
 
 async function getdrink() {
-  const res = await axios.get(`${API_URL}/product/Food`);
+  const res = await axios.get(`${API_URL}/menu/food`);
   console.log(res);
   return res.data;
 }
@@ -18,14 +18,14 @@ async function getdrink() {
 const Drink_header = () => {
   return (
     <div id="drink_main_div1">
-      <div id="drink_back_img1">
+      <div id="food_back_img1">
         <div id="drink_textbox2">
           <div id="drink_textbox1_div1"><p>푸드</p></div>
           <div id="drink_textbox1_div2"><p>Always Beside you, <b>EDIYA COFFEE</b></p></div>
         </div>
         <div id="drink_header_DFM">
           <a href="/product/drink" id="DFM_drink_style2">음료</a>
-          <a href="/product/food" id="DFM_drink_style2">푸드</a>
+          <a href="/product/food" id="backgray">푸드</a>
           <a href="/product/md" id="DFM_drink_style2">MD</a>
         </div>
       </div>
@@ -37,9 +37,9 @@ const Drink_header = () => {
 function Food(props) {
   const [hiddenItems, setHiddenItems] = useState([]);
   const [hiddenItems1, setHiddenItems1] = useState([]);
-  const [breadChecked, setbreadChecked] = useState(false);
-  const [dessertChecked, setdessertChecked] = useState(false);
-  const [sauceChecked, setsauceChecked] = useState(false);
+  const [breadChecked, setBreadChecked] = useState(false);
+  const [dessertChecked, setDessertChecked] = useState(false);
+  const [sauceChecked, setSauceChecked] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [showMore1, setShowMore1] = useState(8);
   const itemsPerPage = 8;
@@ -70,8 +70,9 @@ function Food(props) {
   if (error) return <div>에러가 발생했습니다.</div>;
   if (!pdata) return null;
 
+  const sortedData = [...pdata].sort((a, b) => a.seq - b.seq);
   // ICED와 HOT 필터링된 데이터 가져오기
-  const filteredData = pdata.filter((item) => {
+  const filteredData = sortedData.filter((item) => {
     const isbreadMatch = !breadChecked || item.type.includes('bread');
     const isdessertMatch = !dessertChecked || item.type.includes('dessert');
     const issauceMatch = !sauceChecked || item.type.includes('sauce');
@@ -87,6 +88,24 @@ function Food(props) {
     <button onClick={onClick} className="slick-next"></button>
   );
 
+  const handleBreadChange = () => {
+    setBreadChecked(true);
+    setDessertChecked(false);
+    setSauceChecked(false);
+  };
+
+  const handleDessertChange = () => {
+    setBreadChecked(false);
+    setDessertChecked(true);
+    setSauceChecked(false);
+  };
+
+  const handleSauceChange = () => {
+    setBreadChecked(false);
+    setDessertChecked(false);
+    setSauceChecked(true);
+  };
+
   const settings = {
     arrows: true,
     infinite: true,
@@ -94,8 +113,8 @@ function Food(props) {
     slidesToShow: 3,
     slidesToScroll: 1,
     waitForAnimate: false,
-    prevArrow: <CustomPrevButton />,
-    nextArrow: <CustomNextButton />,
+    // prevArrow: <CustomPrevButton />,
+    // nextArrow: <CustomNextButton />,
   };
 
   return (
@@ -106,7 +125,7 @@ function Food(props) {
           <div id="drink_main_container">
             <div className="hr-sect">추천 상품</div>
             <Slider {...settings} id='slick-slider'>
-              {pdata.map((a, index) => {
+              {sortedData.map((a, index) => {
                 const imga = a.img_url.split(',');
                 return (
                   <div id="drink_relative" key={a.id} style={{ margin: '0 10px' }}>
@@ -153,19 +172,18 @@ function Food(props) {
                     onChange={(e) => setSearchText(e.target.value)}/><IoSearch /></div>
                 </div>  
                 <div id="drink_search_2">
-                  <input type="checkbox" id="drink_search_checkbox1" 
-                  checked={breadChecked}
-                  onChange={() => setbreadChecked(!breadChecked)}
+                  <input type="checkbox" id="drink_search_checkbox1"
+                    checked={breadChecked}
+                    onChange={handleBreadChange}
                   /><p>bread</p>
                   <input type="checkbox" id="drink_search_checkbox1"
-                  checked={dessertChecked}
-                  onChange={() => setdessertChecked(!dessertChecked)}
+                    checked={dessertChecked}
+                    onChange={handleDessertChange}
                   /><p>dessert</p>
                   <input type="checkbox" id="drink_search_checkbox1"
-                  checked={sauceChecked}
-                  onChange={() => setsauceChecked(!sauceChecked)}
+                    checked={sauceChecked}
+                    onChange={handleSauceChange}
                   /><p>sauce</p>
-                  
                 </div>
               </div>
             </div>
@@ -180,7 +198,7 @@ function Food(props) {
                         <img src={imga[0]} alt="1" id="drink_img1" />
                       </div>
                       <div id="drink_textbox">
-                        <p><b>{a.name}</b></p>
+                      <div id="a_name"><p><b>{a.name}</b></p></div>
                         {a.use_yn == 1 && (
                           <Link to={`/product/drink/${a.id}`}>
                             <div id="drink_buy"><p>구매하기</p></div>
@@ -194,7 +212,7 @@ function Food(props) {
                       style={{ display: hiddenItems1[index] ? "block" :"none"}}>
                       <div>
                         <div id="drink_name1">
-                          <div id="name_kor"><p><b>{a.name}</b></p></div>
+                          <div id="name_kor1"><p><b>{a.name}</b></p></div>
                           <div id="name_eng"><p>{a.eng_name}</p></div>
                         </div>
                         <div id="drink_info1" ><p>{a.info}</p></div>
@@ -219,7 +237,7 @@ function Food(props) {
               <div id="show_drink_list_warrap">
                 {showMore1 < filteredData.length && (
                 <button id="show_drink_list" onClick={toggleShowMore1}>
-                  {'더보기'}
+                  {'더보기  +'}
                 </button>
               )}
               </div>

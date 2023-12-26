@@ -50,8 +50,8 @@ function Notice() {
               공지사항
             </div>
             <div className="notice-search-container">
-                <div className="notice-drowdown-box">
-                  <select className='notice-drowdown-list' onChange={onchanglist} value={content}>
+                <div className="notice-dropwdown-box">
+                  <select className='notice-dropwdown-list' onChange={onchanglist} value={content}>
                     {options.map((item)=>(
                       <option key={item.key} value={item.key}>{item.value}</option>
                     ))}
@@ -62,7 +62,7 @@ function Notice() {
                   className='notice-serch-input'
                   type="text" />
                     <button className='notice-serch-result'>
-                      <img src="/images/cardlist/icon_search.gif"/>
+                      <img src={process.env.PUBLIC_URL + "/images/cardlist/icon_search.gif"} alt='img'/>
                     </button>
                 </div>
               </div>
@@ -71,7 +71,7 @@ function Notice() {
               {Noticedata.map((item) => (
                   <li key={item.id}>
                     <div className='notice-detail-list-iconbox'>
-                      <img src="/images/brandnews/notice_icon.gif"/>
+                      <img src="/images/brandnews/notice_icon.gif" alt='img'/>
                     </div>
                     <div className='list-detail-box'>
                       <h5>

@@ -8,11 +8,11 @@
 }
 #admin-main {
   display: flex;
-  height: 794px;
+  height: 780px;
 }
 .others {
   flex: 6;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .menuImg {
@@ -27,6 +27,7 @@
   background-color: #243C84;
   margin-right: 15px;
   color: #fff;
+  cursor: pointer;
 }
 .menuListDelete {
   cursor: pointer;
@@ -45,4 +46,24 @@
   align-items: center;
   flex-direction: column;
   gap: 50px;
+}
+.add-button {
+  /* position: fixed; */
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  display: block;
+  align-self: flex-end;
+  border: none;
+  background-color: #243C84;
+  color: #fff;
+  font-family: 'Pretendard-Regular';
+  margin: 10px;
+  font-size: 17px;
+}
+
+#ad_menu_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

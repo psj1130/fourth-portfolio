@@ -2,36 +2,24 @@ import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import useAsync from '../customHook/useAsync';
+import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../../config/serverurl';
 import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 import { Link } from 'react-router-dom';
-import MenuModal from './component/menumodal';
+import MdModal from '../component/mdmodal';
 
 
 
 
-async function getMenu() {
-  const res = await axios.get(`${API_URL}/product/menu`);
+async function getMd() {
+  const res = await axios.get(`${API_URL}/admin/md`);
   console.log(res);
   return res.data;
 }
 
 
 const columns = [
-  {
-    field: 'type',
-    headerName: 'Drink / Food',
-    width: 100,
-    editable: false,
-  },
-  {
-    field: 'code',
-    headerName: '메뉴 코드',
-    width: 100,
-    editable: false,
-  },
   {
     field: 'seq',
     headerName: '순서',
@@ -41,13 +29,13 @@ const columns = [
   {
     field: 'name',
     headerName: '메뉴 이름',
-    width: 150,
+    width: 250,
     editable: true,
   },
   {
     field: 'eng_name',
     headerName: '영어 이름',
-    width: 150,
+    width: 300,
     editable: true,
   },
   {
@@ -61,50 +49,15 @@ const columns = [
     headerName: '이미지',
     width: 100,
     renderCell: (params) => {
-      console.log(params.row.img_url);
+      const image = params.row.img_url.split(',');
+      console.log(image[1]);
       return(
         <div>
-          <img className='menuImg' src={params.row.img_url} alt='' >
+          <img className='menuImg' src={image[0]} alt='' >
           </img>
         </div>
       )
     }
-  },
-  {
-    field: 'ingredient_cal',
-    headerName: '칼로리(kcal)',
-    width: 120,
-    editable: true,
-  },
-  {
-    field: 'ingredient_sugar',
-    headerName: '당류(g)',
-    width: 90,
-    editable: true,
-  },
-  {
-    field: 'ingredient_protein',
-    headerName: '단백질(g)',
-    width: 90,
-    editable: true,
-  },
-  {
-    field: 'ingredient_sf',
-    headerName: '포화지방(g)',
-    width: 110,
-    editable: true,
-  },
-  {
-    field: 'ingredient_na',
-    headerName: '나트륨(mg)',
-    width: 100,
-    editable: true,
-  },
-  {
-    field: 'ingredient_caffein',
-    headerName: '카페인(mg)',
-    width: 90,
-    editable: true,
   },
   {
     field: 'use_yn',
@@ -114,15 +67,35 @@ const columns = [
   },
   {
     field: 'createdAt',
-    headerName: '출시 날짜',
-    width: 120,
-    editable: false,
+    headerName: '등록 날짜',
+    width: 200,
+    renderCell: (params) => {
+      return(
+        <p>{new Date(params.row.createdAt).toLocaleString('ko-KR', {
+          year: '2-digit',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })}</p>
+      )
+    }
   },
   {
-    field: 'modified_at',
-    headerName: '수정 날짜',
-    width: 120,
-    editable: true,
+    field: 'modifiedAt',
+    headerName: '출시 날짜',
+    width: 200,
+    renderCell: (params) => {
+      return(
+        <p>{new Date(params.row.modified_at).toLocaleString('ko-KR', {
+          year: '2-digit',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })}</p>
+      )
+    }
   },
   {
     field: 'action',
@@ -131,17 +104,17 @@ const columns = [
     renderCell: (params) => {
       return (
         <>
-          <Link to={'/menu/' + params.row.id}>
-            <button className='menuListEdit'>수정</button>
+          <Link to={`/administrator/md/update/${params.row.id}`}>
+            <button type='click' className='menuListEdit' tabIndex={-1}>수정</button>
           </Link>
           <DeleteOutLine className='menuListDelete' onClick={async () => {
             let yn = window.confirm('정말 삭제하시겠습니까?');
               if(yn) {
                 console.log(params.id);
-              await axios.delete(`${API_URL}/menu/delete/${params.id}`)
+              await axios.delete(`${API_URL}/menu/md/delete/${params.row.id}`)
               .then(res => {
                 console.log(res.data);
-                window.location.reload();
+                window.location.replace('/administartor/md');
               })
               .catch(err => {
                 console.log(err);
@@ -155,8 +128,8 @@ const columns = [
   },
 ];
 
-export default function Ad_menu() {
-  const [state] = useAsync(getMenu, []);
+export default function Ad_md() {
+  const [state] = useAsync(getMd, []);
   const [isOpen, setOpen] = useState(false);
 
   const { loading, data: formData, error } = state;
@@ -167,6 +140,9 @@ export default function Ad_menu() {
 
   return (
     <div id='ad_menu_container'>
+      <button className='add-button' type='click' onClick={() => {
+          setOpen(true);
+        }}>새 상품</button>
       <div id='ad_menu_main'>
         <Box>
           <DataGrid
@@ -175,7 +151,7 @@ export default function Ad_menu() {
             initialState={{
               pagination: {
                 paginationModel: {
-                  pageSize: 10,
+                  pageSize: 11,
                 },
               },
             }}
@@ -184,11 +160,8 @@ export default function Ad_menu() {
             disableRowSelectionOnClick
           />
         </Box>
-        <button type='click' onClick={() => {
-          setOpen(true);
-        }}>새 메뉴</button>
-        {isOpen ? <MenuModal
-                   isOpen={setOpen} /> : null}
+        
+        {isOpen ? <MdModal isOpen={setOpen} /> : null}
       </div>
     </div>
   );

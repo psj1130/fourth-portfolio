@@ -21,7 +21,7 @@ function Brandbg() {
                   <a href="/brandnews/event">이벤트 안내</a>
                 </span>
                 <span className='brandbg-btn-con-lists'>
-                  <a href='/brandnews/activitys/activity'>사회공헌 활동</a>
+                  <a href='/brandnews/activity'>사회공헌 활동</a>
                 </span>
               </div>
             </div>

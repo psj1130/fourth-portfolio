@@ -1,104 +1,71 @@
-import * as React from 'react';
+import React, {useState, useRef, useEffect} from "react";
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
-
-
-async function deleteSuggestion(id) {
-  try {
-    const res = await axios.delete(`${API_URL}/suggestion/${id}`);
-    console.log(res);
-  } catch (error) {
-    console.error('Error deleting suggestion:', error);
-  }
-}
-
-async function getSuggestion() {
-  const res = await axios.get(`${API_URL}/suggestion`);
-  console.log(res);
-  return res.data;
-}
-
-
-const columns = [
-  {
-    field: 'type',
-    headerName: '사회 공헌',
-    width: 120,
-    editable: true,
-  },
-  {
-    field: 'user',
-    headerName: '이름',
-    width: 120,
-    editable: true,
-  },
-  {
-    field: 'phone',
-    headerName: '핸드폰 번호',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 150,
-    valueGetter: (params) => `${params.row.phone}`,
-  },
-  {
-    field: 'email',
-    headerName: '이메일',
-    width: 200,
-    editable: true,
-  },
-  {
-    field: 'title',
-    headerName: '제목',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'body',
-    headerName: '내용',
-    width: 200,
-    editable: true,
-  },
-  {
-    field: 'file_dir',
-    headerName: '첨부 파일',
-    width: 100,
-    editable: true,
-  },
-  {
-    field: 'action',
-    headerName: '삭제',
-    width: 80,
-    renderCell: (params) => {
-      const handleDelete = () => {
-        deleteSuggestion(params.id); 
-      };
-
-      return (
-        <>
-          <button className='userListDelete' onClick={async () => {
-            console.log(params.id);
-            await axios.delete(`${API_URL}/suggestion/delete/${params.id}`)
-            .then(res => {
-              console.log(res.data);
-              window.location.reload();
-            })
-            .catch(err => {
-              console.log(err);
-            })
-          }}>
-            삭제
-          </button>
-        </>
-      );
-    },
-  },
-];
+import './ad_notice.css';
+import Integratedpopup from "./modal/integratedpopup";
+import Createmodal from "./modal/socialcreatemodal";
+import Button from '@mui/material/Button';
+import Updatemodal from "./modal/socialupdatemodal";
 
 export default function Ad_social() {
-  const [state] = useAsync(getSuggestion, []);
+
+    //모달 부분
+    const [isOpen, setOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+    const modalRef = useRef(null);
+    const [selectedlist, setSelectedlist] = useState(null);
+    const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
+    const [updateId, setUpdateId] = useState(null);
+    //내용 팝업 모달 열기
+    const popupclick = () => {
+      setOpen(true);
+    };
+    //모달닫기
+    const handleCloseModal = () => {
+      setOpen(false);
+    };
+    //수정모달 열기
+    const UpdateClick = (postId) => {
+      setUpdateId(postId);
+      setUpdateModalOpen(true);
+    };
+  
+  
+    useEffect(() => {
+      const OutsideClick = (event) => {
+        if (isOpen && !modalRef.current?.contains(event.target)) {
+          handleCloseModal();
+        }
+      };
+    
+      document.addEventListener("mousedown", OutsideClick);
+    
+      return () => document.removeEventListener("mousedown", OutsideClick);
+    }, [isOpen]);
+
+  //데이터 전체 조회부분
+  async function getSocial() {
+    const res = await axios.get(`${API_URL}/social`);
+    console.log(res);
+    return res.data;
+  };
+ //데이터 삭제 부분
+  async function deleteSocial(id) {
+    try {
+      const res = await axios.delete(`${API_URL}/social/${id}`);
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  //수정 하기위한 id값 데이터 전체 modal전달하는 함
+
+
+  const [state] = useAsync(getSocial, []);
 
   const { loading, data: formData, error } = state;
 
@@ -106,10 +73,141 @@ export default function Ad_social() {
   if (error) return <div>에러가 발생했습니다.</div>;
   if (!formData) return null;
 
+  
+  
+  //각 열 이름 및 데이터 설정
+  const columns = [
+    {
+      field: 'id',
+      headerName: '사회공헌활동',
+      width: 120,
+      editable: false,
+    },
+    {
+      field: 'title',
+      headerName: '제목',
+      width: 200,
+      editable: false,
+    },
+    {
+      field: 'body',
+      headerName: '내용',
+      width: 200,
+      editable: false,
+      renderCell: (params) => {
+        const bodydetail = params.row.body;
+          return (
+            <>
+            <div className='data-box-list' ref={modalRef}>
+            <p
+              className='data-box'
+              src={params.row.body}
+              onClick={() => {
+              setSelectedlist(params.row.id); // 또는 다른 고유한 식별자
+              popupclick(true);
+            }}
+          >{bodydetail.length > 100 ? bodydetail.substring(0, 10) + '...' : bodydetail}</p>
+              {isOpen && selectedlist === params.row.id && (
+                <Integratedpopup bodydetail={bodydetail} isOpen={isOpen} />
+              )}
+          </div>
+          </>
+        );
+      },  
+    },
+    {
+      field: 'createdAt',
+      headerName: '등록 시간',
+      width: 200,
+      editable: false,
+      valueGetter: (params) => {
+        // 'createdAt' 필드의 값은 여기서 변환됩니다.
+        const dates = new Date(params.row.createdAt);
+        return dates.toLocaleString('ko-KR', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+        });
+      },
+    },
+    {
+      field: 'updatedAt',
+      headerName: '수정시간',
+      width: 200,
+      editable: false,
+      valueGetter: (params) => {
+        // 'createdAt' 필드의 값은 여기서 변환됩니다.
+        const dates = new Date(params.row.updatedAt);
+        //받아온 데이터 컬럼 값으로 바꿔야함
+        return dates.toLocaleString('ko-KR', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+        });
+      },
+    },
+    {
+      field: 'action',
+      headerName: '삭제',
+      width: 80,
+      renderCell: (params) => {
+        return (
+          <>
+            <button className='userListDelete' onClick={async () => {
+              console.log(params.id);
+              await axios.delete(`${API_URL}/social/delete/${params.id}`)
+              .then(res => {
+                console.log(res.data);
+                window.location.reload();
+              })
+              .catch(err => {
+                console.log(err);
+              })
+            }}>
+              삭제
+            </button>
+          </>
+        );
+      },
+    },
+    {
+      field: "update",
+      headerName: "수정",
+      width: 80,
+      renderCell: (params) => {
+        return (
+          <>
+            <button
+              className="userListDelete"
+              onClick={() => UpdateClick(params.row.id)}
+            >
+              수정
+            </button>
+          </>
+        );
+      },
+    },
+  ];
+
   return (
     <div id='ad_suggestion_container'>
       <div id='ad_suggestion_main'>
         <Box>
+          <div className="created-btn">
+          <Button
+          onClick={() => setModalOpen(true)}
+          style={{ color: 'black'}}>새로 만들기</Button>
+            <Createmodal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+          </div>
+          <Updatemodal
+            isOpen={isUpdateModalOpen}
+            onClose={() => setUpdateModalOpen(false)}
+            updateId={updateId}
+          />
           <DataGrid
             rows={formData}
             columns={columns}

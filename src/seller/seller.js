@@ -1,4 +1,4 @@
-import { useParams,useSearchParams} from "react-router-dom";
+import { useParams, useSearchParams} from "react-router-dom";
 import { API_URL } from "../config/contansts";
 // import { getCookie } from "../loginpage/cookies";
 import React from "react";
@@ -8,8 +8,13 @@ import { useState, } from 'react'
 import "./seller.css";
 import Checkout from "./Checkout.tsx";
 import { getCookie } from "../customer/cookies.js";
-async function getseller(id) {
-  const res = await axios.get(`${API_URL}/seller/${id}`);
+
+async function getseller(userid, id) {
+  const res = await axios.get(`${API_URL}/seller/${userid}`, {
+    params: {
+      id: id
+    }
+  });
   console.log(res);
   return res.data;
 }
@@ -51,7 +56,7 @@ function DT2(props) {
  
   const menu = props.rdata.menuResult;
   
-  const imgurl = props.rdata.menuResult.img_url.split(',');
+  const imgurl = null
   const amount1 = props.value.amount;
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -67,7 +72,7 @@ function DT2(props) {
         <h3 id="sellerbor1" onClick={handleToggle}>구매상품</h3>
           <div id="sellerdt1">
             <div>
-              <img src={imgurl[0]} id="sellerimg"></img>
+              <img src={imgurl} id="sellerimg"></img>
             </div>
               <div >
                 <h2 id="sellerp1">{menu.name}</h2>
@@ -120,73 +125,79 @@ function DT3(props) {
   );
 }
 function Info(props){
-  
+  const [point, setpoint] = useState('0');
   const user = props.rdata.userResult;
   console.log(user);
-  const order = props.value.amount;
-
-
-  const changepoint =(e)=>{
-    const inputValue = e.target.value.replace(/[^0-9]/g, '') && e.target.value.replace(/^0+/, '');
-   props.setpoint1(inputValue); 
-   
-   if( e.target.value>user.point || e.target.value>parseInt(order)){
-    // alert('보유 포인트 이상은 사용불가능합니다.');
-    e.target.value="";
-    props.setpoint1(e.target.value);
-   }
-   if (e.target.value === '0') {
-    e.target.value="";
-  } else {
-    props.setpoint1(e.target.value);
-  }
-   
- 
-  }
-  return(
-    <div id="sellergrid">
-      <div>
-        <DT1 rdata={props.rdata}  value={props.value}/>
-        <DT2 rdata={props.rdata} value={props.value}/>
-        <DT3 rdata={props.rdata} value={props.value}point={props.point1}/>
-        <h3 id="sellercenter">포인트</h3>
-        <div id="sellergird2">
-        <h3>보유 이디야 포인트</h3><h3 id="sellerright">{user.point}원</h3>
-        <p >사용포인트</p>
-        <p id="sellerright"><input type="text" id="sellerbtn" placeholder='0' onChange={(e) =>changepoint(e)}
-        ></input>P</p>
-        
-        <p>총 사용 포인트</p> <p id="sellerright">{props.point1}P</p>
+  const order = props.value.amount.toLocaleString();
+  const Allprice = order - point;
+  
+  // useState를 사용하여 text 값의 상태를 관리
+  const changepoint = (e) => {
+    e.preventDefault(); // 기본 동작 취소
+  
+    // 숫자만 허용하도록 정규식 수정
+    const inputValue = e.target.value.replace(/[^0-9]/g, '').replace(/^0+/, '');
+  
+    // 값이 변경되었을 때만 상태 업데이트
+    if (inputValue !== point) {
+      if (inputValue > user.point || inputValue > parseInt(order)) {
+        setpoint(""); // 상태 업데이트
+      } else {
+        setpoint(inputValue);
+      }
+    }
+  };
+  
+  return (
+    <>
+      <div id="sellergrid">
+        <div>
+          <DT1 rdata={props.rdata} value={props.value} />
+          <DT2 rdata={props.rdata} value={props.value} />
+          <DT3 rdata={props.rdata} value={props.value} point={point} />
+          <h3 id="sellercenter">포인트</h3>
+          <div id="sellergird2">
+            <h3>보유 이디야 포인트</h3>
+            <h3 id="sellerright">{user.point}원</h3>
+            <p>사용포인트</p>
+            <p id="sellerright">
+              <input
+                type="text"
+                id="sellerbtn"
+                placeholder="0"
+                onChange={changepoint}
+                value={point}
+              ></input>
+              P
+            </p>
+  
+            <p>총 사용 포인트</p> <p id="sellerright">{point}P</p>
+          </div>
+        </div>
+        <div>
+          <h3 id="sellercenter">최종결제</h3>
+          <div>
+            <div id="sellergird2">
+              <h3 id="sellercolor">총금액 </h3>
+              <h3 id="sellerright1">{order}원</h3>
+              <h3 id="sellercolor">사용포인트 </h3>
+              <h3 id="sellerright1">{point}P</h3>
+              <h3>최종금액</h3>
+              <h3 id="sellerright">{Allprice.toLocaleString()}원</h3>
+            </div>
+            <Checkout setseller={props.setseller} price={Allprice} />
+          </div>
         </div>
       </div>
-      <div>
-        <h3 id="sellercenter">최종결제</h3>
-      <Info2  rdata={props.rdata} value={props.value} point1={props.point1}
-       setseller={props.setseller}/>
-      </div>
-    </div>
-  )
-}
+    </>
+  );
+    
+  }  
 
-function Info2(props){
-  const order = props.value.amount.toLocaleString();
-  const Allprice = order-props.point1;
-  
-  
-  return(
-    <div>
-      <div id="sellergird2">
-     
-      <h3 id="sellercolor">총금액 </h3><h3 id="sellerright1">{order}원</h3>
-      <h3 id="sellercolor">사용포인트 </h3><h3 id="sellerright1">{props.point1}P</h3>
-      <h3 >최종금액</h3><h3 id="sellerright">{Allprice.toLocaleString()}원</h3>
-    </div>
-    <Checkout setseller={props.setseller} price={Allprice}/>
-    </div>
-  )
-}
+
 function Seller(props) {
-  const [point1,setpoint1] = useState('0')
+  const { userid } = useParams();
+  console.log(userid);
   const [searchParams, setSearchParams] = useSearchParams();
   const id = searchParams.get('id');
   const count = searchParams.get('o_count');
@@ -197,12 +208,11 @@ function Seller(props) {
     amount
   }
   const cookie = getCookie('loginCookie');
-  const order =value.amount.toLocaleString();
-  const Allprice = order-props.point1;
   async function setseller(price){
     if(cookie){
     const data = {
-      id:cookie,
+      id:userid,
+      menuid:id,
       count : count,
       amount : price,
 
@@ -223,8 +233,8 @@ function Seller(props) {
   }
 }
   
-  console.log("Link to:",id,count,amount);
-  const [state] = useAsync(() => getseller(id), [id]);
+  // console.log("Link to:",id,count,amount);
+  const [state] = useAsync(() => getseller(userid, id), [userid]);
   const { loading, data: rdata, error } = state;
 
   if (loading) return <div>로딩중입니다.....</div>;
@@ -233,9 +243,9 @@ function Seller(props) {
   return (
     <div className="seller">
       
-      <Info  rdata={rdata} value={value} setseller={setseller} point1={point1} setpoint1={setpoint1} />
+      <Info  rdata={rdata} value={value} setseller={setseller}  />
       
     </div>
   );
 }
-export default Seller
+export default Seller;

@@ -31,24 +31,24 @@ function Brandnewsrouters() {
     <div>
       <Routes>
           {/* 페이지 라우트 */}
-        <Route path='/notice' element={<Notice/>}/>
+        <Route path='/' element={<Notice/>}/>
         <Route path='/event' element={<Event/>}/>
 
-        <Route path='/activitys/activity' element={<Activity/>}/>
-        <Route path='/activitys/campus' element={<Campus/>}/>
-        <Route path='/activitys/hygiene' element={<Hygiene/>}/>
-        <Route path='/activitys/accompany' element={<Accompany/>}/>
-        <Route path='/activitys/otheractivities' element={<Otheractivities/>}/>
+        <Route path='/activity' element={<Activity/>}/>
+        <Route path='/campus' element={<Campus/>}/>
+        <Route path='/hygiene' element={<Hygiene/>}/>
+        <Route path='/accompany' element={<Accompany/>}/>
+        <Route path='/otheractivities' element={<Otheractivities/>}/>
 
         {/* 상세페이지 id 라우트 */}
         <Route path='notice/:id' element={<Noticedetail />} />
         <Route path='event/:id' element={<Eventdetail />} />
 
-        <Route path='activitys/activity/details/:id' element={<Activitydetail />} />
-        <Route path='activitys/campus/details/:id' element={<Campusdetail />} />
-        <Route path='activitys/hygiene/details/:id' element={<Hygienedetail />} />
-        <Route path='activitys/accompany/details/:id' element={<Accompanydetail />} />
-        <Route path='activitys/otheractivities/details/:id' element={<Otheractivitiesdetail />} />
+        <Route path='activity/details/:id' element={<Activitydetail />} />
+        <Route path='campus/details/:id' element={<Campusdetail />} />
+        <Route path='hygiene/details/:id' element={<Hygienedetail />} />
+        <Route path='accompany/details/:id' element={<Accompanydetail />} />
+        <Route path='otheractivities/details/:id' element={<Otheractivitiesdetail />} />
       </Routes>
     </div>
   )

@@ -25,13 +25,13 @@ function Introduce() {
                 <div id="introduce-btn">
                   <div id="introduce-btn-con">
                     <span className='introduce-btn-con-lists'>
-                      <a href='/card/giftcardrouters/giftcard'>기프트카드</a>
+                      <a href='/card/giftcardrouters/'>기프트카드</a>
                     </span>
                     <span className='introduce-btn-con-lists'>
-                      <a href="#noen">모바일 상품권</a>
+                      <a href="https://brand.naver.com/ediyagift">모바일 상품권</a>
                     </span>
                     <span className='introduce-btn-con-lists'>
-                      <a href='/card/giftcardrouters/giftcard/giftbuy'>단체·기업 구매</a>
+                      <a href='/card/giftcardrouters/giftbuy'>단체·기업 구매</a>
                     </span>
                   </div>
                 </div>

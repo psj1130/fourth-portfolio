@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 import Ad_suggestion from './ad_suggestion';
-import Ad_menu from './ad_menu';
+import Ad_menu from './menu/ad_menu.js';
+import Ad_md from './menu/ad_md.js';
 import Ad_user from './ad_user';
 import Sidebar from './include/sidebar';
 import { getCookie } from '../customer/cookies';
@@ -9,10 +10,17 @@ import Sell from './ad_sell.jsx';
 import './adminpage.css';
 
 // 공지관련
+import Ad_event from './notice/ad_event.js';
 import Ad_qna from './notice/ad_qna';
-import Ad_notice from './notice/ad_notice';
-import Ad_event from './notice/ad_event';
-import Ad_social from './notice/ad_social';
+import Ad_social from './notice/ad_social'
+import Ad_notice from './notice/ad_notice'
+import Ad_home from './ad_index.js';
+
+import Ad_sell from './ad_sell.jsx';
+import Ad_selledit from './ad_selledit.js';
+
+import MenuUpdate from './component/menuupdate.js';
+import MdUpdate from './component/mdupdate.js';
 
 function AdminPage() {
   document.title = "EDIYA COFFEE - 관리자 페이지";
@@ -20,6 +28,7 @@ function AdminPage() {
   const navigate = useNavigate();
 
   return(
+    
     cookie ? 
     <div id='admin'>
       <header>
@@ -33,13 +42,24 @@ function AdminPage() {
         <Sidebar />
         <div className='others'>
           <Routes>
+            <Route path='/' element={<Ad_home/>}/>
+
+            <Route path='/sales' element={<Ad_sell/>}/>
             <Route path='/suggestion' element={<Ad_suggestion/>}/>
             <Route path='/menu' element={<Ad_menu/>}/>
+            <Route path='/md' element={<Ad_md/>}/>
             <Route path='/user' element={<Ad_user/>}/>
+            
             <Route path='/qna' element={<Ad_qna/>}/>
-            <Route path='/notice' element={<Ad_notice/>}/>
-            <Route path='/event' element={<Ad_event/>}/>
             <Route path='/social' element={<Ad_social/>}/>
+            <Route path='/event' element={<Ad_event/>}/>
+            <Route path='/notice' element={<Ad_notice/>}/>
+
+            <Route path='/sell' element={<Ad_sell/>}/>
+            <Route path='/selledit' element={<Ad_selledit/>}/>
+
+            <Route path='/menu/update/:id' element={<MenuUpdate/>}/>
+            <Route path='/md/update/:id' element={<MdUpdate/>}/>
           </Routes>
         </div>
       </div>

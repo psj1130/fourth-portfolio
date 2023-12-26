@@ -29,7 +29,7 @@ const LoginForm = (props) => {
         <p>
           <span>비밀번호</span>
         </p>
-        <input ref={pw_css} id="password" type="text" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
+        <input ref={pw_css} id="password" type="password" placeholder="비밀번호를 입력해 주세요." onChange={(e) => {
           setPassword(e.target.value);
         }}></input>
       </div>
@@ -106,7 +106,7 @@ function LoginPage() {
         </div>
         <LoginForm/>
         <div className="other-container">
-          <span >아이디/비밀번호 찾기</span>
+          {/* <span >아이디/비밀번호 찾기</span> */}
           <form name="form" id="form" action="https://nice.checkplus.co.kr/CheckPlusSafeModel/service.cb">
               <input type="hidden" id="m" name="m" value="service" />
               <input type="hidden" id="token_version_id" name="token_version_id" value="" />
@@ -117,7 +117,7 @@ function LoginPage() {
             navigate('/members/signup');
           }}>이메일로 회원가입</div>
         </div>
-        <div className="kakao-login login-button" onClick={async () => {
+        {/* <div className="kakao-login login-button" onClick={async () => {
           await axios.get(`${API_URL}/auth/kakao`)
             .then(res => {
               console.log('성공');
@@ -132,7 +132,7 @@ function LoginPage() {
         <div className="naver-login login-button">
           <p></p>
           <span>네이버 1초 회원가입/로그인</span>
-        </div>
+        </div> */}
       </div>
     </div>
   )

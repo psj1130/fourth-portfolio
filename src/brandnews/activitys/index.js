@@ -23,7 +23,7 @@ function Society() {
   const handleComponentClick = (key) => {
     setSelectBoxlist(key);
     // 페이지 이동 로직 추가
-    navigate(`/brandnews/activitys/${key}`);
+    navigate(`/brandnews/${key}`);
   };
 
   const renderContent = () => {
