@@ -1,0 +1,24 @@
+#orderlist-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#orderlist-container {
+ display: flex;
+ justify-content: center;
+}
+#orderlist-container h2 {
+  
+}
+.order-item {
+
+}
+#member-wrapper {
+  
+}
+#member-container {
+ 
+}
+#delete-button {
+ 
+}

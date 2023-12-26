@@ -1,16 +1,10 @@
 import { Link, useParams,useSearchParams} from "react-router-dom";
-import { API_URL } from "../config/contansts";
+import { API_URL } from "../config/serverurl";
 // import { getCookie } from "../loginpage/cookies";
-import * as react from 'react'; 
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
-import { useState, useEffect, useRef } from 'react'
-import styled from "styled-components";
 import "./sell.css";
 import {DataGrid} from '@mui/x-data-grid'
-import {DeleteOutline} from '@mui/icons-material'
-
-
 
 async function getseller(id) {
   const res = await axios.get(`${API_URL}/order/order`);

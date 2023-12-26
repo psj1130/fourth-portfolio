@@ -11,7 +11,7 @@ import MainPage from './main';
 import Affiliatecard from './card/affiliatecard';
 import Giftcardrouters from "./card/giftcardrouters";
 import Brandnewsrouters from "./brandnews/barndnewsrouters";
-
+import Orderlist from './seller/orderlist.js';
 import Seller from './seller/seller';
 import Buym from "./seller/buym";
 import Success from './seller/success.tsx';
@@ -56,6 +56,7 @@ function App() {
           <Route path='/searchstore' element={<MapSearch/>}/>
 
           {/* 성원 */}
+          <Route path='/orderlist/:userid' element={<Orderlist />}/>
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:id' element={<Seller/>}/>
