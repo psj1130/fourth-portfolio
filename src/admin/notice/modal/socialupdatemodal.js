@@ -66,33 +66,33 @@ const Updatemodal = ({ isOpen, onClose, updateId }) => {
 
   return (
     <Modal
-      className="socialcreatemodal-body"
+      className="socialmodal-body"
       isOpen={isOpen}
       onRequestClose={() => onClose(false)}
-      contentLabel="updatemodal"
+      contentLabel="Createmodal"
     >
-      <div className="socialcreatemodal-content">
-        <div className="socialcreatemodal-top">
-          <p className='socialcreatemodal-top-title'>게시물 수정(사회공헌)</p>
+      <div className="socialmodal-content">
+        <div className="socialmodal-top">
+          <p className='socialmodal-top-title'>사회 공헌</p>
           <button
-            className='socialcreatemodal-btn-style'
+            className='socialmodal-btn-style' 
             onClick={() => onClose(false)}>
             <LogoutIcon style={{ fontSize: '44px'}}/>
           </button>
         </div>
-        <div className="socialcreatemodal-main-container">
+        <div className="socialmodal-main-container">
           <form onSubmit={UpdateSubmit} encType="multipart/form-data">
-            <div className="socialcreatemodal-main-title">
+            <div className="socialmodal-main-title">
               <input
-                className='socialcreatemodal-main-title-style'
+                className='socialmodal-title'
                 type="text"
                 name="title"
-                placeholder='제목을 입력해주세요'
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                placeholder='제목을 입력해주세요' 
+                value={title} 
+                onChange={(e) => setTitle(e.target.value)} 
               />
               <select
-                className='socialcreatemodal-main-category-style'
+                className='socialmodal-category'
                 name="category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}>
@@ -104,33 +104,29 @@ const Updatemodal = ({ isOpen, onClose, updateId }) => {
                 ))}
               </select>
             </div>
-            <div className="socialcreatemodal-main-body">
+            <div className="socialmodal-main-box">
               <textarea
-                className='socialcreatemodal-main-body-style'
+                className='socialmodal-main-body'
                 placeholder='내용을 입력해주세요'
                 type="text"
                 name="body"
                 value={body}
                 onChange={(e) => setBody(e.target.value)}/>
             </div>
-            <div className="socialcreatemodal-bottom-body">
-              <div className='socialcreatemodal-botton-file-con'>
-                <input
-                  id='file-style'
-                  className='socialcreatemodal-bottom-imgselect'
-                  type="file"
-                  name="img_url"
-                  onChange={(e) => setImg(e.target.files[0])}
-                />
+            <div className="socialmodal-bottom-body">
+              <div className='socialmodal-file-box'>
                 <label htmlFor="file-style">
-                  <div className="file-input-icon">
-                    <IconButton component="span">
-                      <FileOpenIcon style={{ fontSize: '44px' }} />
-                    </IconButton>
-                  </div>
-                </label>
+                  사진 올리기
+                  <input
+                    id='file-style' 
+                    className='socialmodal-bottom-imgselect'
+                    type="file"
+                    name="img_url"
+                    onChange={(e) => setImg(e.target.files[0])} 
+                    />
+                  </label>
               </div>
-              <button className='socialcreatemodal-form-btn' type="submit">업로드</button>
+              <button className='socialmodal-form-btn' type="submit">업로드</button>
             </div>
           </form>
         </div>

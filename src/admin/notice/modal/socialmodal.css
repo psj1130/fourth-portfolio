@@ -1,4 +1,12 @@
-.eventmodal-body {
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  /* 59 68 95 149*/
+}
+
+.socialmodal-body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -6,21 +14,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'DungGeunMo';
 }
 
-.eventmodal-content {
+.socialmodal-content {
   width: 1500px;
   height: 850px;
   background-color: #d9d9d9;
   border: 2px solid black;
 }
 
-.eventmodal-form {
-  width: 100%;
-  height: 100%;
-}
-
-.eventmodal-top {
+.socialmodal-top {
   width: 100%;
   height: 50px;
   background-color: white;
@@ -30,13 +34,13 @@
   line-height: 45px;
 }
 
-.eventmodal-top-title {
+.socialmodal-top-title {
   margin-left: 5px;
   font-weight: 700;
   font-size: 34px;
 }
 
-.eventmodal-btn-style {
+.socialmodal-btn-style {
   width: 55px;
   height: 100%;
   text-align: center;
@@ -44,7 +48,7 @@
   cursor: pointer;
 }
 
-.eventmodal-main-container {
+.socialmodal-main-container {
   margin: 30px auto 0;
   background-color: white;
   width: 1450px;
@@ -52,7 +56,29 @@
   border: 1px solid black;
 }
 
-.eventmodal-main-title {
+.socialmodal-title {
+  width: 1235px;
+  padding-left: 15px;
+  height: 60px;
+  border: none;
+  outline: none;
+  font-size: 22px;
+  font-family: 'DungGeunMo';
+}
+
+.socialmodal-category {
+  width: 200px;
+  height: 60px;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid black;
+  cursor: pointer;
+  font-family: 'DungGeunMo';
+}
+
+.socialmodal-main-title {
   width: 100%;
   height: 60px;
   border-bottom: 1px solid black;
@@ -60,60 +86,14 @@
   flex-direction: row;
 }
 
-.eventmodal-title {
-  padding: 0 15px;
-  width: 1000px;
-  height: 100%;
-  font-size: 22px;
-  border: none;
-  outline: none;
-}
 
-.eventmodal-date-box {
-  width: 450px;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
-.eventmodal-date-start {
-  width: 200px;
-  height: 100%;
-  border: none;
-  border-left: 1px solid black;
-  font-size: 20px;
-  font-weight: 900;
-  padding: 0 10px 0 10px;
-  outline: none;
-  cursor: pointer;
-}
-
-.eventmodal-date-style {  
-  font-size: 34px;
-  font-weight: 900;
-  text-align: center;
-  line-height: 50px;
-  padding: 0 25px 0 25px;
-}
-
-.eventmodal-date-end {
-  width: 200px;
-  height: 100%;
-  border: none;
-  font-size: 20px;
-  font-weight: 900;
-  padding: 0 10px 0 10px;
-  outline: none;
-  cursor: pointer;
-}
-
-.eventmodal-main-box {
+.socialmodal-main-box {
   width: 100%;
   height: 590px;
 }
 
-.eventmodal-main-body {
+.socialmodal-main-body {
   width: calc(100% - 30px);
   height: calc(100% - 30px);
   padding: 15px;
@@ -121,14 +101,15 @@
   border: none;
   outline: none;
 /* 단어가 가로 공간을 넘어갈 때 줄바꿈 처리 */
+  font-family: 'DungGeunMo';
 }
 
-.eventmodal-main-body-style::placeholder {
+.socialmodal-main-body-style::placeholder {
   font-size: 44px;
   text-align: center;
 }
 
-.eventmodal-bottom-body {
+.socialmodal-bottom-body {
   width: 100%;
   height: 75px;
   border-top: 1px solid black;
@@ -137,49 +118,30 @@
   justify-content: space-between;
 }
 
-.eventmodal-img-container {
-  width: 700px;
+.socialmodal-file-box { 
+  width: 430px;
   height: 78px;
   display: flex;
-  margin-left: 15px;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
-.eventmodal-img-container > label {
-  width: 140px;
+.socialmodal-bottom-imgselect {
+  font-family: 'DungGeunMo';
+}
+
+.socialmodal-file-box > label {
+  width: 430px;
   height: 78px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   font-size: 26px;
   font-weight: 900;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
   cursor: pointer;
 }
 
-.eventemodal-imgselect-01 {
-  width: 200px;
-  display: flex;
-  padding-left: 15px;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-}
-
-.eventemodal-imgselect-02{
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  cursor: pointer;
-}
-
-.eventmodal-form-btn {
+.socialmodal-form-btn {
   width: 130px;
   height: 78px;
   border: none;
@@ -188,4 +150,5 @@
   cursor: pointer;
   background-color: #243c84;
   color: white;
+  font-family: 'DungGeunMo';
 }

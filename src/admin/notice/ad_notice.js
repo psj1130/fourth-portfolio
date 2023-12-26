@@ -16,7 +16,7 @@ export default function Ad_notice() {
 
     //모달 부분
     const [isOpen, setOpen] = useState(false);
-    const [modalOpen, setModalOpen] = useState(true);
+    const [modalOpen, setModalOpen] = useState(false);
     const modalRef = useRef(null);
     const [selectedlist, setSelectedlist] = useState(null);
     const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
