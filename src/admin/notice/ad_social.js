@@ -8,6 +8,7 @@ import './ad_notice.css';
 import Integratedpopup from "./modal/integratedpopup";
 import Createmodal from "./modal/socialcreatemodal";
 import Button from '@mui/material/Button';
+import Updatemodal from "./modal/socialupdatemodal";
 
 export default function Ad_social() {
 
@@ -15,15 +16,23 @@ export default function Ad_social() {
     const [isOpen, setOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const modalRef = useRef(null);
-    const [selectedlist, setSelectedlist] = useState(null)
-  
+    const [selectedlist, setSelectedlist] = useState(null);
+    const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
+    const [updateId, setUpdateId] = useState(null);
+    //내용 팝업 모달 열기
     const popupclick = () => {
       setOpen(true);
     };
-  
+    //모달닫기
     const handleCloseModal = () => {
       setOpen(false);
     };
+    //수정모달 열기
+    const UpdateClick = (postId) => {
+      setUpdateId(postId);
+      setUpdateModalOpen(true);
+    };
+  
   
     useEffect(() => {
       const OutsideClick = (event) => {
@@ -43,6 +52,18 @@ export default function Ad_social() {
     console.log(res);
     return res.data;
   };
+ //데이터 삭제 부분
+  async function deleteSocial(id) {
+    try {
+      const res = await axios.delete(`${API_URL}/social/${id}`);
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  //수정 하기위한 id값 데이터 전체 modal전달하는 함
+
 
   const [state] = useAsync(getSocial, []);
 
@@ -51,12 +72,14 @@ export default function Ad_social() {
   if (loading) return <div>로딩중입니다.....</div>;
   if (error) return <div>에러가 발생했습니다.</div>;
   if (!formData) return null;
+
+  
   
   //각 열 이름 및 데이터 설정
   const columns = [
     {
       field: 'id',
-      headerName: '공지사항',
+      headerName: '사회공헌활동',
       width: 120,
       editable: false,
     },
@@ -87,10 +110,10 @@ export default function Ad_social() {
               {isOpen && selectedlist === params.row.id && (
                 <Integratedpopup bodydetail={bodydetail} isOpen={isOpen} />
               )}
-            </div>
-            </>
-          );
-        },
+          </div>
+          </>
+        );
+      },  
     },
     {
       field: 'createdAt',
@@ -131,14 +154,12 @@ export default function Ad_social() {
       field: 'action',
       headerName: '삭제',
       width: 80,
-      //그리드 컬럼 설정하는데 여기서 return값을 주고 삭제 요청을 보낼수있음
       renderCell: (params) => {
         return (
           <>
             <button className='userListDelete' onClick={async () => {
               console.log(params.id);
-              await axios.delete(`${API_URL}/qna/delete/${params.id}`)
-              //qnaroute에서 delete만들고 요청하면 됨
+              await axios.delete(`${API_URL}/social/delete/${params.id}`)
               .then(res => {
                 console.log(res.data);
                 window.location.reload();
@@ -148,6 +169,23 @@ export default function Ad_social() {
               })
             }}>
               삭제
+            </button>
+          </>
+        );
+      },
+    },
+    {
+      field: "update",
+      headerName: "수정",
+      width: 80,
+      renderCell: (params) => {
+        return (
+          <>
+            <button
+              className="userListDelete"
+              onClick={() => UpdateClick(params.row.id)}
+            >
+              수정
             </button>
           </>
         );
@@ -165,6 +203,11 @@ export default function Ad_social() {
           style={{ color: 'black'}}>새로 만들기</Button>
             <Createmodal modalOpen={modalOpen} setModalOpen={setModalOpen} />
           </div>
+          <Updatemodal
+            isOpen={isUpdateModalOpen}
+            onClose={() => setUpdateModalOpen(false)}
+            updateId={updateId}
+          />
           <DataGrid
             rows={formData}
             columns={columns}

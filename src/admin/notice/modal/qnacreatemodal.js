@@ -1,56 +1,42 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import LogoutIcon from '@mui/icons-material/Logout';
-import IconButton from '@mui/material/IconButton';
-import FileOpenIcon from '@mui/icons-material/FileOpen';
 import axios from 'axios'; // Axios 라이브러리 import
 import { API_URL } from '../../../config/serverurl';
 import './createmodal.css';
 
 const Createmodal = ({ modalOpen, setModalOpen }) => {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
   const [category, setCategory] = useState('');
-  const [img, setImg] = useState(null);
   
-  const categories = ["메이트 희망기금", "캠퍼스 희망기금", "식수위생 캠퍼스", "이디야의 동행", "기타 활동"];
-
+  const categories = ["구매", "환불", "사용", "단체 및 기업구매", "기타"];
+  
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    const imgfile = document.getElementById('file-style').files[0];
-    const formData = new FormData();
-    // formData.append('title', title);
-    // formData.append('body', body);
-    // formData.append('category', category);
-    formData.append('img_url', imgfile);
+    e.preventDefault();
 
-    
-    // console.log('푼 값들', socialdata);
+    const qnadata = {
+      question: question,
+      answer: answer,
+      category: category
+    };
 
-  await axios.post(`${API_URL}/social/images/social`, formData)
-      .then(res => {
-        console.log(res.data);
+    console.log('전송할 데이터:', qnadata);
 
-        const socialdata = {
-          title: title,
-          body: body,
-          category: category,
-          img_url: res.data.path
-          //이미지 경로 데이터 사용
-        }
-
-        axios.post(`${API_URL}/social/add`, socialdata)
-        .then(res => {
-          console.log(res.data);
-        })
-        .catch (err => {
-          console.log(err);
-        })
-      })
-
+    try {
+      const res = await axios.post(`${API_URL}/qna/add`, qnadata);
+      console.log(res.data);
+      setModalOpen(false); // 데이터 전송이 성공하면 모달을 닫습니다.
+      console.log('Modal closed:', modalOpen); // 이 줄을 추가
+    } catch (err) {
+      console.log(err);
     }
+  };
+  
+  // 모달이 열려있을 때 question, answer, category 등의 상태 확인
+
   return (
-    <Modal
+      <Modal
       className="socialcreatemodal-body"
       isOpen={modalOpen}
       onRequestClose={() => setModalOpen(false)}
@@ -60,9 +46,9 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
         <div className="socialcreatemodal-top">
           <p className='socialcreatemodal-top-title'>사회 공헌</p>
           <button
-            className='socialcreatemodal-btn-style' 
+            className='socialcreatemodal-btn-style'
             onClick={() => setModalOpen(false)}>
-            <LogoutIcon style={{ fontSize: '44px'}}/>
+            <LogoutIcon style={{ fontSize: '44px' }} />
           </button>
         </div>
         <div className="socialcreatemodal-main-container">
@@ -73,8 +59,8 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                 type="text"
                 name="title"
                 placeholder='제목을 입력해주세요' 
-                value={title} 
-                onChange={(e) => setTitle(e.target.value)} 
+                value={question} 
+                onChange={(e) => setQuestion(e.target.value)} 
               />
               <select
                 className='socialcreatemodal-main-category-style'
@@ -95,25 +81,12 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                 placeholder='내용을 입력해주세요'
                 type="text"
                 name="body"
-                value={body}
-                onChange={(e) => setBody(e.target.value)}/>
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}/>
             </div>
             <div className="socialcreatemodal-bottom-body">
               <div className='socialcreatemodal-botton-file-con'>
-              <input
-                id='file-style' 
-                className='socialcreatemodal-bottom-imgselect'
-                type="file"
-                name="img_url"
-                onChange={(e) => setImg(e.target.files[0])} 
-                />
-                <label htmlFor="file-style">
-                  <div className="file-input-icon">
-                    <IconButton component="span">
-                      <FileOpenIcon style={{ fontSize: '44px' }} />
-                    </IconButton>
-                  </div>
-                </label>
+
               </div>
               <button className='socialcreatemodal-form-btn' type="submit">업로드</button>
             </div>

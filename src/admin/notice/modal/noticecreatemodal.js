@@ -5,18 +5,27 @@ import IconButton from '@mui/material/IconButton';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import axios from 'axios'; // Axios 라이브러리 import
 import { API_URL } from '../../../config/serverurl';
-import './createmodal.css';
+import './noticecreatemodal.css';
 
 const Createmodal = ({ modalOpen, setModalOpen }) => {
+
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [category, setCategory] = useState('');
+  const [date, setDate] = useState('');
   const [img, setImg] = useState(null);
   
-  const categories = ["메이트 희망기금", "캠퍼스 희망기금", "식수위생 캠퍼스", "이디야의 동행", "기타 활동"];
+  const formatDate = (selectedDate) => {
+    const date = new Date(selectedDate);
+  
+    const year = date.getFullYear();
+    let month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month starts from 0
+    let day = date.getDate().toString().padStart(2, '0');
+  
+    return `${year}-${month}-${day}`;
+  };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const imgfile = document.getElementById('file-style').files[0];
     const formData = new FormData();
     // formData.append('title', title);
@@ -24,26 +33,28 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
     // formData.append('category', category);
     formData.append('img_url', imgfile);
 
+    console.log(date);
+
     
     // console.log('푼 값들', socialdata);
 
-  await axios.post(`${API_URL}/social/images/social`, formData)
+  await axios.post(`${API_URL}/notice/images/notice`, formData)
       .then(res => {
         console.log(res.data);
 
-        const socialdata = {
+        const noticedata = {
           title: title,
           body: body,
-          category: category,
+          date: formatDate(date),
           img_url: res.data.path
-          //이미지 경로 데이터 사용
         }
-
-        axios.post(`${API_URL}/social/add`, socialdata)
+        axios.post(`${API_URL}/notice/add`, noticedata)
         .then(res => {
+          setModalOpen(false);
           console.log(res.data);
         })
         .catch (err => {
+          
           console.log(err);
         })
       })
@@ -58,7 +69,7 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
     >
       <div className="socialcreatemodal-content">
         <div className="socialcreatemodal-top">
-          <p className='socialcreatemodal-top-title'>사회 공헌</p>
+          <p className='socialcreatemodal-top-title'>공지사항</p>
           <button
             className='socialcreatemodal-btn-style' 
             onClick={() => setModalOpen(false)}>
@@ -76,18 +87,14 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                 value={title} 
                 onChange={(e) => setTitle(e.target.value)} 
               />
-              <select
-                className='socialcreatemodal-main-category-style'
-                name="category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}>
-                <option value="">카테고리를 선택해주세요</option>
-                {categories.map((category, index) => (
-                  <option key={index} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
+             <input
+                className='noticecreatemodal-main-title-style'
+                type='date'
+                name="date"
+                placeholder='날짜를 입력해주세요' 
+                value={date} 
+                onChange={(e) => setDate(formatDate(e.target.value))} 
+              />
             </div>
             <div className="socialcreatemodal-main-body">
               <textarea
