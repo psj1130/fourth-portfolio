@@ -2,6 +2,7 @@ import './customersoundCH.css';
 import Ccmlist from './ccmlist';
 
 function CustomersoundCH() {
+  
   return (
     <div>
       <div id='cus_Top'>
@@ -13,7 +14,7 @@ function CustomersoundCH() {
       </div>
       <div id='cus_detail'>
           <div id='Partnership_mid'>
-            <p>HOME › 고객 지원 › 고객의 소리</p>
+            <p>HOME ❯ 고객 지원 ❯ 고객의 소리</p>
           </div>
         <h1>고객의 소리 접수채널</h1>
         <h2>1.매장 및 인터넷,전화 등 다양한 채널을 통해 접수</h2>

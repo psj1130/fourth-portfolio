@@ -22,7 +22,7 @@ function StickC() {
           </div>
         </div>
         <div id='stickC_arrow'>
-          <h1>›</h1>
+          <h1>❯</h1>
         </div>
         <div id='stickC_a'>
           <div id='stickC_aa'>
@@ -39,7 +39,7 @@ function StickC() {
           </div>
         </div>
         <div id='stickC_arrow'>
-          <h1>›</h1>
+          <h1>❯</h1>
         </div>
         <div id='stickC_a'>
           <div id='stickC_aa'>

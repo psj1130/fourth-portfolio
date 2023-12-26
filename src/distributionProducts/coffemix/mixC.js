@@ -22,7 +22,7 @@ function MixC() {
           </div>
         </div>
         <div id='mixC_arrow'>
-          <h1>›</h1>
+          <h1>❯</h1>
         </div>
         <div id='mixC_a'>
           <div id='mixC_aa'>
@@ -39,7 +39,7 @@ function MixC() {
           </div>
         </div>
         <div id='mixC_arrow'>
-          <h1>›</h1>
+          <h1>❯</h1>
         </div>
         <div id='mixC_a'>
           <div id='mixC_aa'>

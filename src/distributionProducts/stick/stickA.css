@@ -1,7 +1,6 @@
 
 #stickA_container{
   width: 100%;
-
 }
 #stickA_img1{
   width: 192px;
@@ -15,7 +14,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 3px solid black; */
 }
 #stickA_main2{
   width: 1200px;
@@ -24,7 +22,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 3px solid rgb(0, 72, 255); */
 }
 #stickA_a{
   width: 1200px;
@@ -34,24 +31,37 @@
   justify-content: center;
   flex-direction: column;
   font-weight: 100;
-  /* border: 3px solid rgb(0, 72, 255); */
+  
+}
+#stickA_a_h3{
+  width: 800px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  line-height: 22px;
+  border-bottom: 1px solid black;
 }
 #stickA_a h3{
   font-size: 20px;
+  color:rgb(32, 32, 35);
+  line-height: 25px;
+  font-weight: 100;
 }
 
 #stickA_aa{
   font-size: 14px;
   font-weight: 400;
-  height: 60px;
-  /* border: 3px solid black; */
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color:rgb(70, 70, 70);
 }
 #stickB_main{
   width: 1200px;
-  /* border: 3px solid black; */
 }
 #stickA_img2 img{
   width: 160px;
@@ -74,12 +84,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  /* border: 3px solid black; */
 }
 #stickA_bb{
   width: 300px;
   height: 70px;
-  /* border: 3px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +103,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 3px solid black; */
   flex-wrap: wrap;
   line-height: 20px;
 }
@@ -107,8 +114,6 @@
   background-size: 100% 450px;
   display: flex;
   flex-direction: column;
-  /* border: 3px solid #000; */
-  /* align-content: space-around; */
 }
 #stick_title{
   width: 100%;
@@ -117,8 +122,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 3px solid rebeccapurple; */
   font-weight: 100;
+}
+#stick_sapn{
+  font-weight: 900;
 }
 #stick_title h3{
   font-size: 60px;
@@ -131,14 +138,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid rebeccapurple; */
 }
 #stick_mid{
   width: 89%;
   height: 150px;
   color: #898989;
   font-size: 12px;
-  /* border: 1px solid black; */
   text-align: right;
   display: flex;
   align-items: center;

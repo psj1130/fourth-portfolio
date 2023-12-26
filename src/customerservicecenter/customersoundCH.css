@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* border: 3px solid black; */
 }
 #cus_detail h1{
   font-size: 25px;
@@ -32,7 +31,6 @@
 
 }
 #info_icon_detail{
-  border: 1px solid black;
   border-radius: 5px;
   width: 300px;
   height: 310px;
@@ -47,7 +45,6 @@
   margin-top: 40px;
 }
 #info_icon_detail_a {
-  /* line-height: 0; */
   text-align: center;
   height: 45px;
   
@@ -60,22 +57,18 @@
   color: #002F6C;
   font-size: 18px;
   height: 30px;
-  /* border: 1px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #info_icon_detail_aa {
-  /* line-height: 0; */
   height: 65px;
-  /* border: 1px solid black; */
 }
 #info_icon_detail_aa h4{
   color: #002F6C;
   font-size: 18px;
   height: 30px;
-  /* border: 1px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +93,6 @@
   font-size: 18px;
   color: #002F6C;
   height: 45px;
-  /* border: 3px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,11 +113,9 @@
   width: 210px;
   display: flex;
   align-items: center;
-  /* border: 3px solid black; */
   justify-content: space-evenly;
 }
 #info_cus_btn_A{
-  /* border: 3px solid black; */
   height: 70px;
   display: flex;
   align-items: center;

@@ -1,6 +1,5 @@
 import './cupB.css';
 
-
 function CupB() {
   return (
     <div id='cupB_container'>
@@ -8,7 +7,7 @@ function CupB() {
         <div id='cupB_main1'>
           <div id='cupB_detail'>
             <img id='' src='/cupimg/cupcoffee_pro01.png'></img>
-            <h3>CAFE LATTE</h3>
+            <h3 id='cupB_detail_a'>CAFE LATTE</h3>
             <h4>카페라떼</h4>
             <div id='cupB_detail_pp'>
               <p>이디야 듀얼 로스팅 원두 추출액과</p>
@@ -18,7 +17,7 @@ function CupB() {
           </div>
           <div id='cupB_detail'>
             <img id='' src='/cupimg/cupcoffee_pro02.png'></img>
-            <h3>TOFFEENUT SIGNATURE LATTE</h3>  
+            <h3 id='cupB_detail_b'>TOFFEENUT SIGNATURE LATTE</h3>  
             <h4>토피넛 시그니처 라떼</h4>
             <div id='cupB_detail_pp'>
               <p>이디야 듀얼 로스팅 원두 추출액과</p>
@@ -28,7 +27,7 @@ function CupB() {
           </div>
           <div id='cupB_detail'>
             <img id='' src='/cupimg/cupcoffee_pro03.png'></img>
-            <h3>DOLCE COLD BREW</h3>
+            <h3 id='cupB_detail_c'>DOLCE COLD BREW</h3>
             <h4>돌체 콜드브루</h4>
             <div id='cupB_detail_pp'>
               <p>이디야 듀얼 로스팅 콜드브루 추출액과 연유가</p>
@@ -37,11 +36,11 @@ function CupB() {
             </div>
           </div>
         </div>
-
+        {/* 아래 2개 */}
         <div id='cupB_main2'>
           <div id='cupB_detail'>
             <img id='' src='/cupimg/cupcoffee_pro04.png'></img>
-            <h3>VANILLA LATTE</h3>
+            <h3 id='cupB_detail_d'>VANILLA LATTE</h3>
             <h4>바닐라 라떼</h4>
             <div id='cupB_detail_pp'>
               <p>이디야 듀얼 로스팅 원두 추출액과</p>
@@ -50,7 +49,7 @@ function CupB() {
           </div>
             <div id='cupB_detail'>
               <img id='' src='/cupimg/cupcoffee_pro05.png'></img>
-              <h3>CHOCOLATE MOCHA</h3>
+              <h3 id='cupB_detail_e'>CHOCOLATE MOCHA</h3>
               <h4>쇼콜라 모카</h4>
               <div id='cupB_detail_p'>
                 <div id='cupB_detail_pp'>
@@ -61,7 +60,6 @@ function CupB() {
             </div>
         </div>
       </div>
-      
     </div>
   );
 }

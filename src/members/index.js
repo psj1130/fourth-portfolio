@@ -17,10 +17,10 @@ function MembersPage() {
       <MembersHeader/>
         <div className="members-container">
           <Routes>
+          <Route path='/' element={<Members_main/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path='/members_guide' element={<Members_guide/>}/>
             <Route path='/service_guide' element={<Service_guide/>}/>
-            <Route path='/' element={<Members_main/>}/>
             <Route path="/signup" element={<SignUpPage/>}/>
           </Routes>
         </div>

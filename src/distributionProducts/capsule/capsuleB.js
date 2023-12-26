@@ -1,6 +1,5 @@
 import './capsuleB.css';
 
-
 function CapsuleB() {
   return (
     <div id='capsuleB_container'>
@@ -23,7 +22,7 @@ function CapsuleB() {
           </div>
         </div>
         <div id='capsuleB_arrow'>
-          <h1>›</h1>
+          <h1>❯</h1>
         </div>
         <div id='capsuleB_a'>
           <div id='capsuleB_aa'>

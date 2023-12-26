@@ -11,7 +11,7 @@ import Contents from "./contents";
 import styled from "styled-components";
 import Star from "./star";
 
-const cookie = getCookie("loginCookie");
+
 const ContentDiv = styled.div`
   width: 1020px;
   display: flex;
@@ -27,6 +27,7 @@ async function getBuy(id) {
 
 function Buymenu(props) {
   const [count, setCount] = useState(0);
+  const cookie = getCookie("loginCookie");
   const Plus = () => {
     setCount((prevCount) => prevCount + 1);
   };
@@ -131,11 +132,12 @@ function Buymenu(props) {
                   ? `/seller/${cookie}?id=${
                       props.rdata.menuResult.id
                     }&o_count=${count}&o_amount=${count * price}`
-                  : "/login"
+                  : "/members/login"
               }
-              id="buybutton"
             >
-            <button id="buybutton">
+            <button id="buybutton" onClick={() => {
+              window.sessionStorage.setItem('BeforePage', window.location.pathname);
+            }}>
               <b>구매하기</b>
             </button>
             </Link>

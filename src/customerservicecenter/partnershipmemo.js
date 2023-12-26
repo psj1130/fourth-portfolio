@@ -3,7 +3,8 @@ import './partnershipmemo.css';
 import PartnershipRobot from './partnershipRobot';
 import axios from 'axios';
 import { API_URL } from '../config/serverurl';
-import { useNavigate } from 'react-router';
+import { useNavigate} from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const Test = () => {
@@ -36,33 +37,52 @@ const Test = () => {
     setSelectedFile(file);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
-    const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
-    const email = `${emailId}@${selectedDomain}`;
-    const formData = {
-      type: selectedOptions,
-      user: name,
-      // phone: `${firstNumber}-${middleNumber}-${lastNumber}`,
-      phone: contactInfo,
-      email,
-      title,
-      body: content,
-      // file_dir: selectedFile,
-      file_dir: 'test',
-      // spamCheck,
-    };
-    console.log('제출된 데이터:', formData);
+    const test = document.getElementById('partnershipmemo_memo6').files[0];
+    const newFile = new FormData();
+    newFile.append('newfile', test);
+    console.log(newFile);
+    await axios.post(`${API_URL}/newfile`, newFile)
+      .then(res => {
+        console.log(res.data.path);
+        const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
+        const email = `${emailId}@${selectedDomain}`;
+        const data = {
+          type : selectedOptions,
+          user : name,
+          phone: contactInfo,
+          email : email,
+          title : title,
+          body : content,
+          file_dir : res.data.path
+        }
 
-    axios.post(`${API_URL}/suggestion`, formData)
-    .then(res => {
-      console.log(res.status);
-      alert("신청 성공!");
-      navigate('/'); //성공하면 메인페이지로 가게 하는것
-    }).catch(err => {
-      console.error(err);
-    })
+        axios.post(`${API_URL}/suggestion`, data)
+          .then(res => {
+            alert("신청 성공!");
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+    // console.log(test);
+    
+    // console.log('제출된 데이터:', formData);
+
+    // axios.post(`${API_URL}/suggestion`, formData)
+    // .then(res => {
+    //   console.log(res.status);
+      
+    //   navigate('/'); //성공하면 메인페이지로 가게 하는것
+    // }).catch(err => {
+    //   console.error(err);
+    // })
   };
 
   const emailDomains = [
@@ -75,7 +95,7 @@ const Test = () => {
 
   return (
     <div id='partnershipmemo_main'>
-      <form id='partnershipmemo_container' onSubmit={handleSubmit}>
+      <form id='partnershipmemo_container' encType='multipart/form-data' onSubmit={handleSubmit}>
       <label id='par'>
         <span id='partnershipmemo_title'>선택 </span>
         <div id='par_a'>
@@ -184,11 +204,6 @@ const Test = () => {
         <label id='par_a'>
           <span id='partnershipmemo_title'>스팸방지 체크 </span>
           <PartnershipRobot></PartnershipRobot>
-          {/* <input
-            type="checkbox"
-            checked={spamCheck}
-            onChange={(e) => setSpamCheck(e.target.checked)}
-          /> */}
         </label>
         
         <br />
@@ -199,7 +214,7 @@ const Test = () => {
         <br />
         <div id='partnership_btns_main'>
           <div id='partnership_btns'>
-            <button id='partnership_btn_a' type="submit">취소</button>
+          <Link to='/searchstore'><button id='partnership_btn_a' type="button">취소</button></Link>
             <button id='partnership_btn_b' type="submit">등록</button>
           </div>
         </div>

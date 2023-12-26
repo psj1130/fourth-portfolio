@@ -1,6 +1,5 @@
 import './mixCC.css';
 
-
 function MixCC() {
   return (
     <div id='mixcc_container'>

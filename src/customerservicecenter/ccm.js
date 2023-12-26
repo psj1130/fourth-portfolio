@@ -14,7 +14,7 @@ function Ccm() {
       </div>
       <div id='ccm_a'>
           <div id='Partnership_mid'>
-            <p>HOME › 고객 지원 › 소비자 중심경영(CCM)</p>
+            <p>HOME ❯ 고객 지원 ❯ 소비자 중심경영(CCM)</p>
           </div>
         <h1>이디야커피는 국내 커피업계 최초 <span id='ccm_span'>소비자중심경영(CCM) 인증</span>을</h1>
         <h1>획득하여 2019년부터 도입 운영하고 있습니다.</h1>

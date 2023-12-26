@@ -1,7 +1,7 @@
-
 import './customersoundPR.css';
 
 function CustomersoundPR() {
+
   return (
     <div>
       <div id='cus_process'>
@@ -19,7 +19,7 @@ function CustomersoundPR() {
              </div>
           </div>
           <div id='arrow'>
-            <h1>›</h1>
+            <h1>❯</h1>
           </div>
           <div id='step'>
             <div id='step_a'>
@@ -31,7 +31,7 @@ function CustomersoundPR() {
             </div>
           </div>
           <div id='arrow'>
-            <h1>›</h1>
+            <h1>❯</h1>
           </div>
           <div id='step'>
             <div id='step_a'>
@@ -43,7 +43,7 @@ function CustomersoundPR() {
             </div>
           </div>
           <div id='arrow'>
-            <h1>›</h1>
+            <h1>❯</h1>
           </div>
           <div id='step'>
             <div id='step_a'>
@@ -55,7 +55,7 @@ function CustomersoundPR() {
             </div>
           </div>
           <div id='arrow'>
-            <h1>›</h1>
+            <h1>❯</h1>
           </div>
           <div id='step'>
             <div id='step_a'>
@@ -67,7 +67,7 @@ function CustomersoundPR() {
             </div>  
           </div>
           <div id='arrow'>
-            <h1>›</h1>
+            <h1>❯</h1>
           </div>
           <div id='step'>
             <div id='step_a'>

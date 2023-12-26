@@ -5,10 +5,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 13px solid black; */
   gap: 50px;
 }
-
 #mixcc_detail{
   width: 400px;
   height: 200px;
@@ -16,9 +14,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-   /* border: 3px solid black; */
 }
-
 #mixcc_detail_2{
   width: 400px;
   height: 100px;
@@ -26,7 +22,6 @@
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  /* border: 3px solid black; */
 }
 #mixcc_detail_3{
   width: 400px;
@@ -35,7 +30,6 @@
   align-items: center;
   text-align: center;
   font-weight: 900;
-  /* border: 3px solid black; */
 }
 #mixcc_detail h3{
   font-size: 17px;
@@ -44,7 +38,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 3px solid black; */
 }
 #mixcc_detail p {
   font-size: 13px;
@@ -53,7 +46,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 3px solid black; */
+  color:#464646;
+  color:rgb(70, 70, 70);
+  background-color:#000000;
+  background-color:rgba(0, 0, 0, 0);
+  font-size:13px;
+  line-height:22.1px;
+  vertical-align:baseline;
+  letter-spacing:normal;
+  word-spacing:0px;
+  font-weight:400;
+  font-style:normal;
+  font-variant:normal;
+  text-transform:none;
+  text-decoration:none solid rgb(70, 70, 70);
+  text-align:center;
+  text-indent:0px;
 }
 #mixcc_main1{
   width: 1200px;
@@ -61,7 +69,6 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  /* border: 3px solid black; */
 }
 #mixcc_main4{
   width: 1200px;
@@ -79,7 +86,6 @@
 #mixcc_main4 p{
   font-size: 13px;
   width: 370px;
-  /* border: 3px solid black; */
 }
 #mixcc_main3{
   width: 1200px;
@@ -97,7 +103,6 @@
 #mixcc_main3 p{
   font-size: 13px;
   width: 370px;
-  /* border: 3px solid black; */
 }
 #mixcc_main2{
   width: 1200px;
@@ -106,12 +111,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /* border: 3px solid black; */
 }
 #mixC_title{
   width: 1200px;
   height: 200px;
-  /* border: 3px solid rgb(254, 0, 0); */
   display: flex;
   align-items: flex-end;
 }

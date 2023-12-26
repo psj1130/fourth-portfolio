@@ -23,7 +23,7 @@ const PartnershipRobot = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    // <form onSubmit={handleSubmit}>
       <ReCAPTCHA
         sitekey="6LfDxCkpAAAAAMnQpYau7QlEUDh1PZ2L4xy0NbjB" 
         // reCAPTCHA 사이트 키 입력
@@ -31,8 +31,8 @@ const PartnershipRobot = () => {
         // 테스트용
         onChange={handleRecaptchaChange}
       />
-      {/* <button type="submit">제출</button> */}
-    </form>
+      // <button type="submit">제출</button>
+    // </form>
   );
 };
 

@@ -5,8 +5,10 @@ const MapSearch = () => {
   const [markers, setMarkers] = useState([]);
   const [keyword, setKeyword] = useState('이디야 커피랩');
   const [places, setPlaces] = useState([]);
-  const mapContainer = useRef(null);
   const [kakaoMap, setKakaoMap] = useState(null);
+  const mapContainer = useRef(null); // mapContainer를 useRef로 선언
+  const [showDetail, setShowDetail] = useState(false); // State to manage the visibility
+
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -24,12 +26,14 @@ const MapSearch = () => {
         setKakaoMap(newKakaoMap);
       });
     };
-
+    
     return () => {
       // 필요한 경우 마운트 해제 시 스크립트 및 리소스 정리
     };
   }, []);
-
+  const handleToggleDetail = () => {
+    setShowDetail(!showDetail); // Toggle the state to show/hide detail
+  };
   const handleKeywordChange = (e) => {
     setKeyword(e.target.value);
   };
@@ -100,7 +104,6 @@ const showMarkers = (data) => {
   setMarkers(newMarkers);
 };
 
-  // 
   const displayPlaces = (places) => {
     const listEl = document.getElementById('placesList');
     const menuEl = document.getElementById('menu_wrap');
@@ -114,6 +117,7 @@ const showMarkers = (data) => {
       const marker = new window.kakao.maps.Marker({
         position: placePosition,
         map: kakaoMap
+        
       });
 
       bounds.extend(placePosition);
@@ -159,6 +163,13 @@ const showMarkers = (data) => {
     listEl.appendChild(fragment);
     menuEl.scrollTop = 0;
 
+    // 검색 결과가 있을 때만 st_detail 요소를 보이도록 변경
+  const stDetail = document.getElementById('st_detail');
+  stDetail.style.display = places.length > 0 ? 'block' : 'none';
+
+  const stDetailScrollbar = stDetail.querySelector('#placesList');
+  stDetailScrollbar.style.display = places.length > 0 ? 'block' : 'none';
+    
     kakaoMap.setBounds(bounds);
   };
 
@@ -170,30 +181,30 @@ const showMarkers = (data) => {
 
   return (
     <div className="map_wrap">
-      <div ref={mapContainer} style={{ width: '1200px', height: '500px' }}></div>
-        <div id="menu_wrap" className="bg_white">
-          <div className="option">
-            <div id='st_name'>
-              <form id='st_form_a' onSubmit={handleSubmit}>
-                <div id='st_form_b'>
-                  <span><div id='st_img_a'><img src="images/logo/top_logo.gif"/></div><p id='st_p'>매장명</p></span>
-                </div>
-                <div id='st_form_c'>
-                  <input id='st_form_d' type="text" value={keyword} onChange={handleKeywordChange} size="15" />
-                  <button id='st_form_e' type="submit"><img src='./mapimg/mir_add.jpg'></img></button>
-                </div>
-              </form>
-            </div>
+      <div ref={mapContainer} style={{ width: '100%', height: '900px' }}></div>
+      <div id="menu_wrap" className="bg_white">
+        <div className="option">
+          <div id='st_name'>
+            <form id='st_form_a' onSubmit={handleSubmit}>
+              <div id='st_form_b'>
+                <span><p id='st_p'>EDIYA COFFEE</p></span>
+              </div>
+              <div id='st_form_c'>
+                <input id='st_form_d' type="text" value={keyword} onChange={handleKeywordChange} size="15" />
+                <button id='st_form_e' type="submit"><img src='./mapimg/mir_add.jpg'></img></button>
+              </div>
+            </form>
           </div>
-          <div id='st_detail'>
-            <ul>
-              <li id="placesList"></li>
-            </ul>
-            <div id="pagination"></div>
-          </div>
+        </div>
+        <div id='st_detail' style={{ display: showDetail ? 'block' : 'none' }}>
+          <ul>
+            <li id="placesList"></li>
+          </ul>
+        </div>
       </div>
     </div>
   );
 };
+
 
 export default MapSearch;
