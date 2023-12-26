@@ -8,7 +8,7 @@ import { API_URL } from '../../config/serverurl';
 import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 import { Link } from 'react-router-dom';
 import MenuModal from '../component/menumodal';
-import MenuUpdateModal from '../component/menumodalpatch';
+import MenuUpdateModal from '../component/menuupdate';
 
 async function getMenu() {
   const res = await axios.get(`${API_URL}/admin/menu`);
@@ -154,7 +154,9 @@ export default function Ad_menu() {
       renderCell: (params) => {
         return (
           <>
-            <button className='menuListEdit' tabIndex={-1} onClick={setOpen1}>수정</button>
+            <Link to={`/administrator/menu/update/${params.row.id}`}>
+              <button type='click' className='menuListEdit' tabIndex={-1}>수정</button>
+            </Link>
             <DeleteOutLine className='menuListDelete' onClick={async () => {
               let yn = window.confirm('정말 삭제하시겠습니까?');
                 if(yn) {
@@ -206,7 +208,6 @@ export default function Ad_menu() {
         </Box>
         
         {isOpen ? <MenuModal isOpen={setOpen} /> : null}
-        {isOpen1 ? <MenuUpdateModal data={formData} isOpen={setOpen1} /> : null}
       </div>
     </div>
   );
