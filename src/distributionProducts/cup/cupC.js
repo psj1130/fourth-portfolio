@@ -1,6 +1,5 @@
 import './cupC.css';
 
-
 function CupC() {
   return (
     <div id='cupC_container'>

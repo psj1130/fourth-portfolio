@@ -5,20 +5,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  
 }
 #stickB_main{
   width: 1200px;
   display: flex;
   flex-direction: row;
-  /* border: 20px solid rgb(49, 84, 225); */
 }
 /* 버튼 */
-
 #st_list{
   width: 50%;
   height: 70px;
-  /* border: 10px solid black; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,11 +29,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid rgb(109, 109, 109); */
 }
 #st_list_btn{
-  background-color: #002F6C;/* 기본 배경색 */
-  color: #fff; /* 기본 텍스트 색상 */
+  background-color: #002F6C;
+  color: #fff; 
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -49,7 +44,6 @@
 }
 #st_list_btn:hover{
   background-color: #a6c3e6;
-  /* 호버 시 배경색 초록으로 변경 */
   color: #fff; /* 호버 시 텍스트 색상 흰색으로 변경 */
   cursor: pointer; /* 호버 시 커서 모양 변경 */
   transform: scale(1.1); /* 호버 시 약간 확대되는 효과 */

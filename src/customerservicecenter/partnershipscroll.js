@@ -18,7 +18,7 @@ const Partnershipscroll = () => {
         <Ccmlist></Ccmlist>
       </div>
       <div id='Partnership_mid'>
-        <p>HOME › 고객 지원 › 제휴/제안 접수</p>
+        <p>HOME ❯ 고객 지원 ❯ 제휴/제안 접수</p>
       </div>
       <div id='p_main3'>
           <h2>원활한 접수를 위해 필요한</h2>
