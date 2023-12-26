@@ -14,22 +14,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(109, 109, 109);
+  border: 1px solid rgb(172, 176, 186)
 }
 #dp_list_btn{
-  background-color: #002F6C;/* 기본 배경색 */
-  color: #fff; /* 기본 텍스트 색상 */
+  background-color: transparent;
+  color: #000000; /* 기본 텍스트 색상 */
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s; /* 호버 효과를 위한 transition */
 }
 #dp_list_btn a{
-  color: #ffffff;
+  color: #000000;
   font-weight: 700;
 }
 #dp_list_btn:hover{
-  background-color: #a6c3e6;
+  background-color: #84847C;
   /* 호버 시 배경색 초록으로 변경 */
   color: #fff; /* 호버 시 텍스트 색상 흰색으로 변경 */
   cursor: pointer; /* 호버 시 커서 모양 변경 */

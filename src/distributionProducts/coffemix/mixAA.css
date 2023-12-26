@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 10px solid red; */
 }
 #mixAA_container{
   width: 1200px;
@@ -12,7 +11,6 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* border: 10px solid black; */
   flex-wrap: row;
 }
 #mixAA_main{
@@ -21,17 +19,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 10px solid blue; */
   flex-direction: column;
   flex-wrap: wrap;
+  gap: 20x;
 }
 #mixAA_main img{
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 #mixAA_memo{
   width: 600px;
-  height: 200px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,11 +44,12 @@
   color: rgb(0, 47, 108);
   font-weight: 800;
   font-size: 14px;
-  /* border: 10px solid blue; */
 }
 #mixAA_memo h3{
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
+  height: 25px;
+  color: rgb(0, 47, 108);
 }
 #mixAA_memo h4 {
   width: 500px;
@@ -58,19 +57,26 @@
   color: rgb(154, 106, 56);
   font-weight: 900;
   font-size: 15px;
-  /* border: 10px solid blue; */
 }
 #mixAA_memo_1{
   width: 270px;
-  height: 90px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  /* border: 10px solid blue; */
+  font-size: 13px;
   line-height: 20px;
 }
-#mixAA_memo_1{
+#mixAA_memo_1 p{
+  width: 250px;
+  height: 250px;
+  color:rgb(70, 70, 70);
+  font-weight: 600;
   font-size: 13px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 

@@ -33,31 +33,25 @@
   height: 58px;
   font-size: 15px;
   display: flex;
-  /* border: 1px solid black; */
   align-items: center;
 }
 #par{
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 #par_a{
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
 #partnershipmemo_container{
-  /* border: 3px solid rgb(255, 0, 0); */
   width: 680px;
- 
 }
 #partnershipmemo_hyphen{
   display: flex;
   width: 15px;
   justify-content: center;
   align-items: center;
-  /* border: 3px solid rgb(255, 0, 0); */
 }
 /* 버튼 */
 #partnership_btns_main{
@@ -65,13 +59,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 3px solid rgb(255, 0, 0); */
 }
 #partnership_btns{
   width: 520px;
   display: flex;
   justify-content: space-between;
-  /* border: 3px solid rgb(255, 0, 0); */
 }
 #partnership_btn_a{
   width: 245px;
@@ -81,6 +73,7 @@
   font-weight: 900;
   border: none;
   font-size: 20px;
+  cursor: pointer;
 }
 #partnership_btn_b{
   width: 245px;
@@ -90,6 +83,7 @@
   font-weight: 900;
   border: none;
   font-size: 20px;
+  cursor: pointer;
 }
 #partnershipmemo_notice{
   width: 750px;
@@ -109,6 +103,5 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* border: 3px solid black; */
   gap: 20px;
 }

@@ -17,7 +17,6 @@
 #cussl{
   width: 1200px;
   height: 420px;
-  /* border: 1px solid black; */
   display: flex;
   justify-content: center;
 }
@@ -42,19 +41,22 @@
 #cussl_d{
   width: 212px;
   height: 50px;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #cussl_e{
   width: 330px;
-  height: 49.5px;
-  border-bottom: 3px solid black;
+  height: 49px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 #cussl_ee{
   width: 330px;
   height: 50px;
@@ -82,7 +84,10 @@
 #cussl_g{
   width: 636px;
   height: 50px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +95,8 @@
 #cussl_gg{
   width: 636px;
   height: 203px;
-  border: 1px solid black;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,9 +116,11 @@
   border: 1px solid black;
 }
 #cussl_i{
-  width: 212px;
-  height: 299px;
-  border: 1px solid black;
+  width: 211px;
+  height: 298px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;

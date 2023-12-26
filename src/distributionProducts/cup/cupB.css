@@ -3,21 +3,18 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* border: 3px solid black; */
 }
 #cupB_main{
   width: 1200px;
-  height: 800px;
-  border: 1px solid rgb(199, 199, 199); 
+  height: 900px;
+  border: 1px dotted rgb(199, 199, 199); 
 }
 #cupB_main1{
   width: 1200px;
-  height: 400px;
+  height: 450px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  
-  /* border: 3px solid black; */
 }
 #cupB_detail{
   width: 400px;
@@ -25,19 +22,60 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-right: 1px solid rgb(199, 199, 199); 
+  border-right: 1px dotted rgb(199, 199, 199); 
 }
 #cupB_detail:nth-last-child(1) {
   border: none;
 }
-#cupB_detail h3{
-  font-size: 17px;
+#cupB_detail_a{
+  color:rgb(173, 100, 27);
+  font-size: 15px;
+  font-weight: 900;
   width: 330px;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 3px solid black; */
+}
+#cupB_detail_b{
+  color:rgb(134, 32, 33);
+  font-size: 15px;
+  font-weight: 900;
+  width: 330px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cupB_detail_c{
+  color:rgb(0, 60, 130);
+  font-size: 15px;
+  font-weight: 900;
+  width: 330px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cupB_detail_d{
+  color:rgb(246, 182, 28);
+  font-size: 15px;
+  font-weight: 900;
+  width: 330px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cupB_detail_e{
+  color:rgb(98, 44, 39);
+  font-size: 15px;
+  font-weight: 900;
+  width: 330px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #cupB_detail_pp {
   font-size: 14px;
@@ -49,15 +87,13 @@
   flex-direction: column;
   line-height: 22px;
   color:rgb(149, 149, 149);
-  /* border: 3px solid black; */
   font-weight: 600;
 }
 #cupB_main2{
   width: 1200px;
-  height: 400px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  /* border: 3px solid black; */
 }

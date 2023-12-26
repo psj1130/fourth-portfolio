@@ -1,6 +1,5 @@
 import React from "react";
 import './App.css';
-
 import { Routes, Route } from 'react-router-dom';
 
 // 컴포넌트 불러오기
@@ -26,7 +25,6 @@ import MD from "./menu_main/md/md";
 import Customerservice from './customerservicecenter/customerservice';
 import DistributionProducts from './distributionProducts/distributionProducts';
 import MapSearch from './mapsearch/mapSearch';
-
 import Searchre from "./include/searchresult.js";
 
 
@@ -66,7 +64,7 @@ function App() {
           <Route path="/seller/success" element={<Success/>}/>
         </Routes>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

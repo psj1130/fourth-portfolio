@@ -112,6 +112,7 @@ function Searchre() {
               <p>검색 결과가 없습니다.</p>
             </div>
         )}
+
         {/* 이벤트 */}
         {postResults.length > 0 &&
           postResults.map((result) => (
@@ -141,6 +142,7 @@ function Searchre() {
             </Link>
           ))
         }
+
         {/* 공지사항 */}
         <div id='noticeResults_container'>
           {noticeResults.length > 0 &&
@@ -173,6 +175,7 @@ function Searchre() {
             })
           }
         </div>
+
         {/* QnA */}
         <div id='QnAResults_continer'>
           {qnaResults.length > 0 &&
@@ -221,9 +224,6 @@ function Searchre() {
         </div>
       </ul>
     </div>
-
-    
-
    </div>
   );
 }

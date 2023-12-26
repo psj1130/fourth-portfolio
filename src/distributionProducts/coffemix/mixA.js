@@ -13,7 +13,7 @@ function MixA() {
        <Dplist></Dplist>
       </div>
       <div id='mix_mid'>
-        <p>HOME › 유통제품 › 커피믹스</p>
+        <p>HOME ❯ 유통제품 ❯ 커피믹스</p>
       </div>
       <div id='mixA_main'>
         <div id='mixA_main2'>

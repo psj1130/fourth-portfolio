@@ -1,12 +1,10 @@
 
 #mixA_containcupBer{
   width: 100%;
-
 }
 #mixA_img1{
   width: 192px;
   height: 40px;
-  
 }
 #mixA_main{
   width: 100%;
@@ -15,7 +13,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 3px solid black; */
 }
 #mixA_main2{
   width: 1200px;
@@ -24,7 +21,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 3px solid rgb(0, 72, 255); */
 }
 #mixA_main2 h1{
   font-size: 50px;
@@ -39,30 +35,25 @@
   justify-content: center;
   flex-direction: column;
   font-weight: 100;
-  /* border: 3px solid rgb(0, 72, 255); */
 }
 #mixA_a h3{
   font-size: 20px;
   font-weight: 400;
 }
-
 #mixA_aa{
   font-size: 14px;
   font-weight: 400;
   height: 60px;
-  /* border: 3px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #mixB_main{
   width: 1200px;
-  /* border: 3px solid black; */
 }
 #mixA_img2 img{
   width: 160px;
   height: 160px;
-  /* border: 3px solid black; */
 }
 #mixA_img2{
   width: 1200px;
@@ -80,44 +71,37 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  /* border: 3px solid black; */
 }
 #mixA_bb{
   width: 300px;
   height: 70px;
-  /* border: 3px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
 }
 #mixA_bb h4{
-  font-weight: 500;
+  font-weight: 700;
 }
-
 #mixA_bbb {
   width: 305px;
-  height: 80px;
+  height: 100px;
   font-size: 13px;
   font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* border: 3px solid black; */
   flex-wrap: wrap;
-  line-height: 20px;
+  line-height: 22px;
 }
-
 #mix_Top{
   width: 100%;
   height: 450px;
-  border: 1px solid black;
   background-image: url('../dpbackimg/beanist_visual.jpg');
   background-size: 100% 450px;
   display: flex;
   flex-direction: column;
-  /* align-content: space-around; */
 }
 #mix_title{
   width: 100%;
@@ -126,14 +110,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid rebeccapurple; */
   font-weight: 100;
 }
 #mix_title h3{
   font-weight: 100;
   font-size: 48px;
 }
-
 #mix_title_p{
   font-size: 26px;
   width: 800px;
@@ -141,7 +123,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid rebeccapurple; */
 }
 #mix_title_sapn{
   font-weight: 700;
@@ -151,7 +132,6 @@
   height: 150px;
   color: #898989;
   font-size: 12px;
-  /* border: 1px solid black; */
   text-align: right;
   display: flex;
   align-items: center;

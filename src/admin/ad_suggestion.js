@@ -20,8 +20,6 @@ async function getSuggestion() {
   console.log(res);
   return res.data;
 }
-
-
 const columns = [
   {
     field: 'type',
