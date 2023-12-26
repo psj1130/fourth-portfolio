@@ -4,7 +4,8 @@ import { DataGrid } from '@mui/x-data-grid';
 import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
-import './ad_notice.css';
+import './notice.css';
+import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 
 import Popup from "./modal/noticepopup";
 import Createmodal from "./modal/noticecreatemodal";
@@ -15,7 +16,7 @@ export default function Ad_notice() {
 
     //모달 부분
     const [isOpen, setOpen] = useState(false);
-    const [modalOpen, setModalOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(true);
     const modalRef = useRef(null);
     const [selectedlist, setSelectedlist] = useState(null);
     const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
@@ -72,7 +73,7 @@ export default function Ad_notice() {
   const columns = [
     {
       field: 'id',
-      headerName: '사회공헌활동',
+      headerName: '공지사항',
       width: 120,
       editable: false,
     },
@@ -165,12 +166,16 @@ export default function Ad_notice() {
       field: 'action',
       headerName: '삭제',
       width: 80,
+      //그리드 컬럼 설정하는데 여기서 return값을 주고 삭제 요청을 보낼수있음
       renderCell: (params) => {
         return (
           <>
-            <button className='userListDelete' onClick={async () => {
+            <DeleteOutLine
+            style={{ cursor: 'pointer' }}
+             className='userListDelete' onClick={async () => {
               console.log(params.id);
               await axios.delete(`${API_URL}/notice/delete/${params.id}`)
+              //qnaroute에서 delete만들고 요청하면 됨
               .then(res => {
                 console.log(res.data);
                 window.location.reload();
@@ -180,7 +185,7 @@ export default function Ad_notice() {
               })
             }}>
               삭제
-            </button>
+            </DeleteOutLine>
           </>
         );
       },
@@ -193,7 +198,7 @@ export default function Ad_notice() {
         return (
           <>
             <button
-              className="userListDelete"
+              className="update-btn"
               onClick={() => UpdateClick(params.row.id)}
             >
               수정
@@ -208,10 +213,11 @@ export default function Ad_notice() {
     <div id='ad_suggestion_container'>
       <div id='ad_suggestion_main'>
         <Box>
-          <div className="created-btn">
-          <Button
-          onClick={() => setModalOpen(true)}
-          style={{ color: 'black'}}>새로 만들기</Button>
+          <div className="create_title">
+            <button
+              className="create-btn"
+              onClick={() => setModalOpen(true)}>
+              새로 만들기</button>
             <Createmodal modalOpen={modalOpen} setModalOpen={setModalOpen} />
           </div>
           <Updatemodal

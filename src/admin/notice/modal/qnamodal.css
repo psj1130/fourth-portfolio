@@ -1,0 +1,116 @@
+.qnamodal-body {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qnamodal-content {
+  width: 1500px;
+  height: 850px;
+  background-color: #d9d9d9;
+  border: 2px solid black;
+}
+
+.qnamodal-form {
+  width: 100%;
+  height: 100%;
+}
+
+.qnamodal-top {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 45px;
+}
+
+.qnamodal-top-title {
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 34px;
+}
+
+.qnamodal-btn-style {
+  width: 55px;
+  height: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.qnamodal-main-container {
+  margin: 30px auto 0;
+  background-color: white;
+  width: 1450px;
+  height: 730px;
+  border: 1px solid black;
+}
+
+.qnamodal-main-title-box {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.qnamodal-main-title {
+  width: 1235px;
+  padding-left: 15px;
+  height: 60px;
+  border: none;
+  outline: none;
+  font-size: 22px;
+}
+
+.qnamodal-main-category {
+  width: 200px;
+  height: 60px;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+}
+
+.qnamodal-main-box {
+  width: 100%;
+  height: 590px;
+}
+
+.qnamodal-main-body {
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  padding: 15px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+/* 단어가 가로 공간을 넘어갈 때 줄바꿈 처리 */
+}
+
+.qnamodal-main-body-style::placeholder {
+  font-size: 44px;
+  text-align: center;
+}
+
+.qnamodal-bottom-body {
+  width: 100%;
+  height: 75px;
+  border-top: 1px solid black;
+}
+
+.qnamodal-form-btn {
+  width: 130px;
+  height: 78px;
+  float: right;
+  border: none;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  background-color: #243c84;
+  color: white;
+}

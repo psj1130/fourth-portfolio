@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios'; // Axios 라이브러리 import
 import { API_URL } from '../../../config/serverurl';
-import './eventcreatemodal.css';
+import './eventmodal.css';
 
 const Updatemodal = ({ isOpen, onClose, updateId }) => {
   const [title, setTitle] = useState('');
@@ -59,7 +59,7 @@ const Updatemodal = ({ isOpen, onClose, updateId }) => {
     }
   }
 
-  const handleSubmit = async (e) => {
+  const UpdateSubmit = async (e) => {
 
     console.log('제목:', title);
     console.log('내용:', body);
@@ -114,86 +114,91 @@ const Updatemodal = ({ isOpen, onClose, updateId }) => {
     }
   return (
     <Modal
-      className="socialcreatemodal-body"
-      isOpen={isOpen}
-      onRequestClose={() => onClose(false)}
-      contentLabel="Createmodal"
-    >
-      <div className="socialcreatemodal-content">
-        <div className="socialcreatemodal-top">
-          <p className='socialcreatemodal-top-title'>이벤트</p>
-          <button
-            className='socialcreatemodal-btn-style' 
-            onClick={() => onClose(false)}>
-            <LogoutIcon style={{ fontSize: '44px'}}/>
-          </button>
-        </div>
-        <div className="socialcreatemodal-main-container">
-          <form onSubmit={handleSubmit} encType="multipart/form-data">
-            <div className="socialcreatemodal-main-title">
-              <input
-                className='socialcreatemodal-main-title-style'
-                type="text"
-                name="title"
-                placeholder='제목을 입력해주세요' 
-                value={title} 
-                onChange={(e) => setTitle(e.target.value)} 
-              />
-              <input
-                className='noticecreatemodal-main-title-style'
-                type='date'
-                name="start"
-                placeholder='날짜를 입력해주세요' 
-                value={start} 
-                onChange={(e) => setStart(StartDate(e.target.value))} 
-              />
-              <input
-                className='noticecreatemodal-main-title-style'
-                type='date'
-                name="end"
-                placeholder='날짜를 입력해주세요' 
-                value={end} 
-                onChange={(e) => setEnd(EndDate(e.target.value))} 
-              />
-            </div>
-            <div className="socialcreatemodal-main-body">
-              <textarea
-                className='socialcreatemodal-main-body-style'
-                placeholder='내용을 입력해주세요'
-                type="text"
-                name="body"
-                value={body}
-                onChange={(e) => setBody(e.target.value)}/>
-            </div>
-            <div className="eventcreatemodal-bottom-body">
-              <div className='eventcreatemodal-botton-file-con'>
+    className="eventmodal-body"
+    isOpen={isOpen}
+    onRequestClose={() => onClose(false)}
+    contentLabel="Createmodal"
+  >
+    <div className="eventmodal-content">
+      <div className="eventmodal-top">
+        <p className='eventmodal-top-title'>이벤트</p>
+        <button
+          className='eventmodal-btn-style' 
+          onClick={() => onClose(false)}>
+          <LogoutIcon style={{ fontSize: '44px'}}/>
+        </button>
+      </div>
+      <div className="eventmodal-main-container">
+        <form onSubmit={UpdateSubmit} 
+        className='eventmodal-form'
+        encType="multipart/form-data">
+          <div className="eventmodal-main-title">
+            <input
+              className='eventmodal-title'
+              type="text"
+              name="title"
+              placeholder='제목을 입력해주세요' 
+              value={title} 
+              onChange={(e) => setTitle(e.target.value)} 
+            />
+          <div className='eventmodal-date-box'>  
+            <input
+              className='eventmodal-date-start'
+              type='date'
+              name="start"
+              placeholder='날짜를 입력해주세요' 
+              value={start} 
+              onChange={(e) => setStart(StartDate(e.target.value))} 
+            />
+            <p className='eventmodal-date-style'> ~ </p>
+            <input
+              className='eventmodal-date-end'
+              type='date'
+              name="end"
+              placeholder='날짜를 입력해주세요' 
+              value={end} 
+              onChange={(e) => setEnd(EndDate(e.target.value))} 
+            />
+          </div>
+          </div>
+          <div className="eventmodal-main-box">
+            <textarea
+              className='eventmodal-main-body'
+              placeholder='내용을 입력해주세요'
+              type="text"
+              name="body"
+              value={body}
+              onChange={(e) => setBody(e.target.value)}/>
+          </div>
+            <div className='eventmodal-bottom-body'>
+              <div className="eventmodal-img-container">
                 <label htmlFor="title-file-style">
                   타이틀 사진
                 </label>
-                <input
-                  id='title-file-style' 
-                  className='eventcreatemodal-bottom-imgselect'
-                  type="file"
-                  name="title_img_url"
-                  onChange={(e) => setTitleImg(e.target.files[0])} 
-                />
-                <label htmlFor="detail-file-style">
-                  메인사진
-                </label>
-                <input
-                  id='detail-file-style' 
-                  className='eventcreatemodal-bottom-imgselect'
-                  type="file"
-                  name="img_url"
-                  onChange={(e) => setDetailImg(e.target.files[0])} 
-                />
+                  <input
+                    id='title-file-style' 
+                    className='eventemodal-imgselect-01'
+                    type="file"
+                    name="title_img_url"
+                    onChange={(e) => setTitleImg(e.target.files[0])} 
+                  />
+                  <label htmlFor="detail-file-style">
+                    메인사진
+                  </label>
+                  <input
+                    id='detail-file-style' 
+                    className='eventemodal-imgselect-02'
+                    type="file"
+                    name="img_url"
+                    onChange={(e) => setDetailImg(e.target.files[0])} 
+                  />
               </div>
-              <button className='eventcreatemodal-form-btn' type="submit">업로드</button>
+              <button className='eventmodal-form-btn' type="submit">업로드</button>
             </div>
-          </form>
-        </div>
+        </form>
       </div>
-    </Modal>
+    </div>
+  </Modal>
   );
 };
 

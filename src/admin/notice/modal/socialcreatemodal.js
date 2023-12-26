@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import axios from 'axios'; // Axios 라이브러리 import
 import { API_URL } from '../../../config/serverurl';
-import './createmodal.css';
+import './socialmodal.css';
 
 const Createmodal = ({ modalOpen, setModalOpen }) => {
   const [title, setTitle] = useState('');

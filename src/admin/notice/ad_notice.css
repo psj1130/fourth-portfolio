@@ -1,9 +1,0 @@
-.data-box-list {
-  display: flex;
-  flex-direction: row ;
-}
-
-.data-box{
-  width: 100%;
-  height: 100%;
-}

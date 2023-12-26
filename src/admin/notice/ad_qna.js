@@ -4,10 +4,11 @@ import { DataGrid } from '@mui/x-data-grid';
 import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
+import './notice.css';
+import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 
 import Integratedpopup from "./modal/integratedpopup";
 import Createmodal from "./modal/qnacreatemodal";
-import Button from '@mui/material/Button';
 import Updatemodal from "./modal/qnaupdatemodal";
 
 export default function Ad_qna() {
@@ -161,15 +162,16 @@ const columns = [
     field: 'action',
     headerName: '삭제',
     width: 80,
+    //그리드 컬럼 설정하는데 여기서 return값을 주고 삭제 요청을 보낼수있음
     renderCell: (params) => {
-    const handleDelete = () => {
-    deleteQna(params.id); 
-      }
       return (
         <>
-          <button className='userListDelete' onClick={async () => {
+          <DeleteOutLine
+          style={{ cursor: 'pointer' }}
+           className='userListDelete' onClick={async () => {
             console.log(params.id);
             await axios.delete(`${API_URL}/qna/delete/${params.id}`)
+            //qnaroute에서 delete만들고 요청하면 됨
             .then(res => {
               console.log(res.data);
               window.location.reload();
@@ -179,7 +181,7 @@ const columns = [
             })
           }}>
             삭제
-          </button>
+          </DeleteOutLine>
         </>
       );
     },
@@ -192,7 +194,7 @@ const columns = [
       return (
         <>
           <button
-            className="userListDelete"
+            className="update-btn"
             onClick={() => UpdateClick(params.row.id)}
           >
             수정
@@ -205,17 +207,15 @@ const columns = [
 
 return (
   <div id='ad_suggestion_container'>
-  <div id='ad_suggestion_main'>
-    <Box>
-      <div className="created-btn">
-        <Button
-          onClick={() => setModalOpen(true)}
-          style={{ color: 'black'}}
-        >
-          새로 만들기
-        </Button>
-        <Createmodal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-      </div>
+    <div id='ad_suggestion_main'>
+      <Box>
+        <div div className="create_title">
+          <button
+            className="create-btn"
+            onClick={() => setModalOpen(true)}>
+          새로 만들기</button>
+          <Createmodal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+        </div>
       <Updatemodal
         isOpen={isUpdateModalOpen}
         onClose={() => setUpdateModalOpen(false)}
