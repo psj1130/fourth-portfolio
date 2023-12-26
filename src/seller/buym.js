@@ -130,7 +130,7 @@ function Buymenu(props) {
                 cookie
                   ? `/seller/${cookie}?id=${
                       props.rdata.menuResult.id
-                    }&o_count=${count}&o_amount=${count * price}`
+                    }&o_count=${count}&o_amount=${price*count}`
                   : "/login"
               }
               id="buybutton"
