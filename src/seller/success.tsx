@@ -1,9 +1,16 @@
 import React from "react";
+import { useParams,useSearchParams} from "react-router-dom";
 import { Link } from "react-router-dom";
 import './success.css'
 import { getCookie } from "../customer/cookies";
+import { log } from "console";
 
 function ReservationSuccess() {
+  console.log('함수호출');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const id = searchParams.get('set');
+  console.log(id);
+  
   const cookie = getCookie('loginCookie');
   return(
     <div id="payment-result-wrapper">
