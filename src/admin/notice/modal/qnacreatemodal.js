@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios'; // Axios 라이브러리 import
@@ -11,6 +11,8 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
   const [category, setCategory] = useState('');
   
   const categories = ["구매", "환불", "사용", "단체 및 기업구매", "기타"];
+
+  
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,7 +87,10 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                 onChange={(e) => setAnswer(e.target.value)}/>
             </div>
             <div className="qnamodal-bottom-body">
-              <button className='qnamodal-form-btn' type="submit">업로드</button>
+              <button className='qnamodal-form-btn'
+               type="submit"
+               onClick={()=> window.location.reload()}
+              >업로드</button>
             </div>
           </form>
         </div>

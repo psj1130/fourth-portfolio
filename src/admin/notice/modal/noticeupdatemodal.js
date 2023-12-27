@@ -93,67 +93,66 @@ const Updatemodal = ({ isOpen, onClose, updateId }) => {
 
   return (
     <Modal
-      className="socialcreatemodal-body"
+      className="noticemodal-body"
       isOpen={isOpen}
       onRequestClose={() => onClose(false)}
-      contentLabel="updatemodal"
+      contentLabel="Createmodal"
     >
-      <div className="socialcreatemodal-content">
-        <div className="socialcreatemodal-top">
-          <p className='socialcreatemodal-top-title'>게시물 수정(공지사항)</p>
+      <div className="noticemodal-content">
+        <div className="noticemodal-top">
+          <p className='noticemodal-top-title'>공지사항</p>
           <button
-            className='socialcreatemodal-btn-style'
+            className='noticemodal-btn-style' 
             onClick={() => onClose(false)}>
             <LogoutIcon style={{ fontSize: '44px'}}/>
           </button>
         </div>
-        <div className="socialcreatemodal-main-container">
+        <div className="noticemodal-main-container">
           <form onSubmit={UpdateSubmit} encType="multipart/form-data">
-            <div className="socialcreatemodal-main-title">
+            <div className="noticemodal-title-box">
               <input
-                className='socialcreatemodal-main-title-style'
+                className='noticemodal-title'
                 type="text"
                 name="title"
-                placeholder='제목을 입력해주세요'
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                placeholder='제목을 입력해주세요' 
+                value={title} 
+                onChange={(e) => setTitle(e.target.value)} 
               />
-              <input
-                className='noticecreatemodal-main-title-style'
+             <input
+                className='noticemodal-date'
                 type='date'
-                name="date"
+                name="date" 
                 placeholder='날짜를 입력해주세요' 
                 value={date} 
                 onChange={(e) => setDate(formatDate(e.target.value))} 
               />
             </div>
-            <div className="socialcreatemodal-main-body">
+            <div className="noticemodal-main-box">
               <textarea
-                className='socialcreatemodal-main-body-style'
+                className='noticemodal-body-style'
                 placeholder='내용을 입력해주세요'
                 type="text"
                 name="body"
                 value={body}
                 onChange={(e) => setBody(e.target.value)}/>
             </div>
-            <div className="socialcreatemodal-bottom-body">
-              <div className='socialcreatemodal-botton-file-con'>
-                <input
-                  id='file-style'
-                  className='socialcreatemodal-bottom-imgselect'
-                  type="file"
-                  name="img_url"
-                  onChange={(e) => setImg(e.target.files[0])}
+          <div className="noticemodal-bottom-body">
+            <div className='noticemodal-file-box'>
+              <label htmlFor="file-style">
+                사진 올리기
+                
+              <input
+                id='file-style' 
+                className='noticemodal-img'
+                type="file"
+                name="img_url"
+                onChange={(e) => setImg(e.target.files[0])} 
                 />
-                <label htmlFor="file-style">
-                  <div className="file-input-icon">
-                    <IconButton component="span">
-                      <FileOpenIcon style={{ fontSize: '44px' }} />
-                    </IconButton>
-                  </div>
                 </label>
               </div>
-              <button className='socialcreatemodal-form-btn' type="submit">업로드</button>
+              <button className='noticemodal-form-btn' 
+              type="submit"
+              onClick={()=> window.location.reload()}>업로드</button>
             </div>
           </form>
         </div>

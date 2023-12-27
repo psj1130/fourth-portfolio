@@ -102,7 +102,8 @@ const Updatemodal = ({ isOpen, onClose, updateId }) => {
                 onChange={(e) => setAnswer(e.target.value)}/>
             </div>
             <div className="qnamodal-bottom-body">
-              <button className='qnamodal-form-btn' type="submit">업로드</button>
+              <button className='qnamodal-form-btn' type="submit"
+              onClick={()=> window.location.reload()}>업로드</button>
             </div>
           </form>
         </div>

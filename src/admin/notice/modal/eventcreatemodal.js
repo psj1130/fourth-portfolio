@@ -159,7 +159,9 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                       onChange={(e) => setDetailImg(e.target.files[0])} 
                     />
                 </div>
-                <button className='eventmodal-form-btn' type="submit">업로드</button>
+                <button className='eventmodal-form-btn' 
+                type="submit"
+                onClick={()=> window.location.reload()}>업로드</button>
               </div>
           </form>
         </div>

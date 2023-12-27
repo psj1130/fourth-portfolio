@@ -34,7 +34,7 @@ export default function Ad_qna() {
     setUpdateModalOpen(true);
   };
 
-
+  //외부클릭시 종료
   useEffect(() => {
     const OutsideClick = (event) => {
       if (isOpen && !modalRef.current?.contains(event.target)) {

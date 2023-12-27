@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'DungGeunMo';
+  /* font-family: 'DungGeunMo'; */
 }
 
 .socialmodal-content {
@@ -63,7 +63,7 @@
   border: none;
   outline: none;
   font-size: 22px;
-  font-family: 'DungGeunMo';
+  /* font-family: 'DungGeunMo'; */
 }
 
 .socialmodal-category {
@@ -75,7 +75,7 @@
   border: none;
   border-left: 1px solid black;
   cursor: pointer;
-  font-family: 'DungGeunMo';
+  /* font-family: 'DungGeunMo'; */
 }
 
 .socialmodal-main-title {
@@ -101,7 +101,7 @@
   border: none;
   outline: none;
 /* 단어가 가로 공간을 넘어갈 때 줄바꿈 처리 */
-  font-family: 'DungGeunMo';
+  /* font-family: 'DungGeunMo'; */
 }
 
 .socialmodal-main-body-style::placeholder {
@@ -126,7 +126,7 @@
 }
 
 .socialmodal-bottom-imgselect {
-  font-family: 'DungGeunMo';
+  /* font-family: 'DungGeunMo'; */
 }
 
 .socialmodal-file-box > label {
@@ -150,5 +150,5 @@
   cursor: pointer;
   background-color: #243c84;
   color: white;
-  font-family: 'DungGeunMo';
+  /* font-family: 'DungGeunMo'; */
 }
