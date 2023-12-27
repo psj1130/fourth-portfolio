@@ -185,7 +185,7 @@ function Info(props){
               <h3>최종금액</h3>
               <h3 id="sellerright">{Allprice.toLocaleString()}원</h3>
             </div>
-            <Checkout setseller={props.setseller} price={Allprice} />
+            <Checkout count={props.value.count} price={Allprice} rdata={props.rdata} />
           </div>
         </div>
       </div>
@@ -207,31 +207,8 @@ function Seller(props) {
     count,
     amount
   }
-  const cookie = getCookie('loginCookie');
-  async function setseller(price){
-    if(cookie){
-    const data = {
-      id:userid,
-      menuid:id,
-      count : count,
-      amount : price,
-
-      
-    };
-    console.log("data:",data);
-    const res = await axios.post(`${API_URL}/seller/success`,{data})
-    .then((res)=>{
-      if(res.data == '저장완료') {
-        console.log('주문했음');
-      }
-    })
-    .catch(err=>{
-        console.log(err)
-    })
-  }else if(!cookie){
-    return;
-  }
-}
+  
+ 
   
   // console.log("Link to:",id,count,amount);
   const [state] = useAsync(() => getseller(userid, id), [userid]);
@@ -243,7 +220,7 @@ function Seller(props) {
   return (
     <div className="seller">
       
-      <Info  rdata={rdata} value={value} setseller={setseller}  />
+      <Info  rdata={rdata} value={value} />
       
     </div>
   );
