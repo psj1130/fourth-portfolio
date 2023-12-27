@@ -1,17 +1,56 @@
 import React from "react";
 import { useParams,useSearchParams} from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import './success.css'
 import { getCookie } from "../customer/cookies";
 import { log } from "console";
+import axios from "axios";
+import { API_URL } from "../config/contansts";
+const cookie = getCookie('loginCookie');
 
 function ReservationSuccess() {
-  console.log('함수호출');
-  const [searchParams, setSearchParams] = useSearchParams();
-  const id = searchParams.get('set');
-  console.log(id);
   
-  const cookie = getCookie('loginCookie');
+  async function Setseller(){
+    const {userid} = useParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const id = searchParams.get('id');
+    const count = searchParams.get('o_count');
+    const amount = searchParams.get('o_amount');
+    const cookie = getCookie('loginCookie');
+    console.log("2");
+    console.log("1");
+    if(cookie){
+    const data = {
+      id:cookie,
+      menuid:id,
+      count : count,
+      amount : amount,   
+    };
+    
+    const res = await axios.post(`${API_URL}/seller/success`,{data})
+    .then((res)=>{
+      if(res.data == '저장완료') {
+        console.log("3");
+        
+        console.log('주문했음');
+      }
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+  }else if(!cookie){
+    return;
+  }
+}
+  useEffect(() => {
+    console.log("!");
+    
+  },[])
+  
+  
+  
+
   return(
     <div id="payment-result-wrapper">
       <div id="payment-result-container">
@@ -24,11 +63,11 @@ function ReservationSuccess() {
             메인 페이지
           </div>
         </Link>
-        {/* <Link to={`/order/list/`}>
+        <Link to={`/orderlist/${cookie}`}>
           <div className="payment-result-button">
             구매목록
           </div>
-        </Link> */}
+        </Link>
       </div>
     </div>
   )

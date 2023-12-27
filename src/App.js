@@ -64,7 +64,7 @@ function App() {
           <Route path='/mapsearch' element={<MapSearch />}/>
           <Route path='/order/menu/:id' element={<Buym/>}/>
           <Route path='/seller/:userid' element={<Seller/>}/>
-          <Route path="/seller/success" element={<Success/>}/>
+          <Route path="/seller/success/:id" element={<Success/>}/>
           <Route path="/seller/fail" element={<Fail/>}/>
         </Routes>
       </div>
