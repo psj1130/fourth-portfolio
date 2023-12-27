@@ -126,9 +126,7 @@ const Updatemodal = ({ isOpen, onClose, updateId }) => {
                     />
                   </label>
               </div>
-              <button className='socialmodal-form-btn' 
-              type="submit"
-              onClick={()=> window.location.reload()}>업로드</button>
+              <button className='socialmodal-form-btn' type="submit">업로드</button>
             </div>
           </form>
         </div>
