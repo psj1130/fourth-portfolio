@@ -111,7 +111,9 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                     />
                   </label>
               </div>
-              <button className='socialmodal-form-btn' type="submit">업로드</button>
+              <button className='socialmodal-form-btn' 
+              onClick={()=> window.location.reload()} 
+              type="submit">업로드</button>
             </div>
           </form>
         </div>

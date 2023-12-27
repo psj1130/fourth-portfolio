@@ -119,7 +119,9 @@ const Createmodal = ({ modalOpen, setModalOpen }) => {
                 />
                 </label>
               </div>
-              <button className='noticemodal-form-btn' type="submit">업로드</button>
+              <button className='noticemodal-form-btn' 
+              type="submit"
+              onClick={()=> window.location.reload()}>업로드</button>
             </div>
           </form>
         </div>
