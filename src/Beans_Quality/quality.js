@@ -15,10 +15,10 @@ function Quality(){
           </div>
           <div id="Beans_Quality_linkv">
             <div id="Beans_linkv">
-              <a href="/Beans" id="Beans_link_av" className="Beans_Quality_select_style">원두</a>
+              <Link to="/Beans" id="Beans_link_av" className="Beans_Quality_select_style">원두</Link>
             </div>
             <div id="Quality_linkv">
-              <a href="/Quality" id="Quality_link_av" >품질</a>
+              <Link to="/Quality" id="Quality_link_av" >품질</Link>
             </div>
           </div>
         </div>

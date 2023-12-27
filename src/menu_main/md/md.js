@@ -7,9 +7,8 @@ import useAsync from '../../customHook/useAsync';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { IoSearch } from "react-icons/io5";
 
-async function getdrink() {
+async function getMD() {
   const res = await axios.get(`${API_URL}/menu/md`);
   console.log(res);
   return res.data;
@@ -24,9 +23,9 @@ const Drink_header = () => {
           <div id="drink_textbox1_div2"><p>Always Beside you, <b>EDIYA COFFEE</b></p></div>
         </div>
         <div id="drink_header_DFM">
-          <a href="/product/drink" id="DFM_drink_style">음료</a>
-          <a href="/product/food" id="DFM_drink_style">푸드</a>
-          <a href="/product/md" className="backwhite">MD</a>
+          <Link to="/product/drink" id="DFM_drink_style">음료</Link>
+          <Link to="/product/food" id="DFM_drink_style">푸드</Link>
+          <Link to="/product/md" className="backwhite">MD</Link>
         </div>
       </div>
     </div>
@@ -39,6 +38,15 @@ function MD(props) {
   const [showMore1, setShowMore1] = useState(8);
   const itemsPerPage = 8;
 
+  const { id } = useParams();
+  const [state] = useAsync(() => getMD(id), [id]);
+  const { loading, data: pdata, error } = state;
+
+  if (loading) return <div>로딩중입니다.....</div>;
+  if (error) return <div>에러가 발생했습니다.</div>;
+  if (!pdata) return null;
+
+  // hidden_div를 ON/OFF 형식으로 보여주기위한 함수
   const switchHandler = (index,listNumber) => {
     if (listNumber === 1) {
       setHiddenItems((prevHiddenItems) => {
@@ -54,26 +62,15 @@ function MD(props) {
       });
     }
   };
+
+  // 더보기 기능 / 더보기를 누를 시 itemsPerPage의 수 만큼 생성됨
   const toggleShowMore1 = () => {
     setShowMore1((prevShowMore) => prevShowMore + itemsPerPage);
   };
-  const { id } = useParams();
-  const [state] = useAsync(() => getdrink(id), [id]);
-  const { loading, data: pdata, error } = state;
+  
 
-  if (loading) return <div>로딩중입니다.....</div>;
-  if (error) return <div>에러가 발생했습니다.</div>;
-  if (!pdata) return null;
-
-  // ICED와 HOT 필터링된 데이터 가져오기
+  // ICED와 HOT 필터링된 데이터 가져오기 seq순서에 맞게
   const sortedData = pdata.sort((a, b) => a.seq - b.seq);
-  const CustomPrevButton = ({ onClick }) => (
-    <button onClick={onClick} className="slick-prev"></button>
-  );
-
-  const CustomNextButton = ({ onClick }) => (
-    <button onClick={onClick} className="slick-next"></button>
-  );
 
   const settings = {
     arrows: true,
@@ -82,8 +79,6 @@ function MD(props) {
     slidesToShow: 3,
     slidesToScroll: 1,
     waitForAnimate: false,
-    // prevArrow: <CustomPrevButton />,
-    // nextArrow: <CustomNextButton />,
   };
 
   return (

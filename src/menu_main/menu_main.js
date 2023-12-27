@@ -1,5 +1,6 @@
 import React from "react";
 import './menu_main.css'
+import { Link } from "react-router-dom";
 
 function Menu_main (){
   return(
@@ -14,9 +15,9 @@ function Menu_main (){
               <div id="menu_textbox1_div3"><p>한 잔의 커피 그 이상의 감동을 경험하세요.</p></div>
               
               <div id="menu_header_DFM">
-                <a href="/product/drink" id="DFM_div_style">음료</a>
-                <a href="/product/food" id="DFM_div_style">푸드</a>
-                <a href="/product/md" id="DFM_div_style">MD</a>
+                <Link to="/product/drink" id="DFM_div_style">음료</Link>
+                <Link to="/product/food" id="DFM_div_style">푸드</Link>
+                <Link to="/product/md" id="DFM_div_style">MD</Link>
               </div>
             </div>
           </div>
