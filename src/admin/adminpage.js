@@ -5,7 +5,7 @@ import Ad_menu from './menu/ad_menu.js';
 import Ad_md from './menu/ad_md.js';
 import Ad_user from './ad_user';
 import Sidebar from './include/sidebar';
-import { getCookie } from '../customer/cookies';
+import { getCookie, delCookie } from '../customer/cookies';
 import Sell from './ad_sell.jsx';
 import './adminpage.css';
 
@@ -28,8 +28,7 @@ function AdminPage() {
   const navigate = useNavigate();
 
   return(
-    
-    cookie ? 
+    cookie ?
     <div id='admin'>
       <header>
         <div className='admin-header-logo'>
@@ -37,6 +36,14 @@ function AdminPage() {
             <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'}></img>
           </a>
         </div>
+        <ul>
+          <li onClick={() => {
+            delCookie('adminCookie');
+          }}>로그아웃</li>
+          <li onClick={() => {
+            navigate('/')
+          }}>홈페이지</li>
+        </ul>
       </header>
       <div id='admin-main'>
         <Sidebar />
@@ -49,7 +56,7 @@ function AdminPage() {
             <Route path='/menu' element={<Ad_menu/>}/>
             <Route path='/md' element={<Ad_md/>}/>
             <Route path='/user' element={<Ad_user/>}/>
-            
+
             <Route path='/qna' element={<Ad_qna/>}/>
             <Route path='/social' element={<Ad_social/>}/>
             <Route path='/event' element={<Ad_event/>}/>
@@ -64,7 +71,7 @@ function AdminPage() {
         </div>
       </div>
     </div>
-    : navigate('/administrator/login')
+    : window.location.replace('/administrator/login')
   )
 }
 

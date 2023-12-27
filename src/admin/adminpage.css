@@ -4,11 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #ccc;
 }
 #admin-main {
   display: flex;
   height: 780px;
+}
+#admin-main header {
+  border-bottom: 1px solid #ccc;
 }
 .others {
   flex: 6;
