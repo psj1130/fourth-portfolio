@@ -118,6 +118,12 @@ export default function Ad_social() {
       },  
     },
     {
+      field: 'category',
+      headerName: '카테고리',
+      width: 200,
+      editable: false,
+    },
+    {
       field: 'createdAt',
       headerName: '등록 시간',
       width: 200,
