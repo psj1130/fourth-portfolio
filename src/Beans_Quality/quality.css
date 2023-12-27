@@ -37,7 +37,7 @@
   left: 50%;
   width: 400px;
   height: 50px;
-  border: 3px solid #ffffff;
+  border: 2px solid #ffffff;
   align-items: center;
 }
 .Beans_Quality_select_stylev{
@@ -54,6 +54,7 @@
 }
 #Quality_linkv{
   background-color: white;
+  color: black;
   width: 100%;
   height: 100%;
   display: flex;
@@ -61,8 +62,13 @@
   align-items: center;
 }
 #Quality_link_av{
+  line-height: 50px;
+  text-align: center;
+  font-weight: bolder;
   color: rgb(0, 0, 0);
   font-size: 16px;
+  width: 100%;
+  height: 100%;
 }
 /* --------------------------------- */
 #Beans_main_bodyv{
@@ -133,7 +139,7 @@
 }
 #Quality_textbox_2div{
   margin-bottom: 20px;
-  width: 260px;
+  width: 274px;
   font-size: 25px;
   background: linear-gradient(to top, rgb(182, 218, 255) 50%, transparent 50%);
 }
@@ -143,7 +149,7 @@
 }
 #Quality_textbox_3div{
   margin-bottom: 20px;
-  width: 210px;
+  width: 225px;
   font-size: 25px;
   background: linear-gradient(to top, rgb(182, 218, 255) 50%, transparent 50%);
   margin-left: auto ;
@@ -161,7 +167,7 @@
 /* 4------------------------------- */
 #Quality_textbox_4div{
   margin-bottom: 20px;
-  width: 240px;
+  width: 249px;
   font-size: 25px;
   background: linear-gradient(to top, rgb(182, 218, 255) 50%, transparent 50%);
 }
@@ -188,7 +194,7 @@
 /* 5------------------------------- */
 #Quality_textbox_5div{
   margin-bottom: 20px;
-  width: 290px;
+  width: 310px;
   font-size: 25px;
   background: linear-gradient(to top, rgb(182, 218, 255) 50%, transparent 50%);
   margin-left: auto ;

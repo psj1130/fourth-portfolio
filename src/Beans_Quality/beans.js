@@ -17,10 +17,10 @@ function Beans(){
           </div>
           <div id="Beans_Quality_link">
             <div id="Beans_link">
-              <a href="/Beans" id="Beans_link_a" className="Beans_Quality_select_style">원두</a>
+              <Link to="/Beans" id="Beans_link_a" className="Beans_Quality_select_style">원두</Link>
             </div>
             <div id="Quality_link">
-              <a href="/Quality" id="Quality_link_a" >품질</a>
+              <Link to="/Quality" id="Quality_link_a" >품질</Link>
             </div>
           </div>
         </div>
