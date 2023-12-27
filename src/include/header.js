@@ -12,14 +12,17 @@ function Header() {
   let context = null;
 
   if(cookie) {
-    context = <p onClick={() => {
+    context = <><li><p onClick={() => {
       delCookie('loginCookie');
       document.location.reload(true);
-    }}>로그아웃</p>
+    }}>로그아웃</p></li>
+    <li><Link to={
+      cookie
+      ?`/mypage/${cookie}`: "/members/login"}>구매내역</Link></li></>
   } else if(!cookie) {
-    context = <a href='/members/login' onClick={() => {
+    context = <li><a href='/members/login' onClick={() => {
       window.sessionStorage.setItem('BeforePage', window.location.pathname);
-    }}>로그인</a>
+    }}>로그인</a></li>
   }
 
   const handleScroll = () => {
@@ -49,10 +52,7 @@ function Header() {
         <div id="header-topmenu-container">
           <div id="header-topmenu">
             <ul id="header-topmenu-navigation">
-              <li><Link to={
-                cookie
-                ?`/mypage/${cookie}`: "/members/login"}>구매내역</Link></li>
-              <li>{context}</li>
+              {context}
               <li><Link to='/searchstore'>매장찾기</Link></li>
               <li><Link to='/cs'>고객의 소리</Link></li>
               <li><Link to='/'>이디야 스토어</Link></li>

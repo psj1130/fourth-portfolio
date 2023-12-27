@@ -180,27 +180,38 @@ const showMarkers = (data) => {
   };
 
   return (
-    <div className="map_wrap">
-      <div ref={mapContainer} style={{ width: '100%', height: '900px' }}></div>
-      <div id="menu_wrap" className="bg_white">
-        <div className="option">
-          <div id='st_name'>
-            <form id='st_form_a' onSubmit={handleSubmit}>
-              <div id='st_form_b'>
-                <span><p id='st_p'>EDIYA COFFEE</p></span>
-              </div>
-              <div id='st_form_c'>
-                <input id='st_form_d' type="text" value={keyword} onChange={handleKeywordChange} size="15" />
-                <button id='st_form_e' type="submit"><img src='./mapimg/mir_add.jpg'></img></button>
-              </div>
-            </form>
+    <div className='mapsearch-wrapper'>
+      <div className='mapsearch-category'>
+        <p>HOME ❯ 매장찾기</p>
+      </div>
+      <div className='mapsearch-logo-container'>
+        <h2>EDIYA 매장 찾기</h2>
+        <p>전국 어디서나 이디야 커피와 함께 !</p>
+      </div>
+      <div className="map_wrap">
+        <div ref={mapContainer} style={{ width: '100%', height: '100%' }}>
+        <div id="menu_wrap" className="bg_white">
+          <div className="option">
+            <div id='st_name'>
+              <form id='st_form_a' onSubmit={handleSubmit}>
+                <div id='st_form_b'>
+                  <span><p id='st_p'>EDIYA COFFEE</p></span>
+                </div>
+                <div id='st_form_c'>
+                  <input id='st_form_d' type="text" value={keyword} onChange={handleKeywordChange} size="15" />
+                  <button id='st_form_e' type="submit"><img src='./mapimg/mir_add.jpg'></img></button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id='st_detail' style={{ display: showDetail ? 'block' : 'none' }}>
+            <ul>
+              <li id="placesList"></li>
+            </ul>
           </div>
         </div>
-        <div id='st_detail' style={{ display: showDetail ? 'block' : 'none' }}>
-          <ul>
-            <li id="placesList"></li>
-          </ul>
         </div>
+        
       </div>
     </div>
   );
