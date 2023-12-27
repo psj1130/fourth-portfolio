@@ -18,7 +18,6 @@ const ContentDiv = styled.div`
   flex-direction: column-reverse;
 `;
 
-
 async function getBuy(id) {
   const res = await axios.get(`${API_URL}/order/menu/${id}`);
   console.log(res);
@@ -27,7 +26,30 @@ async function getBuy(id) {
 
 function Buymenu(props) {
   const [count, setCount] = useState(0);
-  const cookie = getCookie("loginCookie");
+  const review = props.rdata.reviewResult;
+  const [rating, setRating] = useState(review[0]?.score || null);
+  const fetchRatingFromDatabase = () => {
+    const fetchedRating = props.rdata.reviewResult[0]?.score;
+    setRating(fetchedRating || null);
+  };
+
+  useEffect(() => {
+    fetchRatingFromDatabase();
+  }, []);
+
+  const renderStars = () => {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span key={i} className={i <= rating ? "star filled" : "star"}>
+          &#9733;
+        </span>
+      );
+    }
+
+    return stars;
+  };
   const Plus = () => {
     setCount((prevCount) => prevCount + 1);
   };
@@ -38,7 +60,12 @@ function Buymenu(props) {
     setCount((prevCount) => prevCount - 1);
   };
   const menu = props.rdata.menuResult;
-  const review = props.rdata.reviewResult;
+
+  const review1 = props.rdata.reviewResult1;
+  const averageScore =
+    review.length > 0
+      ? review.reduce((total, a) => total + (a.score || 0), 0) / review.length
+      : 0;
   const user = props.rdata.userResult;
   const price = menu.price;
   const n1 = price * 0.03;
@@ -48,7 +75,6 @@ function Buymenu(props) {
   const sumn = n4 + n5 + n2;
   const imgurl = props.rdata.menuResult.img_url.split(",");
   console.log(review);
-
   return (
     <table id="buytable" border={1}>
       <tr id="borderbuy">
@@ -147,78 +173,85 @@ function Buymenu(props) {
             </div>
           </div>
         </td>
-      </tr>   
-          <tr>
-            <td id="buytabletd1_1">
-            리뷰 수<span>{review.score}</span>
-            <span>사용자 총 평점</span>
-            <span>{review.score/review.id}</span>
-          </td>
-        </tr>
+      </tr>
+      <tr>
+        <td id="buytabletd1_1">
+          리뷰 수<span>{review.length}</span>
+          <span>사용자 총 평점</span>
+          <span>{averageScore.toFixed(1)}</span>
+        </td>
+      </tr>
+     
+      
+        
+      
     </table>
   );
 }
+
 function Photo(props) {
   const review = props.rdata.reviewResult;
-  const [rating, setRating] = useState(review[0].score); // 가저온 점수를 저장할 state
 
-  // 데이터베이스에서 값을 가져와서 rating state를 업데이트하는 함수
+  const [rating, setRating] = useState(review[0]?.score || null);
+
   const fetchRatingFromDatabase = () => {
-    // 여기에서 데이터베이스에서 값을 가져오는 로직을 구현
-    // 가져온 값을 setRating을 사용하여 rating state에 업데이트
-    const fetchedRating = props.rdata.reviewResult[0].score;
-    setRating(fetchedRating);
+    const fetchedRating = props.rdata.reviewResult[0]?.score;
+    setRating(fetchedRating || null);
   };
 
-  // 컴포넌트가 마운트될 때 데이터베이스에서 값을 가져옴
   useEffect(() => {
     fetchRatingFromDatabase();
-  }, []); // 빈 배열을 전달하여 최초 한 번만 실행
+  }, []);
 
-  // 별점을 보여주는 UI를 생성하는 함수
   const renderStars = () => {
     const stars = [];
 
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <span
-          key={i}
-          className={i <= rating ? 'star filled' : 'star'}
-          // 여기에서 클릭 이벤트를 추가하여 사용자가 별을 클릭할 때 rating을 업데이트할 수 있도록 구현 가능
-        >
-          &#9733; {/* 별 모양의 유니코드 */}
+        <span key={i} className={i <= rating ? "star filled" : "star"}>
+          &#9733;
         </span>
       );
     }
 
     return stars;
-  }
+  };
+
   return (
     <div>
-    <p id="photop1"><b>포토/동영상</b>
-    <span>전체보기</span></p>
+      <p id="photop1">
+        <b>포토/동영상</b>
+        <span>전체보기</span>
+      </p>
       <div id="photogrid">
-        {review.filter((_, index) => index < 2).map((a) => {
-          return (
-          <div key={a.id} id="photogrid1">
-             <div>
+        {review.length > 0 ? (
+          review
+            .filter((_, index) => index < 2)
+            .map((a) => (
+              <div key={a.id} id="photogrid1">
                 <div>
-                  <div className="star-rating">{renderStars()} {rating}</div> 
-                </div>
-                <p>
-                    {a.user.name}*
+                  <div>
+                    <div className="star-rating">
+                      {renderStars()} {rating}
+                    </div>
+                  </div>
+                  <p>
+                    {a.user.name}
                     <span style={{ fontSize: "10px" }}>{a.createAt}</span>
                   </p>
-                <p>{a.body}</p>
-            </div>
-              <div> 
-                <img id="reviewimg" src={a.img_url} alt="빈칸"/></div>
-            </div>  
-          )
-        })}
-        </div>
-      </div> 
-    )
+                  <p>{a.body}</p>
+                </div>
+                <div>
+                  <img id="reviewimg" src={a.img_url} alt="빈칸" />
+                </div>
+              </div>
+            ))
+        ) : (
+          <h3>아직 없습니다. 구매 후 리뷰 부탁드립니다.</h3>
+        )}
+      </div>
+    </div>
+  );
 }
 
 function Buy() {

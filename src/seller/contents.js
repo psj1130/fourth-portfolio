@@ -1,18 +1,57 @@
 import React from "react";
 import styled from "styled-components";
 import "./contents.css";
+import { useState, useEffect, useRef } from "react";
 const StyledDiv = styled.div`
   div {
     height: auto;
-    margin-top:30px;
+    
     
 
   }
 `;
 
 const Middle = (props) => {
+  const review = props.rdata.reviewResult
   const imgurl = props.rdata.menuResult.img_url.split(',');
   console.log(imgurl[2])
+  const [count, setCount] = useState(0);
+  const [rating, setRating] = useState(review[0]?.score || null);
+  const fetchRatingFromDatabase = () => {
+    const fetchedRating = props.rdata.reviewResult[0]?.score;
+    setRating(fetchedRating || null);
+  };
+  const averageScore =
+    review.length > 0
+      ? review.reduce((total, a) => total + (a.score || 0), 0) / review.length
+      : 0;
+
+  useEffect(() => {
+    fetchRatingFromDatabase();
+  }, []);
+
+  const renderStars = () => {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span key={i} className={i <= rating ? "star filled" : "star"}>
+          &#9733;
+        </span>
+      );
+    }
+
+    return stars;
+  };
+  const Plus = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+  const Minus = () => {
+    if (count == 0) {
+      return;
+    }
+    setCount((prevCount) => prevCount - 1);
+  };
   return (
     <StyledDiv>
       <div id="a">
@@ -142,8 +181,27 @@ const Middle = (props) => {
           <p style={{color:"#a797ba"}}>상품을 구매하신 분들이 작성하신 리뷰입니다. 리뷰 작성시 아래 금액만큼 포인트가 적립됩니다.</p>
           <p id="prop1">텍스트리뷰:<span id="prospan1">50원</span><span id="prospan"> 포토/동영상 리뷰: <span id="prospan1">150원</span></span></p>
         </div>
-          <h3 id="proh1">리뷰 review.length건</h3>
+          <h3 id="proh1">리뷰{review.length}건</h3>
         <div id="prodiv">
+        {review.map((a) => (
+          <div key={a.id} id="cphotoreview">
+            <div>
+              <div>
+                <div className="star-rating">
+                  {renderStars()} {rating}
+                </div>
+              </div>
+              <p>
+                {a.user.name}*
+                <span style={{ fontSize: "10px" }}>{a.createAt}</span>
+              </p>
+              <p>{a.body}</p>
+            </div>
+            <div>
+              <img id="creviewimg" src={a.img_url} alt="빈칸" />
+            </div>
+          </div>
+        ))}
         </div>
       </div>
       <div id="c">
