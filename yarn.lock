@@ -3369,6 +3369,18 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@tanstack/query-core@5.14.2":
+  version "5.14.2"
+  resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-5.14.2.tgz"
+  integrity sha512-QmoJvC72sSWs3hgGis8JdmlDvqLfYGWUK4UG6OR9Q6t28JMN9m2FDwKPqoSJ9YVocELCSjMt/FGjEiLfk8000Q==
+
+"@tanstack/react-query@^5.15.0":
+  version "5.15.0"
+  resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-5.15.0.tgz"
+  integrity sha512-hWLuZ2Hg9HzmHJ3VtWzhvK+sTxPz+rIIujYUxzapPoU9PPXe7NCm8k8EaKpm+Sc65FM7Dljfk/Ov9yYMhwg9vw==
+  dependencies:
+    "@tanstack/query-core" "5.14.2"
+
 "@testing-library/dom@^8.5.0":
   version "8.20.1"
   resolved "https://registry.npmjs.org/@testing-library/dom/-/dom-8.20.1.tgz"
@@ -3445,21 +3457,21 @@
   dependencies:
     "@tosspayments/sdk-constants" "^0.2.2"
 
-"@tosspayments/payment-widget__types@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@tosspayments/payment-widget__types/-/payment-widget__types-1.0.0.tgz"
-  integrity sha512-Uc6oDmPr706vCgv8yoHrJSdr8xpiI/5HkRp++UE2yhld+KWP8H2YjJWt5mxkBYkDig2C8so7PdqLAoJFJWGw0Q==
+"@tosspayments/payment-widget__types@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@tosspayments/payment-widget__types/-/payment-widget__types-1.0.1.tgz"
+  integrity sha512-p2l6ni4ZAH0Jh7Yo4hwwDAECN0rz6Io9R19oBJ5ZkL0H1upMhGzT6xrdymIYQwcUSzIcwHwI2u03eeAX19hmug==
   dependencies:
     "@tosspayments/brandpay-types" "^0.2.6"
     "@tosspayments/payment__types" "^1.66.3"
     "@tosspayments/payment-widget-types" "^0.0.5"
 
-"@tosspayments/payment-widget-sdk@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.npmjs.org/@tosspayments/payment-widget-sdk/-/payment-widget-sdk-0.10.1.tgz"
-  integrity sha512-cxhNG+Om9ENmfhiV7iXoS78y5LEeQW0dfcZ+sN4rqegHuORVMmWoJDOP9vSSsyQnjGEIaibPRPEHf5zKgVHhgg==
+"@tosspayments/payment-widget-sdk@^0.10.2":
+  version "0.10.2"
+  resolved "https://registry.npmjs.org/@tosspayments/payment-widget-sdk/-/payment-widget-sdk-0.10.2.tgz"
+  integrity sha512-0dpkEbnDXmvIwpHYm+YODpMhh/gAtvJRYOU5uikFQpM/XCkyZDXAP9C6pc+GhiT6NsWIKKFILwaSgAeL/UT3ow==
   dependencies:
-    "@tosspayments/payment-widget__types" "1.0.0"
+    "@tosspayments/payment-widget__types" "1.0.1"
 
 "@tosspayments/payment-widget-types@^0.0.5":
   version "0.0.5"

@@ -1,6 +1,5 @@
 import { useParams,useSearchParams} from "react-router-dom";
 import { API_URL } from "../config/contansts";
-// import { getCookie } from "../loginpage/cookies";
 import React from "react";
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
@@ -8,9 +7,9 @@ import { useState, } from 'react'
 import "./seller.css";
 import Checkout from "./Checkout.tsx";
 import { getCookie } from "../customer/cookies.js";
-
+const cookie = getCookie('loginCookie');
 async function getseller(id) {
-  const res = await axios.get(`${API_URL}/seller/${id}`);
+  const res = await axios.get(`${API_URL}/seller/${id},${cookie}`);
   console.log(res);
   return res.data;
 }
@@ -74,7 +73,7 @@ function DT2(props) {
                 <h2 id="sellerp1">{menu.name}</h2>
                 <div id="sellergrid4">
                 <h3>구매수량:{props.value.count}개</h3>
-                <h3>총 {amount1.toLocaleString()}원 </h3>
+                <h3>총 {amount1.toLocaleString('ko-KR')}원 </h3>
               </div>
             </div>
           </div>
@@ -96,7 +95,7 @@ function DT3(props) {
     setIsOpen(!isOpen);
   };
   const n1 = props.value.amount * 0.03;
-
+  
   return (
     <>
       <div>
@@ -119,14 +118,16 @@ function DT3(props) {
       </ul>
     </>
   );
+
+return <div>로그인후 사용해주세요</div>
 }
 function Info(props){
   const [point, setpoint] = useState('0');
   const user = props.rdata.userResult;
   console.log(user);
-  const order = props.value.amount.toLocaleString();
+  const order = props.value.amount
   const Allprice = order - point;
-  
+  const n1 = props.value.amount * 0.03;
   // useState를 사용하여 text 값의 상태를 관리
   const changepoint = (e) => {
     e.preventDefault(); // 기본 동작 취소
@@ -179,9 +180,9 @@ function Info(props){
               <h3 id="sellercolor">사용포인트 </h3>
               <h3 id="sellerright1">{point}P</h3>
               <h3>최종금액</h3>
-              <h3 id="sellerright">{Allprice.toLocaleString()}원</h3>
+              <h3 id="sellerright">{Allprice.toLocaleString('ko-KR')}원</h3>
             </div>
-            <Checkout count={props.value.count} price={Allprice} rdata={props.rdata} />
+            <Checkout count={props.value.count} Allprice={Allprice} rdata={props.rdata} Mpoint ={point} Ppoint ={n1}/>
           </div>
         </div>
       </div>
@@ -189,8 +190,6 @@ function Info(props){
   );
     
   }  
-
-
 function Seller(props) {
   const {userid} = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -212,12 +211,13 @@ function Seller(props) {
   if (loading) return <div>로딩중입니다.....</div>;
   if (error) return <div>에러가 발생했습니다.</div>;
   if (!rdata) return null;
+  if (cookie){
   return (
     <div className="seller">
-      
       <Info  rdata={rdata} value={value} />
-      
     </div>
   );
-}
+} else{
+  window.location.replace('/members/login');
+}}
 export default Seller;

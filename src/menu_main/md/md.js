@@ -135,9 +135,9 @@ function MD(props) {
                       <div id="drink_textbox">
                         <div id="a_name"><p><b>{a.name}</b></p></div>
                         {a.use_yn == 1 && (
-                          <Link to={`/product/drink/${a.id}`}>
-                            <div id="drink_buy"><p>구매하기</p></div>
-                          </Link>
+                         <Link to={`/order/menu/${a.id}`}>
+                         <div id="drink_buy"><p>구매하기</p></div>
+                       </Link>
                         )}
                       </div>
                     </div>
