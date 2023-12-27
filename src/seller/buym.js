@@ -63,7 +63,7 @@ function Buymenu(props) {
             </p>
             <div id="buybox1">
               <p id="buyp2">
-                <b>{cookie} 님만을 위한 혜택</b>
+                <b>{cookie? cookie : '회원'} 님만을 위한 혜택</b>
               </p>
               <div id="buyp2-4">
                 <p id="buyp1-3">
@@ -237,8 +237,8 @@ function Buy() {
       <Buymenu rdata={rdata} />
       <Photo rdata={rdata} />
       <ContentDiv>
-        <Contents rdata={rdata} />
-        <MenuList />
+      <Contents rdata={rdata} />
+      <MenuList />
       </ContentDiv>
     </div>
   );
