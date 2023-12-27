@@ -9,12 +9,31 @@
   display: flex;
   height: 780px;
 }
-#admin-main header {
+#admin header {
   border-bottom: 1px solid #ccc;
 }
 .others {
   flex: 6;
   overflow-y: scroll;
+}
+#admin header ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding-right: 100px;
+  margin-bottom: 20px;
+}
+#admin header ul li {
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+#admin header ul li i {
+  font-size: 20px;
 }
 
 .menuImg {

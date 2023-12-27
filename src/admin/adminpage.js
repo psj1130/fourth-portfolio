@@ -39,10 +39,11 @@ function AdminPage() {
         <ul>
           <li onClick={() => {
             delCookie('adminCookie');
-          }}>로그아웃</li>
+            window.location.replace('/administrator/login');
+          }}><i className='xi-log-out'></i>Logout</li>
           <li onClick={() => {
             navigate('/')
-          }}>홈페이지</li>
+          }}><i className='xi-home-o'></i>Home</li>
         </ul>
       </header>
       <div id='admin-main'>
