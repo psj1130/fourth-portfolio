@@ -63,7 +63,7 @@ function ReservationSuccess() {
             메인 페이지
           </div>
         </Link>
-        <Link to={`/orderlist/${cookie}`}>
+        <Link to={`/mypage/${cookie}`}>
           <div className="payment-result-button">
             구매목록
           </div>

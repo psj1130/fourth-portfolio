@@ -41,6 +41,7 @@ function AdminPage() {
             delCookie('adminCookie');
             window.location.replace('/administrator/login');
           }}><i className='xi-log-out'></i>Logout</li>
+          <li ><i className='xi-help-o'></i>Manual</li>
           <li onClick={() => {
             navigate('/')
           }}><i className='xi-home-o'></i>Home</li>
