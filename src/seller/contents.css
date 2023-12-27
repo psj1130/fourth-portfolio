@@ -106,7 +106,17 @@
 #prodiv{
   border-bottom: 1.5px solid #ededed;
   border-top: 1.5px solid #ededed;
-  height: 250px;
+}
+#cphotoreview{
+  border-bottom: 1.5px solid #ededed;
+  border-top: 1.5px solid #ededed;
+  margin: 0px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 700px 320px;
+}
+#creviewimg{
+  
 }
 #probtn1{
   width: 200px;

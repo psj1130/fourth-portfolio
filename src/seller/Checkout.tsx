@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { useEffect, useRef, useState } from "react";
 import { loadPaymentWidget, PaymentWidgetInstance } from "@tosspayments/payment-widget-sdk";
 import { nanoid } from 'nanoid';
 import "./seller.css";
@@ -10,34 +11,28 @@ const customerKey = "YbX2HuSlsC9uVJW6NMRMj";
 
 export default function Pay(props) {
   const paymentWidgetRef = useRef<PaymentWidgetInstance | null>(null);
-  console.log(props.price);
+  
 
-  useEffect(() => {
+  
     const initPaymentWidget = async () => {
-      const paymentWidget = await loadPaymentWidget(clientKey, customerKey);
-      paymentWidget.renderPaymentMethods("#payment-widget", props.price);
+      const paymentWidget = await loadPaymentWidget(clientKey, customerKey);   
+      paymentWidget.renderPaymentMethods("#payment-widget",props.Allprice);
       paymentWidgetRef.current = paymentWidget;
     };
 
     initPaymentWidget();
-  }, [props.price]);
-
-  // props.setseller를 의존성 배열에 추가
   
+
   const handlePayment = async () => {
     const paymentWidget = paymentWidgetRef.current;
-    console.log("0");
-    
-    try {
-      console.log("-1");
-      
+    try { 
       await paymentWidget?.requestPayment({
         orderId: nanoid(),
         orderName: "패키지 상품 결제",
         customerEmail: "customer123@gmail.com",
-        successUrl: `${window.location.origin}/seller/success/${cookie}?id=${
+        successUrl: `${window.location.origin}/seller/success/${cookie}?userid=${cookie}&id=${
           props.rdata.menuResult.id
-        }&o_count=${props.count}&o_amount=${props.price}`,
+        }&o_count=${props.count}&o_amount=${props.Allprice}&point=${props.Mpoint}&Ppoint=${props.Ppoint},`,
         failUrl: `${window.location.origin}/seller/fail`,
       })
 

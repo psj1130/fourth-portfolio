@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import './success.css'
 import { getCookie } from "../customer/cookies";
-import { log } from "console";
+
 import axios from "axios";
 import { API_URL } from "../config/contansts";
 const cookie = getCookie('loginCookie');
@@ -14,18 +14,23 @@ function ReservationSuccess() {
   async function Setseller(){
     const {userid} = useParams();
     const [searchParams, setSearchParams] = useSearchParams();
+   
     const id = searchParams.get('id');
     const count = searchParams.get('o_count');
     const amount = searchParams.get('o_amount');
-    const cookie = getCookie('loginCookie');
-    console.log("2");
-    console.log("1");
+    const cookie = searchParams.get('userid');
+    const Ppoint = searchParams.get('Ppoint');
+    const Mpoint = searchParams.get('point');
+    console.log(id)
+    
     if(cookie){
     const data = {
-      id:cookie,
+      userid:cookie,
       menuid:id,
       count : count,
-      amount : amount,   
+      amount : amount,
+      Ppoint:Ppoint,
+      Mpoint:Mpoint,   
     };
     
     const res = await axios.post(`${API_URL}/seller/success`,{data})
@@ -43,11 +48,7 @@ function ReservationSuccess() {
     return;
   }
 }
-  useEffect(() => {
-    console.log("!");
-    
-  },[])
-  
+  Setseller();
   
   
 

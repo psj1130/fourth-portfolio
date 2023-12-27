@@ -12,7 +12,7 @@ const StyledDiv = styled.div`
 `;
  
 
-const MenuList = () => {
+const MenuList = (props) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (index) => {
@@ -22,7 +22,7 @@ const MenuList = () => {
   return (
     <StyledDiv>
       <div className="div-container">
-        {[{ to: 'a', label: '상세정보' }, { to: 'b', label: '리뷰.length' }, { to: 'c', label: 'Q&A.length' }, { to: 'd', label: '반품/교환정보' }].map((item, index) => (
+        {[{ to: 'a', label: '상세정보' }, { to: 'b', label: '리뷰' }, { to: 'c', label: 'Q&A' }, { to: 'd', label: '반품/교환정보' }].map((item, index) => (
           <Link
             key={index}
             to={item.to}
