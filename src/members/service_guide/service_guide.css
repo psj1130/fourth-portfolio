@@ -48,8 +48,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-
+} 
 #ser_guide2_img{
   margin-right: 60px;
   width: 580px;
@@ -68,7 +67,7 @@
   letter-spacing: 2px;
   margin-top: 10px;
   font-weight: bolder;
-  font-size: 38px;
+  font-size: 35px;
 }
 #ser_item1_div3{
   color: rgb(102, 105, 126);

@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { IoSearch } from "react-icons/io5";
 
-async function getdrink() {
+async function getfood() {
   const res = await axios.get(`${API_URL}/menu/food`);
   console.log(res);
   return res.data;
@@ -24,9 +24,9 @@ const Drink_header = () => {
           <div id="drink_textbox1_div2"><p>Always Beside you, <b>EDIYA COFFEE</b></p></div>
         </div>
         <div id="drink_header_DFM">
-          <a href="/product/drink" id="DFM_drink_style2">음료</a>
-          <a href="/product/food" id="backgray">푸드</a>
-          <a href="/product/md" id="DFM_drink_style2">MD</a>
+          <Link to="/product/drink" id="DFM_drink_style2">음료</Link>
+          <Link to="/product/food" id="backgray">푸드</Link>
+          <Link to="/product/md" id="DFM_drink_style2">MD</Link>
         </div>
       </div>
     </div>
@@ -44,6 +44,7 @@ function Food(props) {
   const [showMore1, setShowMore1] = useState(8);
   const itemsPerPage = 8;
 
+  // hidden_div를 ON/OFF 형식으로 보여주기위한 함수
   const switchHandler = (index,listNumber) => {
     if (listNumber === 1) {
       setHiddenItems((prevHiddenItems) => {
@@ -59,11 +60,13 @@ function Food(props) {
       });
     }
   };
+
+  // 더보기 기능 / 더보기를 누를 시 itemsPerPage의 수 만큼 생성됨
   const toggleShowMore1 = () => {
     setShowMore1((prevShowMore) => prevShowMore + itemsPerPage);
   };
   const { id } = useParams();
-  const [state] = useAsync(() => getdrink(id), [id]);
+  const [state] = useAsync(() => getfood(id), [id]);
   const { loading, data: pdata, error } = state;
 
   if (loading) return <div>로딩중입니다.....</div>;
@@ -80,26 +83,21 @@ function Food(props) {
     return isbreadMatch && isdessertMatch && issauceMatch && isSearchMatch;
   });
 
-  const CustomPrevButton = ({ onClick }) => (
-    <button onClick={onClick} className="slick-prev"></button>
-  );
-
-  const CustomNextButton = ({ onClick }) => (
-    <button onClick={onClick} className="slick-next"></button>
-  );
-
+  // Bread체크박스 체크 시 나머지 체크박스 false로
   const handleBreadChange = () => {
     setBreadChecked(true);
     setDessertChecked(false);
     setSauceChecked(false);
   };
 
+  // Dessert체크박스 체크 시 나머지 체크박스 false로
   const handleDessertChange = () => {
     setBreadChecked(false);
     setDessertChecked(true);
     setSauceChecked(false);
   };
 
+  // Sauce체크박스 체크 시 나머지 체크박스 false로
   const handleSauceChange = () => {
     setBreadChecked(false);
     setDessertChecked(false);

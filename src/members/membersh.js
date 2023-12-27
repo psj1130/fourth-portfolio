@@ -33,14 +33,14 @@ function MembersHeader() {
       <div className="members-header-bottom">
         <div className="members-top-logo">
           <h1 className="members-logo">
-            <a href="/members">
+            <Link to="/members">
               <span className="blind">EDIYA</span>
-            </a>
+            </Link>
           </h1>
         </div>
         <div className="members-header-bottom-nav">
-          <a href="/members/members_guide">멤버십 안내</a>
-          <a href="/members/service_guide">서비스 안내</a>
+          <Link to="/members/members_guide">멤버십 안내</Link>
+          <Link to="/members/service_guide">서비스 안내</Link>
         </div>
       </div>
     </header>

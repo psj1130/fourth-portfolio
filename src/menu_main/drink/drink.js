@@ -24,9 +24,9 @@ const Drink_header = () => {
           <div id="drink_textbox1_div2"><p>Always Beside you, <b>EDIYA COFFEE</b></p></div>
         </div>
         <div id="drink_header_DFM">
-          <a href="/product/drink" className="backwhite">음료</a>
-          <a href="/product/food" id="DFM_drink_style">푸드</a>
-          <a href="/product/md" id="DFM_drink_style">MD</a>
+          <Link to="/product/drink" className="backwhite">음료</Link>
+          <Link to="/product/food" id="DFM_drink_style">푸드</Link>
+          <Link to="/product/md" id="DFM_drink_style">MD</Link>
         </div>
       </div>
     </div>
@@ -34,34 +34,17 @@ const Drink_header = () => {
 }
 
 function Drink(props) {
-  const [hiddenItems, setHiddenItems] = useState([]);
-  const [hiddenItems1, setHiddenItems1] = useState([]);
-  const [icedChecked, setIcedChecked] = useState(false);
-  const [hotChecked, setHotChecked] = useState(false);
-  const [searchText, setSearchText] = useState('');
-  const [showMore1, setShowMore1] = useState(8);
-  const itemsPerPage = 8;
+  const [hiddenItems, setHiddenItems] = useState([]); //슬릭 슬라이드의 hiddden_div를 ON/OFF 형식으로 보여주기위해 만든 useState
+  const [hiddenItems1, setHiddenItems1] = useState([]);  // hiddden_div를 ON/OFF 형식으로 보여주기위해 만든 useState
+  const [icedChecked, setIcedChecked] = useState(false); //체크박스의 값을 받아 ICED가 포함된 아이템을 보여주기위해 만든 useState
+  const [hotChecked, setHotChecked] = useState(false); //체크박스의 값을 받아 HOT이 포함된 아이템을 보여주기위해 만든 useState
+  const [searchText, setSearchText] = useState(''); //검색용 useState
+  const [showMore1, setShowMore1] = useState(8); //화면 켰을 시 보여주는 item들의 갯수
+  const itemsPerPage = 8; //추가되는 아이템들의 갯수
 
 
   
-  const switchHandler = (index,listNumber) => {
-    if (listNumber === 1) {
-      setHiddenItems((prevHiddenItems) => {
-        const newHiddenItems = [...prevHiddenItems];
-        newHiddenItems[index] = !newHiddenItems[index];
-        return newHiddenItems;
-      });
-    } else if (listNumber === 2) {
-      setHiddenItems1((prevHiddenItems) => {
-        const newHiddenItems = [...prevHiddenItems];
-        newHiddenItems[index] = !newHiddenItems[index];
-        return newHiddenItems;
-      });
-    }
-  };
-  const toggleShowMore1 = () => {
-    setShowMore1((prevShowMore) => prevShowMore + itemsPerPage);
-  };
+  
   const { id } = useParams();
   const [state] = useAsync(() => getdrink(id), [id]);
   const { loading, data: pdata, error } = state;
@@ -80,14 +63,28 @@ function Drink(props) {
     return isIcedMatch && isHotMatch && isSearchMatch;
   });
 
-  const CustomPrevButton = ({ onClick }) => (
-    <button onClick={onClick} className="slick-prev"></button>
-  );
+  // hidden_div를 ON/OFF 형식으로 보여주기위한 함수
+  const switchHandler = (index,listNumber) => {
+    if (listNumber === 1) {
+      setHiddenItems((prevHiddenItems) => {
+        const newHiddenItems = [...prevHiddenItems];
+        newHiddenItems[index] = !newHiddenItems[index];
+        return newHiddenItems;
+      });
+    } else if (listNumber === 2) {
+      setHiddenItems1((prevHiddenItems) => {
+        const newHiddenItems = [...prevHiddenItems];
+        newHiddenItems[index] = !newHiddenItems[index];
+        return newHiddenItems;
+      });
+    }
+  };
 
-  const CustomNextButton = ({ onClick }) => (
-    <button onClick={onClick} className="slick-next"></button>
-  );
-
+  // 더보기 기능 함수
+  const toggleShowMore1 = () => {
+    setShowMore1((prevShowMore) => prevShowMore + itemsPerPage);
+  };
+  
   const handleIcedChange = () => {
     setIcedChecked(!icedChecked);
     // HOT 체크박스가 true일 때, ICED 체크박스를 변경할 때 false로 설정
@@ -112,8 +109,6 @@ function Drink(props) {
     slidesToShow: 3,
     slidesToScroll: 1,
     waitForAnimate: false,
-    // prevArrow: <CustomPrevButton />,
-    // nextArrow: <CustomNextButton />,
   };
 
   return (

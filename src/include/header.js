@@ -112,8 +112,8 @@ function Header() {
               <li className="nav_menu">
                 <Link to="/members" className="nav_a"><span>이디야멤버스</span></Link>
                 <ul>
-                  <li><Link to="/members">멤버십안내</Link></li>
-                  <li><Link to="/members">서비스안내</Link></li>
+                  <li><Link to="/members/members_guide">멤버십안내</Link></li>
+                  <li><Link to="/members/service_guide">서비스안내</Link></li>
                 </ul>
               </li>
               <li className="nav_menu">
