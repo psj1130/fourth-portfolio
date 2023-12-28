@@ -41,7 +41,7 @@ function Brandnewsrouters() {
         <Route path='/otheractivities' element={<Otheractivities/>}/>
 
         {/* 상세페이지 id 라우트 */}
-        <Route path='notice/:id' element={<Noticedetail />} />
+        <Route path='/:id' element={<Noticedetail />} />
         <Route path='event/:id' element={<Eventdetail />} />
 
         <Route path='activity/details/:id' element={<Activitydetail />} />
