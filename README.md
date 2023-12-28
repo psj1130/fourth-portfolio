@@ -27,7 +27,7 @@ HTML,css,react,node.js,MongoDB,카카오 지도 API,ReCAPTCHA API,MUI
 <img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/7d0c773f-8d0b-4876-a03c-317ced545134" width="200px" height="80px" align="center"><img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/0fc54852-44d3-4855-8426-984dd80ea4c1" width="200px" height="80px" align="center">
 
 ## 관리자 페이지 메뉴얼(pdf)
-[관리자 페이지 메뉴얼(pdf)](https://github.com/psj1130/fourth-portfolio/files/13784377/default.pptx)
+[관리자 페이지 메뉴얼(pdf)]([https://github.com/psj1130/fourth-portfolio/files/13784377/default.pptx](https://github.com/psj1130/fourth-portfolio/files/13784532/EdiyaAdministratorPageManual.pptx)
 
 
 ## 시작하기
