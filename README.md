@@ -19,15 +19,16 @@
 ## 개발에 사용된 언어
 HTML,css,react,node.js,MongoDB,카카오 지도 API,ReCAPTCHA API,MUI
 #### 프론트엔드 언어 & 프레임워크
-<img src="https://img.shields.io/badge/HTML5-E35F26?style=for-the-badge&logo=HTML5&logoColor=white" align="center"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" align="center"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" align="center"><img src = "https://github.com/psj1130/fourth-portfolio/assets/137889849/d5c0024e-a344-4979-9512-7a7e3388de0c" width="150px" height="40px" align="center">
+<img src="https://img.shields.io/badge/HTML5-E35F26?style=for-the-badge&logo=HTML5&logoColor=white" align="center"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" align="center"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" align="center"><img src = "https://github.com/psj1130/fourth-portfolio/assets/137889849/d5c0024e-a344-4979-9512-7a7e3388de0c" width="150px" height="40px" align="center"><img src = "https://github.com/psj1130/fourth-portfolio/assets/137889849/8b08023d-28a9-4be5-887c-df7dd76d068b" width="50px" height="40px" align="center">
 #### 백엔드 언어 & 환경
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" align="center"> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" align="center"><img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/db4337c8-1391-45d0-b8bb-a904aaf22686" width="150px" height="40px" align="center"> 
 
 ### API
-<img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/7d0c773f-8d0b-4876-a03c-317ced545134" width="170px" height="60px" align="center"><img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/0fc54852-44d3-4855-8426-984dd80ea4c1" width="170px" height="60px" align="center">
+<img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/7d0c773f-8d0b-4876-a03c-317ced545134" width="200px" height="80px" align="center"><img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/0fc54852-44d3-4855-8426-984dd80ea4c1" width="200px" height="80px" align="center">
 
 ## 관리자 페이지 메뉴얼(pdf)
-<img src="https://github.com/psj1130/fourth-portfolio/files/13783795/default.pdf" width="170px" height="60px" align="center">
+[관리자 페이지 메뉴얼(pdf)](https://github.com/psj1130/fourth-portfolio/files/13784377/default.pptx)
+
 
 ## 시작하기
 ### `npm install` or `npm i`
