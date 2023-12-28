@@ -50,7 +50,7 @@ function Hygiene() {
           {/* 추후 맵으로 뿌리면될듯 밑에는 틀만 맞는지 확인용 하드코딩 */}
           <ul className="hygiene-box-list-con">
             {category.map((item) => (
-              <li key={item.id}>
+              <li key={item.id} className='hygiene-box'>
                 <Link to={`details/${item.id}`}>
                 <img src={item.img_url}/>
                 </Link >

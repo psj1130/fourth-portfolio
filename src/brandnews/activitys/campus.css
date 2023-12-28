@@ -61,10 +61,15 @@
   margin-bottom: 80px;
 }
 
-.campus-box-list-con > li {
+.campus-box {
   border: 1px solid #D9D9D9;
   width: 578px;
   height: 512px;
+}
+
+.campus-box > a > img {
+  width: 577px;
+  height: 320px;
 }
 
 .campus-text-box > a{
