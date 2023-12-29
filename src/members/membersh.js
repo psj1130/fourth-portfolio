@@ -27,6 +27,7 @@ function MembersHeader() {
             <li><Link to='/searchstore'>매장찾기</Link></li>
             <li><Link to='/'>APP 다운로드</Link></li>
             <li><Link to='/'>이디야 스토어</Link></li>
+            <li><Link to='/'>메인 페이지</Link></li>
           </ul>
         </div>
       </div>

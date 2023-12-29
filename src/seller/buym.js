@@ -10,7 +10,7 @@ import MenuList from "./menulist";
 import Contents from "./contents";
 import styled from "styled-components";
 import Star from "./star";
-
+const cookie = getCookie('loginCookie');
 
 const ContentDiv = styled.div`
   width: 1020px;

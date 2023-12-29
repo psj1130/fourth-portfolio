@@ -213,7 +213,7 @@ function Seller(props) {
  
   
   // console.log("Link to:",id,count,amount);
-  const [state] = useAsync(() => getseller(userid, id), [userid]);
+  const [state] = useAsync(() => getseller(id), [id]);
   const { loading, data: rdata, error } = state;
 
   if (loading) return <div>로딩중입니다.....</div>;

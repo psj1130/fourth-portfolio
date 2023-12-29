@@ -52,7 +52,7 @@
 .members-header-bottom {
   width: 1240px;
   height: 77px;
-  margin: 0 331px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
