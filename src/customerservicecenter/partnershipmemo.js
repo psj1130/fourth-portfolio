@@ -62,6 +62,7 @@ const Test = () => {
         axios.post(`${API_URL}/suggestion`, data)
           .then(res => {
             alert("신청 성공!");
+            navigate('/');
           })
           .catch(err => {
             console.log(err);
