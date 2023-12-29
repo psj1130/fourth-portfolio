@@ -17,7 +17,7 @@
                   이 프로젝트를 통해 우리는 팀원들 간의 협력과 의사 소통 능력을 향상시키며, 결과물을 통해 더 많은 사람들에게 도움을 줄 수 있을 것으로 기대합니다.
 
 ## 개발에 사용된 언어
-HTML,css,react,node.js,MongoDB,카카오 지도 API,ReCAPTCHA API,MUI
+HTML,css,react,node.js,MariaDB,카카오 지도 API,ReCAPTCHA API,MUI
 #### 프론트엔드 언어 & 프레임워크
 <img src="https://img.shields.io/badge/HTML5-E35F26?style=for-the-badge&logo=HTML5&logoColor=white" align="center"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" align="center"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" align="center"><img src = "https://github.com/psj1130/fourth-portfolio/assets/137889849/d5c0024e-a344-4979-9512-7a7e3388de0c" width="150px" height="40px" align="center"><img src = "https://github.com/psj1130/fourth-portfolio/assets/137889849/8b08023d-28a9-4be5-887c-df7dd76d068b" width="50px" height="40px" align="center">
 #### 백엔드 언어 & 환경
@@ -42,13 +42,14 @@ npm start 명령어를 입력해 리액트 스크립트를 실행시켜줍니다
 
 ### 4차 포트폴리오 서버
 
+아래의 주소를 클릭하시면 4차 포트폴리오 서버 github에 접속이 됩니다.
 https://github.com/psj1130/fourth-portfolio-server.git
 
 ## 프로젝트 설명
 
 프로젝트 기간 : 2023.12.06 ~ 2023.12.31
 
-카페 사이트인 이디야를 모방하여 상품 및 게시물 검색, 매장검색, 결제,관리자 페이지로 관리가 가능할수 있게 구현한 사이트입니다.
+국내 카페 사이트인 이디야를 모방하여 상품 및 게시물 검색, 매장검색, 결제,관리자 페이지로 관리가 가능할수 있게 구현한 사이트입니다.
 
 ## 프로젝트 일정 및 API 경로
 
