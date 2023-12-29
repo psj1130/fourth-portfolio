@@ -43,6 +43,7 @@ function Noticedetail() {
         </div>
           <div className="noticedetail-detail-main">
             <img src={NoticeDetaildata.img_url} alt="" />
+            <p>{NoticeDetaildata.body}</p>
           </div>
           <div className="noticedetail-list-link-con">
             <a href="/brandnews/notice">

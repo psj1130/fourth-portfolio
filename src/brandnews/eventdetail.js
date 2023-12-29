@@ -46,7 +46,8 @@ function Eventdetail() {
             <span className='eventdetail-detail-state'>진행중</span>
           </div>
           <div className="eventdetail-detail-main">
-            <img src={EventDetaildata.body} alt="" />
+            <img src={EventDetaildata.img_url} alt="" />
+            <p>{EventDetaildata.body}</p>
           </div>
           <div className="eventdetail-list-link-con">
             <a href="/brandnews/notice">
