@@ -1,4 +1,4 @@
-# fourth-portfolio
+# Fourth-portfolio
 3조 4차 포트폴리오 - 이디야 커피
 
 ## 기획 계기
@@ -55,9 +55,9 @@ https://github.com/psj1130/fourth-portfolio-server.git
 
 https://docs.google.com/spreadsheets/d/1_nzVMCArcdvaZ4zrDy4epF1xoJuUB9a7QuOHcv_Kt3c/edit?usp=sharing
 
-### 팀구성
+### 팀원 별 역할
 
-박성종(팀장) - 메인페이지,로그인페이지,회원가입 페이지,메뉴관리 페이지,회원관리 페이지 등 전반적인 백엔드,axios요청 관리및 데이터베이스 관리,전체일정 조율 및 관리
+박성종(팀장) - 메인 페이지, 로그인 페이지, 회원가입 페이지, 메뉴관리 페이지, 회원관리 페이지 프론트&백엔드, 전반적인 백엔드, axios요청 관리, 데이터베이스 관리 및 전체일정 조율&관리
 
 이동명 -매장 검색 페이지(카카오 지도 API이용한 지도 기능 구현),검색창 페이지(음료,MD,이벤트,Q&A,사회 공헌 활동,공지사항)검색 기능 구현,고객의 소리 페이지(제휴제안-ReCAPTCHA API 이용한 스팸 해킹 방지 기능 구현,
 관리자 페이지 데이터 전송 및 구현),유통제품 페이지,관리자 페이지MUI적용 
