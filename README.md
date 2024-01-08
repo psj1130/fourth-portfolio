@@ -20,7 +20,8 @@
 ### 메인
 ![image](https://github.com/psj1130/fourth-portfolio/assets/137477529/f9be8568-b8ab-4080-adfe-ed6886d4e893)
 ### 관리자 페이지
-![image](https://github.com/psj1130/fourth-portfolio/assets/137477529/0988bc58-a6e7-4de1-8235-ecede369470d)
+![image](https://github.com/psj1130/fourth-portfolio/assets/137477529/405007a2-e206-4f5b-b89f-53041e7296c1)
+
 
 ## 개발에 사용된 언어
 HTML,css,react,node.js,MariaDB,카카오 지도 API,ReCAPTCHA API,MUI
