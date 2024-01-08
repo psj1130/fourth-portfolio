@@ -17,9 +17,9 @@
                   이 프로젝트를 통해 우리는 팀원들 간의 협력과 의사 소통 능력을 향상시키며, 결과물을 통해 더 많은 사람들에게 도움을 줄 수 있을 것으로 기대합니다.
 
 ## 대표 화면
-#메인
+### 메인
 ![image](https://github.com/psj1130/fourth-portfolio/assets/137477529/f9be8568-b8ab-4080-adfe-ed6886d4e893)
-#관리자 페이지
+### 관리자 페이지
 ![image](https://github.com/psj1130/fourth-portfolio/assets/137477529/a0faa5c8-5394-427e-a346-57d88f7e9e09)
 
 
