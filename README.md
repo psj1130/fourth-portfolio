@@ -63,8 +63,12 @@ https://github.com/psj1130/fourth-portfolio-server.git
 
 https://docs.google.com/spreadsheets/d/1_nzVMCArcdvaZ4zrDy4epF1xoJuUB9a7QuOHcv_Kt3c/edit?usp=sharing
 
-## 팀원 별 역할
+## ERD
 
+![Untitled (1)](https://github.com/psj1130/fourth-portfolio/assets/137477529/a4a9d674-e628-4d6c-9dce-b3aeee05126d)
+
+
+## 팀원 별 역할
 ### 박성종(팀장)
 - 메인 페이지 : 메인 페이지의 프론트&백엔드 담당. 헤더 부분의 메뉴바를 이용해 각 페이지로 연결하고, 서버에서 이미지를 불러와 이미지 슬라이드에 적용시켰습니다.
 - 로그인&회원가입 페이지 : 로그인&회원가입 페이지 프론트&백엔드 담당. 로그인 시 서버 API를 통해 데이터베이스에 등록된 유저데이터와 비교하여 성공 시 이전 페이지로 이동시키고, 실패 시 유저에게 실패를 알리도록 하였습니다.
