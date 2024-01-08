@@ -57,6 +57,7 @@ function DT2(props) {
   const [isOpen, setIsOpen] = useState(false);
  
   const menu = props.rdata.menuResult;
+  console.log(menu);
   
   const imgurl = null
   const amount1 = props.value.amount;

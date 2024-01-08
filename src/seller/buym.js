@@ -11,7 +11,6 @@ import Contents from "./contents";
 import styled from "styled-components";
 import Star from "./star";
 const cookie = getCookie('loginCookie');
-
 const ContentDiv = styled.div`
   width: 1020px;
   display: flex;
@@ -190,6 +189,7 @@ function Buymenu(props) {
 }
 
 function Photo(props) {
+  
   const review = props.rdata.reviewResult;
 
   const [rating, setRating] = useState(review[0]?.score || null);
