@@ -62,6 +62,7 @@ const Test = () => {
         axios.post(`${API_URL}/suggestion`, data)
           .then(res => {
             alert("신청 성공!");
+            navigate('/');
           })
           .catch(err => {
             console.log(err);
@@ -215,7 +216,7 @@ const Test = () => {
         <div id='partnership_btns_main'>
           <div id='partnership_btns'>
           <Link to='/searchstore'><button id='partnership_btn_a' type="button">취소</button></Link>
-            <button id='partnership_btn_b' type="submit">등록</button>
+          <button id='partnership_btn_b' type="submit" >등록</button>
           </div>
         </div>
         

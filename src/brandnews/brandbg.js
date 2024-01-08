@@ -15,7 +15,7 @@ function Brandbg() {
             <div className="brandbg-btn">
               <div className="brandbg-btn-con">
                 <span className='brandbg-btn-con-lists'>
-                  <a href='/brandnews/notice'>공지사항</a>
+                  <a href='/brandnews/'>공지사항</a>
                 </span>
                 <span className='brandbg-btn-con-lists'>
                   <a href="/brandnews/event">이벤트 안내</a>

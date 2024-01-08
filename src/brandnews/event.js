@@ -73,7 +73,7 @@ function Event() {
                      {/* {console.log(`Key for item with id ${item.id}: ${item.id}`)} 키 값 확인코드 */}
                    <div className='event-detail-imgcon'>
                     <Link to={`${item.id}`}>
-                      <img src={item.img_url} alt="" />
+                      <img src={item.title_img_url} alt="" />
                     </Link>
                   </div>
                   <dl className='event-detail-titlecon'>
