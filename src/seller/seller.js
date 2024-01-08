@@ -57,6 +57,7 @@ function DT2(props) {
   const [isOpen, setIsOpen] = useState(false);
  
   const menu = props.rdata.menuResult;
+  console.log(menu);
   
   const imgurl = null
   const amount1 = props.value.amount;
@@ -213,7 +214,7 @@ function Seller(props) {
  
   
   // console.log("Link to:",id,count,amount);
-  const [state] = useAsync(() => getseller(userid, id), [userid]);
+  const [state] = useAsync(() => getseller(id), [id]);
   const { loading, data: rdata, error } = state;
 
   if (loading) return <div>로딩중입니다.....</div>;

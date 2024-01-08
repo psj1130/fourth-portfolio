@@ -41,7 +41,9 @@ function AdminPage() {
             delCookie('adminCookie');
             window.location.replace('/administrator/login');
           }}><i className='xi-log-out'></i>Logout</li>
-          <li ><i className='xi-help-o'></i>Manual</li>
+          <li onClick={() => {
+            window.open('https://github.com/psj1130/fourth-portfolio/files/13784532/EdiyaAdministratorPageManual.pptx', '_blank', 'noopener, noreferrer');
+          }}><i className='xi-help-o'></i>Manual</li>
           <li onClick={() => {
             navigate('/')
           }}><i className='xi-home-o'></i>Home</li>
