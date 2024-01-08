@@ -36,7 +36,7 @@ HTML,css,react,node.js,MariaDB,카카오 지도 API,ReCAPTCHA API,MUI
 
 ## 관리자 페이지 메뉴얼(pdf)
 
-관리자 페이지 메뉴얼(pdf) ➭ ([https://github.com/psj1130/fourth-portfolio/files/13784377/default.pptx](https://github.com/psj1130/fourth-portfolio/files/13784532/EdiyaAdministratorPageManual.pptx)
+관리자 페이지 메뉴얼(pdf) ➭ [https://github.com/psj1130/fourth-portfolio/files/13784377/default.pptx](https://github.com/psj1130/fourth-portfolio/files/13784532/EdiyaAdministratorPageManual.pptx)
 
 
 ## 시작하기
