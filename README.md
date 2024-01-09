@@ -26,7 +26,7 @@
 ## 기술 스택
 HTML,css,react,node.js,MariaDB,카카오 지도 API,ReCAPTCHA API,MUI
 #### 프론트엔드 언어 & 프레임워크
-<img src="https://img.shields.io/badge/HTML5-E35F26?style=for-the-badge&logo=HTML5&logoColor=white" align="center"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" align="center"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" align="center"><img src = "https://github.com/psj1130/fourth-portfolio/assets/137889849/d5c0024e-a344-4979-9512-7a7e3388de0c" width="150px" height="40px" align="center"><img src = "https://github.com/psj1130/fourth-portfolio/assets/137889849/8b08023d-28a9-4be5-887c-df7dd76d068b" width="50px" height="40px" align="center">
+<img src="https://img.shields.io/badge/HTML5-E35F26?style=for-the-badge&logo=HTML5&logoColor=white" align="center"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white" align="center"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white" align="center"> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=Axios&logoColor=white" align="center"> <img src="https://img.shields.io/badge/MUI-007FFF?style=for-the-badge&logo=MUI&logoColor=white" align="center"> 
 
 #### 백엔드 언어 & 환경
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" align="center"> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" align="center"> <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white" align="center">
