@@ -32,7 +32,7 @@ HTML,css,react,node.js,MariaDB,카카오 지도 API,ReCAPTCHA API,MUI
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" align="center"> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" align="center"> <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white" align="center">
 
 ### API
-<img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/7d0c773f-8d0b-4876-a03c-317ced545134" width="200px" height="80px" align="center"><img src="https://github.com/psj1130/fourth-portfolio/assets/137889849/0fc54852-44d3-4855-8426-984dd80ea4c1" width="200px" height="80px" align="center"> <img src="https://img.shields.io/badge/kakaomapAPI-FFCD00?style=for-the-badge&logo=kakao&logoColor=white" align="center">
+<img src="https://img.shields.io/badge/google reCapcha-4285F4?style=for-the-badge&logo=google&logoColor=white" align="center"> <img src="https://img.shields.io/badge/kakaomapAPI-FFCD00?style=for-the-badge&logo=kakao&logoColor=white" align="center">
 
 ### 협업
 <img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" align="center"> <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white" align="center">
