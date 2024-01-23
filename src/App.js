@@ -10,7 +10,6 @@ import MainPage from './main';
 import Affiliatecard from './card/affiliatecard';
 import Giftcardrouters from "./card/giftcardrouters";
 import Brandnewsrouters from "./brandnews/barndnewsrouters";
-import Orderlist from './seller/mypage/orderlist.js';
 import Seller from './seller/seller';
 import Buym from "./seller/buym";
 import Success from './seller/success.tsx';
