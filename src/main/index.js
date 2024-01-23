@@ -16,32 +16,6 @@ async function getImages() {
 function MainPage() {
   const [ state ] = useAsync(getImages, []);
   const { loading, data:images, error} = state;
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    // arrows: false,
-    draggable: false,
-    appendDots: (dots) => (
-      <div
-        style={{
-          width: '100%',
-          position: 'absolute',
-          bottom: '24px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-          
-        }}
-      >
-        <ul> {dots} </ul>
-      </div>
-    ),
-    dotsClass: 'dots_custom'
-  }
 
   if(loading) return <div>로딩중입니다.....</div>
   if(error) return <div>에러가 발생했습니다.</div>
@@ -77,7 +51,7 @@ function MainPage() {
           </div> 
         </div>
         <div className='dream-factory-img'>
-          <img src='images/main_banner/dream_factory.png'></img>
+          <img src='images/main_banner/dream_factory.png' alt="1"></img>
         </div>
       </section>
       <section id='mainpage-fourth'>
@@ -115,7 +89,7 @@ function MainPage() {
           <p>가까운 이디야 매장을 <br></br>확인해보세요.</p>
           <form>
             <input id="bottom-input" type="text" placeholder='FIND A STORE'/>
-            <a href='/'><img src='images/logo/main_store_btn.png'></img></a>
+            <a href='/'><img src='images/logo/main_store_btn.png' alt="1"></img></a>
           </form>
         </div>
         <div className='bottom-menu bottom-news'>

@@ -8,7 +8,7 @@ function Quality(){
       <div>
 
       <div id="Beans_bannerv">
-          <img id="Beans_banner_imgv" src="../images/Beans_Quality_Source/Quality/Quality1.jpg"/>
+          <img id="Beans_banner_imgv" src="../images/Beans_Quality_Source/Quality/Quality1.jpg" alt='1'/>
           <div id="Beans_banner_textv">
             <p id="Beans_banner_text1v">품질</p>
             <p id="Beans_banner_text2v">ALWAYS BESIDE YOU, EDIYA BEAN</p>
@@ -33,9 +33,9 @@ function Quality(){
           <div id="Quality_2div">
             <div id="Quality_2div_warrap">
               <div id="Quality_img_back"></div>
-              <div ><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality2.jpg"/></div>
+              <div ><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality2.jpg" alt='1'/></div>
               <div id="Quality_2div_1div">
-                <img id="Quality_2div_img2" src="../images/Beans_Quality_Source/Quality/Quality3.png"/></div>
+                <img id="Quality_2div_img2" src="../images/Beans_Quality_Source/Quality/Quality3.png" alt='1'/></div>
             </div>
             <div id="Quality_2div_textboxv">
               <div><p id="Quality_2div_textbox_p1"><b>01</b></p></div>
@@ -60,9 +60,9 @@ function Quality(){
             </div>
             <div id="Quality_2div_warrap">
               <div id="Quality_2img_back"></div>
-              <div><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality4.jpg"/></div>
+              <div><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality4.jpg" alt='1'/></div>
               <div id="Quality_2div_1div">
-                <img id="Quality_3div_img1" src="../images/Beans_Quality_Source/Quality/Quality5.jpg"/>
+                <img id="Quality_3div_img1" src="../images/Beans_Quality_Source/Quality/Quality5.jpg" alt='1'/>
               </div>
             </div>
           </div>
@@ -70,9 +70,9 @@ function Quality(){
           <div id="Quality_2div">
             <div id="Quality_2div_warrap">
               <div id="Quality_2img_back"></div>
-              <div><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality6.jpg"/></div>
+              <div><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality6.jpg" alt='1'/></div>
               <div id="Quality_2div_1div">
-                <img id="Quality_4div_img1" src="../images/Beans_Quality_Source/Quality/Quality7.jpg"/>
+                <img id="Quality_4div_img1" src="../images/Beans_Quality_Source/Quality/Quality7.jpg" alt='1'/>
               </div>
             </div>
             <div id="Quality_4div_textboxv">
@@ -98,9 +98,9 @@ function Quality(){
             </div>
             <div id="Quality_2div_warrap">
               <div id="Quality_img_back"></div>
-              <div ><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality8.jpg"/></div>
+              <div ><img id="Quality_2div_img1" src="../images/Beans_Quality_Source/Quality/Quality8.jpg" alt='1'/></div>
               <div id="Quality_2div_1div">
-                <img id="Quality_5div_img2" src="../images/Beans_Quality_Source/Quality/Quality9.png"/></div>
+                <img id="Quality_5div_img2" src="../images/Beans_Quality_Source/Quality/Quality9.png" alt='1'/></div>
             </div>
           </div>
         </div>

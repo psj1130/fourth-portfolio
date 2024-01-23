@@ -6,7 +6,6 @@ import Ad_md from './menu/ad_md.js';
 import Ad_user from './ad_user';
 import Sidebar from './include/sidebar';
 import { getCookie, delCookie } from '../customer/cookies';
-import Sell from './ad_sell.jsx';
 import './adminpage.css';
 
 // 공지관련
@@ -33,7 +32,7 @@ function AdminPage() {
       <header>
         <div className='admin-header-logo'>
           <a href='/administrator'>
-            <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'}></img>
+            <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'} alt='1'></img>
           </a>
         </div>
         <ul>

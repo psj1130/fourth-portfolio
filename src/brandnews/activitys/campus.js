@@ -53,7 +53,7 @@ function Campus() {
           {category.map((item) => (
             <li key={item.id} className='campus-box'>
               <Link to={`details/${item.id}`}>
-              <img src={item.img_url}/>
+              <img src={item.img_url} alt="1"/>
               </Link >
                 <div className='campus-text-box'>
                   <Link to={`details/${item.id}`}>

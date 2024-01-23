@@ -5,7 +5,7 @@ function MixAA (){
   <div id='mixAA_top'>
     <div id='mixAA_container'>
       <div id='mixAA_main'>
-        <img  id='' src='/miximg/beanist_mix02.png'></img>
+        <img  id='' src='/miximg/beanist_mix02.png' alt='1'></img>
         <div id='mixAA_memo'>
           <div>
             <h3>이디야 비니스트</h3>
@@ -19,7 +19,7 @@ function MixAA (){
         
       </div>
       <div id='mixAA_main'>
-        <img  id='' src='/miximg/beanist_mix01.png'></img>
+        <img  id='' src='/miximg/beanist_mix01.png' alt='1'></img>
         <div id='mixAA_memo'>
           <div>
             <h3>이디야 비니스트</h3>

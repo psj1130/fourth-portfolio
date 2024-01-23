@@ -10,14 +10,14 @@ function CapsuleB() {
         <div id='capsuleB_a'>
           <div id='capsuleB_aa'>
             <div id='capsuleB_img1'>
-              <img src='/capsuleimg/beanist_step01_01.gif'></img>
+              <img src='/capsuleimg/beanist_step01_01.gif' alt='1'></img>
             </div>
             <div>
               <p>추출된 20g 에스프레소에 뜨거운 물 60ml를 가수하세요.</p>
               <p>(1:3 비율)</p>
             </div>
             <div id='capsuleB_img2'>
-              <img src='/capsuleimg/beanist_step02_02.gif'></img>
+              <img src='/capsuleimg/beanist_step02_02.gif' alt='1'></img>
             </div>
           </div>
         </div>
@@ -27,14 +27,14 @@ function CapsuleB() {
         <div id='capsuleB_a'>
           <div id='capsuleB_aa'>
             <div id='capsuleB_img1'>
-              <img src='/capsuleimg/beanist_step02_01.gif'></img>
+              <img src='/capsuleimg/beanist_step02_01.gif' alt='1'></img>
             </div>
             <div>
               <p>기호에 따라 우유, 크림 및 시럽 등을</p>
               <p>첨가하여 다양한 라떼를 즐기세요.</p>
             </div>
             <div id='capsuleB_img2'>
-              <img src='/capsuleimg/beanist_step03_02.gif'></img>
+              <img src='/capsuleimg/beanist_step03_02.gif' alt='1'></img>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ function CapsuleB() {
         </div>
         <div id='capsuleB_bot_a'>
           <div id='capsuleB_img_bot'>
-            <img src='/capsuleimg/capsule_pro_img.jpg'></img>
+            <img src='/capsuleimg/capsule_pro_img.jpg' alt='1'></img>
           </div>
           <div id='capsuleB_bot_aa'>
             <p>이디야 캡슐커피는 커피의 맛을 좌우하는 맛과 향을 최대한 지키기 위해 특허 받은 아로마 실링을 사용한 제품입니다.</p>

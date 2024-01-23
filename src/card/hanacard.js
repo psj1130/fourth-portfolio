@@ -7,7 +7,7 @@ function Hanacard() {
     <div id="hanacard-body">
       <div id="hanacard-container">
         <h3 id='hanacard-title-text'>이디야 하나카드 혜택소개</h3>
-          <img src={sinhanimg}/>
+          <img src={sinhanimg} alt='1'/>
             <ul id='benefits'>
               <li className='benefits-1'>
                 <span id='benefits-1-box1'>
@@ -40,7 +40,7 @@ function Hanacard() {
           <h1>카드 디자인</h1>
             <ul id='container02-box'>
               <li className='box-card'>
-                <img src="/images/cardlist/hana_card01.png" alt="" />
+                <img src="/images/cardlist/hana_card01.png" alt="1" />
                   <span className='box-card-style'>
                     <p>COFFEE POWER</p>
                     <p>렌티큘러 기능이 있어요<br/>
@@ -48,13 +48,13 @@ function Hanacard() {
                   </span>
               </li>
               <li className='box-card'>
-                <img src="/images/cardlist/hana_card02.png" alt="" />
+                <img src="/images/cardlist/hana_card02.png" alt="1" />
                   <span className='box-card-style'>
                       <p>LOVE & PEACE</p>
                     </span>
               </li>
               <li className='box-card'>
-                <img src="/images/cardlist/hana_card03.png" alt="" />
+                <img src="/images/cardlist/hana_card03.png" alt="1" />
                   <span className='box-card-style'>
                       <p>FREE DOM</p>
                       <p>폐플라스틱을 활용한<br/>
@@ -62,13 +62,13 @@ function Hanacard() {
                     </span>
               </li>
               <li className='box-card'>
-                <img src="/images/cardlist/hana_card04.png" alt="" />
+                <img src="/images/cardlist/hana_card04.png" alt="1" />
                   <span className='box-card-style'>
                       <p>DREAM FACTORY</p>
                     </span>
               </li>
               <li className='box-card'>
-                <img src="/images/cardlist/hana_card05.png" alt="" />
+                <img src="/images/cardlist/hana_card05.png" alt="1" />
                   <span className='box-card-style'>
                       <p>LATTE</p>
                     </span>

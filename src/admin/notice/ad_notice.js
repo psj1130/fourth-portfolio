@@ -9,7 +9,6 @@ import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 
 import Popup from "./modal/noticepopup";
 import Createmodal from "./modal/noticecreatemodal";
-import Button from '@mui/material/Button';
 import Updatemodal from "./modal/noticeupdatemodal";
 
 export default function Ad_notice() {
@@ -18,7 +17,6 @@ export default function Ad_notice() {
     const [isOpen, setOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const modalRef = useRef(null);
-    const [selectedlist, setSelectedlist] = useState(null);
     const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
     const [updateId, setUpdateId] = useState(null);
     //내용 팝업 모달 열기
@@ -120,6 +118,7 @@ export default function Ad_notice() {
               className='notice-img'
               src={params.row.img_url}
               onClick={popupclick}
+              alt="1"
             />
             {isOpen ? <Popup imgUrl={imgUrl} isOpen={isOpen} /> : null}
           </div>

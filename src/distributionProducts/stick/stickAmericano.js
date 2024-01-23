@@ -5,7 +5,7 @@ const StickAmericano = ({ showInfo, handleButtonClick }) => {
     <div id='am_top'>
       <div id='am_container'>
         <div id='am_main'>
-          <img  id='' src='/stickimg/beanist_img01.jpg'></img>
+          <img  id='' src='/stickimg/beanist_img01.jpg' alt='1'></img>
           <div id='am_detail'>
             <h2 id='am_detail_h2'>오지날 아메리카노</h2>
             <h3 id='am_detail_h3'>ORIGINAL AMERICANO</h3>
@@ -13,7 +13,7 @@ const StickAmericano = ({ showInfo, handleButtonClick }) => {
           </div>
         </div>
         <div id='am_main'>
-          <img id='' src='/stickimg/beanist_img02.jpg'></img>
+          <img id='' src='/stickimg/beanist_img02.jpg' alt='1'></img>
           <div id='am_detail'>
             <h2 id='am_detail_h2'>마일드 아메리카노</h2>
             <h3 id='am_detail_h3_b'>MILD AMERICANO</h3>
@@ -21,7 +21,7 @@ const StickAmericano = ({ showInfo, handleButtonClick }) => {
           </div>
         </div>
         <div id='am_main'>
-          <img id='' src='/stickimg/beanist_img03.jpg'></img>
+          <img id='' src='/stickimg/beanist_img03.jpg' alt='1'></img>
           <div id='am_detail'>
             <h2 id='am_detail_h2'>스페셜 에디션</h2>
             <h3 id='am_detail_h3_c'>SPECIAL EDITION</h3>

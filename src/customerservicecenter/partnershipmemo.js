@@ -19,7 +19,7 @@ const Test = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
-  const [spamCheck, setSpamCheck] = useState(false);
+  // const [spamCheck, setSpamCheck] = useState(false);
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;

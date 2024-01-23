@@ -42,7 +42,7 @@ const LoginForm = (props) => {
         }
         await axios.post(`${API_URL}/admin/login`, { id: id, password: password})
         .then((res) => {
-          if(res.data == '1') {
+          if(res.data === '1') {
             console.log('로그인 성공');
             setCookie('adminCookie', id, {
               path: '/',
@@ -51,7 +51,7 @@ const LoginForm = (props) => {
             });
             navigate('/administrator');
             document.location.reload(true);
-          }else if(res.data == '2') {
+          }else if(res.data === '2') {
             id_css.current.style.setProperty('border', '1px solid red')
             pw_css.current.style.setProperty('border', '1px solid red')
             setContext('아이디 또는 비밀번호를 다시 확인해주세요 !');
@@ -70,7 +70,7 @@ function Ad_login() {
     <div id="ad-login-page-wrapper">
       <div id="ad-login-page-container">
         <div id="ad-login-logo">
-          <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'}></img>
+          <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'} alt='1'></img>
         </div>
         <LoginForm />
       </div>

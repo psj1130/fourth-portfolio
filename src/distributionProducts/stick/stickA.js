@@ -16,7 +16,7 @@ function StickA() {
       </div>
       <div id='stickA_main'>
         <div id='stickA_main2'>
-          <img id='stickA_img1' src='/stickimg/beanist_tt.gif'></img>
+          <img id='stickA_img1' src='/stickimg/beanist_tt.gif' alt='1'></img>
           <div id='stickA_a'>
             <div id='stickA_a_h3'>
               <h3>새로운 패키지에 담긴 다양한 맛의 커피를 직접 선택하세요.</h3>
@@ -31,7 +31,7 @@ function StickA() {
           <div id='stickA_img2'>
             <div id='stickA_b'>
               <div>
-              <img id='stickA_img1' src='/stickimg/beanist_icon01.jpg'></img>
+              <img id='stickA_img1' src='/stickimg/beanist_icon01.jpg'alt='1'></img>
               </div>
               <div id='stickA_bb'>
                 <h4>이디야 커피연구소의 연구개발</h4>
@@ -44,7 +44,7 @@ function StickA() {
             </div>
             <div id='stickA_b'>
               <div>
-              <img id='stickA_img1' src='/stickimg/beanist_icon02.jpg'></img>
+              <img id='stickA_img1' src='/stickimg/beanist_icon02.jpg' alt='1'></img>
               </div>
               <div id='stickA_bb'>
                 <h4>노력의 시작 2001년</h4>
@@ -57,7 +57,7 @@ function StickA() {
             </div>
             <div id='stickA_b'>
               <div>
-              <img id='stickA_img1' src='/stickimg/beanist_icon03.jpg'></img>
+              <img id='stickA_img1' src='/stickimg/beanist_icon03.jpg' alt='1'></img>
               </div>
               <div id='stickA_bb'>
                 <h4>마이크로 그라인딩 원두 함유량 10%</h4>

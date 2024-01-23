@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import './header.css';
 import { Link } from "react-router-dom";
 import { getCookie, delCookie } from "../customer/cookies";
@@ -81,7 +81,7 @@ function Header() {
           </div>
         </div>
           <div id="header-logo">
-            <a href="/"><img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'}></img></a>
+            <a href="/"><img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'} alt="1"></img></a>
           </div>
           <nav id="header-second-menu">
             <ul className="header-second-menu-fromInsideOut">
@@ -120,9 +120,9 @@ function Header() {
                 <Link to="/card/affiliatecard" className="nav_a"><span>상품권·제휴카드</span></Link>
                 <ul>
                   <li><Link to="/card/affiliatecard">제휴카드(하나·신한)</Link></li>
-                  <li><Link to="/card/giftcardrouters/">기프트카드</Link></li>
+                  <li><Link to="/card/giftcard">기프트카드</Link></li>
                   <li><a href="https://brand.naver.com/ediyagift">모바일상품권</a></li>
-                  <li><Link to="/card/giftbuy">단체·기업 구매</Link></li>
+                  <li><Link to="/card/giftcard/giftbuy">단체·기업 구매</Link></li>
                 </ul>
               </li>
               <li className="nav_menu">

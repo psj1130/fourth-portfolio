@@ -25,7 +25,7 @@ function CustomersoundCH() {
         <div id='info_icon'>
           <div id='info_icon_detail'>
             <div>
-              <img src='./customerSupportimg/info_icon01.gif'></img>
+              <img src='./customerSupportimg/info_icon01.gif' alt='1'></img>
             </div>
               <h4 id='info_title'>FAQ</h4>
             <div id='info_memo'>
@@ -38,7 +38,7 @@ function CustomersoundCH() {
           </div>
           <div id='info_icon_detail'>
             <div>
-              <img src='./customerSupportimg/info_icon02.gif'></img>
+              <img src='./customerSupportimg/info_icon02.gif' alt='1'></img>
             </div>
             <div>
               <h4 id='info_title'>인터넷</h4>
@@ -54,7 +54,7 @@ function CustomersoundCH() {
           </div>
           <div id='info_icon_detail'>
             <div>
-             <img src='./customerSupportimg/info_icon03.gif'></img>
+             <img src='./customerSupportimg/info_icon03.gif' alt='1'></img>
             </div>
             <div>
               <h4 id='info_title'>전화</h4>
