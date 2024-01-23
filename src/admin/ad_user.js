@@ -5,10 +5,6 @@ import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../config/serverurl';
 import DeleteOutLine from '@mui/icons-material/DeleteOutline'
-import { Link } from 'react-router-dom';
-
-
-
 
 async function getUser() {
   const res = await axios.get(`${API_URL}/admin/user`);

@@ -11,7 +11,7 @@ function CustomersoundPR() {
         <div id='cus_process_detail'>
           <div id='step'>
             <div id='step_a'>
-              <img src='./customerSupportimg/step01.png'></img>
+              <img src='./customerSupportimg/step01.png' alt='1'></img>
             </div>
              <div id='step_b'>
               <h4>STEP1</h4>
@@ -23,7 +23,7 @@ function CustomersoundPR() {
           </div>
           <div id='step'>
             <div id='step_a'>
-              <img src='./customerSupportimg/step02.png'></img>
+              <img src='./customerSupportimg/step02.png' alt='1'></img>
             </div>
             <div id='step_b'>
               <h4>STEP2</h4>
@@ -35,7 +35,7 @@ function CustomersoundPR() {
           </div>
           <div id='step'>
             <div id='step_a'>
-              <img src='./customerSupportimg/step03.png'></img>
+              <img src='./customerSupportimg/step03.png' alt='1'></img>
             </div>
             <div id='step_b'>
               <h4>STEP3</h4>
@@ -47,7 +47,7 @@ function CustomersoundPR() {
           </div>
           <div id='step'>
             <div id='step_a'>
-              <img src='./customerSupportimg/step04.png'></img>
+              <img src='./customerSupportimg/step04.png' alt='1'></img>
             </div>
             <div id='step_b'>
               <h4>STEP4</h4>
@@ -59,7 +59,7 @@ function CustomersoundPR() {
           </div>
           <div id='step'>
             <div id='step_a'>
-              <img src='./customerSupportimg/step05.png'></img>
+              <img src='./customerSupportimg/step05.png' alt='1'></img>
             </div>
             <div id='step_b'>
               <h4>STEP5</h4>
@@ -71,7 +71,7 @@ function CustomersoundPR() {
           </div>
           <div id='step'>
             <div id='step_a'>
-              <img src='./customerSupportimg/step06.png'></img>
+              <img src='./customerSupportimg/step06.png' alt='1'></img>
             </div>
             <div id='step_b'>
               <h4>STEP6</h4>

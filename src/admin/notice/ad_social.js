@@ -9,7 +9,6 @@ import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 
 import Integratedpopup from "./modal/integratedpopup";
 import Createmodal from "./modal/socialcreatemodal";
-import Button from '@mui/material/Button';
 import Updatemodal from "./modal/socialupdatemodal";
 
 export default function Ad_social() {
@@ -55,14 +54,14 @@ export default function Ad_social() {
     return res.data;
   };
  //데이터 삭제 부분
-  async function deleteSocial(id) {
-    try {
-      const res = await axios.delete(`${API_URL}/social/${id}`);
-      console.log(res);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // async function deleteSocial(id) {
+  //   try {
+  //     const res = await axios.delete(`${API_URL}/social/${id}`);
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   //수정 하기위한 id값 데이터 전체 modal전달하는 함
 

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import './sidebar.css';
 import HomeWorkIcon from '@mui/icons-material/HomeWork'
-import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
 import PerosonOutlineIcon from '@mui/icons-material/PersonOutline'
 import StoreFrontIceon from '@mui/icons-material/Storefront'

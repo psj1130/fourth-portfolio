@@ -20,7 +20,7 @@ function Service_guide() {
       <div id="service_item_back2">
         <div id="service_itembox">
           <div id="ser_item1">
-            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide1.png"/></div>
+            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide1.png" alt="1"/></div>
             <div id="ser_item1_textbox1">
               <div id="ser_item1_div1"><p>2. 매장주문, 배달주문</p></div>
               <div id="ser_item1_div2"><p>이디야가 준비한 <b id="ser_textblue">풍부한<br/> 혜택</b>, 함께해요.</p></div>
@@ -29,15 +29,15 @@ function Service_guide() {
               </p></div>
             </div>
           </div>
-          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide2.png"/></div>
+          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide2.png" alt="1"/></div>
         </div>
       </div>
 
       <div id="service_item_back3">
         <div id="service_itembox">
-          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide3.png"/></div>
+          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide3.png" alt="1"/></div>
           <div id="ser_item1">
-            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide4.png"/></div>
+            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide4.png" alt="1"/></div>
             <div id="ser_item1_textbox1">
               <div id="ser_item1_div1"><p>2. 매장주문, 배달주문</p></div>
               <div id="ser_item1_div2"><p><b id="ser_textblue">다양해진 주문 서비스</b>를<br/>  이용해보세요.</p></div>
@@ -52,7 +52,7 @@ function Service_guide() {
       <div id="service_item_back2">
         <div id="service_itembox">
           <div id="ser_item1">
-            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide5.png"/></div>
+            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide5.png" alt="1"/></div>
             <div id="ser_item1_textbox1">
               <div id="ser_item1_div1"><p>3. 이디야 QR , 월렛</p></div>
               <div id="ser_item1_div2"><p><b id="ser_textblue">결제</b>부터 <b id="ser_textblue">스탬프적립</b>,<br/> 쿠폰사용까지 <b id="ser_textblue">한번에</b></p></div>
@@ -61,15 +61,15 @@ function Service_guide() {
               </p></div>
             </div>
           </div>
-          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide6.png"/></div>
+          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide6.png" alt="1"/></div>
         </div>
       </div>
 
       <div id="service_item_back3">
         <div id="service_itembox">
-          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide8.png"/></div>
+          <div id="ser_item2"><img id="ser_guide2_img" src="../images/service_guide/service_guide8.png" alt="1"/></div>
           <div id="ser_item1">
-            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide7.png"/></div>
+            <div><img id="ser_guide1_img" src="../images/service_guide/service_guide7.png" alt="1"/></div>
             <div id="ser_item1_textbox1">
               <div id="ser_item1_div1"><p>4. 이디야소식, E-미션</p></div>
               <div id="ser_item1_div2"><p><b id="ser_textblue">신상품</b>과 <b id="ser_textblue">브랜드 소식</b>을 접하고 <b id="ser_textblue">리워드 혜택</b>도<br/> 받고</p></div>

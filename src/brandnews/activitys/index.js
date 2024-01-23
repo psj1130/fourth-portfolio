@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './society.css';
 
-import Activity from './activity';
-import Campus from './campus';
-import Hygiene from './hygiene';
-import Accompany from './accompany';
-import Otheractivities from './otheractivities';
-
 function Society() {
   const [selectBoxlist, setSelectBoxlist] = useState('activity');
   const navigate = useNavigate();

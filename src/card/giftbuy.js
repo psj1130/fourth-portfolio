@@ -48,34 +48,34 @@ function Giftbuy() {
                     </dl>
                       <ul className='guide-subbox-middle'>
                         <li>
-                          <img src="/images/cardlist/member_list_dot.png"/>
+                          <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                           상담 운영 시간 : 월~금 09:00 ~ 17:00 (토·일요일, 공휴일 휴무)
                           </li>
                         <li>
-                          <img src="/images/cardlist/member_list_dot.png"/>
+                          <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                           상담 구매 및 제휴 문의
                           </li>
                         <li>
-                          <img src="/images/cardlist/member_list_dot.png"/>
+                          <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                           - 유선 안내 : 02-123-456
                           </li>
                         <li>
-                          <img src="/images/cardlist/member_list_dot.png"/>
+                          <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                           - 메일 안내 : iiww123@naver.com
                         </li>
                         <li>
-                          <img src="/images/cardlist/member_list_dot.png"/>
+                          <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                           기프트카드 발주서 : 
-                          <span  id='subbox-giftbuy-order'><a href="">기프트카드 발주서</a></span> 
+                          <span id='subbox-giftbuy-order'><a href="/">기프트카드 발주서</a></span> 
                         </li>
                       </ul>
                       <ul id='guide-subbox-bottom'>
                         <li>
-                          <img src="/images/cardlist/member_list_dot.png"/>
+                          <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                           답변은 신청 시 기재한 메일 또는 유선으로 운영 시간 내에 안내됩니다.
                         </li>
                         <li>
-                          <img src="/images/cardlist/member_list_dot.png"/>
+                          <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                           기재 오류로 인하여 답변이 불가할 수 있으므로 메일 주소 및 전화번호를 꼭 확인해 주시기 바랍니다.
                         </li>
                       </ul>
@@ -92,25 +92,25 @@ function Giftbuy() {
               <div id="giftbuy-guide-subbox02">
                   <ul id='guide-subbox02-top'>
                     <li>
-                      <img src="/images/cardlist/member_list_dot.png"/>
+                      <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                       상담 운영 시간 : 월~금 09:00 ~ 17:00 (토·일요일, 공휴일 휴무)
                       </li>
                     <li>
-                      <img src="/images/cardlist/member_list_dot.png"/>
+                      <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                       상담 구매 및 제휴 문의
                       </li>
                     <li>
-                      <img src="/images/cardlist/member_list_dot.png"/>
+                      <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                       - 메일 안내 : iiww123@naver.com
                     </li>
                   </ul>
                   <ul id='guide-subbox-bottom'>
                     <li>
-                      <img src="/images/cardlist/member_list_dot.png"/>
+                      <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                       답변은 신청 시 기재한 메일 또는 유선으로 운영 시간 내에 안내됩니다.
                     </li>
                     <li>
-                      <img src="/images/cardlist/member_list_dot.png"/>
+                      <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                       기재 오류로 인하여 답변이 불가할 수 있으므로 메일 주소 및 전화번호를 꼭 확인해 주시기 바랍니다.
                     </li>
                   </ul>

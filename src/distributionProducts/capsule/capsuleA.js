@@ -25,7 +25,7 @@ function CapsuleA() {
         <div id='capsuleC_container'>
           <div id='capsuleC_main1'>
             <div id='capsuleC_detail'>
-              <img id='' src='/capsuleimg/capsule_img01.jpg'></img>
+              <img id='' src='/capsuleimg/capsule_img01.jpg' alt='1'></img>
               <h3>이디야 캡슐커피 페르소나 블렌드</h3>
               <h4 id='capsuleC_detail_h4_a'>PERSONA BLEND</h4>
               <div id='capsuleC_detail_p'>
@@ -34,10 +34,10 @@ function CapsuleA() {
                 제품으로서 다크 초콜렛, 카라멜, 견과류의
                 고소함 및 부드러운 바디감이 특징</p>
               </div>
-              <img id='' src='/capsuleimg/capsule_taste01.jpg'></img>
+              <img id='' src='/capsuleimg/capsule_taste01.jpg' alt='1'></img>
             </div>
             <div id='capsuleC_detail'>
-              <img id='' src='/capsuleimg/capsule_img02.jpg'></img>
+              <img id='' src='/capsuleimg/capsule_img02.jpg' alt='1'></img>
               <h3>더 깔끔한 맛을 위한 무지방 우유 함유</h3>
               <h4 id='capsuleC_detail_h4_b'>COLOMBIA SUPREMO</h4>
               <div id='capsuleC_detail_p'>
@@ -45,10 +45,10 @@ function CapsuleA() {
                 고소함과 은은한 향미의 안정적인
                 밸런스가 특징인 제품</p>
               </div>
-              <img id='' src='/capsuleimg/capsule_taste02.jpg'></img>
+              <img id='' src='/capsuleimg/capsule_taste02.jpg' alt='1'></img>
             </div>
             <div id='capsuleC_detail'>
-              <img id='' src='/capsuleimg/capsule_img03.jpg'></img>
+              <img id='' src='/capsuleimg/capsule_img03.jpg' alt='1'></img>
               <h3>차별화된 시크릿 레시피 사용</h3>
               <h4 id='capsuleC_detail_h4_c'>ETHIOPIA LIMMU</h4>
               <div id='capsuleC_detail_p'>
@@ -56,7 +56,7 @@ function CapsuleA() {
                 은은하고 선명한 플로럴한 향미와
                 케인 슈가의 달콤한 후미가 특징인 제품</p>
               </div>
-              <img id='' src='/capsuleimg/capsule_taste03.jpg'></img>
+              <img id='' src='/capsuleimg/capsule_taste03.jpg' alt='1'></img>
             </div>
           </div>
         </div>

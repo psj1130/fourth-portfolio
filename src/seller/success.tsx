@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams,useSearchParams} from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import './success.css'
 import { getCookie } from "../customer/cookies";
 
@@ -12,7 +11,7 @@ const cookie = getCookie('loginCookie');
 function ReservationSuccess() {
   
   async function Setseller(){
-    const {userid} = useParams();
+    const { userid } = useParams();
     const [searchParams, setSearchParams] = useSearchParams();
    
     const id = searchParams.get('id');
@@ -33,9 +32,9 @@ function ReservationSuccess() {
       Mpoint:Mpoint,   
     };
     
-    const res = await axios.post(`${API_URL}/seller/success`,{data})
+    await axios.post(`${API_URL}/seller/success`,{data})
     .then((res)=>{
-      if(res.data == '저장완료') {
+      if(res.data === '저장완료') {
         console.log("3");
         
         console.log('주문했음');

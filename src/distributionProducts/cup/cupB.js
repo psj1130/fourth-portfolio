@@ -6,7 +6,7 @@ function CupB() {
       <div id='cupB_main'>
         <div id='cupB_main1'>
           <div id='cupB_detail'>
-            <img id='' src='/cupimg/cupcoffee_pro01.png'></img>
+            <img id='' src='/cupimg/cupcoffee_pro01.png' alt='1'></img>
             <h3 id='cupB_detail_a'>CAFE LATTE</h3>
             <h4>카페라떼</h4>
             <div id='cupB_detail_pp'>
@@ -16,7 +16,7 @@ function CupB() {
             </div>
           </div>
           <div id='cupB_detail'>
-            <img id='' src='/cupimg/cupcoffee_pro02.png'></img>
+            <img id='' src='/cupimg/cupcoffee_pro02.png' alt='1'></img>
             <h3 id='cupB_detail_b'>TOFFEENUT SIGNATURE LATTE</h3>  
             <h4>토피넛 시그니처 라떼</h4>
             <div id='cupB_detail_pp'>
@@ -26,7 +26,7 @@ function CupB() {
             </div>
           </div>
           <div id='cupB_detail'>
-            <img id='' src='/cupimg/cupcoffee_pro03.png'></img>
+            <img id='' src='/cupimg/cupcoffee_pro03.png' alt='1'></img>
             <h3 id='cupB_detail_c'>DOLCE COLD BREW</h3>
             <h4>돌체 콜드브루</h4>
             <div id='cupB_detail_pp'>
@@ -39,7 +39,7 @@ function CupB() {
         {/* 아래 2개 */}
         <div id='cupB_main2'>
           <div id='cupB_detail'>
-            <img id='' src='/cupimg/cupcoffee_pro04.png'></img>
+            <img id='' src='/cupimg/cupcoffee_pro04.png' alt='1'></img>
             <h3 id='cupB_detail_d'>VANILLA LATTE</h3>
             <h4>바닐라 라떼</h4>
             <div id='cupB_detail_pp'>
@@ -48,7 +48,7 @@ function CupB() {
             </div>
           </div>
             <div id='cupB_detail'>
-              <img id='' src='/cupimg/cupcoffee_pro05.png'></img>
+              <img id='' src='/cupimg/cupcoffee_pro05.png' alt='1'></img>
               <h3 id='cupB_detail_e'>CHOCOLATE MOCHA</h3>
               <h4>쇼콜라 모카</h4>
               <div id='cupB_detail_p'>

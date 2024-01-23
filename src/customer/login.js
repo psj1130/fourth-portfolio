@@ -42,7 +42,7 @@ const LoginForm = (props) => {
         }
         await axios.post(`${API_URL}/login`, { id: id, password: password})
         .then((res) => {
-          if(res.data == '1') {
+          if(res.data === '1') {
             // console.log('로그인 성공');
             setCookie('loginCookie', id, {
               path: '/',
@@ -51,7 +51,7 @@ const LoginForm = (props) => {
             });
             navigate(sessionStorage.getItem('BeforePage') ? sessionStorage.getItem('BeforePage') : '/');
             document.location.reload(true);
-          }else if(res.data == '2') {
+          }else if(res.data ==='2') {
             id_css.current.style.setProperty('border', '1px solid red')
             pw_css.current.style.setProperty('border', '1px solid red')
             setContext('아이디 또는 비밀번호를 다시 확인해주세요 !');
@@ -72,31 +72,28 @@ function LoginPage() {
   const navigate = useNavigate();
 
 
-  const loginHandler = () => {
-    window.location.href = link;
-  };
   // 휴대폰 인증 버튼 클릭시 실행되는 함수, NICE 표준창 호출
- const onClickCertify = async () => {
-  const { form } = document;
-  // const left = screen.width / 2 - 500 / 2;
-  // const top = screen.height / 2 - 800 / 2;
-  // const option = `status=no, menubar=no, toolbar=no, resizable=no, width=500, height=600, left=${left}, top=${top}`;
-  const returnUrl = `http://localhost:3000/api/nice`;  // 본인인증 결과를 전달받을 api url
+//  const onClickCertify = async () => {
+//   const { form } = document;
+//   // const left = screen.width / 2 - 500 / 2;
+//   // const top = screen.height / 2 - 800 / 2;
+//   // const option = `status=no, menubar=no, toolbar=no, resizable=no, width=500, height=600, left=${left}, top=${top}`;
+//   const returnUrl = `http://localhost:3000/api/nice`;  // 본인인증 결과를 전달받을 api url
 
-  // 위에서 언급했던 token api가 요청 데이터를 암호화한 후 표준창 호출에 필요한 데이터를 응답해준다.
-  // const res = await api.get('/api/token', { returnUrl });
+//   // 위에서 언급했던 token api가 요청 데이터를 암호화한 후 표준창 호출에 필요한 데이터를 응답해준다.
+//   // const res = await api.get('/api/token', { returnUrl });
 
-  // if (form && res.data) {
-  //     const { enc_data, integrity_value, token_version_id } = res.data;
-  //     window.open('', 'nicePopup', option);
+//   // if (form && res.data) {
+//   //     const { enc_data, integrity_value, token_version_id } = res.data;
+//   //     window.open('', 'nicePopup', option);
 
-  //     form.target = 'nicePopup';
-  //     form.enc_data.value = enc_data;
-  //     form.token_version_id.value = token_version_id;
-  //     form.integrity_value.value = integrity_value;
-      form.submit();
-  // }
-  };
+//   //     form.target = 'nicePopup';
+//   //     form.enc_data.value = enc_data;
+//   //     form.token_version_id.value = token_version_id;
+//   //     form.integrity_value.value = integrity_value;
+//       form.submit();
+//   // }
+//   };
 
   return (
     <div id="login-page-wrapper">

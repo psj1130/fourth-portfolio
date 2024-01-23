@@ -27,7 +27,7 @@ function MixA() {
           <div id='mixA_img2'>
             <div id='mixA_b'>
               <div>
-              <img id='mixA_img1' src='/miximg/coffeemix_icon01.jpg'></img>
+              <img id='mixA_img1' src='/miximg/coffeemix_icon01.jpg' alt='1'></img>
               </div>
               <div id='mixA_bb'>
                 <h4>커피만을 연구해온 이디야커피</h4>
@@ -40,7 +40,7 @@ function MixA() {
             </div>
             <div id='mixA_b'>
               <div>
-              <img id='mixA_img1' src='/miximg/coffeemix_icon02.jpg'></img>
+              <img id='mixA_img1' src='/miximg/coffeemix_icon02.jpg' alt='1'></img>
               </div>
               <div id='mixA_bb'>
                 <h4>이디야 커피연구소의 연구개발</h4>
@@ -54,7 +54,7 @@ function MixA() {
             </div>
             <div id='mixA_b'>
               <div>
-              <img id='mixA_img1' src='/miximg/coffeemix_icon03.jpg'></img>
+              <img id='mixA_img1' src='/miximg/coffeemix_icon03.jpg' alt='1'></img>
               </div>
               <div id='mixA_bb'>
                 <h4>뛰어난 품질 경쟁력과 황금비율</h4>

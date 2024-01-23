@@ -52,7 +52,7 @@ function Activity() {
           {category.map((item) => (
             <li key={item.id} className='activity-box'>
               <Link to={`details/${item.id}`}>
-              <img src={item.img_url}/>
+              <img src={item.img_url} alt="1"/>
               </Link >
                 <div className='activity-text-box'>
                   <Link to={`details/${item.id}`}>

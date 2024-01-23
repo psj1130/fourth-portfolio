@@ -19,7 +19,7 @@ const Popup = ({isOpen}) => {
         <div id='modal-title'>
           <h2>이디야 기프트카드 이용약관</h2>
           <img src="/images/cardlist/members_pop_close.png" 
-            onClick={() => {isOpen(false)}}/>
+            onClick={() => {isOpen(false)}} alt='1'/>
         </div>
           <div id="modal-text-container">
             <h3>이디야 기프트카드 이용약관</h3>

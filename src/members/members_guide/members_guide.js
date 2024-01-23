@@ -27,7 +27,7 @@ function Members_guide(){
                   <div id="trb1_textbox2"><p>회원 신규 가입 시</p></div>
                 </div>
                 <div>
-                  <img src="../images/members_guide/membershipguid1.png" id="trb1_img"/>
+                  <img src="../images/members_guide/membershipguid1.png" id="trb1_img" alt="1"/>
                 </div>
               </div>
               <div id="main_trb1_2div">
@@ -43,7 +43,7 @@ function Members_guide(){
                   <div id="trb1_textbox2"><p>스탬프 <b id="num5blue">5</b>개 이상 적립 시</p></div>
                 </div>
                 <div id="main_treebox1_imgdiv">
-                  <img src="../images/members_guide/membershipguid2.png" id="trb1_img"/>
+                  <img src="../images/members_guide/membershipguid2.png" id="trb1_img" alt="1"/>
                 </div>
               </div>
               <div id="main_trb1_2div">
@@ -60,7 +60,7 @@ function Members_guide(){
                   
                 </div>
                 <div id="main_treebox1_imgdiv">
-                  <img src="../images/members_guide/membershipguid3.png" id="trb1_img"/>
+                  <img src="../images/members_guide/membershipguid3.png" id="trb1_img" alt="1"/>
                 </div>
               </div>
               <div id="main_trb1_2div">
@@ -84,7 +84,7 @@ function Members_guide(){
               <div id="service_useguide_items">
 
                 <div id="service_useguide_item">
-                  <div><img src="../images/members_guide/membershipguid4.png"/></div>
+                  <div><img src="../images/members_guide/membershipguid4.png" alt="1"/></div>
                   <div>
                     <div id="service_item_text1"><p>스탬프 적립기준</p></div>
                     <div id="service_item_text2"><p>매장 제조음료 1잔당<br/>스탬프 1개가 적립됩니다.</p></div>
@@ -92,7 +92,7 @@ function Members_guide(){
                 </div>
 
                 <div id="service_useguide_item">
-                  <div><img src="../images/members_guide/membershipguid5.png"/></div>
+                  <div><img src="../images/members_guide/membershipguid5.png" alt="1"/></div>
                   <div>
                     <div id="service_item_text1"><p>스탬프 유효기간</p></div>
                     <div id="service_item_text2"><p>스탬프 유효기간은 스탬프별<br/>1년입니다.</p></div>
@@ -100,7 +100,7 @@ function Members_guide(){
                 </div>
 
                 <div id="service_useguide_item">
-                  <div><img src="../images/members_guide/membershipguid6.png"/></div>
+                  <div><img src="../images/members_guide/membershipguid6.png" alt="1"/></div>
                   <div>
                     <div id="service_item_text1"><p>등급상승</p></div>
                     <div id="service_item_text2"><p>승급조건 충족 시 익일부터<br/>적용됩니다.</p></div>
@@ -108,7 +108,7 @@ function Members_guide(){
                 </div>
 
                 <div id="service_useguide_item">
-                  <div><img src="../images/members_guide/membershipguid7.png"/></div>
+                  <div><img src="../images/members_guide/membershipguid7.png" alt="1"/></div>
                   <div>
                     <div id="service_item_text1"><p>등급기간</p></div>
                     <div id="service_item_text2"><p>승급 일자로부터 1년간<br/>유효합니다.</p></div>
@@ -116,7 +116,7 @@ function Members_guide(){
                 </div>
 
                 <div id="service_useguide_item">
-                  <div><img src="../images/members_guide/membershipguid8.png"/></div>
+                  <div><img src="../images/members_guide/membershipguid8.png" alt="1"/></div>
                   <div>
                     <div id="service_item_text1"><p>등급변경</p></div>
                     <div id="service_item_text2"><p>1년간 등급 유지 후 승급조건에<br/>해당하는 등급으로 변경됩니다.</p></div>

@@ -1,5 +1,5 @@
 import './ccm.css';
-import React, { useState } from 'react';
+import React from 'react';
 import Ccmlist from './ccmlist';
 function Ccm() {
  
@@ -31,7 +31,7 @@ function Ccm() {
               <p>한국소비자원이 평가하고 공정거래위원회가 인증하는 제도</p>
           </div>
           <div id='ccm_c'>
-            <img src='../customerSupportimg/ccm_1.jpg'></img>
+            <img src='../customerSupportimg/ccm_1.jpg' alt='1'></img>
           </div>
         </div>
       </div>
@@ -43,11 +43,11 @@ function Ccm() {
           </div>
           <div id='ccm_e'>
             <div>
-              <img src='../customerSupportimg/ccm_2.jpg'></img>
+              <img src='../customerSupportimg/ccm_2.jpg' alt='1'></img>
               <h4>이디야 CCM국문 인증서</h4>
             </div>
             <div>
-              <img src='../customerSupportimg/ccm_3.jpg'></img>
+              <img src='../customerSupportimg/ccm_3.jpg' alt='1'></img>
               <h4>이디야 CCM영문 인증서</h4>
             </div>
           </div>
