@@ -43,7 +43,7 @@ const LoginForm = (props) => {
         await axios.post(`${API_URL}/login`, { id: id, password: password})
         .then((res) => {
           if(res.data == '1') {
-            console.log('로그인 성공');
+            // console.log('로그인 성공');
             setCookie('loginCookie', id, {
               path: '/',
               secure: '/',

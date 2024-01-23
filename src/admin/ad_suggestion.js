@@ -7,7 +7,7 @@ import { API_URL } from '../config/serverurl';
 
 async function getSuggestion() {
   const res = await axios.get(`${API_URL}/suggestion`);
-  console.log(res);
+  // console.log(res);
   return res.data;
 }
 const columns = [
@@ -66,7 +66,7 @@ const columns = [
             console.log(params.id);
             await axios.delete(`${API_URL}/suggestion/delete/${params.id}`)
             .then(res => {
-              console.log(res.data);
+              // console.log(res.data);
               window.location.reload();
             })
             .catch(err => {

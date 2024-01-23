@@ -9,7 +9,7 @@ import {DataGrid} from '@mui/x-data-grid'
 
 async function getseller(id) {
   const res = await axios.get(`${API_URL}/order/order`);
-  console.log(res);
+  // console.log(res);
   return res.data;
 }
 
@@ -45,7 +45,7 @@ function Ad_sell() {
     if (!rdata) return null;
 
   
-    console.log(rdata.orderResult);
+    // console.log(rdata.orderResult);
   return (
     <div className="sell">
       <DataGrid

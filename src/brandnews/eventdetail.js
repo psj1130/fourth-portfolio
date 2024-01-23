@@ -9,7 +9,7 @@ import './eventdetail.css'
 async function getEvent(id) {
   try {
     const EventDetaildata = await axios.get(`${API_URL}/event/${id}`);
-    console.log('EventDetaildata로 받아온 데이터', EventDetaildata);
+    // console.log('EventDetaildata로 받아온 데이터', EventDetaildata);
     return EventDetaildata.data;
   }
   catch(err) {

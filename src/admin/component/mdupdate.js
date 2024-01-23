@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
-import Modal from 'react-modal';
+import React, { useState, useRef } from 'react'
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
 import useAsync from '../../customHook/useAsync';
@@ -59,13 +58,13 @@ const MdUpdateInput = (props) => {
         </div>
         <div className='menu-add-image-container'>
           <div className='menu-add-image' >
-            <label htmlFor='img1'><img src={previewImg} alt='image'></img></label>
+            <label htmlFor='img1'><img src={previewImg} alt='1'></img></label>
             <input ref={imgRef} id='img1' type='file' accept="image/*" onChange={(e) => {
               InsertImg(e);
             }}></input>
           </div>
           <div className='menu-add-image' >
-            <label htmlFor='img2'><img src={previewImg2 ? previewImg : process.env.PUBLIC_URL +'/images/icon/camera.png'} alt='image'></img></label>
+            <label htmlFor='img2'><img src={previewImg2 ? previewImg : process.env.PUBLIC_URL +'/images/icon/camera.png'} alt='1'></img></label>
             <input id='img2' type='file' accept="image/*" onChange={(e) => {
               InsertImg2(e);
             }}></input>

@@ -28,7 +28,7 @@ export default function MyPage() {
   if(cookie) {
     return(
       <div id="mypage-wrapper">
-        <Userinfo rdata={rdata[0].user}/>
+        {/* <Userinfo rdata={rdata[0].user}/> */}
         <Orderlist rdata={rdata} />
       </div>
     )

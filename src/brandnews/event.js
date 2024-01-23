@@ -11,7 +11,7 @@ import Brandbg from './brandbg';
 async function getevent() {
   try {
     const eventdata = await axios.get(`${API_URL}/event`);
-    console.log('eventdata로 받아온 데이터', eventdata);
+    // console.log('eventdata로 받아온 데이터', eventdata);
     return eventdata.data;
   }
   catch(err) {

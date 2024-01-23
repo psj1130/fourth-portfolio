@@ -11,7 +11,7 @@ import Brandbg from './brandbg';
 async function getNotice() {
   try {
     const Noticedata = await axios.get(`${API_URL}/notice`);
-    console.log('Noticedata로 받아온 데이터', Noticedata);
+    // console.log('Noticedata로 받아온 데이터', Noticedata);
     return Noticedata.data;
   }
   catch(err) {
