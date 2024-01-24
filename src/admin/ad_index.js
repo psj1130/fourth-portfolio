@@ -7,7 +7,7 @@ import Chart from "./component/chart.tsx";
 
 const getOrder = async () => {
   const result = await axios.get(`${API_URL}/order/order`);
-  console.log(result.data);
+  // console.log(result.data);
   return result.data;
 }
 

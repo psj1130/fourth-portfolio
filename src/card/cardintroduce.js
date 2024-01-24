@@ -46,7 +46,7 @@ function Introduce() {
           <div id="introduce-con01">
             <div id="introduce-card-con01">
               <div id="introduce-card-imgcon">
-                <img src="/images/cardlist/giftcard_img.png"/>
+                <img src="/images/cardlist/giftcard_img.png" alt="1"/>
               </div>
               <div id="introduce-card-textcon">
                 <h1 id="card-textcon-style">기프트카드란?</h1>
@@ -57,7 +57,7 @@ function Introduce() {
             </div>
           </div>
           <div id="arrow-con">
-            <img id="introduce-arrow" src="/images/cardlist/members_block_back.png"/>
+            <img id="introduce-arrow" src="/images/cardlist/members_block_back.png" alt="1"/>
           </div>
         <div className="introduce-subbox">
           <div id="introduce-con-box">
@@ -68,22 +68,22 @@ function Introduce() {
             </dl>
               <ul className='introduce-subbox-middle'>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                   이디야 키프트가드는 전국 이디야커피 매장에서 구매 가능합니다.(일부매장 제외)
                   </li>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                   카드결제로만 구매 가능합니다.
                   </li>
                 <li>
                   &nbsp; ※ 카드결제: 신용카드, 체크카드, 법인카드(기프트카드로 결제 불가합니다.)
                   </li>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                   기프트카드 구매 시 현금영수증은 발행되지 않습니다.
                 </li>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                   기프트 카드 구매시 적립되지 않습니다.
                 </li>
               </ul>
@@ -94,18 +94,18 @@ function Introduce() {
               </dl>
                 <ul className='introduce-subbox-middle'>
                   <li>
-                    <img src="/images/cardlist/member_list_dot.png"/>
+                    <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     기프트카드 단체 및 기업 구매의 경우 하단 발주서를 작성 후 기재된 이메일로 발송하여 구매 요청 가능합니다.
                     </li>
                   <li>
-                    <span  id='introduce-subbox-order'><a href="">기프트카드 발주서</a></span> 
+                    <span  id='introduce-subbox-order'><a href="/">기프트카드 발주서</a></span> 
                   </li>
                   <li>
-                    <img src="/images/cardlist/member_list_dot.png"/>
+                    <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     상담 운영시간 : 09:00 ~ 18:00 (토/일요일, 공휴일 휴무)
                   </li>
                   <li>
-                    <img src="/images/cardlist/member_list_dot.png"/>
+                    <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     단체 및 기업 구매 문의 : 02-123-1234
                   </li>
                 </ul>
@@ -116,7 +116,7 @@ function Introduce() {
               </dl>
                 <ul className='introduce-subbox-middlesub'>
                   <li>
-                    <img src="/images/cardlist/member_list_dot.png"/>
+                    <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     기프트카드 단체 및 기업 구매의 경우 하단 발주서를 작성 후 기재된 이메일로 발송하여 구매 요청 가능합니다.
                     </li>
                   &nbsp; ※ 단체 및 기업카드 별도
@@ -150,23 +150,23 @@ function Introduce() {
             </dl>
               <ul className='introduce-subbox-middle'>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     기프트카드의 뒷면 바코드를 제시하여 이용이 가능합니다.
                   </li>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                   기프트카드를 사용하여 이디야커피 상품 구매 시 현금 영수증 발급이 가능합니다.
                   </li>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     카드 뒷면에 표기된 금액만큼 사용이 가능하며 충전은 불가합니다.
                   </li>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     카드의 유효기간은 구매일로부터 5년입니다. 유효기간 만료 시 잔액은 자동 소멸됩니다.
                 </li>
                 <li>
-                  <img src="/images/cardlist/member_list_dot.png"/>
+                  <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     기프트카드는 이디야 멤버스 APP에 등록하여 사용, 사용이력 조회, 잔액 조회가 가능합니다.
                 </li>
               </ul>
@@ -178,7 +178,7 @@ function Introduce() {
                 <ul className='introduce-subbox-middle'
                 id="introduce-subbox02-middle">
                   <li>
-                    <img src="/images/cardlist/member_list_dot.png"/>
+                    <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                    경주홈플러스점, 광양홈플러스점, 대구성서홈플러스점, 대구칠곡홈플러스점, 병점홈플러스점, 부산가야홈플러스점, 부산연산홈플러스점, 
                    <p>연수홈플러스점, 울산홈플러스점, 원주홈플러스점, 의정부홈플러스점, 인하홈플러스점, 킨텍스홈플러스점, 평택안중홈플러스점</p>
                     </li>
@@ -191,7 +191,7 @@ function Introduce() {
                 <ul className='introduce-subbox-middlesub'
                 id="introduce-subbox02-middle">
                   <li>
-                    <img src="/images/cardlist/member_list_dot.png"/>
+                    <img src="/images/cardlist/member_list_dot.png" alt="1"/>
                     3공수특전여단점, 9사단점, CampCasey점, RodriguezRange점, Warriorbase점, 계룡대점, 과천역점, 과천중앙점, 광양체육관점, 광양포스코점, 광주수완롯데마트점,
                     <p>구미삼성점, 구미삼성점(쉼터), 구미삼성점(해피데이), 군산수송동점, 기흥삼성점, 남현홈플러스점, 내발산점, 대전SK점, 도농코레일점, 동구미이마트점, 동탄삼성점,</p>
                     <p> 방학홈플러스점, 부산대정문점, 부천세무서점, 삼척홈플러스점, 상암홈플러스점, 상지대2호점, 상지대점, 성남단대점, 성빈센트병원점, 세이브존노원점, 세종시갈매점,</p>
@@ -210,7 +210,7 @@ function Introduce() {
                   id="terms-btn"
                   onClick={popupclick}>
                     기프트카드 이용약관
-                    <img src="/images/cardlist/list_btn.gif" alt="" />
+                    <img src="/images/cardlist/list_btn.gif" alt="1"/>
                   </button>
                   {isOpen ? <Popup
                    isOpen={setOpen} /> : null}

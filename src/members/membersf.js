@@ -23,7 +23,7 @@ function MembersFooter (){
         </div>
 
         <div id="member_footer_box2">
-          <img src="../images/members_main/EDIYA_footer_img.png"/>
+          <img src="../images/members_main/EDIYA_footer_img.png" alt="1"/>
         </div>
 
         <div id="member_footer_box3">
@@ -33,7 +33,7 @@ function MembersFooter (){
             <div><p>사업자등록번호 : 107-86-16302 | 통신판매업 신고 : 강남 제 002519호 | 대표이사 : 문창기, 권익범</p></div>
             <div><p>ⓒ 2023 EDIYA COFFEE COMPANY.ALL RIGHTS RESERVED</p></div>
           </div>
-          <div id="memeber_footer_box3_2"><img src="../images/members_main/EDIYA_footer_img2.png"/></div>
+          <div id="memeber_footer_box3_2"><img src="../images/members_main/EDIYA_footer_img2.png" alt="1"/></div>
         </div>
       </div>
     </div>

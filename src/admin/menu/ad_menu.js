@@ -8,7 +8,6 @@ import { API_URL } from '../../config/serverurl';
 import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 import { Link } from 'react-router-dom';
 import MenuModal from '../component/menumodal';
-import MenuUpdateModal from '../component/menuupdate';
 
 async function getMenu() {
   const res = await axios.get(`${API_URL}/admin/menu`);
@@ -19,7 +18,6 @@ async function getMenu() {
 export default function Ad_menu() {
   const [state] = useAsync(getMenu, []);
   const [isOpen, setOpen] = useState(false);
-  const [isOpen1, setOpen1] = useState(false);
 
   const columns = [
     {

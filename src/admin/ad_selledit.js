@@ -7,7 +7,7 @@ import useAsync from '../customHook/useAsync';
 
 async function getEdit(id) {
   const res = await axios.get(`${API_URL}/order/order`);
-  console.log(res);
+  // console.log(res);
   return res.data;
 }
 
@@ -82,14 +82,14 @@ function Selledit() {
     setEditedCount('');
 
     // 서버에 수정된 데이터 전송
-    const updatedData = {
-      id: editingRowId,
-      count: editedCount,
-    };
+    // const updatedData = {
+    //   id: editingRowId,
+    //   count: editedCount,
+    // };
 
     try {
-      const response = await axios.put(`${API_URL}/order/update`, updatedData);
-      console.log(response.data);
+      // const response = await axios.put(`${API_URL}/order/update`, updatedData);
+      // console.log(response.data);
       // 성공적으로 업데이트되면 서버에서 데이터를 다시 불러옵니다.
       refetch();
     } catch (error) {

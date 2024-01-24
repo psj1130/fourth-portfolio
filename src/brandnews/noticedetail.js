@@ -9,7 +9,7 @@ import './noticedetail.css'
 async function getNotice(id) {
   try {
     const NoticeDetaildata = await axios.get(`${API_URL}/notice/${id}`);
-    console.log('Noticedata로 받아온 데이터', NoticeDetaildata);
+    // console.log('Noticedata로 받아온 데이터', NoticeDetaildata);
     return NoticeDetaildata.data;
   }
   catch(err) {

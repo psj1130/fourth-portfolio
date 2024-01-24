@@ -1,6 +1,5 @@
 import React from "react";
 import Orderlist from "./orderlist";
-import Userinfo from "./userinfo";
 import axios from "axios";
 import useAsync from "../../customHook/useAsync";
 import { API_URL } from "../../config/contansts";
@@ -28,7 +27,7 @@ export default function MyPage() {
   if(cookie) {
     return(
       <div id="mypage-wrapper">
-        <Userinfo rdata={rdata[0].user}/>
+        {/* <Userinfo rdata={rdata[0].user}/> */}
         <Orderlist rdata={rdata} />
       </div>
     )

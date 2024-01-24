@@ -5,12 +5,12 @@ function Footer() {
   return(
     <footer>
       <ul className="footer-nav">
-        <li><a>영상정보처리기기 운영·관리방침</a></li>
-        <li><a>개인정보처리방침</a></li>
-        <li><a>멤버스 이용약관</a></li>
-        <li><a>가맹 안내</a></li>
-        <li><a>Sitemap</a></li>
-        <li><a>점주의 방</a></li>
+        <li>영상정보처리기기 운영·관리방침</li>
+        <li>개인정보처리방침</li>
+        <li>멤버스 이용약관</li>
+        <li>가맹 안내</li>
+        <li>Sitemap</li>
+        <li>점주의 방</li>
       </ul>
       <div className="footer-logo">
         <img src={process.env.PUBLIC_URL + "/images/logo/bottom_logo.gif"}></img>

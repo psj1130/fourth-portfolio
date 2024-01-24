@@ -5,11 +5,10 @@ import { getCookie } from "../customer/cookies";
 import React from "react";
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import MenuList from "./menulist";
 import Contents from "./contents";
 import styled from "styled-components";
-import Star from "./star";
 const cookie = getCookie('loginCookie');
 const ContentDiv = styled.div`
   width: 1020px;
@@ -36,19 +35,19 @@ function Buymenu(props) {
     fetchRatingFromDatabase();
   }, []);
 
-  const renderStars = () => {
-    const stars = [];
+  // const renderStars = () => {
+  //   const stars = [];
 
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span key={i} className={i <= rating ? "star filled" : "star"}>
-          &#9733;
-        </span>
-      );
-    }
+  //   for (let i = 1; i <= 5; i++) {
+  //     stars.push(
+  //       <span key={i} className={i <= rating ? "star filled" : "star"}>
+  //         &#9733;
+  //       </span>
+  //     );
+  //   }
 
-    return stars;
-  };
+  //   return stars;
+  // };
   const Plus = () => {
     setCount((prevCount) => prevCount + 1);
   };
@@ -60,7 +59,7 @@ function Buymenu(props) {
   };
   const menu = props.rdata.menuResult;
 
-  const review1 = props.rdata.reviewResult1;
+  // const review1 = props.rdata.reviewResult1;
   const averageScore =
     review.length > 0
       ? review.reduce((total, a) => total + (a.score || 0), 0) / review.length
@@ -78,7 +77,7 @@ function Buymenu(props) {
     <table id="buytable" border={1}>
       <tr id="borderbuy">
         <td id="buytabletd1">
-          <img id="buyimg" src={imgurl[0]} />
+          <img id="buyimg" src={imgurl[0]} alt="1"/>
         </td>
         <td rowSpan={2} id="buytabletd2">
           <div id="buydiv">
@@ -258,7 +257,7 @@ function Buy() {
   const { id } = useParams();
   const [state] = useAsync(() => getBuy(id), [id]);
   const { loading, data: rdata, error } = state;
-  const cookie = getCookie("loginCookie");
+  // const cookie = getCookie("loginCookie");
 
   if (loading) return <div>로딩중입니다.....</div>;
   if (error) return <div>에러가 발생했습니다.</div>;

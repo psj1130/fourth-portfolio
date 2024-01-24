@@ -8,7 +8,7 @@ function Menu_main (){
       <div id="Menu_main_body">
         <div id="Menu_main_container">
           <div id="Menu_main_div1">
-            <img className="menu_main_img" src="../images/menu/menu_1.jpg"/>
+            <img className="menu_main_img" src="../images/menu/menu_1.jpg" alt="1"/>
             <div id="menu_textbox1">
               <div id="menu_textbox1_div1"><p>메뉴</p></div>
               <div id="menu_textbox1_div2"><p>Always Beside you, EDIYA COFFEE</p></div>
@@ -23,7 +23,7 @@ function Menu_main (){
           </div>
 
           <div id="Menu_main_div1">
-            <img className="menu_main_img" src="../images/menu/menu_2.jpg"/>
+            <img className="menu_main_img" src="../images/menu/menu_2.jpg" alt="1"/>
             <div id="menu_textbox2">
               <div id="menu_textbox2_div1"><p>음료</p></div>
               <div id="menu_textbox2_div2"><p>특별한 경험을 선사합니다.</p></div>
@@ -33,7 +33,7 @@ function Menu_main (){
           </div>
 
           <div id="Menu_main_div1">
-            <img className="menu_main_img" src="../images/menu/menu_3.jpg"/>
+            <img className="menu_main_img" src="../images/menu/menu_3.jpg" alt="1"/>
             <div id="menu_textbox3">
               <div id="menu_textbox3_div1"><p>베이커리</p></div>
               <div id="menu_textbox3_div2"><p>갓 구워낸 신선함, 그 맛과 영양을 그대로</p></div>
@@ -43,7 +43,7 @@ function Menu_main (){
           </div>
 
           <div id="Menu_main_div1">
-            <img className="menu_main_img" src="../images/menu/menu_4.jpg"/>
+            <img className="menu_main_img" src="../images/menu/menu_4.jpg" alt="1"/>
             <div id="menu_textbox2">
               <div id="menu_textbox2_div1"><p>MD</p></div>
               <div id="menu_textbox2_div2"><p>특별함을 더해줄 상품들</p></div>

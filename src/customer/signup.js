@@ -69,7 +69,7 @@ const SignUpForm = () => {
         if(!name || !password || !password2 || !email || !second || !third) {
           setContext('필수정보를 입력해주세요 !')
         } else {
-          if(password == password2) {
+          if(password === password2) {
             const data = {
               id : id,
               name: name,
@@ -79,17 +79,17 @@ const SignUpForm = () => {
             }
             await axios.post(`${API_URL}/signup`, data)
               .then(res => {
-                if(res.data == 'success') {
+                if(res.data === 'success') {
                   alert('회원가입을 축하드립니다 !');
                   navigate('/members/login');
-                } else if(res.data == 'fail') {
+                } else if(res.data === 'fail') {
                   alert('다시 확인해주세요 !');
                 }
               })
               .catch(err => {
                 console.log(err);
               })
-          } else if(password != password2) {
+          } else if(password !== password2) {
             pw_css.current.style.setProperty('border', '1px solid red');
             pw2_css.current.style.setProperty('border', '1px solid red');
           }

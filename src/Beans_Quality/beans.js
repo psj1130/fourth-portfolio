@@ -10,7 +10,7 @@ function Beans(){
       <div id="Beans_container">
 
         <div id="Beans_banner">
-          <img id="Beans_banner_img" src="../images/Beans_Quality_Source/Beans/Beans1.jpg"/>
+          <img id="Beans_banner_img" src="../images/Beans_Quality_Source/Beans/Beans1.jpg" alt='1'/>
           <div id="Beans_banner_text">
             <p id="Beans_banner_text1">원두</p>
             <p id="Beans_banner_text2">ALWAYS BESIDE YOU, EDIYA BEAN</p>
@@ -30,7 +30,7 @@ function Beans(){
 
           <div id="Beans_2div">
             <div id="Beans_2div_img_warrap">
-              <img id="Beans_2div_img" src="../images/Beans_Quality_Source/Beans/Beans2.png"/>
+              <img id="Beans_2div_img" src="../images/Beans_Quality_Source/Beans/Beans2.png" alt='1'/>
             </div>
             <div id="Beans_2div_textbox">
               <div id="Beans_2div_textdiv1"><p id="Beans_2div_p1">이디야커피는 고품질의 원두만을 공급합니다.</p></div>
@@ -44,13 +44,13 @@ function Beans(){
               <div id="Beans_2div_textdiv2"><p id="Beans_2div_p2">다년간 축적된 이디야커피만의 원두 관리 노하우를 바탕으로<br/>원두가 가진 고유의 맛과 향 그대로 신선한 커피만을 제공합니다.</p></div>
             </div>
             <div id="Beans_2div_img_warrap">
-              <img id="Beans_2div_img" src="../images/Beans_Quality_Source/Beans/Beans3.png"/>
+              <img id="Beans_2div_img" src="../images/Beans_Quality_Source/Beans/Beans3.png" alt='1'/>
             </div>
           </div>
         
           <div id="Beans_2div">
             <div id="Beans_2div_img_warrap">
-              <img src="../images/Beans_Quality_Source/Beans/Beans4.png"/>
+              <img src="../images/Beans_Quality_Source/Beans/Beans4.png" alt='1'/>
             </div>
             <div id="Beans_2div_textbox">
               <div id="Beans_2div_textdiv1"><p id="Beans_2div_p1">커피를 연구하는 최고의 분야별 전문가와 함께 합니다.</p></div>
@@ -73,7 +73,7 @@ function Beans(){
               </div>
             </div>
             <div id="Beans_2div_img_warrap">
-              <img src="../images/Beans_Quality_Source/Beans/Beans5.jpg"/>
+              <img src="../images/Beans_Quality_Source/Beans/Beans5.jpg" alt='1'/>
             </div>
           </div>
 
@@ -81,7 +81,7 @@ function Beans(){
             <div id="Beans_6div_header"><p id="Beans_6div_header_p">이디야 원두의 특징</p></div>
             <div id="Beans_6div_itembox">
               <div id="Beans_6div_img_warrap">
-                  <img src="../images/Beans_Quality_Source/Beans/Beans6.jpg"/>
+                  <img src="../images/Beans_Quality_Source/Beans/Beans6.jpg" alt='1'/>
               </div>
               <div id="Beans_6div_textdiv">
                 <p id="Beans_6div_textdiv_p">커피 본연의 풍부한 향을 첫 느낌으로,<br/>
@@ -95,7 +95,7 @@ function Beans(){
           
           <div id="Beans_7div">
             <div id="Beans_7div_headerdiv"><p id="Beans_6div_header_p">이디야 원두의 산지별 품종 소개</p></div>
-            <div id="Beans_7div_imgdiv"><img id="Beans_7div_mapimg" src="../images/Beans_Quality_Source/Beans/Beans7.jpg"/></div>
+            <div id="Beans_7div_imgdiv"><img id="Beans_7div_mapimg" src="../images/Beans_Quality_Source/Beans/Beans7.jpg" alt='1'/></div>
             <div id="Beans_7div_itembox">
 
               <div id="Beans_7div_item1">
@@ -141,8 +141,8 @@ function Beans(){
             <div id="Beans_8div_itembox">
 
               <div id="Beans_8div_item1">
-                <div><img src="../images/Beans_Quality_Source/Beans/Beans8.jpg"/></div>
-                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num1.jpg"/></div>
+                <div><img src="../images/Beans_Quality_Source/Beans/Beans8.jpg" alt='1'/></div>
+                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num1.jpg" alt='1'/></div>
                 <div id="Beans_8div_textbox">
                   <div><p id="Beans_8div_text1">생두 선별</p></div>
                   <div><p id="Beans_8div_text2">세계 커피 산지 별 품질이 우수한 제품들을 선별하여 저온 보관을 합니다.<br/>커피 본연의 맛과 향에 영향을 줄 수 있는 이물질(나뭇가지, 잎사귀, 돌 등)을 제거합니다.</p></div>
@@ -150,8 +150,8 @@ function Beans(){
               </div>
 
               <div id="Beans_8div_item1">
-                <div><img src="../images/Beans_Quality_Source/Beans/Beans9.jpg"/></div>
-                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num2.jpg"/></div>
+                <div><img src="../images/Beans_Quality_Source/Beans/Beans9.jpg" alt='1'/></div>
+                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num2.jpg" alt='1'/></div>
                 <div id="Beans_8div_textbox">
                   <div><p id="Beans_8div_text1">샘플 로스팅</p></div>
                   <div><p id="Beans_8div_text2">국내 최고의 Q-grader(커피 감별사)와 커피 전문 Roaster(로스터)가 커피의 특성을 파악하기 위해 샘플 로스팅을 합니다.</p></div>
@@ -159,8 +159,8 @@ function Beans(){
               </div>
 
               <div id="Beans_8div_item1">
-                <div><img src="../images/Beans_Quality_Source/Beans/Beans10.jpg"/></div>
-                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num3.jpg"/></div>
+                <div><img src="../images/Beans_Quality_Source/Beans/Beans10.jpg" alt='1'/></div>
+                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num3.jpg" alt='1'/></div>
                 <div id="Beans_8div_textbox">
                   <div><p id="Beans_8div_text1">블랜딩 커핑</p></div>
                   <div><p id="Beans_8div_text2">고객에게 더 맛있는 커피를 제공하기 위해 여러 번의 커핑작업과 블랜딩을 통한 테스트를 시행합니다.</p></div>
@@ -168,8 +168,8 @@ function Beans(){
               </div>
 
               <div id="Beans_8div_item1">
-                <div><img src="../images/Beans_Quality_Source/Beans/Beans11.jpg"/></div>
-                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num4.jpg"/></div>
+                <div><img src="../images/Beans_Quality_Source/Beans/Beans11.jpg" alt='1'/></div>
+                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num4.jpg" alt='1'/></div>
                 <div id="Beans_8div_textbox">
                   <div><p id="Beans_8div_text1">제품 로스팅</p></div>
                   <div><p id="Beans_8div_text2">커피 본연의 맛과 향을 더욱 느낄 수 있도록 전용 로스팅 기기로 제품을 생산합니다.</p></div>
@@ -177,8 +177,8 @@ function Beans(){
               </div>
 
               <div id="Beans_8div_item1">
-                <div><img src="../images/Beans_Quality_Source/Beans/Beans12.jpg"/></div>
-                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num5.jpg"/></div>
+                <div><img src="../images/Beans_Quality_Source/Beans/Beans12.jpg" alt='1'/></div>
+                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num5.jpg" alt='1'/></div>
                 <div id="Beans_8div_textbox">
                   <div><p id="Beans_8div_text1">매장 공급</p></div>
                   <div><p id="Beans_8div_text2">신속한 제품 포장을 하여 커피가 가장 신선하고 맛과 향미가 가장 풍부한 기간에 이디야 매장에 공급합니다.</p></div>
@@ -186,8 +186,8 @@ function Beans(){
               </div>
 
               <div id="Beans_8div_item1">
-                <div><img src="../images/Beans_Quality_Source/Beans/Beans13.jpg"/></div>
-                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num6.jpg"/></div>
+                <div><img src="../images/Beans_Quality_Source/Beans/Beans13.jpg" alt='1'/></div>
+                <div id="Beans_8div_numimg"><img src="../images/Beans_Quality_Source/Beans/Bean_num6.jpg" alt='1'/></div>
                 <div id="Beans_8div_textbox">
                   <div><p id="Beans_8div_text1">고객 판매</p></div>
                   <div><p id="Beans_8div_text2">최고의 바리스타와 서비스로 고객에게 감동을 드리는 커피, 이디야커피 입니다.</p></div>
@@ -200,17 +200,17 @@ function Beans(){
             <div id="Beans_7div_headerdiv"><p id="Beans_6div_header_p">이디야 블렌딩</p></div>
             <div id="Beans_9div_itembox">
               <div id="Beans_9div_item">
-                <div><img src="../images/Beans_Quality_Source/Beans/Beans_10div_1.jpg"/></div>
+                <div><img src="../images/Beans_Quality_Source/Beans/Beans_10div_1.jpg" alt='1'/></div>
                 <div><p id="Beans_9div_p1">적합한 생두 선택</p></div>
                 <div><p id="Beans_9div_p2">각 산지별 커피의 특성을 이해한 후 블렌딩에 적합한 <br/>최고의 원두를 선별합니다.</p></div>
               </div>
               <div id="Beans_9div_item">
-                <div><img  src="../images/Beans_Quality_Source/Beans/Beans_10div_2.jpg"/></div>
+                <div><img  src="../images/Beans_Quality_Source/Beans/Beans_10div_2.jpg" alt='1'/></div>
                 <div><p id="Beans_9div_p1">엄격한 품질 관리</p></div>
                 <div><p id="Beans_9div_p2">1년 365일 언제나 좋은 품질의 커피를 만들기 위해<br/> 엄격한 품질 관리를 합니다.</p></div>
               </div>
               <div id="Beans_9div_item">
-                <div><img  src="../images/Beans_Quality_Source/Beans/Beans_10div_3.jpg"/></div>
+                <div><img  src="../images/Beans_Quality_Source/Beans/Beans_10div_3.jpg" alt='1'/></div>
                 <div><p id="Beans_9div_p1">최적의 로스팅 노하우</p></div>
                 <div><p id="Beans_9div_p2">커피 본연의 맛을 추출하기 위한 최적의 로스팅을 합<br/>니다.</p></div>
               </div>

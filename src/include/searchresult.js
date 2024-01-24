@@ -40,7 +40,7 @@ function Searchre() {
     // 쉼표(,)로 구분된 이미지 URL 문자열을 분할하여 배열
 
     // 첫 번째 이미지 URL만 반환
-    return <img src={imageUrlsArray[0].trim()} alt="First Image" />;
+    return <img src={imageUrlsArray[0].trim()} alt="1" />;
   };
 
   return (

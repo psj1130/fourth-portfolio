@@ -1,7 +1,7 @@
 import './partnership.css';
 import Partnershipmemo from './partnershipmemo';
 import Partnershipscroll from './partnershipscroll';
-import React, { useState } from 'react';
+import React from 'react';
 
 function Partnership() {
   

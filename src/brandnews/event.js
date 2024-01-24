@@ -11,7 +11,7 @@ import Brandbg from './brandbg';
 async function getevent() {
   try {
     const eventdata = await axios.get(`${API_URL}/event`);
-    console.log('eventdata로 받아온 데이터', eventdata);
+    // console.log('eventdata로 받아온 데이터', eventdata);
     return eventdata.data;
   }
   catch(err) {
@@ -62,7 +62,7 @@ function Event() {
                   className='event-search-input'
                   type="text" />
                     <button className='event-search-result'>
-                      <img src="/images/cardlist/icon_search.gif"/>
+                      <img src="/images/cardlist/icon_search.gif" alt="1"/>
                     </button>
                 </div>
               </div>
@@ -73,7 +73,7 @@ function Event() {
                      {/* {console.log(`Key for item with id ${item.id}: ${item.id}`)} 키 값 확인코드 */}
                    <div className='event-detail-imgcon'>
                     <Link to={`${item.id}`}>
-                      <img src={item.title_img_url} alt="" />
+                      <img src={item.title_img_url} alt="1" />
                     </Link>
                   </div>
                   <dl className='event-detail-titlecon'>
