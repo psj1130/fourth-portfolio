@@ -1,6 +1,6 @@
 import React from "react";
 import './chart.css'
-import {LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 
 export default function Chart(props) {
 
@@ -11,6 +11,9 @@ export default function Chart(props) {
     return `${xTick.substring(5,7)}/${xTick.substring(8, 10)}`;
   };
   
+  const formatYAxis = (yTick: number) => {
+    return `${yTick.toLocaleString()}원`;
+  };
 
   return (
     <div className="chart">
