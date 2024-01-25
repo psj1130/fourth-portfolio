@@ -18,6 +18,7 @@ export default function Ad_event() {
     const [isOpen, setOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const modalRef = useRef(null);
+    const [selectedlist, setSelectedlist] = useState(null);
     const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
     const [updateId, setUpdateId] = useState(null);
     //내용 팝업 모달 열기
@@ -98,7 +99,6 @@ export default function Ad_event() {
               className='notice-img'
               src={params.row.title_img_url}
               onClick={popupclick}
-              alt="1"
             />
             {isOpen ? <Integratedpopup imgUrl={imgUrl} isOpen={isOpen} /> : null}
           </div>

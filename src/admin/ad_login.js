@@ -70,7 +70,7 @@ function Ad_login() {
     <div id="ad-login-page-wrapper">
       <div id="ad-login-page-container">
         <div id="ad-login-logo">
-          <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'} alt='1'></img>
+          <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'}></img>
         </div>
         <LoginForm />
       </div>
