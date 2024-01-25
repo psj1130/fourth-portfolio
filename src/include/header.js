@@ -107,6 +107,8 @@ function Header() {
                   <li><Link to="/dp/coffeemix">커피믹스</Link></li>
                   <li><Link to="/dp/capsule">캡슐커피</Link></li>
                   <li><Link to="/dp/cup">컵커피</Link></li>
+                  <li><Link to="/dp/transaction">수출입거래</Link></li>
+                  <li><Link to="/dp/b2b">B2B/특판/대리점 거래</Link></li>
                 </ul>
               </li>
               <li className="nav_menu">
