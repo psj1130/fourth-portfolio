@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios'; // Axios 라이브러리 import

@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
 import PartnershipRobot from '../../customerservicecenter/partnershipRobot';
@@ -17,6 +18,7 @@ import PartnershipRobot from '../../customerservicecenter/partnershipRobot';
 const productInterestOptions = ['스틱커피', '커피', 'TEA', '병음료', '파우더', '선물세트'];
 
 const TransactionDetail = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [firstNumber, setFirstNumber] = useState('');
   const [middleNumber, setMiddleNumber] = useState('');
@@ -51,9 +53,11 @@ const TransactionDetail = () => {
     try {
       await axios.post(`${API_URL}/transaction`, data);
       alert('신청 성공!');
+      navigate('/');
     } catch (error) {
-      console.error(error);
+      console.error('서버 오류:', error);
     }
+    
   };
 
   const emailDomains = ['naver.com', 'gmail.com', 'daum.com', 'nate.com'];
@@ -64,7 +68,7 @@ const TransactionDetail = () => {
         <h3>상담 신청자 정보</h3>
         <p>표시 항목은 필수 입력항목입니다. 최대한 상세히 내용 기재해주시면 보다 정확한 상담이 가능합니다.</p>
       </div>
-      <form onSubmit={handleSubmit} id="partnershipmemo_main" encType='multipart/form-data'>
+      <form  id="partnershipmemo_main" encType='multipart/form-data'>
         <Grid container spacing={2}  >
           <Grid item xs={12} id='name'>
             <TextField
@@ -199,7 +203,7 @@ const TransactionDetail = () => {
               <Button variant="outlined" color="secondary">
                 취소
               </Button>
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="click" onClick={handleSubmit} variant="contained" color="primary">
                 등록
               </Button>
             </Link>

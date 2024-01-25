@@ -1,6 +1,7 @@
-import React from "react";
-import { useParams} from "react-router-dom";
+import { Link, useParams,useSearchParams} from "react-router-dom";
 import { API_URL } from "../config/serverurl";
+import { getCookie } from "../customer/cookies";
+import * as react from 'react'; 
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
 import "./sell.css";
@@ -8,12 +9,17 @@ import {DataGrid} from '@mui/x-data-grid'
 
 async function getseller(id) {
   const res = await axios.get(`${API_URL}/order/order`);
-  // console.log(res);
+  console.log(res);
   return res.data;
 }
 
 
 function Ad_sell() {
+    
+    const handleDelete=(id) =>{
+   
+     
+    }
     const columns=[
       {field: 'id', headerName:'주문번호', width:70,},
       {field: 'userid', headerName:'구매자', width:110,},
@@ -39,7 +45,7 @@ function Ad_sell() {
     if (!rdata) return null;
 
   
-    // console.log(rdata.orderResult);
+    console.log(rdata.orderResult);
   return (
     <div className="sell">
       <DataGrid

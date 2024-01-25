@@ -3,14 +3,14 @@ import './partnershipmemo.css';
 import PartnershipRobot from './partnershipRobot';
 import axios from 'axios';
 import { API_URL } from '../config/serverurl';
-import { useNavigate} from 'react-router';
+import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 
 const Test = () => {
   const navigate = useNavigate();
   const [selectedOptions, setSelectedOptions] = useState('');
-  const [name,setName] = useState('');
+  const [name, setName] = useState('');
   const [firstNumber, setfirstNumber] = useState('');
   const [middleNumber, setMiddleNumber] = useState('');
   const [lastNumber, setLastNumber] = useState('');
@@ -50,13 +50,13 @@ const Test = () => {
         const contactInfo = `${firstNumber}-${middleNumber}-${lastNumber}`;
         const email = `${emailId}@${selectedDomain}`;
         const data = {
-          type : selectedOptions,
-          user : name,
+          type: selectedOptions,
+          user: name,
           phone: contactInfo,
-          email : email,
-          title : title,
-          body : content,
-          file_dir : res.data.path
+          email: email,
+          title: title,
+          body: content,
+          file_dir: res.data.path
         }
 
         axios.post(`${API_URL}/suggestion`, data)
@@ -73,13 +73,13 @@ const Test = () => {
       })
 
     // console.log(test);
-    
+
     // console.log('제출된 데이터:', formData);
 
     // axios.post(`${API_URL}/suggestion`, formData)
     // .then(res => {
     //   console.log(res.status);
-      
+
     //   navigate('/'); //성공하면 메인페이지로 가게 하는것
     // }).catch(err => {
     //   console.error(err);
@@ -95,31 +95,31 @@ const Test = () => {
   ];
 
   return (
-    <div id='partnershipmemo_main'>
+    <div id='partnershipmemo_main2'>
       <form id='partnershipmemo_container' encType='multipart/form-data' onSubmit={handleSubmit}>
-      <label id='par'>
-        <span id='partnershipmemo_title'>선택 </span>
-        <div id='par_a'>
-          <label id='par'>
-            <input
-              type="checkbox"
-              value="제휴"
-              checked={selectedOptions.includes('제휴')}
-              onChange={handleCheckboxChange}
-            />
-            제휴
-          </label>
-          <label id='par'>
-            <input
-              type="checkbox"
-              value="제안"
-              checked={selectedOptions.includes('제안')}
-              onChange={handleCheckboxChange}
-            />
-            제안
-          </label>
-        </div>
-      </label>
+        <label id='par'>
+          <span id='partnershipmemo_title'>선택 </span>
+          <div id='par_a'>
+            <label id='par'>
+              <input
+                type="checkbox"
+                value="제휴"
+                checked={selectedOptions.includes('제휴')}
+                onChange={handleCheckboxChange}
+              />
+              제휴
+            </label>
+            <label id='par'>
+              <input
+                type="checkbox"
+                value="제안"
+                checked={selectedOptions.includes('제안')}
+                onChange={handleCheckboxChange}
+              />
+              제안
+            </label>
+          </div>
+        </label>
         <label id='par'>
           <span id='partnershipmemo_title'>이름 </span>
           <input
@@ -138,14 +138,14 @@ const Test = () => {
             value={firstNumber}
             onChange={(e) => setfirstNumber(e.target.value)}
           />
-            <div id='partnershipmemo_hyphen'>-</div>
+          <div id='partnershipmemo_hyphen'>-</div>
           <input
             id='partnershipmemo_memo2'
             type="text"
             value={middleNumber}
             onChange={(e) => setMiddleNumber(e.target.value)}
           />
-            <div id='partnershipmemo_hyphen'>-</div>
+          <div id='partnershipmemo_hyphen'>-</div>
           <input
             id='partnershipmemo_memo2'
             type="text"
@@ -155,19 +155,19 @@ const Test = () => {
         </label>
         <br />
         <label id='par'>
-          <span id='partnershipmemo_title'>E-Mail </span> 
+          <span id='partnershipmemo_title'>E-Mail </span>
           <input
             id='partnershipmemo_memo3'
             type="text"
             value={emailId}
             onChange={(e) => setEmailId(e.target.value)}
           />
-            <div id='partnershipmemo_hyphen'>@</div>
+          <div id='partnershipmemo_hyphen'>@</div>
           <select id='partnershipmemo_memo5'
             value={selectedDomain}
             onChange={(e) => setSelectedDomain(e.target.value)}
           >
-            <option  value="">이메일 선택</option>
+            <option value="">이메일 선택</option>
             {emailDomains.map((domain, index) => (
               <option key={index} value={domain}>{domain}</option>
             ))}
@@ -206,7 +206,7 @@ const Test = () => {
           <span id='partnershipmemo_title'>스팸방지 체크 </span>
           <PartnershipRobot></PartnershipRobot>
         </label>
-        
+
         <br />
         <div id='partnershipmemo_notice'>
           <p>※ 해당 페이지는 마케팅, 상품, 서비스 등의 제휴/제안 페이지입니다. CS 관련 문의는 고객의 소리를 이용해</p>
@@ -215,11 +215,11 @@ const Test = () => {
         <br />
         <div id='partnership_btns_main'>
           <div id='partnership_btns'>
-          <Link to='/searchstore'><button id='partnership_btn_a' type="button">취소</button></Link>
-          <button id='partnership_btn_b' type="submit" >등록</button>
+            <Link to='/searchstore'><button id='partnership_btn_a' type="button">취소</button></Link>
+            <button id='partnership_btn_b' type="submit" >등록</button>
           </div>
         </div>
-        
+
       </form>
     </div>
   );

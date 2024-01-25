@@ -1,11 +1,16 @@
 import React from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
-import Ad_suggestion from './ad_suggestion';
+
+import Ad_suggestion from './ad_suggestion.js';
+import Ad_transaction from './ad_transactionDetail.js';
+import Ad_b2b from './ad_b2bdetail.js';
+
 import Ad_menu from './menu/ad_menu.js';
 import Ad_md from './menu/ad_md.js';
 import Ad_user from './ad_user';
 import Sidebar from './include/sidebar';
 import { getCookie, delCookie } from '../customer/cookies';
+import Sell from './ad_sell.jsx';
 import './adminpage.css';
 
 // 공지관련
@@ -32,7 +37,7 @@ function AdminPage() {
       <header>
         <div className='admin-header-logo'>
           <a href='/administrator'>
-            <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'} alt='1'></img>
+            <img src={process.env.PUBLIC_URL + '/images/logo/top_logo.gif'}></img>
           </a>
         </div>
         <ul>
@@ -40,9 +45,6 @@ function AdminPage() {
             delCookie('adminCookie');
             window.location.replace('/administrator/login');
           }}><i className='xi-log-out'></i>Logout</li>
-          <li onClick={() => {
-            window.open('https://github.com/psj1130/fourth-portfolio/files/13784532/EdiyaAdministratorPageManual.pptx', '_blank', 'noopener, noreferrer');
-          }}><i className='xi-help-o'></i>Manual</li>
           <li onClick={() => {
             navigate('/')
           }}><i className='xi-home-o'></i>Home</li>
@@ -56,6 +58,9 @@ function AdminPage() {
 
             <Route path='/sales' element={<Ad_sell/>}/>
             <Route path='/suggestion' element={<Ad_suggestion/>}/>
+            <Route path='/transaction' element={<Ad_transaction/>}/>
+            <Route path='/b2b' element={<Ad_b2b/>}/>
+            <Route path='/menu' element={<Ad_menu/>}/>
             <Route path='/menu' element={<Ad_menu/>}/>
             <Route path='/md' element={<Ad_md/>}/>
             <Route path='/user' element={<Ad_user/>}/>
