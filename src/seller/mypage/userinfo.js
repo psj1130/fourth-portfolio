@@ -1,7 +1,14 @@
 import React from "react";
 
 export default function Userinfo(props) {
-  console.log(props.rdata);
+  if (props.rdata) {
+    console.log("식별됨",props.rdata.name);
+  } else {
+    console.log('props.rdata 또는 props.rdata.name이 존재하지 않습니다.');
+  }
+
+  console.log("userinfo 정보",typeof props.rdata);
+  console.log(typeof props.rdata.name);
   return(
     <div id="userinfo-container">
       <h2>사용자 정보</h2>
