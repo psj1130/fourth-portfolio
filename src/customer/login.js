@@ -42,8 +42,8 @@ const LoginForm = (props) => {
         }
         await axios.post(`${API_URL}/login`, { id: id, password: password})
         .then((res) => {
-          if(res.data === '1') {
-            // console.log('로그인 성공');
+          if(res.data == '1') {
+            console.log('로그인 성공');
             setCookie('loginCookie', id, {
               path: '/',
               secure: '/',
@@ -51,7 +51,7 @@ const LoginForm = (props) => {
             });
             navigate(sessionStorage.getItem('BeforePage') ? sessionStorage.getItem('BeforePage') : '/');
             document.location.reload(true);
-          }else if(res.data ==='2') {
+          }else if(res.data == '2') {
             id_css.current.style.setProperty('border', '1px solid red')
             pw_css.current.style.setProperty('border', '1px solid red')
             setContext('아이디 또는 비밀번호를 다시 확인해주세요 !');

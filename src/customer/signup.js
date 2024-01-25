@@ -42,7 +42,7 @@ const SignUpForm = () => {
         </div>
       </div>
       <p><span>이메일</span></p>
-      <input id="email" type="text" placeholder="이메일을 입력해주세요." onChange={(e) => {
+      <input type="text" placeholder="이메일을 입력해주세요." onChange={(e) => {
         setEmail(e.target.value);
       }}></input>
       <p><span>핸드폰 번호</span></p>
@@ -69,7 +69,7 @@ const SignUpForm = () => {
         if(!name || !password || !password2 || !email || !second || !third) {
           setContext('필수정보를 입력해주세요 !')
         } else {
-          if(password === password2) {
+          if(password == password2) {
             const data = {
               id : id,
               name: name,
@@ -79,10 +79,10 @@ const SignUpForm = () => {
             }
             await axios.post(`${API_URL}/signup`, data)
               .then(res => {
-                if(res.data === 'success') {
+                if(res.data == 'success') {
                   alert('회원가입을 축하드립니다 !');
                   navigate('/members/login');
-                } else if(res.data === 'fail') {
+                } else if(res.data == 'fail') {
                   alert('다시 확인해주세요 !');
                 }
               })
