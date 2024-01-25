@@ -1,5 +1,5 @@
 import { useParams, useSearchParams} from "react-router-dom";
-import { API_URL } from "../config/contansts";
+import { API_URL } from "../config/serverurl.js";
 import React from "react";
 import axios from "axios";
 import useAsync from "../customHook/useAsync";

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams} from "react-router-dom";
-import { API_URL } from "../config/contansts";
+import { API_URL } from "../config/serverurl";
 import axios from "axios";
 import useAsync from "../customHook/useAsync";
 import "./sell.css";

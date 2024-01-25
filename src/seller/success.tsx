@@ -5,7 +5,7 @@ import './success.css'
 import { getCookie } from "../customer/cookies";
 
 import axios from "axios";
-import { API_URL } from "../config/contansts";
+import { API_URL } from "../config/serverurl";
 const cookie = getCookie('loginCookie');
 
 function ReservationSuccess() {
