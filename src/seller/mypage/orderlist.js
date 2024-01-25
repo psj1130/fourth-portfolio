@@ -5,6 +5,12 @@ import { getCookie } from "../../customer/cookies.js";
 import { Link } from "react-router-dom";
 import useAsync from "../../customHook/useAsync.js";
 
+async function getReviews() {
+  const res = await axios.get(`${API_URL}/reviews/review`);
+  // console.log(res.data);
+  return res.data;
+}
+
 function Orderlist(props) {
   // 상태 및 레퍼런스 선언
   const cookie = getCookie('loginCookie');
@@ -124,7 +130,7 @@ function Orderlist(props) {
     <div id="orderlist-container">
       <h2>구매 내역</h2>
       <ul>
-        {cookie ? props.rdata.map((list, index) => {
+        {cookie ? props.rdata.orderResult.map((list, index) => {
           const images = list.menu.img_url.split(',');
           return (
             <li className="order-item" key={list.id}>
