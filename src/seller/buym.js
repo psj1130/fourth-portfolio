@@ -1,6 +1,6 @@
 import "./buy.css";
 import { Link, useParams } from "react-router-dom";
-import { API_URL } from "../config/contansts";
+import { API_URL } from "../config/serverurl";
 import { getCookie } from "../customer/cookies";
 import React from "react";
 import axios from "axios";

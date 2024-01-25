@@ -1,5 +1,5 @@
 import { Link, useParams,useSearchParams} from "react-router-dom";
-import { API_URL } from "../config/contansts";
+import { API_URL } from "../config/serverurl";
 import { getCookie } from "../customer/cookies";
 import * as react from 'react'; 
 import axios from "axios";

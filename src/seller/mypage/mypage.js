@@ -3,10 +3,16 @@ import Orderlist from "./orderlist";
 import Userinfo from "./userinfo";
 import axios from "axios";
 import useAsync from "../../customHook/useAsync";
-import { API_URL } from "../../config/contansts";
+import { API_URL } from "../../config/serverurl";
 import { useParams } from "react-router";
 import './mypage.css'
 import { getCookie } from "../../customer/cookies";
+
+async function getUser(userid) {
+  const res = await axios.get(`${API_URL}/user/${userid}`)
+  console.log(res);
+  return res.data;
+}
 
 async function getOrder(userid) {
   const res = await axios.get(`${API_URL}/seller/orderlist/${userid}`);
