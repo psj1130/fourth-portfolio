@@ -13,6 +13,7 @@ const MapSearch = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=b9af15b0476acfb8e621c5d13246de00&libraries=services`;
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=340c9a781e3284e44d072e83e281b19f&libraries=services`;
     script.async = true;
     document.head.appendChild(script);
 
@@ -31,9 +32,9 @@ const MapSearch = () => {
       // 필요한 경우 마운트 해제 시 스크립트 및 리소스 정리
     };
   }, []);
-  // const handleToggleDetail = () => {
-  //   setShowDetail(!showDetail); // Toggle the state to show/hide detail
-  // };
+  const handleToggleDetail = () => {
+    setShowDetail(!showDetail); // Toggle the state to show/hide detail
+  };
   const handleKeywordChange = (e) => {
     setKeyword(e.target.value);
   };
@@ -199,7 +200,7 @@ const showMarkers = (data) => {
                 </div>
                 <div id='st_form_c'>
                   <input id='st_form_d' type="text" value={keyword} onChange={handleKeywordChange} size="15" />
-                  <button id='st_form_e' type="submit"><img src='./mapimg/mir_add.jpg' alt="1"></img></button>
+                  <button id='st_form_e' type="submit"><img src='./mapimg/mir_add.jpg'></img></button>
                 </div>
               </form>
             </div>
