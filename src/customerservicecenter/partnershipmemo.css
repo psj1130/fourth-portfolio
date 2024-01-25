@@ -45,7 +45,12 @@
 }
 
 #partnershipmemo_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 680px;
+  /* border: 1px solid #000; */
 }
 #partnershipmemo_hyphen{
   display: flex;
@@ -92,12 +97,13 @@
   text-align:left;
   /* border: 1px solid black; */
 }
-#partnershipmemo_main{
+#partnershipmemo_main2{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
+  /* border: 1px solid #000; */
 }
 #par_a{
   width: 580px;

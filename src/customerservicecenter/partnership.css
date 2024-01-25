@@ -1,3 +1,10 @@
+#parner_boxP{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+}
 #Partnership_list{
   width: 100%;
   height: 40px;

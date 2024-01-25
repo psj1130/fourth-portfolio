@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Modal from 'react-modal';
 import axios from 'axios';
 import { API_URL } from '../../config/serverurl';
@@ -6,7 +6,9 @@ import './menumodal.css'
 
 
 const MenuModal = ({isOpen}) => {
+  const [img1, setImage1] = useState(null);
   const [previewImg, setPreviewImg ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
+  const [img2, setImage2] = useState(null);
   const [previewImg2, setPreviewImg2 ] = useState(process.env.PUBLIC_URL + '/images/icon/camera.png')
   const [type, setType] = useState('drink');
   const [code, setCode] = useState(0);
@@ -73,13 +75,13 @@ const MenuModal = ({isOpen}) => {
         </div>
         <div className='menu-add-image-container'>
           <div className='menu-add-image' >
-            <label htmlFor='img1'><img src={previewImg} alt='1'></img></label>
+            <label htmlFor='img1'><img src={previewImg} alt='image'></img></label>
             <input ref={imgRef} id='img1' type='file' accept="image/*" onChange={(e) => {
               InsertImg(e);
             }}></input>
           </div>
           <div className='menu-add-image' >
-            <label htmlFor='img2'><img src={previewImg2} alt='1'></img></label>
+            <label htmlFor='img2'><img src={previewImg2} alt='image'></img></label>
             <input id='img2' type='file' accept="image/*" onChange={(e) => {
               InsertImg2(e);
             }}></input>

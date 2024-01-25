@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import './sidebar.css';
 import HomeWorkIcon from '@mui/icons-material/HomeWork'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
 import PerosonOutlineIcon from '@mui/icons-material/PersonOutline'
 import StoreFrontIceon from '@mui/icons-material/Storefront'
@@ -47,6 +48,12 @@ export default function Sidebar() {
           <ul className="sidebarList">
             <Link to="/administrator/suggestion">
               <li className="sidebarListItem"><PerosonOutlineIcon />제휴 및 제안</li>
+            </Link>
+            <Link to="/administrator/transaction">
+              <li className="sidebarListItem"><PerosonOutlineIcon />수출입거래</li>
+            </Link>
+            <Link to="/administrator/b2b">
+              <li className="sidebarListItem"><PerosonOutlineIcon />B2B/특판</li>
             </Link>
           </ul>
         </div>

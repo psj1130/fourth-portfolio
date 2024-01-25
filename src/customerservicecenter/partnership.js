@@ -6,7 +6,7 @@ import React from 'react';
 function Partnership() {
   
   return (
-    <div>
+    <div id='parner_box'>
       <Partnershipscroll></Partnershipscroll>
       <Partnershipmemo></Partnershipmemo>
     </div>

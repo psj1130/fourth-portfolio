@@ -5,21 +5,15 @@ import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../config/serverurl';
 
-async function getSuggestion() {
-  const res = await axios.get(`${API_URL}/suggestion`);
+async function getTransaction() {
+  const res = await axios.get(`${API_URL}/transaction`);
   console.log(res);
   return res.data;
 }
 const columns = [
   {
-    field: 'type',
-    headerName: '제휴/제안',
-    width: 120,
-    editable: true,
-  },
-  {
     field: 'user',
-    headerName: '이름',
+    headerName: '성함',
     width: 120,
     editable: true,
   },
@@ -34,24 +28,43 @@ const columns = [
   {
     field: 'email',
     headerName: '이메일',
+    width: 120,
+    editable: true,
+  },
+  
+  {
+    field: 'company',
+    headerName: '회사명',
     width: 200,
+    editable: true,
+  },
+  {
+    field: 'nation',
+    headerName: '국가',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'city',
+    headerName: '도시',
+    width: 200,
+    editable: true,
+  },
+  {
+    field: 'type',
+    headerName: '관심 제품',
+    width: 100,
     editable: true,
   },
   {
     field: 'title',
     headerName: '제목',
-    width: 150,
+    width: 100,
     editable: true,
   },
   {
     field: 'body',
     headerName: '내용',
-    width: 200,
-    editable: true,
-  },
-  {
-    field: 'file_dir',
-    headerName: '첨부 파일',
     width: 100,
     editable: true,
   },
@@ -64,7 +77,7 @@ const columns = [
         <>
           <button className='userListDelete' onClick={async () => {
             console.log(params.id);
-            await axios.delete(`${API_URL}/suggestion/delete/${params.id}`)
+            await axios.delete(`${API_URL}/transaction/delete/${params.id}`)
             .then(res => {
               console.log(res.data);
               window.location.reload();
@@ -81,8 +94,8 @@ const columns = [
   },
 ];
 
-export default function Ad_suggestion() {
-  const [state] = useAsync(getSuggestion, []);
+export default function Ad_transaction() {
+  const [state] = useAsync(getTransaction, []);
 
   const { loading, data: formData, error } = state;
   console.log(formData);
@@ -91,8 +104,8 @@ export default function Ad_suggestion() {
   if (!formData) return null;
 
   return (
-    <div id='ad_suggestion_container'>
-      <div id='ad_suggestion_main'>
+    <div id='ad_transaction_container'>
+      <div id='ad_transaction_main'>
         <Box>
           <DataGrid
             rows={formData}
@@ -113,4 +126,3 @@ export default function Ad_suggestion() {
     </div>
   );
 }
-

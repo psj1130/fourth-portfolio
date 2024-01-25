@@ -56,6 +56,7 @@ const B2bdetail = () => {
     try {
       await axios.post(`${API_URL}/b2b`, data);
       alert('신청 성공!');
+      navigate('/');
     } catch (err) {
       console.log(err);
       alert('신청 실패!');
@@ -70,7 +71,7 @@ const B2bdetail = () => {
         <h3>상담 신청자 정보</h3>
         <p>표시 항목은 필수 입력항목입니다. 최대한 상세히 내용 기재해주시면 보다 정확한 상담이 가능합니다.</p>
       </div>
-      <form id='partnershipmemo_main' encType='multipart/form-data' onSubmit={handleSubmit}>
+      <form id='partnershipmemo_main' encType='multipart/form-data'>
         <Grid container spacing={2}>
           <Grid item xs={12} id='name'>
             <TextField
@@ -228,7 +229,7 @@ const B2bdetail = () => {
               <Button variant='outlined' color='secondary'>
                 취소
               </Button>
-              <Button type='submit' variant='contained' color='primary'>
+              <Button type='click' onClick={handleSubmit} variant='contained' color='primary'>
                 등록
               </Button>
             </Link>
