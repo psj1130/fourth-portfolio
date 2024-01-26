@@ -16,7 +16,7 @@ async function getUser(userid) {
 
 async function getOrder(userid) {
   const res = await axios.get(`${API_URL}/seller/orderlist/${userid}`);
-  // console.log(res);
+  console.log(res);
   return res.data;
 }
 
@@ -94,6 +94,9 @@ export default function MyPage() {
     }
   };
 
+  
+
+  // 에러가 발생해도 유저 정보가 있으면 페이지를 로딩하고 유저 정보를 표시
 
   if (loading) return <div>로딩중입니다.....</div>
   if (error) return <div>에러가 발생했습니다.</div>
@@ -106,11 +109,21 @@ export default function MyPage() {
   // console.log(rdata);
   // console.log("pdata1 : ", pdata1);
 
+  // if (error) {
+  //   console.error("에러가 발생했습니다.", error);
+  //   return <div>에러가 발생했습니다. 에러 콘솔을 확인해 주세요.</div>;
+  // }
+
+  // // 로딩 중이거나 데이터가 없는 경우 로딩 표시
+  // if (loading || !rdata || !rdata[0] || !rdata[0].user) {
+  //   return <div>로딩중입니다.....</div>;
+  // }
+
   if (cookie) {
     return (
       <div>
         <div id="mypage-wrapper">
-          <Userinfo id="style" rdata={rdata[0].user} />
+          <Userinfo id="style" rdata={rdata} />
           <Orderlist id="style" rdata={rdata} />
         </div>
         <div id="reviews_body">
