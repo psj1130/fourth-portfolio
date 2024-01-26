@@ -1,3 +1,6 @@
+#mypage-all {
+  min-height: 800px;
+}
 #mypage-wrapper {
   width: 100%;
   min-height: 500px;
@@ -183,8 +186,10 @@
   font-size: 17px;
 }
 #reviews_body{
+  width: 1200px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 #update_delete_btn{
   display: flex;
@@ -205,11 +210,15 @@
   background-color: #234C84;
   color: #fff;
 }
-#reviews_body{
-  margin-bottom: 50px;
-}
 .mypg_textarea{
   width: 400px;
   height: 90px;
   resize: none;
+}
+
+#mypage-review-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

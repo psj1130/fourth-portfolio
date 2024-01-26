@@ -121,90 +121,93 @@ export default function MyPage() {
 
   if (cookie) {
     return (
-      <div>
+      <div id="mypage-all">
         <div id="mypage-wrapper">
           <Userinfo id="style" rdata={rdata} />
           <Orderlist id="style" rdata={rdata} />
         </div>
-        <div id="reviews_body">
-          {pdata1.map((pdata) => (
-            <div id="reviews_container" key={pdata.id}>
-              <div id="review_img_div">
-                {editMode[pdata.id] && (
-                  // 이미지 수정 폼 및 미리 보기
-                  <>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) => {
-                        setEditedImage({ ...editedImage, [pdata.id]: e.target.files[0] });
-
-                        // 미리 보기 업데이트
-                        const reader = new FileReader();
-                        reader.onload = (event) => {
-                          const previewUrl = event.target.result;
-                          setPreviewImage({ ...previewImage, [pdata.id]: previewUrl });
-                        };
-                        reader.readAsDataURL(e.target.files[0]);
-                      }}
-                    />
-                    {previewImage[pdata.id] && (
-                      <img
-                        id="preview_img"
-                        src={previewImage[pdata.id]}
-                        alt={`Preview-${pdata.id}`}
+        <div id="mypage-review-wrapper">
+          <div id="reviews_body">
+            <h2>내가 쓴 리뷰</h2>
+            {pdata1.map((pdata) => (
+              <div id="reviews_container" key={pdata.id}>
+                <div id="review_img_div">
+                  {editMode[pdata.id] && (
+                    // 이미지 수정 폼 및 미리 보기
+                    <>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => {
+                          setEditedImage({ ...editedImage, [pdata.id]: e.target.files[0] });
+          
+                          // 미리 보기 업데이트
+                          const reader = new FileReader();
+                          reader.onload = (event) => {
+                            const previewUrl = event.target.result;
+                            setPreviewImage({ ...previewImage, [pdata.id]: previewUrl });
+                          };
+                          reader.readAsDataURL(e.target.files[0]);
+                        }}
                       />
-                    )}
-                  </>
-                )}
-
-                {!editMode[pdata.id] && pdata.img_url && (
-                  // 이미지 표시
-                  <img id="review_img" src={pdata.img_url} alt={`Review-${pdata.id}`} />
-                )}{!editMode[pdata.id] && pdata.img_url && (
-                  // 이미지 표시
-                  <img id="review_img" src={pdata.img_url} alt={`Review-${pdata.id}`} />
-                )}
-              </div>
-              <div id="review_text_div">
-                {editMode[pdata.id] ? (
-                  // 텍스트 수정 폼
-                  <textarea
-                    className="mypg_textarea"
-                    value={editedContent[pdata.id]}
-                    onChange={(e) => setEditedContent({ ...editedContent, [pdata.id]: e.target.value })}
-                  />
-                ) : (
-                  // 텍스트 표시
-                  <p>{pdata.body}</p>
-                )}
-              </div>
-              <div id="update_delete_btn">
-                <div>
-                  {editMode[pdata.id] ? (
-                    <button
-                      id="mypage_btn_style"
-                      onClick={() => handleUpdateReview(pdata.id)}
-                    >
-                      완료
-                    </button>
-                  ) : (
-                    <button
-                      id="mypage_btn_style"
-                      onClick={() => {
-                        setEditMode({ ...editMode, [pdata.id]: true });
-                        setEditedContent({ ...editedContent, [pdata.id]: pdata.body });
-                        setEditedImage({ ...editedImage, [pdata.id]: pdata.img_url });
-                      }}
-                    >
-                      수정
-                    </button>
+                      {previewImage[pdata.id] && (
+                        <img
+                          id="preview_img"
+                          src={previewImage[pdata.id]}
+                          alt={`Preview-${pdata.id}`}
+                        />
+                      )}
+                    </>
+                  )}
+          
+                  {!editMode[pdata.id] && pdata.img_url && (
+                    // 이미지 표시
+                    <img id="review_img" src={pdata.img_url} alt={`Review-${pdata.id}`} />
+                  )}{!editMode[pdata.id] && pdata.img_url && (
+                    // 이미지 표시
+                    <img id="review_img" src={pdata.img_url} alt={`Review-${pdata.id}`} />
                   )}
                 </div>
-                <div><button id="mypage_btn_style" onClick={() => handelDeleteReview(pdata.id)}>삭제</button></div>
+                <div id="review_text_div">
+                  {editMode[pdata.id] ? (
+                    // 텍스트 수정 폼
+                    <textarea
+                      className="mypg_textarea"
+                      value={editedContent[pdata.id]}
+                      onChange={(e) => setEditedContent({ ...editedContent, [pdata.id]: e.target.value })}
+                    />
+                  ) : (
+                    // 텍스트 표시
+                    <p>{pdata.body}</p>
+                  )}
+                </div>
+                <div id="update_delete_btn">
+                  <div>
+                    {editMode[pdata.id] ? (
+                      <button
+                        id="mypage_btn_style"
+                        onClick={() => handleUpdateReview(pdata.id)}
+                      >
+                        완료
+                      </button>
+                    ) : (
+                      <button
+                        id="mypage_btn_style"
+                        onClick={() => {
+                          setEditMode({ ...editMode, [pdata.id]: true });
+                          setEditedContent({ ...editedContent, [pdata.id]: pdata.body });
+                          setEditedImage({ ...editedImage, [pdata.id]: pdata.img_url });
+                        }}
+                      >
+                        수정
+                      </button>
+                    )}
+                  </div>
+                  <div><button id="mypage_btn_style" onClick={() => handelDeleteReview(pdata.id)}>삭제</button></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     )

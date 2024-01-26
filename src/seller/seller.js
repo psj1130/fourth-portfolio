@@ -9,7 +9,11 @@ import Checkout from "./Checkout.tsx";
 import { getCookie } from "../customer/cookies.js";
 const cookie = getCookie('loginCookie');
 async function getseller(id) {
-  const res = await axios.get(`${API_URL}/seller/${id},${cookie}`);
+  const res = await axios.get(`${API_URL}/seller/${cookie}`, {
+    params: {
+      id : id
+    }
+  });
   console.log(res);
   return res.data;
 }
