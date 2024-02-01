@@ -199,8 +199,7 @@ function Info(props){
     
   }  
 function Seller(props) {
-  const { userid } = useParams();
-  console.log(userid);
+
   const [searchParams, setSearchParams] = useSearchParams();
   const id = searchParams.get('id');
   const count = searchParams.get('o_count');
