@@ -12,8 +12,8 @@ const MapSearch = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    // script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=b9af15b0476acfb8e621c5d13246de00&libraries=services`;
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=340c9a781e3284e44d072e83e281b19f&libraries=services`;
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=b9af15b0476acfb8e621c5d13246de00&libraries=services`;
+    // script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=340c9a781e3284e44d072e83e281b19f&libraries=services`;
     script.async = true;
     document.head.appendChild(script);
 
