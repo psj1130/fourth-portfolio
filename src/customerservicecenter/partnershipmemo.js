@@ -95,8 +95,8 @@ const Test = () => {
   ];
 
   return (
-    <div id='partnershipmemo_main'>
-      <form id='partnershipmemo_container' encType='multipart/form-data' onSubmit={handleSubmit}>
+    <div id='partnershipmemo_main2'>
+      <form id='partnershipmemo_container2' encType='multipart/form-data' onSubmit={handleSubmit}>
       <label id='par'>
         <span id='partnershipmemo_title'>선택 </span>
         <div id='par_a'>

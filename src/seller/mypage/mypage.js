@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Orderlist from "./orderlist";
-import Userinfo from "./userinfo";
+import Userinfo from './userinfo';
 import axios from "axios";
 import useAsync from "../../customHook/useAsync";
 import { API_URL } from "../../config/contansts";
