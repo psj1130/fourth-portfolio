@@ -197,7 +197,7 @@ function Drink(props) {
                       </div>
                       <div id="drink_textbox">
                       <div id="a_name"><p><b>{a.name}</b></p></div>
-                        {a.use_yn === 1 && ( // This condition checks if use_yn is true
+                        {a.use_yn == 1 && ( // This condition checks if use_yn is true
                           <Link to={`/order/menu/${a.id}`}>
                             <div id="drink_buy"><p>구매하기</p></div>
                           </Link>

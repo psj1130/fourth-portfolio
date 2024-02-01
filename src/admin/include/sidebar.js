@@ -43,10 +43,16 @@ export default function Sidebar() {
           </ul>
         </div>
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">제휴·제안</h3>
+          <h3 className="sidebarTitle">유통 제품</h3>
           <ul className="sidebarList">
             <Link to="/administrator/suggestion">
               <li className="sidebarListItem"><PerosonOutlineIcon />제휴 및 제안</li>
+            </Link>
+            <Link to="/administrator/transaction">
+              <li className="sidebarListItem"><PerosonOutlineIcon />수출 입거래</li>
+            </Link>
+            <Link to="/administrator/b2b">
+              <li className="sidebarListItem"><PerosonOutlineIcon />B2B/특판</li>
             </Link>
           </ul>
         </div>
