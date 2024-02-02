@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Modal from 'react-modal';
 import axios from 'axios';
-import { API_URL } from '../../config/serverurl';
+import { API_URL } from '../../config/contansts';
 import './menumodal.css'
 
 

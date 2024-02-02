@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
-import { API_URL } from "../../config/serverurl.js";
+import { API_URL } from "../../config/contansts.js";
 import { getCookie } from "../../customer/cookies.js";
 import { Link } from "react-router-dom";
 import useAsync from "../../customHook/useAsync.js";

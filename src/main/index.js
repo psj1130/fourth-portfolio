@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import axios from 'axios';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../config/contansts';
 import ImageSlide from '../components/imageslide';
 import useAsync from '../config/useAsync';
 import Slider from 'react-slick';

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { API_URL } from "../config/serverurl";
+import { API_URL } from "../config/contansts.js";
 import useAsync from '../customHook/useAsync';
 import FeaturedInfo from "./component/featuredinfo";
 import Chart from "./component/chart.tsx";

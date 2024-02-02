@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import './drink.css';
 import { Link, useParams } from 'react-router-dom';
 import axios from "axios";
-import { API_URL } from "../../config/serverurl";
+import { API_URL } from "../../config/contansts";
 import useAsync from '../../customHook/useAsync';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

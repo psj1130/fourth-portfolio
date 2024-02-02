@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import useAsync from '../customHook/useAsync';
 import axios from 'axios';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../config/contansts';
 
 async function getSuggestion() {
   const res = await axios.get(`${API_URL}/suggestion`);

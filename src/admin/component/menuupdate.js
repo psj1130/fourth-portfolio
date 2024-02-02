@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import axios from 'axios';
-import { API_URL } from '../../config/serverurl';
+import { API_URL } from '../../config/contansts';
 import './menumodal.css'
 import { useParams } from 'react-router';
 import useAsync from '../../config/useAsync';

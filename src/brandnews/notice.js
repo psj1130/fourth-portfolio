@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../config/contansts';
 import useAsync from '../config/useAsync';
 
 import './notice.css';

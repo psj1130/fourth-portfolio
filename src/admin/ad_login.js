@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import { API_URL } from "../config/serverurl";
+import { API_URL } from "../config/contansts";
 import { setCookie } from "../customer/cookies";
 
 const LoginForm = (props) => {

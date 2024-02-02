@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { API_URL } from '../config/serverurl';
+import { API_URL } from '../config/contansts';
 import useAsync from '../customHook/useAsync';
 
 async function getEdit(id) {

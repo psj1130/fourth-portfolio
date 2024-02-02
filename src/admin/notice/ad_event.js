@@ -5,7 +5,7 @@ import DeleteOutLine from '@mui/icons-material/DeleteOutline'
 
 import useAsync from '../../customHook/useAsync';
 import axios from 'axios';
-import { API_URL } from '../../config/serverurl';
+import { API_URL } from '../../config/contansts';
 import './notice.css';
 import Integratedpopup from "./modal/integratedpopup";
 import Createmodal from "./modal/eventcreatemodal";

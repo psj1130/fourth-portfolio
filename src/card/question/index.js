@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useParams} from 'react-router-dom';
 import '../question/questionmain.css'
 import axios from 'axios';
-import { API_URL } from '../../config/serverurl';
+import { API_URL } from '../../config/contansts';
 import useAsync from '../../config/useAsync';
 
 
