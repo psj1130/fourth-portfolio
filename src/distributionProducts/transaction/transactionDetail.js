@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { API_URL } from '../../config/serverurl';
+import { API_URL } from '../../config/contansts';
 import PartnershipRobot from '../../customerservicecenter/partnershipRobot';
 
 const productInterestOptions = ['스틱커피', '커피', 'TEA', '병음료', '파우더', '선물세트'];

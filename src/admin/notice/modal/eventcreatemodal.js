@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios'; // Axios 라이브러리 import
-import { API_URL } from '../../../config/serverurl';
+import { API_URL } from '../../../config/contansts';
 import './eventmodal.css';
 
 const Createmodal = ({ modalOpen, setModalOpen }) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { API_URL } from '../../../config/serverurl';
+import { API_URL } from '../../../config/contansts';
 import useAsync from '../../../config/useAsync';
 import './activitydetail.css'
 import Society from '..';

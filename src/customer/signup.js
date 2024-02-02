@@ -1,7 +1,7 @@
 import axios from "axios";
 import './signup.css';
 import React, { useRef, useState } from "react";
-import { API_URL } from "../config/serverurl";
+import { API_URL } from "../config/contansts";
 import { useNavigate } from "react-router";
 
 const SignUpForm = () => {

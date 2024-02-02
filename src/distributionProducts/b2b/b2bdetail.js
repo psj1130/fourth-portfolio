@@ -10,7 +10,7 @@ import {
   Link as MuiLink,
 } from '@mui/material';
 import axios from 'axios';
-import { API_URL } from '../../config/serverurl';
+import { API_URL } from '../../config/contansts';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom'
 import PartnershipRobot from '../../customerservicecenter/partnershipRobot';

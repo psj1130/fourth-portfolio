@@ -4,7 +4,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import IconButton from '@mui/material/IconButton';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
 import axios from 'axios'; // Axios 라이브러리 import
-import { API_URL } from '../../../config/serverurl';
+import { API_URL } from '../../../config/contansts';
 import './noticemodal.css';
 
 const Updatemodal = ({ isOpen, onClose, updateId }) => {
